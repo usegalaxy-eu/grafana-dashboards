@@ -20,9 +20,11 @@ cat > README.md <<-EOF
 
 See the live versions on [stats.galaxyproject.eu](https://stats.galaxyproject.eu):
 
+Name | Live Version | JSON
+--- | --- | ---
 EOF
 
-sqlite3 --csv -separator "$(printf '\t')" /var/lib/grafana/grafana.db 'select title,uid from dashboard;' | awk -F'\t' '{print "- ["$1"](https://stats.galaxyproject.eu/d/"$2")"}' >> README.md
+sqlite3 --csv -separator "$(printf '\t')" /var/lib/grafana/grafana.db 'select title,uid from dashboard;' | awk -F'\t' '{print $1" | [Live](https://stats.galaxyproject.eu/d/"$2") | [File](./"$1".json)"}' >> README.md
 
 cat >> README.md <<-EOF
 
@@ -32,6 +34,8 @@ GPLv3 I guess? Can your really license some json files with queries in them?
 EOF
 
 
-git add *.json README.md
-git commit -a -m "Automated commit for $(date)"
-
+if [[ $1 != "--no-commit" ]]; then
+	git add *.json README.md
+	git commit -a -m "Automated commit for $(date)"
+	git push --quiet
+fi
