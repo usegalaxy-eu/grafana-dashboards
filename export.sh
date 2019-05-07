@@ -24,7 +24,7 @@ EOF
 
 sqlite3 --csv -separator "$(printf '\t')" /var/lib/grafana/grafana.db 'select title,uid from dashboard;' | awk -F'\t' '{print "- ["$1"](https://stats.galaxyproject.eu/d/"$2")"}' >> README.md
 
-cat > README.md <<-EOF
+cat >> README.md <<-EOF
 
 ## License
 
