@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -f *.json
 
-sqlite3 --csv -separator "$(printf '\t')" /var/lib/grafana/grafana.db 'select title,data from dashboard;' | awk -F'\t' '{print $2 > $1".json" }'
+sqlite3 --csv -separator "$(printf '\t')" /var/lib/grafana/grafana.db 'select title,data from dashboard;' | awk -F'\t' '{gsub("\"", "", $1); print $2 > $1".json" }'
 
 for i in *.json; do
 	q=$(mktemp)
@@ -24,7 +24,7 @@ Name | Live Version | JSON
 --- | --- | ---
 EOF
 
-sqlite3 --csv -separator "$(printf '\t')" /var/lib/grafana/grafana.db 'select title,uid from dashboard;' | awk -F'\t' '{print $1" | [Live](https://stats.galaxyproject.eu/d/"$2") | [File](./"$1".json)"}' >> README.md
+sqlite3 --csv -separator "$(printf '\t')" /var/lib/grafana/grafana.db 'select title,uid from dashboard;' | awk -F'\t' '{gsub("\"", "", $1); print $1" | [Live](https://stats.galaxyproject.eu/d/"$2") | [File](./"$1".json)"}' >> README.md
 
 cat >> README.md <<-EOF
 
