@@ -7,9 +7,7 @@
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
-        "limit": 100,
         "name": "Annotations & Alerts",
-        "showIn": 0,
         "type": "dashboard"
       }
     ]
@@ -17,33 +15,159 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 41,
-  "iteration": 1549874409702,
+  "id": 77,
+  "iteration": 1542634462502,
   "links": [],
   "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 15,
+      "panels": [],
+      "title": "Overview",
+      "type": "row"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 0,
+        "y": 1
+      },
+      "id": 11,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_node",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "running"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "title": "Server",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "OK",
+          "value": "1"
+        }
+      ],
+      "valueName": "current"
+    },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 3,
+      "fill": 1,
       "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 0
+        "h": 6,
+        "w": 3,
+        "x": 3,
+        "y": 1
       },
-      "id": 9,
-      "interval": "1m",
+      "id": 8,
       "legend": {
         "avg": false,
         "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
         "max": false,
         "min": false,
-        "show": true,
+        "show": false,
         "total": false,
         "values": false
       },
@@ -55,35 +179,38 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_node.total",
+          "color": "#000000",
+          "fill": 0
+        },
+        {
+          "alias": "rabbitmq_node.used",
+          "color": "#1f78c1",
+          "linewidth": 2
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": true,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "[[tag_proxy]]",
-          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "$time_interval"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
+                "null"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "haproxy",
+          "measurement": "rabbitmq_node",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -92,7 +219,7 @@
             [
               {
                 "params": [
-                  "http_response.2xx"
+                  "proc_used"
                 ],
                 "type": "field"
               },
@@ -102,13 +229,7 @@
               },
               {
                 "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "2xx"
+                  "used"
                 ],
                 "type": "alias"
               }
@@ -116,32 +237,20 @@
           ],
           "tags": [
             {
-              "key": "proxy",
-              "operator": "!=",
-              "value": "stats"
-            },
-            {
-              "condition": "AND",
-              "key": "proxy",
-              "operator": "!=",
-              "value": "https-in"
-            },
-            {
-              "condition": "AND",
-              "key": "proxy",
-              "operator": "!~",
-              "value": "/_special$/"
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
             }
           ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "5m",
-      "title": "2xx by Domain",
+      "timeShift": null,
+      "title": "Processes",
       "tooltip": {
         "shared": true,
-        "sort": 2,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -154,7 +263,8 @@
       },
       "yaxes": [
         {
-          "format": "ops",
+          "decimals": null,
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -183,12 +293,12 @@
       "datasource": null,
       "fill": 1,
       "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 7
+        "h": 6,
+        "w": 3,
+        "x": 6,
+        "y": 1
       },
-      "id": 1,
+      "id": 9,
       "legend": {
         "avg": false,
         "current": false,
@@ -206,29 +316,38 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_node.total",
+          "color": "#000000",
+          "fill": 0
+        },
+        {
+          "alias": "rabbitmq_node.used",
+          "color": "#1f78c1",
+          "linewidth": 2
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": true,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "",
-          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "$time_interval"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "haproxy",
+          "measurement": "rabbitmq_node",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -237,7 +356,157 @@
             [
               {
                 "params": [
-                  "scur"
+                  "sockets_used"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "used"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "sockets_total"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "total"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Sockets",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 9,
+        "y": 1
+      },
+      "id": 21,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_overview",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "consumers"
                 ],
                 "type": "field"
               },
@@ -249,9 +518,9 @@
           ],
           "tags": [
             {
-              "key": "proxy",
-              "operator": "=",
-              "value": "https-in"
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
             }
           ]
         }
@@ -259,7 +528,764 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Sessions",
+      "title": "Consumers",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 12,
+        "y": 1
+      },
+      "id": 22,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_overview",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "channels"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Channels",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 9,
+        "x": 15,
+        "y": 1
+      },
+      "id": 20,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_overview",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "connections"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Connections",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 9,
+        "x": 15,
+        "y": 5
+      },
+      "id": 31,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 4,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[tag_queue]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Consumers",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 9,
+        "x": 0,
+        "y": 7
+      },
+      "id": 24,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 4,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_overview",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_acked"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "acked"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "messages_delivered"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "messages_published"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "published"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "messages_ready"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "ready"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "messages_unacked"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "unacked"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Messages",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 9,
+        "y": 7
+      },
+      "id": 7,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_node.total",
+          "color": "#000000",
+          "fill": 0
+        },
+        {
+          "alias": "rabbitmq_node.used",
+          "color": "#1f78c1",
+          "linewidth": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_node",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "fd_used"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "used"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "fd_total"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "total"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "File Descriptors",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -278,160 +1304,7 @@
           "format": "short",
           "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 3,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 7
-      },
-      "id": 8,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "[[tag_proxy]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "http_response.4xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "derivative"
-              },
-              {
-                "params": [
-                  "4xx"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "!=",
-              "value": "stats"
-            },
-            {
-              "condition": "AND",
-              "key": "proxy",
-              "operator": "!=",
-              "value": "https-in"
-            },
-            {
-              "condition": "AND",
-              "key": "proxy",
-              "operator": "!~",
-              "value": "/_special$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": "5m",
-      "title": "4xx by domain",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ops",
-          "label": null,
-          "logBase": 1,
-          "max": null,
+          "max": "1024",
           "min": "0",
           "show": true
         },
@@ -451,679 +1324,24 @@
     },
     {
       "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 3,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 14
-      },
-      "id": 12,
-      "interval": "1m",
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "haproxy.5xx",
-          "yaxis": 1
-        }
-      ],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "[[tag_proxy]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "bin"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "!=",
-              "value": "https-in"
-            },
-            {
-              "condition": "AND",
-              "key": "proxy",
-              "operator": "!~",
-              "value": "/_special$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": "5m",
-      "title": "Traffic In",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bytes",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 3,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 14
-      },
-      "id": 19,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "[[tag_proxy]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "http_response.5xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "derivative"
-              },
-              {
-                "params": [
-                  "5xx"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "!=",
-              "value": "stats"
-            },
-            {
-              "condition": "AND",
-              "key": "proxy",
-              "operator": "!=",
-              "value": "https-in"
-            },
-            {
-              "condition": "AND",
-              "key": "proxy",
-              "operator": "!~",
-              "value": "/_special$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": "5m",
-      "title": "5xx by Domain",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "ops",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 3,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 21
-      },
-      "id": 15,
-      "interval": "1m",
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "haproxy.5xx",
-          "yaxis": 1
-        }
-      ],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "[[tag_proxy]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "bout"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "!=",
-              "value": "https-in"
-            },
-            {
-              "condition": "AND",
-              "key": "proxy",
-              "operator": "!~",
-              "value": "/_special$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": "5m",
-      "title": "Traffic Out",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bytes",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {
-        "Current connections": "#1f78c1",
-        "Max connections": "#70dbed"
-      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
       "fill": 1,
       "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 21
+        "h": 4,
+        "w": 6,
+        "x": 9,
+        "y": 11
       },
-      "id": 18,
-      "interval": "1m",
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 2,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "haproxy.5xx",
-          "yaxis": 1
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "Current connections",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "sv"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "scur"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "=",
-              "value": "https-in"
-            }
-          ]
-        },
-        {
-          "alias": "Max connections",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "sv"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "slim"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "=",
-              "value": "https-in"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Frontend % of connection use",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 3,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 28
-      },
-      "id": 2,
-      "interval": "1m",
+      "id": 23,
       "legend": {
         "avg": false,
         "current": false,
         "max": false,
         "min": false,
-        "show": true,
+        "show": false,
         "total": false,
         "values": false
       },
@@ -1137,21 +1355,20 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "alias": "haproxy.5xx",
-          "yaxis": 1
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
         }
       ],
       "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
           "alias": "",
-          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "$time_interval"
+                "$__interval"
               ],
               "type": "time"
             },
@@ -1162,7 +1379,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "haproxy",
+          "measurement": "rabbitmq_overview",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1171,140 +1388,32 @@
             [
               {
                 "params": [
-                  "http_response.1xx"
+                  "exchanges"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "derivative"
-              },
-              {
-                "params": [
-                  "1xx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_response.2xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "derivative"
-              },
-              {
-                "params": [
-                  "2xx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_response.3xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "derivative"
-              },
-              {
-                "params": [
-                  "3xx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_response.4xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "derivative"
-              },
-              {
-                "params": [
-                  "4xx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_response.5xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "derivative"
-              },
-              {
-                "params": [
-                  "5xx"
-                ],
-                "type": "alias"
               }
             ]
           ],
           "tags": [
             {
-              "key": "proxy",
-              "operator": "=",
-              "value": "https-in"
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
             }
           ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "5m",
-      "title": "HTTP Return Codes",
+      "timeShift": null,
+      "title": "Exchanges",
       "tooltip": {
         "shared": true,
-        "sort": 2,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1317,7 +1426,8 @@
       },
       "yaxes": [
         {
-          "format": "ops",
+          "decimals": null,
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1339,75 +1449,69 @@
       }
     },
     {
-      "aliasColors": {
-        "Current connections": "#1f78c1",
-        "Max connections": "#70dbed"
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 15
       },
+      "id": 30,
+      "title": "Queues",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 1,
+      "fill": 0,
       "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 28
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 16
       },
-      "id": 16,
-      "interval": "1m",
+      "id": 27,
       "legend": {
-        "alignAsTable": false,
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "rightSide": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
-      "linewidth": 2,
+      "linewidth": 4,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "repeat": "vhost",
+      "repeatDirection": "h",
       "seriesOverrides": [
         {
-          "alias": "haproxy.5xx",
-          "yaxis": 1
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
         }
       ],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": true,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "Current connections",
-          "dsType": "influxdb",
+          "alias": "",
           "groupBy": [
             {
               "params": [
-                "$time_interval"
+                "$__interval"
               ],
               "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "sv"
-              ],
-              "type": "tag"
             },
             {
               "params": [
@@ -1416,7 +1520,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "haproxy",
+          "measurement": "rabbitmq_exchange",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1425,89 +1529,51 @@
             [
               {
                 "params": [
-                  "scur"
+                  "messages_publish_in"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
+              },
+              {
+                "params": [
+                  "in"
+                ],
+                "type": "alias"
               }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "=",
-              "value": "galaxy"
-            },
-            {
-              "condition": "AND",
-              "key": "sv",
-              "operator": "=",
-              "value": "server1"
-            }
-          ]
-        },
-        {
-          "alias": "Max connections",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "sv"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
+            ],
             [
               {
                 "params": [
-                  "slim"
+                  "messages_publish_out"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
+              },
+              {
+                "params": [
+                  "out"
+                ],
+                "type": "alias"
               }
             ]
           ],
           "tags": [
             {
-              "key": "proxy",
-              "operator": "=",
-              "value": "galaxy"
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
             },
             {
               "condition": "AND",
-              "key": "sv",
+              "key": "exchange",
               "operator": "=",
-              "value": "server1"
+              "value": "galaxy_core_exchange"
             }
           ]
         }
@@ -1515,10 +1581,10 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Galaxy % of connection use",
+      "title": "Total Messages galaxy_core_exchange",
       "tooltip": {
         "shared": true,
-        "sort": 2,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1532,7 +1598,7 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "none",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1559,65 +1625,58 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 3,
+      "fill": 0,
       "gridPos": {
-        "h": 7,
-        "w": 12,
+        "h": 11,
+        "w": 8,
         "x": 0,
-        "y": 35
+        "y": 20
       },
-      "id": 10,
-      "interval": "1m",
+      "id": 32,
       "legend": {
-        "alignAsTable": false,
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "rightSide": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
         "show": true,
+        "sort": "avg",
+        "sortDesc": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 4,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "repeatDirection": "h",
       "seriesOverrides": [
         {
-          "alias": "haproxy.5xx",
-          "yaxis": 1
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
         }
       ],
       "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "[[tag_type]]@[[tag_proxy]]",
-          "dsType": "influxdb",
+          "alias": "[[tag_queue]]",
           "groupBy": [
             {
               "params": [
-                "$time_interval"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "type"
+                "queue"
               ],
               "type": "tag"
             },
@@ -1628,7 +1687,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "haproxy",
+          "measurement": "rabbitmq_queue",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1637,32 +1696,32 @@
             [
               {
                 "params": [
-                  "econ"
+                  "messages_ack"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "derivative"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Backend Connection Errors",
+      "title": "Ack'd Messages",
       "tooltip": {
         "shared": true,
-        "sort": 2,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1675,7 +1734,8 @@
       },
       "yaxes": [
         {
-          "format": "ops",
+          "decimals": null,
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1702,65 +1762,58 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 3,
+      "fill": 0,
       "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 35
+        "h": 11,
+        "w": 8,
+        "x": 8,
+        "y": 20
       },
-      "id": 17,
-      "interval": "1m",
+      "id": 33,
       "legend": {
-        "alignAsTable": false,
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "rightSide": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
         "show": true,
+        "sort": "avg",
+        "sortDesc": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 4,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "repeatDirection": "h",
       "seriesOverrides": [
         {
-          "alias": "haproxy.5xx",
-          "yaxis": 1
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
         }
       ],
       "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "retries: [[tag_proxy]] [[tag_sv]]",
-          "dsType": "influxdb",
+          "alias": "[[tag_queue]]",
           "groupBy": [
             {
               "params": [
-                "$time_interval"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "sv"
+                "queue"
               ],
               "type": "tag"
             },
@@ -1771,7 +1824,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "haproxy",
+          "measurement": "rabbitmq_queue",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1780,7 +1833,7 @@
             [
               {
                 "params": [
-                  "wretr"
+                  "messages_unack"
                 ],
                 "type": "field"
               },
@@ -1792,65 +1845,9 @@
           ],
           "tags": [
             {
-              "key": "proxy",
-              "operator": "=",
-              "value": "galaxy"
-            }
-          ]
-        },
-        {
-          "alias": "redispatched: [[tag_proxy]] [[tag_sv]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "sv"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "wredis"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "=",
-              "value": "galaxy"
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
             }
           ]
         }
@@ -1858,10 +1855,10 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "warnings",
+      "title": "UNAck'd Messages",
       "tooltip": {
         "shared": true,
-        "sort": 2,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1875,11 +1872,11 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "none",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -1897,379 +1894,63 @@
       }
     },
     {
-      "columns": [],
-      "datasource": null,
-      "fontSize": "100%",
-      "gridPos": {
-        "h": 15,
-        "w": 24,
-        "x": 0,
-        "y": 42
-      },
-      "height": "600px",
-      "id": 4,
-      "links": [],
-      "pageSize": null,
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 0,
-        "desc": true
-      },
-      "styles": [
-        {
-          "alias": "Time",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "link": false,
-          "pattern": "Time",
-          "type": "date"
-        },
-        {
-          "alias": "1xx",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "decimals": 2,
-          "pattern": "haproxy.1xx",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "2xx",
-          "colorMode": "cell",
-          "colors": [
-            "#70dbed",
-            "#82b5d8",
-            "#1f78c1"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "haproxy.2xx",
-          "thresholds": [
-            "3000",
-            "8000"
-          ],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "3xx",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "link": false,
-          "pattern": "haproxy.3xx",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "4xx",
-          "colorMode": "cell",
-          "colors": [
-            "#1f78c1",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(245, 54, 54, 0.9)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "haproxy.4xx",
-          "thresholds": [
-            "25",
-            "50"
-          ],
-          "type": "number",
-          "unit": "short"
-        },
-        {
-          "alias": "5xx",
-          "colorMode": "cell",
-          "colors": [
-            "#1f78c1",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(245, 54, 54, 0.9)"
-          ],
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "decimals": 2,
-          "pattern": "haproxy.5xx",
-          "thresholds": [
-            "2",
-            " 10"
-          ],
-          "type": "number",
-          "unit": "short"
-        }
-      ],
-      "targets": [
-        {
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "http_response.1xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "1xx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_response.2xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "2xx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_response.3xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "3xx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_response.4xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "4xx"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "http_response.5xx"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "5xx"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "=",
-              "value": "galaxy"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "HTTP Response Code Counts",
-      "transform": "timeseries_to_columns",
-      "type": "table"
-    },
-    {
-      "alert": {
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                500
-              ],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "A",
-                "5m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "alerting",
-        "frequency": "60s",
-        "handler": 1,
-        "name": "Failed connections to Galaxy",
-        "noDataState": "no_data",
-        "notifications": [
-          {
-            "id": 2
-          }
-        ]
-      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 3,
+      "fill": 0,
       "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 57
+        "h": 11,
+        "w": 8,
+        "x": 16,
+        "y": 20
       },
-      "id": 20,
-      "interval": "1m",
+      "id": 34,
       "legend": {
-        "alignAsTable": false,
-        "avg": false,
+        "alignAsTable": true,
+        "avg": true,
         "current": false,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": false,
-        "min": false,
-        "rightSide": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
         "show": true,
+        "sort": "avg",
+        "sortDesc": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 4,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "repeatDirection": "h",
       "seriesOverrides": [
         {
-          "alias": "haproxy.5xx",
-          "yaxis": 1
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
         }
       ],
       "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
+      "stack": false,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "retries: [[tag_proxy]] [[tag_sv]]",
-          "dsType": "influxdb",
+          "alias": "[[tag_queue]]",
           "groupBy": [
             {
               "params": [
-                "$time_interval"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "sv"
+                "queue"
               ],
               "type": "tag"
             },
@@ -2280,7 +1961,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "haproxy",
+          "measurement": "rabbitmq_queue",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2289,108 +1970,32 @@
             [
               {
                 "params": [
-                  "wretr"
+                  "messages_redeliver"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
               }
             ]
           ],
           "tags": [
             {
-              "key": "proxy",
-              "operator": "=",
-              "value": "galaxy"
-            }
-          ]
-        },
-        {
-          "alias": "redispatched: [[tag_proxy]] [[tag_sv]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "proxy"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "sv"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "haproxy",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "wredis"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "proxy",
-              "operator": "=",
-              "value": "galaxy"
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
             }
           ]
         }
       ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 500
-        }
-      ],
+      "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "warnings",
+      "title": "Redelivered Messages",
       "tooltip": {
         "shared": true,
-        "sort": 2,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -2404,11 +2009,11 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "none",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -2430,66 +2035,39 @@
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
+    "infrastructure",
     "migrated"
   ],
   "templating": {
     "list": [
       {
-        "auto": false,
-        "auto_count": 30,
-        "auto_min": "10s",
+        "allValue": null,
         "current": {
-          "text": "30m",
-          "value": "30m"
+          "tags": [],
+          "text": "proxy.galaxyproject.eu",
+          "value": "proxy.galaxyproject.eu"
         },
+        "datasource": "Galaxy",
         "hide": 0,
+        "includeAll": false,
         "label": null,
-        "name": "time_interval",
-        "options": [
-          {
-            "selected": false,
-            "text": "1m",
-            "value": "1m"
-          },
-          {
-            "selected": false,
-            "text": "5m",
-            "value": "5m"
-          },
-          {
-            "selected": false,
-            "text": "10m",
-            "value": "10m"
-          },
-          {
-            "selected": true,
-            "text": "30m",
-            "value": "30m"
-          },
-          {
-            "selected": false,
-            "text": "1h",
-            "value": "1h"
-          },
-          {
-            "selected": false,
-            "text": "12h",
-            "value": "12h"
-          },
-          {
-            "selected": false,
-            "text": "1d",
-            "value": "1d"
-          }
-        ],
-        "query": "1m,5m,10m,30m,1h,12h,1d",
-        "refresh": 2,
-        "type": "interval"
+        "multi": false,
+        "name": "mqs",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM \"rabbitmq_node\" WITH KEY = \"host\"",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
       }
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -2518,7 +2096,7 @@
     ]
   },
   "timezone": "",
-  "title": "HAProxy",
-  "uid": "000000041",
-  "version": 42
+  "title": "RabbitMQ - Galaxy",
+  "uid": "gwQTkRNiz",
+  "version": 10
 }

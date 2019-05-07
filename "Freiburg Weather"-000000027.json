@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 81,
+  "id": 27,
   "links": [],
   "panels": [
     {
@@ -26,9 +26,240 @@
       "datasource": null,
       "fill": 0,
       "gridPos": {
-        "h": 6,
-        "w": 24,
+        "h": 7,
+        "w": 6,
         "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "max",
+          "color": "#6ED0E0",
+          "fillBelowTo": "min",
+          "lines": false,
+          "linewidth": 1
+        },
+        {
+          "alias": "min",
+          "color": "#6ED0E0",
+          "linewidth": 1
+        },
+        {
+          "alias": "mean",
+          "color": "#052B51",
+          "zindex": 3
+        },
+        {
+          "alias": "min",
+          "lines": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "mean",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "wetter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "temp"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "-273.15"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "min",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "wetter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "temp_min"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "-273.15"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "max",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "wetter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "temp_max"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "-273.15"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Temperature",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "celsius",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 6,
         "y": 0
       },
       "id": 2,
@@ -42,40 +273,40 @@
         "values": false
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 3,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "wetter.cloudiness.mean",
+          "color": "#9AC48A"
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "wetter",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -84,25 +315,13 @@
             [
               {
                 "params": [
-                  "requests"
+                  "cloudiness"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
               }
             ]
           ],
@@ -112,7 +331,7 @@
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Cloudiness",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -128,11 +347,12 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "decimals": null,
+          "format": "percent",
           "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
+          "max": "100",
+          "min": "0",
           "show": true
         },
         {
@@ -157,141 +377,10 @@
       "datasource": null,
       "fill": 0,
       "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 6
-      },
-      "id": 4,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "1m"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "uwsgi.worker",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "requests"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": "1d",
-      "title": "Panel Title",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 12
+        "h": 7,
+        "w": 6,
+        "x": 12,
+        "y": 0
       },
       "id": 3,
       "legend": {
@@ -304,40 +393,40 @@
         "values": false
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 3,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "wetter.humidity.mean",
+          "color": "#705DA0"
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "wetter",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -346,25 +435,13 @@
             [
               {
                 "params": [
-                  "requests"
+                  "humidity"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
               }
             ]
           ],
@@ -373,8 +450,8 @@
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "2d",
-      "title": "Panel Title",
+      "timeShift": null,
+      "title": "Humidity",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -390,7 +467,133 @@
       },
       "yaxes": [
         {
+          "decimals": null,
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": "100",
+          "min": "0",
+          "show": true
+        },
+        {
           "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "wetter.temp_max.mean",
+          "fillBelowTo": "wetter.temp_min.mean",
+          "lines": false
+        },
+        {
+          "alias": "wetter.temp_min.mean",
+          "lines": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "wetter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "pressure"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pressure",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "pressurehpa",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -419,10 +622,10 @@
       "datasource": null,
       "fill": 0,
       "gridPos": {
-        "h": 6,
-        "w": 24,
+        "h": 7,
+        "w": 6,
         "x": 0,
-        "y": 18
+        "y": 7
       },
       "id": 5,
       "legend": {
@@ -435,40 +638,45 @@
         "values": false
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 3,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "wetter.temp_max.mean",
+          "fillBelowTo": "wetter.temp_min.mean",
+          "lines": false
+        },
+        {
+          "alias": "wetter.temp_min.mean",
+          "lines": false
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "wetter",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -477,25 +685,13 @@
             [
               {
                 "params": [
-                  "requests"
+                  "wind.spd"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
               }
             ]
           ],
@@ -504,8 +700,8 @@
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "3d",
-      "title": "Panel Title",
+      "timeShift": null,
+      "title": "Wind Speed",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -521,7 +717,8 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "decimals": null,
+          "format": "velocityms",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -550,10 +747,10 @@
       "datasource": null,
       "fill": 0,
       "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 24
+        "h": 7,
+        "w": 6,
+        "x": 6,
+        "y": 7
       },
       "id": 6,
       "legend": {
@@ -566,6 +763,131 @@
         "values": false
       },
       "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "wetter.temp_max.mean",
+          "fillBelowTo": "wetter.temp_min.mean",
+          "lines": false
+        },
+        {
+          "alias": "wetter.temp_min.mean",
+          "lines": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "wetter",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "wind.deg"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Wind  Angle",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": "360",
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "sol",
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 12,
+        "y": 7
+      },
+      "id": 7,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
@@ -579,18 +901,13 @@
       "steppedLine": false,
       "targets": [
         {
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
-            },
-            {
-              "params": [
-                "id"
-              ],
-              "type": "tag"
             },
             {
               "params": [
@@ -599,7 +916,6 @@
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -608,35 +924,29 @@
             [
               {
                 "params": [
-                  "requests"
+                  "value"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
               }
             ]
           ],
-          "tags": []
+          "tags": [],
+          "target": "sun_altitude"
+        },
+        {
+          "hide": false,
+          "refId": "B",
+          "target": "sun_azimuth"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "4d",
-      "title": "Panel Title",
+      "timeShift": null,
+      "title": "Sun",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -678,21 +988,21 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "sol",
       "fill": 0,
       "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 30
+        "h": 7,
+        "w": 6,
+        "x": 18,
+        "y": 7
       },
-      "id": 7,
+      "id": 8,
       "legend": {
         "avg": false,
         "current": false,
         "max": false,
         "min": false,
-        "show": false,
+        "show": true,
         "total": false,
         "values": false
       },
@@ -710,64 +1020,18 @@
       "steppedLine": false,
       "targets": [
         {
-          "groupBy": [
-            {
-              "params": [
-                "1m"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "uwsgi.worker",
-          "orderByTime": "ASC",
-          "policy": "default",
           "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "requests"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
-              }
-            ]
-          ],
-          "tags": []
+          "target": "moon_altitude"
+        },
+        {
+          "refId": "B",
+          "target": "moon_azimuth"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "5d",
-      "title": "Panel Title",
+      "timeShift": null,
+      "title": "Moon",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -803,18 +1067,138 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "backgroundColor": "rgba(128, 128, 128, 0.1)",
+      "colorMaps": [
+        {
+          "color": "#0a50a1",
+          "text": "night"
+        },
+        {
+          "color": "#f4d598",
+          "text": "day"
+        }
+      ],
+      "crosshairColor": "#8F070C",
+      "datasource": "sol",
+      "display": "timeline",
+      "expandFromQueryS": 0,
+      "extendLastValue": true,
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "highlightOnMouseover": true,
+      "id": 9,
+      "legendSortBy": "-ms",
+      "lineColor": "rgba(128, 128, 128, 1.0)",
+      "links": [],
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "metricNameColor": "#000000",
+      "rangeMaps": [
+        {
+          "from": "0",
+          "text": "day",
+          "to": "100"
+        },
+        {
+          "from": "-100",
+          "text": "night",
+          "to": "0"
+        }
+      ],
+      "rowHeight": 20,
+      "showDistinctCount": false,
+      "showLegend": false,
+      "showLegendCounts": false,
+      "showLegendNames": false,
+      "showLegendPercent": true,
+      "showLegendTime": false,
+      "showLegendValues": true,
+      "showTimeAxis": true,
+      "showTransitionCount": false,
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [],
+          "target": "sun_altitude"
+        }
+      ],
+      "textSize": 12,
+      "textSizeTime": 12,
+      "timeTextColor": "#d8d9da",
+      "title": "day night cycle",
+      "type": "natel-discrete-panel",
+      "units": "short",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueTextColor": "#000000",
+      "writeAllValues": false,
+      "writeLastValue": true,
+      "writeMetricNames": false
     }
   ],
   "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "migrated"
+  ],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "2019-03-19T00:00:00.000Z",
-    "to": "2019-03-19T23:59:58.000Z"
+    "from": "now-2d",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -842,7 +1226,7 @@
     ]
   },
   "timezone": "",
-  "title": "helena-testing",
-  "uid": "IHFHo23iz",
-  "version": 4
+  "title": "Freiburg Weather",
+  "uid": "000000027",
+  "version": 13
 }

@@ -15,7 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 81,
+  "id": 24,
+  "iteration": 1525196221304,
   "links": [],
   "panels": [
     {
@@ -24,11 +25,193 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 0,
+      "fill": 1,
       "gridPos": {
-        "h": 6,
-        "w": 24,
+        "h": 7,
+        "w": 6,
         "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "engine_host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "docker",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "n_containers_paused"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "paused"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "n_containers_running"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "running"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "n_containers_stopped"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "stopped"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "n_containers"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "n_containers"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "engine_host",
+              "operator": "=~",
+              "value": "/^$Host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Containers",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 6,
         "y": 0
       },
       "id": 2,
@@ -37,7 +220,7 @@
         "current": false,
         "max": false,
         "min": false,
-        "show": false,
+        "show": true,
         "total": false,
         "values": false
       },
@@ -55,27 +238,22 @@
       "steppedLine": false,
       "targets": [
         {
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "docker",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -84,7 +262,7 @@
             [
               {
                 "params": [
-                  "requests"
+                  "n_images"
                 ],
                 "type": "field"
               },
@@ -94,25 +272,25 @@
               },
               {
                 "params": [
-                  "1m"
+                  "images"
                 ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
+                "type": "alias"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "engine_host",
+              "operator": "=~",
+              "value": "/^$Host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Images",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -132,7 +310,7 @@
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -143,11 +321,7 @@
           "min": null,
           "show": true
         }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      ]
     },
     {
       "aliasColors": {},
@@ -155,143 +329,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 0,
+      "fill": 1,
       "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 6
-      },
-      "id": 4,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "1m"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "uwsgi.worker",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "requests"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": "1d",
-      "title": "Panel Title",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 12
+        "h": 7,
+        "w": 6,
+        "x": 12,
+        "y": 0
       },
       "id": 3,
       "legend": {
@@ -317,27 +360,22 @@
       "steppedLine": false,
       "targets": [
         {
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "docker_data",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -346,7 +384,7 @@
             [
               {
                 "params": [
-                  "requests"
+                  "used"
                 ],
                 "type": "field"
               },
@@ -356,25 +394,43 @@
               },
               {
                 "params": [
-                  "1m"
+                  "used"
                 ],
-                "type": "non_negative_derivative"
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "available"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
               },
               {
                 "params": [
-                  10
+                  "available"
                 ],
-                "type": "moving_average"
+                "type": "alias"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "engine_host",
+              "operator": "=~",
+              "value": "/^$Host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "2d",
-      "title": "Panel Title",
+      "timeShift": null,
+      "title": "storage (data)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -390,11 +446,11 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "decbytes",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -405,11 +461,7 @@
           "min": null,
           "show": true
         }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      ]
     },
     {
       "aliasColors": {},
@@ -417,12 +469,152 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 0,
+      "fill": 1,
       "gridPos": {
-        "h": 6,
-        "w": 24,
+        "h": 7,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "docker_metadata",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "used"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "used"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "available"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "available"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "engine_host",
+              "operator": "=~",
+              "value": "/^$Host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "storage (metadata)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "decbytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
         "x": 0,
-        "y": 18
+        "y": 7
       },
       "id": 5,
       "legend": {
@@ -448,6 +640,8 @@
       "steppedLine": false,
       "targets": [
         {
+          "alias": "[[tag_container_name]] ([[tag_container_image]]:[[tag_container_version]])",
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
@@ -457,18 +651,30 @@
             },
             {
               "params": [
-                "id"
+                "container_image"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "null"
+                "container_name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "container_version"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "docker_container_cpu",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -477,7 +683,7 @@
             [
               {
                 "params": [
-                  "requests"
+                  "usage_total"
                 ],
                 "type": "field"
               },
@@ -489,23 +695,29 @@
                 "params": [
                   "1m"
                 ],
-                "type": "non_negative_derivative"
+                "type": "derivative"
               },
               {
                 "params": [
-                  10
+                  "n_containers"
                 ],
-                "type": "moving_average"
+                "type": "alias"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "engine_host",
+              "operator": "=~",
+              "value": "/^$Host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "3d",
-      "title": "Panel Title",
+      "timeShift": null,
+      "title": "Container CPU Usage",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -536,11 +748,7 @@
           "min": null,
           "show": true
         }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      ]
     },
     {
       "aliasColors": {},
@@ -548,12 +756,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 0,
+      "fill": 1,
       "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 24
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 7
       },
       "id": 6,
       "legend": {
@@ -575,31 +783,45 @@
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
-      "stack": false,
+      "stack": true,
       "steppedLine": false,
       "targets": [
         {
+          "alias": "[[tag_container_name]] ([[tag_container_image]]:[[tag_container_version]])",
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "10s"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
+                "container_image"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "null"
+                "container_name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "container_version"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "docker_container_mem",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -608,35 +830,29 @@
             [
               {
                 "params": [
-                  "requests"
+                  "usage"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "engine_host",
+              "operator": "=~",
+              "value": "/^$Host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "4d",
-      "title": "Panel Title",
+      "timeShift": null,
+      "title": "Container Mem Usage",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -652,7 +868,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "decbytes",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -667,154 +883,47 @@
           "min": null,
           "show": true
         }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 30
-      },
-      "id": 7,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "1m"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "uwsgi.worker",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "requests"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": "5d",
-      "title": "Panel Title",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      ]
     }
   ],
   "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "galaxy",
+    "docker"
+  ],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "glxdk1.bi.uni-freiburg.de",
+          "value": "glxdk1.bi.uni-freiburg.de"
+        },
+        "datasource": "InfluxDB - Graphite Connector",
+        "hide": 0,
+        "includeAll": false,
+        "label": "engine_host",
+        "multi": false,
+        "name": "Host",
+        "options": [],
+        "query": "SHOW TAG VALUES WITH KEY = \"engine_host\"",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
-    "from": "2019-03-19T00:00:00.000Z",
-    "to": "2019-03-19T23:59:58.000Z"
+    "from": "now-24h",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -842,7 +951,7 @@
     ]
   },
   "timezone": "",
-  "title": "helena-testing",
-  "uid": "IHFHo23iz",
-  "version": 4
+  "title": "Galaxy Docker Cluster",
+  "uid": "000000024",
+  "version": 9
 }
