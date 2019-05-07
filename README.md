@@ -6,7 +6,7 @@ Name | Live Version | JSON
 --- | --- | ---
 Galaxy | [Live](https://stats.galaxyproject.eu/d/000000004) | [File](./Galaxy.json)
 InfluxDB | [Live](https://stats.galaxyproject.eu/d/000000011) | [File](./InfluxDB.json)
-Galaxy User Statistics | [Live](https://stats.galaxyproject.eu/d/000000012) | [File](./Galaxy User Statistics.json)
+Galaxy User Statistics | [Live](https://stats.galaxyproject.eu/d/000000012) | [File](./Galaxy%20User%20Statistics.json)
 Galaxy Database | [Live](https://stats.galaxyproject.eu/d/000000019) | [File](./Galaxy Database.json)
 Public Galaxy Servers | [Live](https://stats.galaxyproject.eu/d/000000020) | [File](./Public Galaxy Servers.json)
 Galaxy Condor Cluster | [Live](https://stats.galaxyproject.eu/d/000000021) | [File](./Galaxy Condor Cluster.json)
