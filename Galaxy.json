@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1559025343296,
+  "iteration": 1559308721061,
   "links": [],
   "panels": [
     {
@@ -438,6 +438,12 @@
               "key": "state",
               "operator": "=",
               "value": "queued"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
             }
           ]
         }
@@ -579,6 +585,12 @@
               "key": "state",
               "operator": "=",
               "value": "new"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
             }
           ]
         }
@@ -755,6 +767,12 @@
               "key": "state",
               "operator": "=",
               "value": "running"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
             }
           ]
         }
@@ -1761,7 +1779,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -1980,7 +2004,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         }
       ],
       "thresholds": [
@@ -2124,7 +2154,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -2298,7 +2334,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         },
         {
           "alias": "average",
@@ -2342,7 +2384,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         }
       ],
       "thresholds": [
@@ -2541,7 +2589,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -2678,7 +2732,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -2815,7 +2875,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -2951,7 +3017,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -3087,7 +3159,13 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -3143,11 +3221,12 @@
       {
         "allValue": null,
         "current": {
+          "tags": [],
           "text": "sn04.bi.uni-freiburg.de",
           "value": "sn04.bi.uni-freiburg.de"
         },
         "datasource": "Galaxy",
-        "definition": "",
+        "definition": "SHOW TAG VALUES FROM \"cluster.queue\" WITH KEY = \"host\"",
         "hide": 0,
         "includeAll": false,
         "label": "Galaxy Host",
@@ -3158,6 +3237,11 @@
             "selected": true,
             "text": "sn04.bi.uni-freiburg.de",
             "value": "sn04.bi.uni-freiburg.de"
+          },
+          {
+            "selected": false,
+            "text": "test.galaxyproject.eu",
+            "value": "test.galaxyproject.eu"
           }
         ],
         "query": "SHOW TAG VALUES FROM \"cluster.queue\" WITH KEY = \"host\"",
@@ -3205,5 +3289,5 @@
   "timezone": "browser",
   "title": "Galaxy",
   "uid": "000000004",
-  "version": 284
+  "version": 287
 }

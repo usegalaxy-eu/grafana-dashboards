@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1558091936334,
+  "iteration": 1559305461881,
   "links": [],
   "panels": [
     {
@@ -74,6 +74,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -188,6 +189,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -302,6 +304,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -416,6 +419,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -530,6 +534,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -645,6 +650,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -772,6 +778,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -892,6 +899,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -1012,6 +1020,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -1101,6 +1110,7 @@
       "id": 60,
       "links": [],
       "mode": "markdown",
+      "options": {},
       "title": "Compute Time overview",
       "type": "text"
     },
@@ -1122,6 +1132,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Galaxy Historical",
       "fill": 1,
       "gridPos": {
         "h": 10,
@@ -1145,6 +1156,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1176,7 +1188,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "jobs.daily",
+          "measurement": "server-jobs.daily",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1252,6 +1264,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Galaxy Historical",
       "fill": 1,
       "gridPos": {
         "h": 10,
@@ -1277,6 +1290,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1309,7 +1323,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "hda.meta.daily",
+          "measurement": "server-hda.daily",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1379,6 +1393,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Galaxy Historical",
       "fill": 1,
       "gridPos": {
         "h": 8,
@@ -1401,6 +1416,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1426,7 +1442,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "users.daily",
+          "measurement": "server-users.daily",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1496,6 +1512,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Galaxy Historical",
       "fill": 1,
       "gridPos": {
         "h": 8,
@@ -1518,6 +1535,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1549,7 +1567,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "hda.meta.daily",
+          "measurement": "server-hda.daily",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1619,6 +1637,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Galaxy Historical",
       "fill": 1,
       "gridPos": {
         "h": 8,
@@ -1641,6 +1660,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1666,7 +1686,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "workflow_invocations.daily",
+          "measurement": "server-workflow-invocations.daily",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1736,6 +1756,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Galaxy Historical",
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -1758,6 +1779,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1783,7 +1805,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "users.prev",
+          "measurement": "server-users.upto",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1853,6 +1875,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Galaxy Historical",
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -1875,6 +1898,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1900,7 +1924,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "jobs.prev",
+          "measurement": "server-jobs.upto",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1915,7 +1939,7 @@
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "sum"
               }
             ]
           ],
@@ -1995,6 +2019,7 @@
       },
       "id": 3,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -2101,6 +2126,7 @@
       },
       "id": 32,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -2208,6 +2234,7 @@
       "hideTimeOverride": true,
       "id": 17,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -2325,6 +2352,7 @@
       },
       "id": 4,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -2431,6 +2459,7 @@
       },
       "id": 12,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -2537,6 +2566,7 @@
       },
       "id": 51,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -2643,6 +2673,7 @@
       },
       "id": 50,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -2762,6 +2793,7 @@
       },
       "id": 13,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -2853,7 +2885,7 @@
     }
   ],
   "refresh": "15m",
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [
     "galaxy",
@@ -2929,5 +2961,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 80
+  "version": 81
 }

@@ -17,7 +17,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 22,
-  "iteration": 1559309110828,
+  "iteration": 1559311456423,
   "links": [],
   "panels": [
     {
@@ -310,7 +310,7 @@
         "y": 6
       },
       "id": 9,
-      "interval": "",
+      "interval": "1h",
       "legend": {
         "avg": false,
         "current": false,
@@ -403,7 +403,7 @@
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -599,5 +599,5 @@
   "timezone": "browser",
   "title": "Public Galaxy Servers - Individual",
   "uid": "000000022",
-  "version": 22
+  "version": 24
 }
