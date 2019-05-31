@@ -23,7 +23,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 6,
@@ -154,7 +153,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 6,
@@ -285,7 +283,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 6,
@@ -416,7 +413,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 6,
@@ -547,7 +543,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 6,
@@ -678,7 +673,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 6,
@@ -806,7 +800,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -844,5 +838,5 @@
   "timezone": "",
   "title": "helena-testing",
   "uid": "IHFHo23iz",
-  "version": 4
+  "version": 5
 }

@@ -9,20 +9,6 @@
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
         "type": "dashboard"
-      },
-      {
-        "datasource": "TESTING",
-        "enable": true,
-        "hide": false,
-        "iconColor": "rgb(5, 146, 45)",
-        "limit": 10,
-        "name": "Galaxy Releases",
-        "query": "select value,tags,description from \"events\"",
-        "showIn": 0,
-        "tagsColumn": "tags",
-        "textColumn": "description",
-        "titleColumn": "value",
-        "type": "event"
       }
     ]
   },
@@ -31,7 +17,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 22,
-  "iteration": 1527093055508,
+  "iteration": 1559309110828,
   "links": [],
   "panels": [
     {
@@ -47,7 +33,7 @@
         }
       ],
       "crosshairColor": "#8F070C",
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "decimals": 0,
       "display": "timeline",
       "expandFromQueryS": 0,
@@ -74,7 +60,14 @@
         }
       ],
       "metricNameColor": "#000000",
-      "rangeMaps": [],
+      "options": {},
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
       "rowHeight": 25,
       "showLegend": false,
       "showLegendNames": true,
@@ -194,7 +187,7 @@
         }
       ],
       "crosshairColor": "#8F070C",
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "decimals": 2,
       "display": "timeline",
       "expandFromQueryS": 0,
@@ -222,7 +215,14 @@
         }
       ],
       "metricNameColor": "#000000",
-      "rangeMaps": [],
+      "options": {},
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
       "rowHeight": 25,
       "showDistinctCount": true,
       "showLegend": false,
@@ -301,8 +301,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "TESTING",
-      "description": "Note that these numbers result from queries made in Germany, so they may not reflect your experience.",
+      "datasource": "Galaxy",
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -310,45 +309,44 @@
         "x": 0,
         "y": 6
       },
-      "id": 2,
+      "id": 9,
+      "interval": "",
       "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": false,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
         "total": false,
-        "values": true
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
-      "pointradius": 5,
+      "pointradius": 2,
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": true,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "Response Time",
+          "alias": "",
           "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1h"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
@@ -383,8 +381,9 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "$name responsiveness",
+      "title": "$name Responsiveness",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -400,12 +399,11 @@
       },
       "yaxes": [
         {
-          "decimals": null,
-          "format": "s",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": "0",
+          "min": null,
           "show": true
         },
         {
@@ -414,7 +412,7 @@
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": false
+          "show": true
         }
       ],
       "yaxis": {
@@ -429,7 +427,7 @@
         "rgba(245, 54, 54, 0.9)",
         "rgba(59, 142, 216, 0.89)"
       ],
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "decimals": 0,
       "esMetric": "Count",
       "gridPos": {
@@ -448,8 +446,17 @@
       "mapCenterLatitude": 0,
       "mapCenterLongitude": 0,
       "maxDataPoints": 1,
+      "mouseWheelZoom": false,
+      "options": {},
       "showLegend": false,
       "stickyLabels": false,
+      "tableQueryOptions": {
+        "geohashField": "geohash",
+        "latitudeField": "latitude",
+        "longitudeField": "longitude",
+        "metricField": "metric",
+        "queryType": "geohash"
+      },
       "targets": [
         {
           "alias": "$tag_location",
@@ -511,7 +518,7 @@
       "valueName": "current"
     },
     {
-      "content": "![](https://stats.usegalaxy.eu/raw/badges/$name.svg) Please note that all response-time type numbers are the result of the [publicly available collection script](https://github.com/martenson/public-galaxy-servers) which is running in Freiburg, Germany. Feel free to embed these graphs on your own site.",
+      "content": "![](https://stats.galaxyproject.eu/raw/badges/$name.svg) Please note that all response-time type numbers are the result of the [publicly available collection script](https://github.com/martenson/public-galaxy-servers) which is running in Freiburg, Germany. Feel free to embed these graphs on your own site.",
       "gridPos": {
         "h": 3,
         "w": 24,
@@ -521,12 +528,13 @@
       "id": 3,
       "links": [],
       "mode": "markdown",
+      "options": {},
       "title": "Public Galaxy Server: $name",
       "type": "text"
     }
   ],
   "refresh": false,
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -538,16 +546,18 @@
           "text": "Main",
           "value": "Main"
         },
-        "datasource": "TESTING",
+        "datasource": "Galaxy",
+        "definition": "SHOW TAG VALUES FROM \"server\" WITH KEY = \"name\"",
         "hide": 0,
         "includeAll": false,
         "label": "Server",
         "multi": false,
         "name": "name",
         "options": [],
-        "query": "SHOW TAG VALUES WITH KEY = \"name\"",
+        "query": "SHOW TAG VALUES FROM \"server\" WITH KEY = \"name\"",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -589,5 +599,5 @@
   "timezone": "browser",
   "title": "Public Galaxy Servers - Individual",
   "uid": "000000022",
-  "version": 12
+  "version": 22
 }

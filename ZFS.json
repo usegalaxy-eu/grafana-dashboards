@@ -1042,7 +1042,7 @@
     }
   ],
   "refresh": "5s",
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1105,5 +1105,5 @@
   "timezone": "browser",
   "title": "ZFS",
   "uid": "n558f4Mik",
-  "version": 4
+  "version": 5
 }

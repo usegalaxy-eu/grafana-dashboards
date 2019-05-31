@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1556788259502,
+  "iteration": 1558091936334,
   "links": [],
   "panels": [
     {
@@ -612,6 +612,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
+      "decimals": null,
       "format": "none",
       "gauge": {
         "maxValue": 1000,
@@ -679,7 +680,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "server-hda",
+          "measurement": "server-datasets",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -704,7 +705,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "HDAs",
+      "title": "Datasets",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -2928,5 +2929,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 78
+  "version": 80
 }

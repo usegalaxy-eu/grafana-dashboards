@@ -15,119 +15,58 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 34,
+  "id": 83,
   "links": [],
   "panels": [
     {
       "aliasColors": {},
-      "bars": false,
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "decimals": 0,
       "fill": 1,
       "gridPos": {
-        "h": 7,
+        "h": 14,
         "w": 24,
         "x": 0,
         "y": 0
       },
-      "id": 1,
+      "id": 2,
       "interval": "1m",
       "legend": {
         "avg": false,
         "current": false,
         "max": false,
         "min": false,
-        "show": false,
+        "show": true,
         "total": false,
         "values": false
       },
-      "lines": true,
+      "lines": false,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
       "options": {},
       "percentage": false,
-      "pointradius": 5,
+      "pointradius": 2,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "alias": "running",
-          "color": "#eab839"
-        },
-        {
-          "alias": "queued",
-          "color": "rgb(124, 124, 124)"
-        }
-      ],
+      "seriesOverrides": [],
       "spaceLength": 10,
       "stack": true,
-      "steppedLine": true,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "[[tag_state]]",
-          "dsType": "influxdb",
+          "alias": "[[tag_handler]]",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "state"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "job_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "state",
-              "operator": "!=",
-              "value": "new"
-            }
-          ]
-        },
-        {
-          "alias": "[[tag_state]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "1m"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "state"
+                "handler"
               ],
               "type": "tag"
             },
@@ -141,7 +80,7 @@
           "measurement": "queue-overview",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "B",
+          "refId": "A",
           "resultFormat": "time_series",
           "select": [
             [
@@ -154,14 +93,26 @@
               {
                 "params": [],
                 "type": "sum"
+              },
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "derivative"
               }
             ]
           ],
           "tags": [
             {
               "key": "state",
-              "operator": "!=",
+              "operator": "=",
               "value": "new"
+            },
+            {
+              "condition": "AND",
+              "key": "handler",
+              "operator": "!=",
+              "value": "_default_"
             }
           ]
         }
@@ -170,13 +121,12 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Currently Running and Queued Jobs",
+      "title": "δ(Job Queue per handler)/δt",
       "tooltip": {
         "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": true,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -191,7 +141,7 @@
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": "0",
+          "min": null,
           "show": true
         },
         {
@@ -209,88 +159,64 @@
       }
     },
     {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#73BF69",
-        "#FFB357",
-        "#F2495C"
-      ],
-      "format": "none",
-      "gauge": {
-        "maxValue": 60000,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": false
-      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 3,
       "gridPos": {
-        "h": 3,
-        "w": 8,
+        "h": 5,
+        "w": 24,
         "x": 0,
-        "y": 7
+        "y": 14
       },
       "id": 3,
-      "interval": "1m",
-      "links": [],
-      "mappingType": 2,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "pluginVersion": "6.2.1",
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "0",
-          "text": "OK",
-          "to": "40000"
-        },
-        {
-          "from": "40000",
-          "text": "Potentially Slow",
-          "to": "90000"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
       },
-      "tableColumn": "",
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "combined",
+          "alias": "[[tag_handler]]",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "1m"
               ],
               "type": "time"
             },
             {
               "params": [
-                "null"
+                "handler"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "hide": false,
           "measurement": "diskio",
           "orderByTime": "ASC",
           "policy": "default",
@@ -300,25 +226,13 @@
             [
               {
                 "params": [
-                  "io_time"
+                  "iops_in_progress"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "10"
-                ],
-                "type": "moving_average"
               }
             ]
           ],
@@ -327,33 +241,181 @@
               "key": "host",
               "operator": "=",
               "value": "sn04.bi.uni-freiburg.de"
-            },
-            {
-              "condition": "AND",
-              "key": "name",
-              "operator": "=~",
-              "value": "/sd.1/"
             }
           ]
         }
       ],
-      "thresholds": "40000",
+      "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "Job Submission",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
+      "title": "IOPS",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
         {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
         }
       ],
-      "valueName": "current"
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 3,
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "id": 4,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[tag_handler]]",
+          "groupBy": [
+            {
+              "params": [
+                "1m"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "handler"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "system",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "load5"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "load5",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
-  "refresh": "1m",
+  "refresh": false,
   "schemaVersion": 18,
   "style": "dark",
   "tags": [],
@@ -361,7 +423,7 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -390,7 +452,7 @@
     ]
   },
   "timezone": "",
-  "title": "Jobs Dashboard",
-  "uid": "000000034",
-  "version": 35
+  "title": "Queue depletion",
+  "uid": "X735azMWk",
+  "version": 5
 }

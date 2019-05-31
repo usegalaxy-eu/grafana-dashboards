@@ -1120,7 +1120,7 @@
     }
   ],
   "refresh": "5m",
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [
     "API"
@@ -1160,5 +1160,5 @@
   "timezone": "browser",
   "title": "Histories",
   "uid": "000000055",
-  "version": 3
+  "version": 4
 }

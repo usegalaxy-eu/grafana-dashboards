@@ -17,7 +17,6 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 71,
-  "iteration": 1556698982319,
   "links": [],
   "panels": [
     {
@@ -733,7 +732,7 @@
     }
   ],
   "refresh": "15m",
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [
     "migrated",
@@ -854,5 +853,5 @@
   "timezone": "",
   "title": "GRT Tool Usage",
   "uid": "SDduH5Zik",
-  "version": 45
+  "version": 46
 }

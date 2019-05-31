@@ -19,7 +19,7 @@
   "links": [],
   "panels": [
     {
-      "content": "<h3>Temporarily Offline - Please check back later</h3>\n\nThis dashboard shows information about some of the <a href=\"https://github.com/martenson/public-galaxy-servers/\">public galaxy servers</a>. To build the dashboard, we made requests to these public servers' APIs every hour asking for their configuration information. We then aggregated that information into dashboards. Please note that uptime percentages may not be perfectly accurate. Additionally, response times may be different than what you see as all requests were made from a server in Freiburg, Germany. The <a target=\"_blank\" href=\"https://stats.usegalaxy.eu/raw/\">collected data</a> is freely accessible from our server so everyone can build off of it (license CC0). If your server is missing from the dashboard or you believe the data is wrong, just open an <a href=\"https://github.com/martenson/public-galaxy-servers/issues\">issue</a> or a <a href=\"https://github.com/martenson/public-galaxy-servers/edit/master/servers.csv\">PR</a> with the relevant information. We've also made <a href=\"https://stats.usegalaxy.eu/raw/badges/\" target=\"_blank\">uptime badges</a> available if you want to show off. Feel free to embed a link directly to the image, e.g. <img src=\"https://stats.usegalaxy.eu/raw/badges/Galaxy%20Europe.svg\" />  ",
+      "content": "This dashboard shows information about some of the <a href=\"https://github.com/martenson/public-galaxy-servers/\">public galaxy servers</a>. To build the dashboard, we made requests to these public servers' APIs every hour asking for their configuration information. We then aggregated that information into dashboards. Please note that uptime percentages may not be perfectly accurate. Additionally, response times may be different than what you see as all requests were made from a server in Freiburg, Germany. The <a target=\"_blank\" href=\"https://stats.usegalaxy.eu/raw/\">collected data</a> is freely accessible from our server so everyone can build off of it (license CC0). If your server is missing from the dashboard or you believe the data is wrong, just open an <a href=\"https://github.com/martenson/public-galaxy-servers/issues\">issue</a> or a <a href=\"https://github.com/martenson/public-galaxy-servers/edit/master/servers.csv\">PR</a> with the relevant information. We've also made <a href=\"https://stats.usegalaxy.eu/raw/badges/\" target=\"_blank\">uptime badges</a> available if you want to show off. Feel free to embed a link directly to the image, e.g. <img src=\"https://stats.galaxyproject.eu/raw/badges/UseGalaxy_eu.svg\" />  ",
       "gridPos": {
         "h": 4,
         "w": 24,
@@ -29,6 +29,7 @@
       "id": 19,
       "links": [],
       "mode": "html",
+      "options": {},
       "title": "About",
       "type": "text"
     },
@@ -39,7 +40,7 @@
         "rgba(245, 54, 54, 0.9)",
         "rgba(72, 91, 213, 0.89)"
       ],
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "decimals": 0,
       "esMetric": "Count",
       "gridPos": {
@@ -60,6 +61,7 @@
       "mapCenterLongitude": 0,
       "maxDataPoints": 1,
       "mouseWheelZoom": false,
+      "options": {},
       "showLegend": true,
       "stickyLabels": false,
       "tableQueryOptions": {
@@ -134,7 +136,7 @@
           "value": "avg"
         }
       ],
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "fontSize": "100%",
       "gridPos": {
         "h": 13,
@@ -145,6 +147,7 @@
       "id": 17,
       "interval": "1h",
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -269,7 +272,7 @@
           "value": "max"
         }
       ],
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "description": "Time for the server to respond to our request. 40 indicates a timeout / inability to reach the server.",
       "fontSize": "100%",
       "gridPos": {
@@ -280,6 +283,7 @@
       },
       "id": 18,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -369,7 +373,7 @@
         "label": "Others",
         "threshold": 0
       },
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "fontSize": "80%",
       "format": "short",
       "gridPos": {
@@ -388,6 +392,7 @@
       "links": [],
       "maxDataPoints": 3,
       "nullPointMode": "connected",
+      "options": {},
       "pieType": "pie",
       "strokeWidth": 1,
       "targets": [
@@ -458,7 +463,7 @@
           "value": "total"
         }
       ],
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "fontSize": "100%",
       "gridPos": {
         "h": 9,
@@ -469,6 +474,7 @@
       "hideTimeOverride": true,
       "id": 12,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -552,7 +558,7 @@
         "label": "Others",
         "threshold": 0
       },
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "fontSize": "80%",
       "format": "short",
       "gridPos": {
@@ -571,6 +577,7 @@
       "links": [],
       "maxDataPoints": 3,
       "nullPointMode": "connected",
+      "options": {},
       "pieType": "pie",
       "strokeWidth": 1,
       "targets": [
@@ -642,7 +649,7 @@
         "label": "Others",
         "threshold": 0
       },
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "fontSize": "80%",
       "format": "short",
       "gridPos": {
@@ -661,6 +668,7 @@
       "links": [],
       "maxDataPoints": 3,
       "nullPointMode": "connected",
+      "options": {},
       "pieType": "pie",
       "strokeWidth": 1,
       "targets": [
@@ -732,7 +740,7 @@
         "label": "Others",
         "threshold": 0
       },
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "fontSize": "80%",
       "format": "short",
       "gridPos": {
@@ -751,6 +759,7 @@
       "links": [],
       "maxDataPoints": 3,
       "nullPointMode": "connected",
+      "options": {},
       "pieType": "pie",
       "strokeWidth": 1,
       "targets": [
@@ -822,7 +831,7 @@
         "label": "Others",
         "threshold": 0
       },
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "fontSize": "80%",
       "format": "short",
       "gridPos": {
@@ -841,6 +850,7 @@
       "links": [],
       "maxDataPoints": 3,
       "nullPointMode": "connected",
+      "options": {},
       "pieType": "pie",
       "strokeWidth": 1,
       "targets": [
@@ -911,7 +921,7 @@
           "value": "avg"
         }
       ],
-      "datasource": "TESTING",
+      "datasource": "Galaxy",
       "fontSize": "100%",
       "gridPos": {
         "h": 13,
@@ -922,7 +932,8 @@
       "height": "500px",
       "id": 11,
       "links": [],
-      "minSpan": 24,
+      "maxPerRow": 1,
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -1167,7 +1178,7 @@
       "type": "table"
     }
   ],
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1205,5 +1216,5 @@
   "timezone": "browser",
   "title": "Public Galaxy Servers",
   "uid": "000000020",
-  "version": 55
+  "version": 59
 }

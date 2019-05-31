@@ -16,7 +16,6 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 78,
-  "iteration": 1545307757502,
   "links": [],
   "panels": [
     {
@@ -26,7 +25,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "decimals": null,
       "description": "",
       "fill": 1,
@@ -176,7 +174,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -217,7 +214,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "decimals": null,
       "description": "",
       "fill": 1,
@@ -322,7 +318,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -363,7 +358,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "decimals": null,
       "description": "",
       "fill": 1,
@@ -471,7 +465,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -512,7 +505,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "decimals": null,
       "description": "",
       "fill": 1,
@@ -644,7 +636,6 @@
         "sort": 0,
         "value_type": "individual"
       },
-      "transparent": false,
       "type": "graph",
       "xaxis": {
         "buckets": null,
@@ -679,7 +670,7 @@
     }
   ],
   "refresh": "5m",
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [
     "marten"
@@ -1625,5 +1616,5 @@
   "timezone": "",
   "title": "Route Timings (detail)",
   "uid": "PVN8IiNmk",
-  "version": 13
+  "version": 14
 }
