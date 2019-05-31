@@ -24,7 +24,7 @@ Name | Tags | Version | Live | JSON
 --- | --- | --- | --- | ---
 EOF
 
-sqlite3 --csv -separator "$(printf '\t')" /var/lib/grafana/grafana.db 'SELECT title,uid,title,version,GROUP_CONCAT(dashboard_tag.term) FROM dashboard left outer join dashboard_tag on dashboard.id = dashboard_tag.dashboard_id GROUP BY title, uid, title order by title asc' | \
+sqlite3 --csv -separator "$(printf '\t')" /var/lib/grafana/grafana.db 'SELECT title,uid,title,version,GROUP_CONCAT(dashboard_tag.term) FROM dashboard left outer join dashboard_tag on dashboard.id = dashboard_tag.dashboard_id WHERE dashboard.is_folder = 0 GROUP BY title, uid, title order by title asc' | \
 	awk -F'\t' '{gsub("\"", "", $1); gsub("\"", "", $3); gsub(" ", "%20", $3); print $1" | "$5" | "$4" | [Live](https://stats.galaxyproject.eu/d/"$2") | [File](./"$3".json)"}' >> README.md
 
 cat >> README.md <<-EOF
