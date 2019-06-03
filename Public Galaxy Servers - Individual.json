@@ -17,8 +17,18 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 22,
-  "iteration": 1559311456423,
-  "links": [],
+  "iteration": 1559544562787,
+  "links": [
+    {
+      "asDropdown": false,
+      "icon": "external link",
+      "tags": [
+        "pgs"
+      ],
+      "title": "",
+      "type": "dashboards"
+    }
+  ],
   "panels": [
     {
       "backgroundColor": "rgba(128, 128, 128, 0.1)",
@@ -536,7 +546,9 @@
   "refresh": false,
   "schemaVersion": 18,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "pgs"
+  ],
   "templating": {
     "list": [
       {
@@ -599,5 +611,5 @@
   "timezone": "browser",
   "title": "Public Galaxy Servers - Individual",
   "uid": "000000022",
-  "version": 24
+  "version": 25
 }

@@ -12,11 +12,24 @@
       }
     ]
   },
+  "description": "",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
   "id": 20,
-  "links": [],
+  "links": [
+    {
+      "asDropdown": false,
+      "icon": "dashboard",
+      "tags": [
+        "pgs"
+      ],
+      "targetBlank": false,
+      "title": "Public Galaxy Server Dashboards",
+      "type": "dashboards",
+      "url": ""
+    }
+  ],
   "panels": [
     {
       "content": "This dashboard shows information about some of the <a href=\"https://github.com/martenson/public-galaxy-servers/\">public galaxy servers</a>. To build the dashboard, we made requests to these public servers' APIs every hour asking for their configuration information. We then aggregated that information into dashboards. Please note that uptime percentages may not be perfectly accurate. Additionally, response times may be different than what you see as all requests were made from a server in Freiburg, Germany. The <a target=\"_blank\" href=\"https://stats.usegalaxy.eu/raw/\">collected data</a> is freely accessible from our server so everyone can build off of it (license CC0). If your server is missing from the dashboard or you believe the data is wrong, just open an <a href=\"https://github.com/martenson/public-galaxy-servers/issues\">issue</a> or a <a href=\"https://github.com/martenson/public-galaxy-servers/edit/master/servers.csv\">PR</a> with the relevant information. We've also made <a href=\"https://stats.usegalaxy.eu/raw/badges/\" target=\"_blank\">uptime badges</a> available if you want to show off. Feel free to embed a link directly to the image, e.g. <img src=\"https://stats.galaxyproject.eu/raw/badges/UseGalaxy_eu.svg\" />  ",
@@ -300,7 +313,7 @@
           "groupBy": [
             {
               "params": [
-                "1h"
+                "1d"
               ],
               "type": "time"
             },
@@ -1195,7 +1208,9 @@
   ],
   "schemaVersion": 18,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "pgs"
+  ],
   "templating": {
     "list": []
   },
@@ -1231,5 +1246,5 @@
   "timezone": "browser",
   "title": "Public Galaxy Servers",
   "uid": "000000020",
-  "version": 62
+  "version": 67
 }

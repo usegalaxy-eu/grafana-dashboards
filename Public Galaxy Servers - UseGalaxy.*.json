@@ -16,7 +16,15 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 85,
-  "links": [],
+  "links": [
+    {
+      "icon": "external link",
+      "tags": [
+        "pgs"
+      ],
+      "type": "dashboards"
+    }
+  ],
   "panels": [
     {
       "circleMaxSize": 30,
@@ -260,7 +268,7 @@
       "crosshairColor": "#8F070C",
       "datasource": "Galaxy",
       "decimals": 2,
-      "description": "",
+      "description": "Offline may indicate that:\n- the remote server is offline\n- that a failure occured somewhere between Freiburg and their server\n- that our server is offline",
       "display": "timeline",
       "expandFromQueryS": 0,
       "extendLastValue": true,
@@ -368,7 +376,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Galaxy",
-      "description": "",
+      "description": "These results are biased by the fact that response times are measured by the hoster of usegalaxy.eu, please be aware of this!",
       "fill": 0,
       "gridPos": {
         "h": 9,
@@ -498,7 +506,9 @@
   ],
   "schemaVersion": 18,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "pgs"
+  ],
   "templating": {
     "list": []
   },
@@ -534,5 +544,5 @@
   "timezone": "browser",
   "title": "Public Galaxy Servers - UseGalaxy.*",
   "uid": "nW8PuvMZk",
-  "version": 9
+  "version": 13
 }
