@@ -4,8 +4,8 @@ See the live versions on [stats.galaxyproject.eu](https://stats.galaxyproject.eu
 
 Name | Tags | Version | Live | JSON
 --- | --- | --- | --- | ---
-Alerts | infrastructure | 160 | [Live](https://stats.galaxyproject.eu/d/000000052) | [File](./Alerts.json)
-CVMFS Stratum 1 Server Status |  | 6 | [Live](https://stats.galaxyproject.eu/d/XtcPRpImz) | [File](./CVMFS%20Stratum%201%20Server%20Status.json)
+Alerts | infrastructure | 163 | [Live](https://stats.galaxyproject.eu/d/000000052) | [File](./Alerts.json)
+CVMFS Stratum 1 Server Status |  | 8 | [Live](https://stats.galaxyproject.eu/d/XtcPRpImz) | [File](./CVMFS%20Stratum%201%20Server%20Status.json)
 GRT Tool Comparison | galaxy,migrated | 6 | [Live](https://stats.galaxyproject.eu/d/kSDduH5Zi) | [File](./GRT%20Tool%20Comparison.json)
 GRT Tool Usage | migrated,galaxy | 46 | [Live](https://stats.galaxyproject.eu/d/SDduH5Zik) | [File](./GRT%20Tool%20Usage.json)
 Galaxy | galaxy | 287 | [Live](https://stats.galaxyproject.eu/d/000000004) | [File](./Galaxy.json)
