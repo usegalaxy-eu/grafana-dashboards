@@ -36,6 +36,7 @@
     {
       "cacheTimeout": null,
       "colorBackground": true,
+      "colorPrefix": false,
       "colorValue": false,
       "colors": [
         "#299c46",
@@ -46,7 +47,7 @@
       "gauge": {
         "maxValue": 60000,
         "minValue": 0,
-        "show": false,
+        "show": true,
         "thresholdLabels": false,
         "thresholdMarkers": false
       },
@@ -909,7 +910,7 @@
             {
               "key": "server",
               "operator": "=",
-              "value": "cvmfs1-ufr0.galaxyproject.eu"
+              "value": "cvmfs1-iu0.galaxyproject.org"
             }
           ]
         }
@@ -3095,5 +3096,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 163
+  "version": 164
 }
