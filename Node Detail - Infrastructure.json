@@ -17,7 +17,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 23,
-  "iteration": 1556788009393,
+  "iteration": 1559836254080,
   "links": [],
   "panels": [
     {
@@ -60,6 +60,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -239,6 +240,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -566,6 +568,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -735,6 +738,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -941,6 +945,7 @@
       },
       "id": 12,
       "links": [],
+      "options": {},
       "pageSize": null,
       "scroll": true,
       "showHeader": true,
@@ -1066,6 +1071,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1260,6 +1266,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1362,6 +1369,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1485,6 +1493,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1627,6 +1636,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1734,6 +1744,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1865,6 +1876,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1996,6 +2008,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2127,6 +2140,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2269,6 +2283,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2595,6 +2610,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2999,6 +3015,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3169,6 +3186,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3310,6 +3328,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3447,6 +3466,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3574,7 +3594,7 @@
         "hideZero": true,
         "max": false,
         "min": false,
-        "show": false,
+        "show": true,
         "total": false,
         "values": false
       },
@@ -3582,6 +3602,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3646,75 +3667,13 @@
               "value": "/^$host$/"
             }
           ]
-        },
-        {
-          "alias": "write [[tag_name]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "name"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "diskio",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "write_bytes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "*-1"
-                ],
-                "type": "math"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "read/write bytes",
+      "title": "read bytes",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -3779,6 +3738,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3898,7 +3858,7 @@
         "x": 18,
         "y": 36
       },
-      "id": 45,
+      "id": 48,
       "legend": {
         "avg": false,
         "current": false,
@@ -3914,6 +3874,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -3923,62 +3884,6 @@
       "stack": false,
       "steppedLine": false,
       "targets": [
-        {
-          "alias": "read [[tag_name]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "name"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "diskio",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "read_time"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "non_negative_derivative"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        },
         {
           "alias": "write [[tag_name]]",
           "dsType": "influxdb",
@@ -4011,7 +3916,7 @@
             [
               {
                 "params": [
-                  "write_time"
+                  "write_bytes"
                 ],
                 "type": "field"
               },
@@ -4046,7 +3951,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "read/write times",
+      "title": "write bytes",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -4712,6 +4617,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -4825,6 +4731,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -4938,6 +4845,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -5051,6 +4959,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -5164,6 +5073,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -5277,6 +5187,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -5390,6 +5301,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -5503,6 +5415,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -5592,7 +5505,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [
     "infrastructure",
@@ -5662,5 +5575,5 @@
   "timezone": "",
   "title": "Node Detail - Infrastructure",
   "uid": "000000023",
-  "version": 70
+  "version": 71
 }

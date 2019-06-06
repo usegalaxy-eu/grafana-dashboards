@@ -23,9 +23,9 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "fill": 0,
+      "fill": 1,
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 24,
         "x": 0,
         "y": 0
@@ -34,6 +34,8 @@
       "legend": {
         "avg": false,
         "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": false,
         "min": false,
         "show": false,
@@ -44,6 +46,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -54,67 +57,66 @@
       "steppedLine": false,
       "targets": [
         {
+          "alias": "[[tag_name]]",
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "10m"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
+                "name"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "diskio",
           "orderByTime": "ASC",
           "policy": "default",
+          "query": "SELECT mean(\"iops_in_progress\") FROM \"diskio\" WHERE (\"host\" =~ /^$host$/) AND $timeFilter GROUP BY time($__interval), \"name\" fill(none)",
+          "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "requests"
+                  "iops_in_progress"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "IOPS in progress",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -153,17 +155,19 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "fill": 0,
+      "fill": 1,
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 5
       },
       "id": 4,
       "legend": {
         "avg": false,
         "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": false,
         "min": false,
         "show": false,
@@ -174,6 +178,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -184,27 +189,29 @@
       "steppedLine": false,
       "targets": [
         {
+          "alias": "[[tag_name]]",
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "10m"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
+                "name"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "diskio",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -213,7 +220,7 @@
             [
               {
                 "params": [
-                  "requests"
+                  "io_time"
                 ],
                 "type": "field"
               },
@@ -226,25 +233,26 @@
                   "1m"
                 ],
                 "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "1d",
-      "title": "Panel Title",
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "IO Time",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -283,272 +291,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "fill": 0,
+      "fill": 1,
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 24,
         "x": 0,
-        "y": 12
-      },
-      "id": 3,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "1m"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "uwsgi.worker",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "requests"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": "2d",
-      "title": "Panel Title",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 18
-      },
-      "id": 5,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "1m"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "uwsgi.worker",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "requests"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  10
-                ],
-                "type": "moving_average"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": "3d",
-      "title": "Panel Title",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 24
+        "y": 9
       },
       "id": 6,
       "legend": {
@@ -564,37 +312,33 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
-      "stack": false,
+      "stack": true,
       "steppedLine": false,
       "targets": [
         {
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "cpu",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -603,7 +347,7 @@
             [
               {
                 "params": [
-                  "requests"
+                  "usage_iowait"
                 ],
                 "type": "field"
               },
@@ -613,25 +357,26 @@
               },
               {
                 "params": [
-                  "1m"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
                   10
                 ],
                 "type": "moving_average"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "4d",
-      "title": "Panel Title",
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU iowait",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -647,6 +392,272 @@
       },
       "yaxes": [
         {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 7,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "system",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "load5"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "load5",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 8,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "/sent/",
+          "color": "#FF780A"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "sent [[tag_interface]]",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "interface"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "net",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "bytes_sent"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "10s"
+                ],
+                "type": "derivative"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "sent",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -673,17 +684,20 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "fill": 0,
+      "fill": 1,
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 22
       },
-      "id": 7,
+      "id": 9,
+      "interval": "",
       "legend": {
         "avg": false,
         "current": false,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": false,
         "min": false,
         "show": false,
@@ -694,37 +708,45 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "/recv/",
+          "color": "#3274D9"
+        }
+      ],
       "spaceLength": 10,
-      "stack": false,
+      "stack": true,
       "steppedLine": false,
       "targets": [
         {
+          "alias": "recv [[tag_interface]]",
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "1m"
+                "$__interval"
               ],
               "type": "time"
             },
             {
               "params": [
-                "id"
+                "interface"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "uwsgi.worker",
+          "measurement": "net",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -733,7 +755,7 @@
             [
               {
                 "params": [
-                  "requests"
+                  "bytes_recv"
                 ],
                 "type": "field"
               },
@@ -743,25 +765,32 @@
               },
               {
                 "params": [
-                  "1m"
+                  "10s"
                 ],
-                "type": "non_negative_derivative"
+                "type": "derivative"
               },
               {
                 "params": [
-                  10
+                  "*-1"
                 ],
-                "type": "moving_average"
+                "type": "math"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
-      "timeShift": "5d",
-      "title": "Panel Title",
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "recv",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -777,6 +806,7 @@
       },
       "yaxes": [
         {
+          "decimals": null,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -807,8 +837,8 @@
     "list": []
   },
   "time": {
-    "from": "2019-03-19T00:00:00.000Z",
-    "to": "2019-03-19T23:59:58.000Z"
+    "from": "now-24h",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -838,5 +868,5 @@
   "timezone": "",
   "title": "helena-testing",
   "uid": "IHFHo23iz",
-  "version": 5
+  "version": 13
 }
