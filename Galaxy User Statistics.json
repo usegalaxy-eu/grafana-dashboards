@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1559305461881,
+  "iteration": 1560440525577,
   "links": [],
   "panels": [
     {
@@ -724,12 +724,148 @@
       "valueName": "total"
     },
     {
+      "content": "<img src=\"https://elixir-europe.org/sites/default/files/styles/right-xlarge/public/images/schemaartboard_1.png\" height=\"200px\">",
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 0,
+        "y": 6
+      },
+      "id": 62,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "title": "",
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Galaxy",
+      "format": "none",
+      "gauge": {
+        "maxValue": 1000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 5,
+        "y": 6
+      },
+      "hideTimeOverride": true,
+      "id": 61,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "150%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "sum",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "provider"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "users-with-oidc",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "timeShift": null,
+      "title": "Galaxy Elixir AAI Users",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 12
       },
       "id": 58,
       "panels": [],
@@ -758,7 +894,7 @@
         "h": 3,
         "w": 5,
         "x": 0,
-        "y": 7
+        "y": 13
       },
       "hideTimeOverride": true,
       "id": 54,
@@ -879,7 +1015,7 @@
         "h": 3,
         "w": 5,
         "x": 5,
-        "y": 7
+        "y": 13
       },
       "hideTimeOverride": true,
       "id": 55,
@@ -1000,7 +1136,7 @@
         "h": 3,
         "w": 5,
         "x": 10,
-        "y": 7
+        "y": 13
       },
       "hideTimeOverride": true,
       "id": 56,
@@ -1105,7 +1241,7 @@
         "h": 3,
         "w": 9,
         "x": 15,
-        "y": 7
+        "y": 13
       },
       "id": 60,
       "links": [],
@@ -1115,887 +1251,888 @@
       "type": "text"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 10
+        "y": 16
       },
       "id": 19,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Galaxy Historical",
+          "fill": 1,
+          "gridPos": {
+            "h": 10,
+            "w": 10,
+            "x": 0,
+            "y": 11
+          },
+          "hideTimeOverride": false,
+          "id": 14,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": true,
+          "steppedLine": true,
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$time_interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "job_runner_name"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "server-jobs.daily",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "job_runner_name",
+                  "operator": "!=",
+                  "value": "local"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Jobs / $time_interval",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Galaxy Historical",
+          "fill": 1,
+          "gridPos": {
+            "h": 10,
+            "w": 14,
+            "x": 10,
+            "y": 11
+          },
+          "id": 23,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "sort": "total",
+            "sortDesc": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": true,
+          "steppedLine": true,
+          "targets": [
+            {
+              "alias": "[[tag_extension]]",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$time_interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "extension"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "server-hda.daily",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "New HDA Datatypes / $time_interval",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Galaxy Historical",
+          "fill": 1,
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 21
+          },
+          "id": 20,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": true,
+          "steppedLine": true,
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$time_interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "server-users.daily",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "User Registrations / $time_interval",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Galaxy Historical",
+          "fill": 1,
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 8,
+            "y": 21
+          },
+          "id": 15,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": true,
+          "steppedLine": true,
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$time_interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "deleted"
+                  ],
+                  "type": "tag"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "server-hda.daily",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "HDAs / $time_interval",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Galaxy Historical",
+          "fill": 1,
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 21
+          },
+          "id": 16,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": true,
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$time_interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "0"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "server-workflow-invocations.daily",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Worfklow Invocations / $time_interval",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Galaxy Historical",
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 29
+          },
+          "id": 52,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": true,
+          "steppedLine": true,
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1d"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "server-users.upto",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Users Over Time",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "Galaxy Historical",
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 12,
+            "y": 29
+          },
+          "id": 53,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "options": {},
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": true,
+          "steppedLine": true,
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "1d"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "none"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "server-jobs.upto",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "count"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "sum"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Jobs Over Time",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
+            ]
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "title": "Recently",
       "type": "row"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Galaxy Historical",
-      "fill": 1,
-      "gridPos": {
-        "h": 10,
-        "w": 10,
-        "x": 0,
-        "y": 11
-      },
-      "hideTimeOverride": false,
-      "id": 14,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "job_runner_name"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "server-jobs.daily",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "count"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "job_runner_name",
-              "operator": "!=",
-              "value": "local"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Jobs / $time_interval",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": [
-          "total"
-        ]
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Galaxy Historical",
-      "fill": 1,
-      "gridPos": {
-        "h": 10,
-        "w": 14,
-        "x": 10,
-        "y": 11
-      },
-      "id": 23,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "total",
-        "sortDesc": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "[[tag_extension]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "extension"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "server-hda.daily",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "count"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "New HDA Datatypes / $time_interval",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": [
-          "total"
-        ]
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Galaxy Historical",
-      "fill": 1,
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 21
-      },
-      "id": 20,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "server-users.daily",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "count"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "User Registrations / $time_interval",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": [
-          "total"
-        ]
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Galaxy Historical",
-      "fill": 1,
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 21
-      },
-      "id": 15,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "deleted"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "server-hda.daily",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "count"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "HDAs / $time_interval",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": [
-          "total"
-        ]
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Galaxy Historical",
-      "fill": 1,
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 21
-      },
-      "id": 16,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "server-workflow-invocations.daily",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "count"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Worfklow Invocations / $time_interval",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": [
-          "total"
-        ]
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Galaxy Historical",
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 29
-      },
-      "id": 52,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "1d"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "server-users.upto",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "count"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Users Over Time",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": [
-          "total"
-        ]
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Galaxy Historical",
-      "fill": 1,
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 29
-      },
-      "id": 53,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": true,
-      "targets": [
-        {
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "1d"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "server-jobs.upto",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "count"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Jobs Over Time",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": [
-          "total"
-        ]
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 17
       },
       "id": 31,
       "panels": [],
@@ -2015,7 +2152,7 @@
         "h": 9,
         "w": 7,
         "x": 0,
-        "y": 37
+        "y": 18
       },
       "id": 3,
       "links": [],
@@ -2122,7 +2259,7 @@
         "h": 9,
         "w": 8,
         "x": 7,
-        "y": 37
+        "y": 18
       },
       "id": 32,
       "links": [],
@@ -2229,7 +2366,7 @@
         "h": 9,
         "w": 9,
         "x": 15,
-        "y": 37
+        "y": 18
       },
       "hideTimeOverride": true,
       "id": 17,
@@ -2348,7 +2485,7 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 46
+        "y": 27
       },
       "id": 4,
       "links": [],
@@ -2455,7 +2592,7 @@
         "h": 9,
         "w": 6,
         "x": 6,
-        "y": 46
+        "y": 27
       },
       "id": 12,
       "links": [],
@@ -2562,7 +2699,7 @@
         "h": 9,
         "w": 6,
         "x": 12,
-        "y": 46
+        "y": 27
       },
       "id": 51,
       "links": [],
@@ -2669,7 +2806,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 46
+        "y": 27
       },
       "id": 50,
       "links": [],
@@ -2769,7 +2906,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 55
+        "y": 36
       },
       "id": 34,
       "panels": [],
@@ -2789,7 +2926,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 56
+        "y": 37
       },
       "id": 13,
       "links": [],
@@ -2961,5 +3098,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 81
+  "version": 84
 }
