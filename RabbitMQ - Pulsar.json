@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 30,
-  "iteration": 1552923854902,
+  "iteration": 1560766662691,
   "links": [],
   "panels": [
     {
@@ -41,7 +41,6 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": null,
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -73,6 +72,7 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
+      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -153,7 +153,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 5,
@@ -175,6 +174,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -246,6 +246,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Processes",
       "tooltip": {
@@ -290,7 +291,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 5,
@@ -312,6 +312,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -401,6 +402,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Sockets",
       "tooltip": {
@@ -445,7 +447,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 5,
@@ -467,6 +468,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -556,6 +558,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "File Descriptors",
       "tooltip": {
@@ -599,7 +602,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 10,
       "gridPos": {
         "h": 8,
@@ -623,6 +625,7 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -745,6 +748,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Messages",
       "tooltip": {
@@ -789,7 +793,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 4,
@@ -811,6 +814,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -871,6 +875,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Consumers",
       "tooltip": {
@@ -915,7 +920,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 4,
@@ -937,6 +941,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -997,6 +1002,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Exchanges",
       "tooltip": {
@@ -1041,7 +1047,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 4,
@@ -1063,6 +1068,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1123,6 +1129,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Connections",
       "tooltip": {
@@ -1167,7 +1174,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 1,
       "gridPos": {
         "h": 4,
@@ -1189,6 +1195,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1249,6 +1256,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Channels",
       "tooltip": {
@@ -1304,11 +1312,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
-        "h": 4,
-        "w": 6,
+        "h": 5,
+        "w": 4,
         "x": 0,
         "y": 15
       },
@@ -1320,14 +1327,16 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "total": false,
         "values": true
       },
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1337,8 +1346,8 @@
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "/",
-          "value": "/"
+          "text": "bari",
+          "value": "bari"
         }
       },
       "seriesOverrides": [],
@@ -1433,13 +1442,14 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             }
           ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Total Messages $vhost",
       "tooltip": {
@@ -1484,12 +1494,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 6,
+        "h": 5,
+        "w": 4,
+        "x": 4,
         "y": 15
       },
       "id": 51,
@@ -1500,27 +1509,29 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "total": false,
         "values": true
       },
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
+      "repeatIteration": 1560766662691,
       "repeatPanelId": 27,
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "/pulsar/galaxy_cz",
-          "value": "/pulsar/galaxy_cz"
+          "text": "belgium",
+          "value": "belgium"
         }
       },
       "seriesOverrides": [],
@@ -1615,13 +1626,14 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             }
           ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Total Messages $vhost",
       "tooltip": {
@@ -1666,12 +1678,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 12,
+        "h": 5,
+        "w": 4,
+        "x": 8,
         "y": 15
       },
       "id": 52,
@@ -1682,27 +1693,29 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "total": false,
         "values": true
       },
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
+      "repeatIteration": 1560766662691,
       "repeatPanelId": 27,
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "/pulsar/galaxy_test",
-          "value": "/pulsar/galaxy_test"
+          "text": "cz",
+          "value": "cz"
         }
       },
       "seriesOverrides": [],
@@ -1797,13 +1810,14 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             }
           ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Total Messages $vhost",
       "tooltip": {
@@ -1848,12 +1862,11 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 18,
+        "h": 5,
+        "w": 4,
+        "x": 12,
         "y": 15
       },
       "id": 53,
@@ -1864,27 +1877,29 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "total": false,
         "values": true
       },
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
+      "repeatIteration": 1560766662691,
       "repeatPanelId": 27,
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "galaxy",
-          "value": "galaxy"
+          "text": "freiburg",
+          "value": "freiburg"
         }
       },
       "seriesOverrides": [],
@@ -1979,13 +1994,14 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             }
           ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Total Messages $vhost",
       "tooltip": {
@@ -2030,13 +2046,380 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
+        "w": 4,
+        "x": 16,
+        "y": 15
+      },
+      "id": 54,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 27,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "test",
+          "value": "test"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_exchange",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_publish_in"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "in"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "messages_publish_out"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "out"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "exchange",
+              "operator": "=",
+              "value": "pulsar"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/$vhost$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Total Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 20,
+        "y": 15
+      },
+      "id": 55,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 27,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "vgcn",
+          "value": "vgcn"
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_exchange",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_publish_in"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "in"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "messages_publish_out"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "out"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "exchange",
+              "operator": "=",
+              "value": "pulsar"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/$vhost$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Total Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
         "x": 0,
-        "y": 19
+        "y": 20
       },
       "id": 31,
       "legend": {
@@ -2046,7 +2429,7 @@
         "max": true,
         "min": true,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "sort": "avg",
         "sortDesc": true,
         "total": false,
@@ -2055,7 +2438,9 @@
       "lines": true,
       "linewidth": 4,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2065,8 +2450,8 @@
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "/",
-          "value": "/"
+          "text": "bari",
+          "value": "bari"
         }
       },
       "seriesOverrides": [
@@ -2136,13 +2521,14 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             }
           ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Consumers $vhost",
       "tooltip": {
@@ -2187,331 +2573,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 6,
-        "y": 19
-      },
-      "id": 54,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "avg",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 4,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
-      "repeatPanelId": 31,
-      "scopedVars": {
-        "vhost": {
-          "selected": false,
-          "text": "/pulsar/galaxy_cz",
-          "value": "/pulsar/galaxy_cz"
-        }
-      },
-      "seriesOverrides": [
-        {
-          "alias": "rabbitmq_overview.mean",
-          "color": "#705da0"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "[[tag_queue]]",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "consumers"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "consumers"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Consumers $vhost",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 12,
-        "y": 19
-      },
-      "id": 55,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "sort": "avg",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 4,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
-      "repeatPanelId": 31,
-      "scopedVars": {
-        "vhost": {
-          "selected": false,
-          "text": "/pulsar/galaxy_test",
-          "value": "/pulsar/galaxy_test"
-        }
-      },
-      "seriesOverrides": [
-        {
-          "alias": "rabbitmq_overview.mean",
-          "color": "#705da0"
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "[[tag_queue]]",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "consumers"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "consumers"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Consumers $vhost",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 18,
-        "y": 19
+        "w": 4,
+        "x": 4,
+        "y": 20
       },
       "id": 56,
       "legend": {
@@ -2521,7 +2588,7 @@
         "max": true,
         "min": true,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "sort": "avg",
         "sortDesc": true,
         "total": false,
@@ -2530,20 +2597,22 @@
       "lines": true,
       "linewidth": 4,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
+      "repeatIteration": 1560766662691,
       "repeatPanelId": 31,
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "galaxy",
-          "value": "galaxy"
+          "text": "belgium",
+          "value": "belgium"
         }
       },
       "seriesOverrides": [
@@ -2620,6 +2689,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Consumers $vhost",
       "tooltip": {
@@ -2664,14 +2734,657 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 8,
+        "y": 20
+      },
+      "id": 57,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 4,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 31,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "cz",
+          "value": "cz"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[tag_queue]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Consumers $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 12,
+        "y": 20
+      },
+      "id": 58,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 4,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 31,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "freiburg",
+          "value": "freiburg"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[tag_queue]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Consumers $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 16,
+        "y": 20
+      },
+      "id": 59,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 4,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 31,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "test",
+          "value": "test"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[tag_queue]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Consumers $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 20,
+        "y": 20
+      },
+      "id": 60,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 4,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 31,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "vgcn",
+          "value": "vgcn"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "rabbitmq_overview.mean",
+          "color": "#705da0"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[tag_queue]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "consumers"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Consumers $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
       "decimals": null,
       "fill": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
+        "w": 4,
         "x": 0,
-        "y": 24
+        "y": 25
       },
       "id": 34,
       "legend": {
@@ -2681,7 +3394,7 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "sideWidth": null,
         "sort": "avg",
         "sortDesc": true,
@@ -2691,7 +3404,9 @@
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -2701,8 +3416,8 @@
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "/",
-          "value": "/"
+          "text": "bari",
+          "value": "bari"
         }
       },
       "seriesOverrides": [
@@ -2779,7 +3494,7 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             },
             {
               "condition": "AND",
@@ -2852,7 +3567,7 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             },
             {
               "condition": "AND",
@@ -2925,7 +3640,7 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             },
             {
               "condition": "AND",
@@ -2938,6 +3653,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Job Messages $vhost",
       "tooltip": {
@@ -2982,1607 +3698,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "decimals": null,
       "fill": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 6,
-        "y": 24
-      },
-      "id": 57,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sideWidth": null,
-        "sort": "avg",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
-      "repeatPanelId": 34,
-      "scopedVars": {
-        "vhost": {
-          "selected": false,
-          "text": "/pulsar/galaxy_cz",
-          "value": "/pulsar/galaxy_cz"
-        }
-      },
-      "seriesOverrides": [
-        {
-          "alias": "unack",
-          "color": "#ff0000",
-          "fill": 10
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "deliver",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_deliver"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "delivered"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__setup"
-            }
-          ]
-        },
-        {
-          "alias": "ack",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_ack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "ack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__setup"
-            }
-          ]
-        },
-        {
-          "alias": "unack",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "E",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_unack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "unack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__setup"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Job Messages $vhost",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "decimals": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 12,
-        "y": 24
-      },
-      "id": 58,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sideWidth": null,
-        "sort": "avg",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
-      "repeatPanelId": 34,
-      "scopedVars": {
-        "vhost": {
-          "selected": false,
-          "text": "/pulsar/galaxy_test",
-          "value": "/pulsar/galaxy_test"
-        }
-      },
-      "seriesOverrides": [
-        {
-          "alias": "unack",
-          "color": "#ff0000",
-          "fill": 10
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "deliver",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_deliver"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "delivered"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__setup"
-            }
-          ]
-        },
-        {
-          "alias": "ack",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_ack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "ack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__setup"
-            }
-          ]
-        },
-        {
-          "alias": "unack",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "E",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_unack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "unack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__setup"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Job Messages $vhost",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "decimals": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 18,
-        "y": 24
-      },
-      "id": 59,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sideWidth": null,
-        "sort": "avg",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
-      "repeatPanelId": 34,
-      "scopedVars": {
-        "vhost": {
-          "selected": false,
-          "text": "galaxy",
-          "value": "galaxy"
-        }
-      },
-      "seriesOverrides": [
-        {
-          "alias": "unack",
-          "color": "#ff0000",
-          "fill": 10
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "deliver",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_deliver"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "delivered"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__setup"
-            }
-          ]
-        },
-        {
-          "alias": "ack",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_ack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "ack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__setup"
-            }
-          ]
-        },
-        {
-          "alias": "unack",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "E",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_unack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "unack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__setup"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Job Messages $vhost",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 0,
-        "y": 29
-      },
-      "id": 50,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "avg",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": "vhost",
-      "repeatDirection": "h",
-      "scopedVars": {
-        "vhost": {
-          "selected": false,
-          "text": "/",
-          "value": "/"
-        }
-      },
-      "seriesOverrides": [
-        {
-          "alias": "unack",
-          "color": "#ff0000",
-          "fill": 10
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "deliver",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_deliver"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "delivered"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__kill"
-            }
-          ]
-        },
-        {
-          "alias": "ack",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_ack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "ack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__kill"
-            }
-          ]
-        },
-        {
-          "alias": "unack",
-          "groupBy": [
-            {
-              "params": [
-                "30s"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "E",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_unack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "unack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__kill"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Job Kill Messages $vhost",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 6,
-        "y": 29
-      },
-      "id": 60,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "avg",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
-      "repeatPanelId": 50,
-      "scopedVars": {
-        "vhost": {
-          "selected": false,
-          "text": "/pulsar/galaxy_cz",
-          "value": "/pulsar/galaxy_cz"
-        }
-      },
-      "seriesOverrides": [
-        {
-          "alias": "unack",
-          "color": "#ff0000",
-          "fill": 10
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "deliver",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_deliver"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "delivered"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__kill"
-            }
-          ]
-        },
-        {
-          "alias": "ack",
-          "groupBy": [
-            {
-              "params": [
-                "$time_interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_ack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "ack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__kill"
-            }
-          ]
-        },
-        {
-          "alias": "unack",
-          "groupBy": [
-            {
-              "params": [
-                "30s"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "queue"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "rabbitmq_queue",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "E",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "messages_unack"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [
-                  "$time_interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "unack"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$mqs$/"
-            },
-            {
-              "condition": "AND",
-              "key": "vhost",
-              "operator": "=~",
-              "value": "/^$vhost$/"
-            },
-            {
-              "condition": "AND",
-              "key": "queue",
-              "operator": "=",
-              "value": "pulsar__kill"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Job Kill Messages $vhost",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 12,
-        "y": 29
+        "w": 4,
+        "x": 4,
+        "y": 25
       },
       "id": 61,
       "legend": {
@@ -4592,7 +3714,8 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
+        "sideWidth": null,
         "sort": "avg",
         "sortDesc": true,
         "total": false,
@@ -4601,20 +3724,22 @@
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
-      "repeatPanelId": 50,
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 34,
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "/pulsar/galaxy_test",
-          "value": "/pulsar/galaxy_test"
+          "text": "belgium",
+          "value": "belgium"
         }
       },
       "seriesOverrides": [
@@ -4697,7 +3822,7 @@
               "condition": "AND",
               "key": "queue",
               "operator": "=",
-              "value": "pulsar__kill"
+              "value": "pulsar__setup"
             }
           ]
         },
@@ -4770,7 +3895,7 @@
               "condition": "AND",
               "key": "queue",
               "operator": "=",
-              "value": "pulsar__kill"
+              "value": "pulsar__setup"
             }
           ]
         },
@@ -4779,7 +3904,7 @@
           "groupBy": [
             {
               "params": [
-                "30s"
+                "$time_interval"
               ],
               "type": "time"
             },
@@ -4843,15 +3968,16 @@
               "condition": "AND",
               "key": "queue",
               "operator": "=",
-              "value": "pulsar__kill"
+              "value": "pulsar__setup"
             }
           ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
-      "title": "Job Kill Messages $vhost",
+      "title": "Job Messages $vhost",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -4869,7 +3995,7 @@
         {
           "decimals": null,
           "format": "short",
-          "label": null,
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": "0",
@@ -4894,13 +4020,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "decimals": null,
       "fill": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 18,
-        "y": 29
+        "w": 4,
+        "x": 8,
+        "y": 25
       },
       "id": 62,
       "legend": {
@@ -4910,7 +4036,8 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
+        "sideWidth": null,
         "sort": "avg",
         "sortDesc": true,
         "total": false,
@@ -4919,20 +4046,1626 @@
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 34,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "cz",
+          "value": "cz"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 12,
+        "y": 25
+      },
+      "id": 63,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sideWidth": null,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 34,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "freiburg",
+          "value": "freiburg"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 16,
+        "y": 25
+      },
+      "id": 64,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sideWidth": null,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 34,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "test",
+          "value": "test"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 20,
+        "y": 25
+      },
+      "id": 65,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sideWidth": null,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 34,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "vgcn",
+          "value": "vgcn"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__setup"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 0,
+        "y": 30
+      },
+      "id": 50,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": "vhost",
+      "repeatDirection": "h",
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "bari",
+          "value": "bari"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "30s"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Kill Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 4,
+        "y": 30
+      },
+      "id": 66,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
       "repeatPanelId": 50,
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "galaxy",
-          "value": "galaxy"
+          "text": "belgium",
+          "value": "belgium"
         }
       },
       "seriesOverrides": [
@@ -5168,6 +5901,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Job Kill Messages $vhost",
       "tooltip": {
@@ -5212,13 +5946,1292 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
+        "w": 4,
+        "x": 8,
+        "y": 30
+      },
+      "id": 67,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 50,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "cz",
+          "value": "cz"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "30s"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Kill Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 12,
+        "y": 30
+      },
+      "id": 68,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 50,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "freiburg",
+          "value": "freiburg"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "30s"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Kill Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 16,
+        "y": 30
+      },
+      "id": 69,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 50,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "test",
+          "value": "test"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "30s"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Kill Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 20,
+        "y": 30
+      },
+      "id": 70,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 50,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "vgcn",
+          "value": "vgcn"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "30s"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__kill"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Kill Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
         "x": 0,
-        "y": 34
+        "y": 35
       },
       "id": 49,
       "legend": {
@@ -5228,7 +7241,7 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "sort": "avg",
         "sortDesc": true,
         "total": false,
@@ -5237,7 +7250,9 @@
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -5247,8 +7262,8 @@
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "/",
-          "value": "/"
+          "text": "bari",
+          "value": "bari"
         }
       },
       "seriesOverrides": [
@@ -5325,7 +7340,7 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             },
             {
               "condition": "AND",
@@ -5398,7 +7413,7 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             },
             {
               "condition": "AND",
@@ -5471,7 +7486,7 @@
               "condition": "AND",
               "key": "vhost",
               "operator": "=~",
-              "value": "/^$vhost$/"
+              "value": "/$vhost$/"
             },
             {
               "condition": "AND",
@@ -5484,6 +7499,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Job Status Messages $vhost",
       "tooltip": {
@@ -5528,15 +7544,14 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 6,
-        "y": 34
+        "w": 4,
+        "x": 4,
+        "y": 35
       },
-      "id": 63,
+      "id": 71,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -5544,7 +7559,7 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "sort": "avg",
         "sortDesc": true,
         "total": false,
@@ -5553,20 +7568,22 @@
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
+      "repeatIteration": 1560766662691,
       "repeatPanelId": 49,
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "/pulsar/galaxy_cz",
-          "value": "/pulsar/galaxy_cz"
+          "text": "belgium",
+          "value": "belgium"
         }
       },
       "seriesOverrides": [
@@ -5802,6 +7819,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Job Status Messages $vhost",
       "tooltip": {
@@ -5846,15 +7864,334 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
+        "w": 4,
+        "x": 8,
+        "y": 35
+      },
+      "id": 72,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 49,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "cz",
+          "value": "cz"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__status_update"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__status_update"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__status_update"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Status Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
         "x": 12,
-        "y": 34
+        "y": 35
       },
-      "id": 64,
+      "id": 73,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -5862,7 +8199,7 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "sort": "avg",
         "sortDesc": true,
         "total": false,
@@ -5871,20 +8208,22 @@
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
+      "repeatIteration": 1560766662691,
       "repeatPanelId": 49,
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "/pulsar/galaxy_test",
-          "value": "/pulsar/galaxy_test"
+          "text": "freiburg",
+          "value": "freiburg"
         }
       },
       "seriesOverrides": [
@@ -6120,6 +8459,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Job Status Messages $vhost",
       "tooltip": {
@@ -6164,15 +8504,14 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
       "fill": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
-        "x": 18,
-        "y": 34
+        "w": 4,
+        "x": 16,
+        "y": 35
       },
-      "id": 65,
+      "id": 74,
       "legend": {
         "alignAsTable": true,
         "avg": false,
@@ -6180,7 +8519,7 @@
         "max": true,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "sort": "avg",
         "sortDesc": true,
         "total": false,
@@ -6189,20 +8528,22 @@
       "lines": true,
       "linewidth": 3,
       "links": [],
+      "maxPerRow": 12,
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1552923854902,
+      "repeatIteration": 1560766662691,
       "repeatPanelId": 49,
       "scopedVars": {
         "vhost": {
           "selected": false,
-          "text": "galaxy",
-          "value": "galaxy"
+          "text": "test",
+          "value": "test"
         }
       },
       "seriesOverrides": [
@@ -6438,6 +8779,327 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job Status Messages $vhost",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 20,
+        "y": 35
+      },
+      "id": 75,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "links": [],
+      "maxPerRow": 12,
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1560766662691,
+      "repeatPanelId": 49,
+      "scopedVars": {
+        "vhost": {
+          "selected": false,
+          "text": "vgcn",
+          "value": "vgcn"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "unack",
+          "color": "#ff0000",
+          "fill": 10
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "deliver",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_deliver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "delivered"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__status_update"
+            }
+          ]
+        },
+        {
+          "alias": "ack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_ack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "ack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__status_update"
+            }
+          ]
+        },
+        {
+          "alias": "unack",
+          "groupBy": [
+            {
+              "params": [
+                "$time_interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "queue"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "rabbitmq_queue",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "messages_unack"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "$time_interval"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "unack"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$mqs$/"
+            },
+            {
+              "condition": "AND",
+              "key": "vhost",
+              "operator": "=~",
+              "value": "/^$vhost$/"
+            },
+            {
+              "condition": "AND",
+              "key": "queue",
+              "operator": "=",
+              "value": "pulsar__status_update"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Job Status Messages $vhost",
       "tooltip": {
@@ -6479,7 +9141,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 16,
+  "schemaVersion": 18,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -6487,11 +9149,12 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "proxy2.galaxyproject.eu.novalocal",
-          "value": "proxy2.galaxyproject.eu.novalocal"
+          "tags": [],
+          "text": "proxy.internal.galaxyproject.eu",
+          "value": "proxy.internal.galaxyproject.eu"
         },
         "datasource": "Galaxy",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -6501,6 +9164,7 @@
         "query": "SHOW TAG VALUES FROM \"rabbitmq_node\" WITH KEY = \"host\"",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -6511,11 +9175,11 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
           "text": "All",
           "value": "$__all"
         },
         "datasource": "Galaxy",
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -6524,7 +9188,8 @@
         "options": [],
         "query": "SHOW TAG VALUES FROM \"rabbitmq_queue\" WITH KEY = \"vhost\"",
         "refresh": 2,
-        "regex": "",
+        "regex": "/_(.*)$/",
+        "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -6582,6 +9247,7 @@
           }
         ],
         "query": "10s,30s,1m,2m,5m,10m,60m",
+        "skipUrlSync": false,
         "type": "custom"
       }
     ]
@@ -6618,5 +9284,5 @@
   "timezone": "",
   "title": "RabbitMQ - Pulsar",
   "uid": "000000030",
-  "version": 41
+  "version": 50
 }
