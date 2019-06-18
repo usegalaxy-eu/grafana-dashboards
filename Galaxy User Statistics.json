@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1560778916225,
+  "iteration": 1560841751535,
   "links": [],
   "panels": [
     {
@@ -724,7 +724,7 @@
       "valueName": "total"
     },
     {
-      "content": "<img src=\"https://elixir-europe.org/sites/default/files/styles/right-xlarge/public/images/schemaartboard_1.png\" height=\"200px\">",
+      "content": "<a href=\"https://usegalaxy.eu/login\" target=\"_blank\"><img src=\"https://elixir-europe.org/sites/default/files/styles/right-xlarge/public/images/schemaartboard_1.png\" height=\"200px\"></a>",
       "gridPos": {
         "h": 6,
         "w": 5,
@@ -3114,5 +3114,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 88
+  "version": 89
 }

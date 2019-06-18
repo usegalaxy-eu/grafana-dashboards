@@ -4,7 +4,7 @@ See the live versions on [stats.galaxyproject.eu](https://stats.galaxyproject.eu
 
 Name | Tags | Version | Live | JSON
 --- | --- | --- | --- | ---
-Alerts | infrastructure | 174 | [Live](https://stats.galaxyproject.eu/d/000000052) | [File](./Alerts.json)
+Alerts | infrastructure | 175 | [Live](https://stats.galaxyproject.eu/d/000000052) | [File](./Alerts.json)
 CVMFS Stratum 1 Server Status |  | 8 | [Live](https://stats.galaxyproject.eu/d/XtcPRpImz) | [File](./CVMFS%20Stratum%201%20Server%20Status.json)
 GRT Tool Comparison | galaxy,migrated | 6 | [Live](https://stats.galaxyproject.eu/d/kSDduH5Zi) | [File](./GRT%20Tool%20Comparison.json)
 GRT Tool Usage | migrated,galaxy | 46 | [Live](https://stats.galaxyproject.eu/d/SDduH5Zik) | [File](./GRT%20Tool%20Usage.json)
@@ -12,7 +12,7 @@ Galaxy | galaxy | 287 | [Live](https://stats.galaxyproject.eu/d/000000004) | [Fi
 Galaxy Condor Cluster | galaxy,cloud | 62 | [Live](https://stats.galaxyproject.eu/d/000000021) | [File](./Galaxy%20Condor%20Cluster.json)
 Galaxy Database | migrated,infrastructure | 22 | [Live](https://stats.galaxyproject.eu/d/000000019) | [File](./Galaxy%20Database.json)
 Galaxy Docker Cluster | galaxy,docker | 9 | [Live](https://stats.galaxyproject.eu/d/000000024) | [File](./Galaxy%20Docker%20Cluster.json)
-Galaxy User Statistics | galaxy,migrated | 88 | [Live](https://stats.galaxyproject.eu/d/000000012) | [File](./Galaxy%20User%20Statistics.json)
+Galaxy User Statistics | galaxy,migrated | 89 | [Live](https://stats.galaxyproject.eu/d/000000012) | [File](./Galaxy%20User%20Statistics.json)
 HAProxy | migrated | 42 | [Live](https://stats.galaxyproject.eu/d/000000041) | [File](./HAProxy.json)
 InfluxDB |  | 11 | [Live](https://stats.galaxyproject.eu/d/000000011) | [File](./InfluxDB.json)
 Jobs Dashboard |  | 35 | [Live](https://stats.galaxyproject.eu/d/000000034) | [File](./Jobs%20Dashboard.json)
