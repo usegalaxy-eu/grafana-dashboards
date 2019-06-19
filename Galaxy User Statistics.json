@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1560841751535,
+  "iteration": 1560957668122,
   "links": [],
   "panels": [
     {
@@ -724,21 +724,6 @@
       "valueName": "total"
     },
     {
-      "content": "<a href=\"https://usegalaxy.eu/login\" target=\"_blank\"><img src=\"https://elixir-europe.org/sites/default/files/styles/right-xlarge/public/images/schemaartboard_1.png\" height=\"200px\"></a>",
-      "gridPos": {
-        "h": 6,
-        "w": 5,
-        "x": 0,
-        "y": 6
-      },
-      "id": 62,
-      "links": [],
-      "mode": "html",
-      "options": {},
-      "title": "",
-      "type": "text"
-    },
-    {
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
@@ -759,7 +744,7 @@
       "gridPos": {
         "h": 6,
         "w": 5,
-        "x": 5,
+        "x": 0,
         "y": 6
       },
       "hideTimeOverride": true,
@@ -858,6 +843,22 @@
         }
       ],
       "valueName": "current"
+    },
+    {
+      "content": "<a href=\"https://usegalaxy.eu/login\" target=\"_blank\"><img src=\"https://elixir-europe.org/sites/default/files/styles/right-xlarge/public/images/schemaartboard_1.png\" height=\"200px\"></a>",
+      "gridPos": {
+        "h": 6,
+        "w": 19,
+        "x": 5,
+        "y": 6
+      },
+      "id": 62,
+      "links": [],
+      "mode": "html",
+      "options": {},
+      "title": "",
+      "transparent": true,
+      "type": "text"
     },
     {
       "collapsed": false,
@@ -3114,5 +3115,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 89
+  "version": 90
 }
