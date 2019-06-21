@@ -395,6 +395,137 @@
     },
     {
       "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Galaxy",
+      "description": "Time for the server to respond to our request. 40 indicates a timeout / inability to reach the server.",
+      "fill": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 26,
+      "interval": "1h",
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {},
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[tag_name]]",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "3h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "tools"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "1w",
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Tools",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
       "breakPoint": "50%",
       "cacheTimeout": null,
       "combine": {
@@ -408,7 +539,7 @@
         "h": 9,
         "w": 4,
         "x": 0,
-        "y": 26
+        "y": 32
       },
       "id": 21,
       "interval": null,
@@ -497,7 +628,7 @@
         "h": 9,
         "w": 4,
         "x": 4,
-        "y": 26
+        "y": 32
       },
       "hideTimeOverride": true,
       "id": 12,
@@ -593,7 +724,7 @@
         "h": 9,
         "w": 4,
         "x": 8,
-        "y": 26
+        "y": 32
       },
       "id": 22,
       "interval": null,
@@ -684,7 +815,7 @@
         "h": 9,
         "w": 4,
         "x": 12,
-        "y": 26
+        "y": 32
       },
       "id": 23,
       "interval": null,
@@ -775,7 +906,7 @@
         "h": 9,
         "w": 4,
         "x": 16,
-        "y": 26
+        "y": 32
       },
       "id": 24,
       "interval": null,
@@ -866,7 +997,7 @@
         "h": 9,
         "w": 4,
         "x": 20,
-        "y": 26
+        "y": 32
       },
       "id": 25,
       "interval": null,
@@ -955,7 +1086,7 @@
         "h": 13,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 41
       },
       "height": "500px",
       "id": 11,
@@ -1246,5 +1377,5 @@
   "timezone": "browser",
   "title": "Public Galaxy Servers",
   "uid": "000000020",
-  "version": 69
+  "version": 70
 }

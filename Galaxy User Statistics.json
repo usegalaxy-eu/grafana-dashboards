@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1560957668122,
+  "iteration": 1561116235037,
   "links": [],
   "panels": [
     {
@@ -1257,7 +1257,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Galaxy Historical",
-      "fill": 1,
+      "fill": 2,
       "gridPos": {
         "h": 7,
         "w": 12,
@@ -1276,7 +1276,7 @@
         "values": false
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 3,
       "links": [],
       "nullPointMode": "null",
       "options": {},
@@ -1284,7 +1284,12 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "server-users.upto.last",
+          "color": "#003399"
+        }
+      ],
       "spaceLength": 10,
       "stack": true,
       "steppedLine": true,
@@ -1376,7 +1381,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Galaxy Historical",
-      "fill": 1,
+      "fill": 2,
       "gridPos": {
         "h": 7,
         "w": 12,
@@ -1395,7 +1400,7 @@
         "values": false
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 3,
       "links": [],
       "nullPointMode": "null",
       "options": {},
@@ -1403,7 +1408,12 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "server-jobs.upto.sum",
+          "color": "#003399"
+        }
+      ],
       "spaceLength": 10,
       "stack": true,
       "steppedLine": true,
@@ -3115,5 +3125,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 90
+  "version": 93
 }
