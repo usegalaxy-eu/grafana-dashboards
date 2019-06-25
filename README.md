@@ -4,8 +4,8 @@ See the live versions on [stats.galaxyproject.eu](https://stats.galaxyproject.eu
 
 Name | Tags | Version | Live | JSON
 --- | --- | --- | --- | ---
-Alerts | infrastructure | 176 | [Live](https://stats.galaxyproject.eu/d/000000052) | [File](./Alerts.json)
-CVMFS Stratum 1 Server Status |  | 39 | [Live](https://stats.galaxyproject.eu/d/XtcPRpImz) | [File](./CVMFS%20Stratum%201%20Server%20Status.json)
+Alerts | infrastructure | 177 | [Live](https://stats.galaxyproject.eu/d/000000052) | [File](./Alerts.json)
+CVMFS Stratum 1 Server Status |  | 44 | [Live](https://stats.galaxyproject.eu/d/XtcPRpImz) | [File](./CVMFS%20Stratum%201%20Server%20Status.json)
 GRT Tool Comparison | galaxy,migrated | 6 | [Live](https://stats.galaxyproject.eu/d/kSDduH5Zi) | [File](./GRT%20Tool%20Comparison.json)
 GRT Tool Usage | migrated,galaxy | 46 | [Live](https://stats.galaxyproject.eu/d/SDduH5Zik) | [File](./GRT%20Tool%20Usage.json)
 Galaxy | galaxy | 287 | [Live](https://stats.galaxyproject.eu/d/000000004) | [File](./Galaxy.json)
@@ -22,7 +22,7 @@ Public Galaxy Servers - UseGalaxy.* | pgs | 17 | [Live](https://stats.galaxyproj
 Queue depletion |  | 5 | [Live](https://stats.galaxyproject.eu/d/X735azMWk) | [File](./Queue%20depletion.json)
 RabbitMQ - Galaxy | infrastructure,migrated | 11 | [Live](https://stats.galaxyproject.eu/d/gwQTkRNiz) | [File](./RabbitMQ%20-%20Galaxy.json)
 RabbitMQ - Pulsar |  | 50 | [Live](https://stats.galaxyproject.eu/d/000000030) | [File](./RabbitMQ%20-%20Pulsar.json)
-Route Timings (detail) | marten | 14 | [Live](https://stats.galaxyproject.eu/d/PVN8IiNmk) | [File](./Route%20Timings%20(detail).json)
+Route Timings (detail) | marten | 16 | [Live](https://stats.galaxyproject.eu/d/PVN8IiNmk) | [File](./Route%20Timings%20(detail).json)
 Squid |  | 11 | [Live](https://stats.galaxyproject.eu/d/AbGoj5Iik) | [File](./Squid.json)
 TIaaS | wip | 15 | [Live](https://stats.galaxyproject.eu/d/7hY6kQfiz) | [File](./TIaaS.json)
 Tomcat |  | 3 | [Live](https://stats.galaxyproject.eu/d/000000058) | [File](./Tomcat.json)

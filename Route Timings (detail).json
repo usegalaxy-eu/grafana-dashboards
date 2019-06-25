@@ -16,6 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 78,
+  "iteration": 1561446692799,
   "links": [],
   "panels": [
     {
@@ -56,6 +57,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 1,
       "points": true,
@@ -167,6 +169,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "$page_timing",
       "tooltip": {
@@ -245,6 +248,7 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 1,
       "points": false,
@@ -311,6 +315,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "System Load",
       "tooltip": {
@@ -389,6 +394,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 1,
       "points": false,
@@ -458,6 +464,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "NFS Operations",
       "tooltip": {
@@ -536,6 +543,7 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {},
       "percentage": false,
       "pointradius": 1,
       "points": false,
@@ -556,6 +564,12 @@
             },
             {
               "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
                 "none"
               ],
               "type": "fill"
@@ -572,7 +586,7 @@
             [
               {
                 "params": [
-                  "reads"
+                  "iops_in_progress"
                 ],
                 "type": "field"
               },
@@ -582,39 +596,9 @@
               },
               {
                 "params": [
-                  "$__interval"
+                  "5"
                 ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "reads"
-                ],
-                "type": "alias"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "writes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "non_negative_derivative"
-              },
-              {
-                "params": [
-                  "writes"
-                ],
-                "type": "alias"
+                "type": "moving_average"
               }
             ]
           ],
@@ -629,6 +613,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Disk IO",
       "tooltip": {
@@ -685,6 +670,7 @@
           "value": "api.uploads.create"
         },
         "datasource": "Galaxy",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -1575,6 +1561,7 @@
         "query": "show tag values with key = \"path\"",
         "refresh": 0,
         "regex": "/^[aw][pe][ib].*/",
+        "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
@@ -1616,5 +1603,5 @@
   "timezone": "",
   "title": "Route Timings (detail)",
   "uid": "PVN8IiNmk",
-  "version": 14
+  "version": 16
 }

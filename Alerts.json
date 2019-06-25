@@ -841,7 +841,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Jobs queued but lacking cluster ID",
+      "title": "Job states",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -3450,7 +3450,7 @@
       "type": "row"
     }
   ],
-  "refresh": "15m",
+  "refresh": false,
   "schemaVersion": 18,
   "style": "dark",
   "tags": [
@@ -3491,5 +3491,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 176
+  "version": 177
 }

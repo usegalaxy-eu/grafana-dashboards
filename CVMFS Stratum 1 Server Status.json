@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 76,
-  "iteration": 1561132806846,
+  "iteration": 1561455382576,
   "links": [],
   "panels": [
     {
@@ -46,8 +46,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -198,8 +198,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -215,7 +215,7 @@
         "x": 3.4285714285714284,
         "y": 1
       },
-      "id": 81,
+      "id": 75,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -247,7 +247,7 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "scopedVars": {
         "repos": {
@@ -352,8 +352,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -369,7 +369,7 @@
         "x": 6.857142857142857,
         "y": 1
       },
-      "id": 82,
+      "id": 76,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -401,7 +401,7 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "scopedVars": {
         "repos": {
@@ -506,8 +506,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -523,7 +523,7 @@
         "x": 10.285714285714285,
         "y": 1
       },
-      "id": 83,
+      "id": 77,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -555,7 +555,7 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "scopedVars": {
         "repos": {
@@ -660,8 +660,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -677,7 +677,7 @@
         "x": 13.714285714285714,
         "y": 1
       },
-      "id": 84,
+      "id": 78,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -709,7 +709,7 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "scopedVars": {
         "repos": {
@@ -814,8 +814,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -831,7 +831,7 @@
         "x": 17.142857142857142,
         "y": 1
       },
-      "id": 85,
+      "id": 79,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -863,7 +863,7 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "scopedVars": {
         "repos": {
@@ -968,8 +968,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -985,7 +985,7 @@
         "x": 20.57142857142857,
         "y": 1
       },
-      "id": 86,
+      "id": 80,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1017,7 +1017,7 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "scopedVars": {
         "repos": {
@@ -1124,10 +1124,10 @@
         "x": 0,
         "y": 3
       },
-      "id": 71,
+      "id": 65,
       "panels": [],
       "repeat": null,
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 64,
       "scopedVars": {
         "servers": {
@@ -1145,8 +1145,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -1162,7 +1162,7 @@
         "x": 0,
         "y": 4
       },
-      "id": 72,
+      "id": 66,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1194,7 +1194,7 @@
       ],
       "repeat": "repos",
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "repeatedByRow": true,
       "scopedVars": {
@@ -1300,8 +1300,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -1317,7 +1317,7 @@
         "x": 3.4285714285714284,
         "y": 4
       },
-      "id": 87,
+      "id": 81,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1349,8 +1349,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 72,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 66,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -1455,8 +1455,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -1472,7 +1472,7 @@
         "x": 6.857142857142857,
         "y": 4
       },
-      "id": 88,
+      "id": 82,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1504,8 +1504,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 72,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 66,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -1610,8 +1610,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -1627,7 +1627,7 @@
         "x": 10.285714285714285,
         "y": 4
       },
-      "id": 89,
+      "id": 83,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1659,8 +1659,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 72,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 66,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -1765,8 +1765,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -1782,7 +1782,7 @@
         "x": 13.714285714285714,
         "y": 4
       },
-      "id": 90,
+      "id": 84,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1814,8 +1814,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 72,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 66,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -1920,8 +1920,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -1937,7 +1937,7 @@
         "x": 17.142857142857142,
         "y": 4
       },
-      "id": 91,
+      "id": 85,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1969,8 +1969,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 72,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 66,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -2075,8 +2075,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -2092,7 +2092,7 @@
         "x": 20.57142857142857,
         "y": 4
       },
-      "id": 92,
+      "id": 86,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -2124,8 +2124,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 72,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 66,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -2232,10 +2232,10 @@
         "x": 0,
         "y": 6
       },
-      "id": 73,
+      "id": 67,
       "panels": [],
       "repeat": null,
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 64,
       "scopedVars": {
         "servers": {
@@ -2253,8 +2253,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -2270,7 +2270,7 @@
         "x": 0,
         "y": 7
       },
-      "id": 74,
+      "id": 68,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -2302,7 +2302,7 @@
       ],
       "repeat": "repos",
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "repeatedByRow": true,
       "scopedVars": {
@@ -2408,8 +2408,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -2425,7 +2425,7 @@
         "x": 3.4285714285714284,
         "y": 7
       },
-      "id": 93,
+      "id": 87,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -2457,8 +2457,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 74,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 68,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -2563,8 +2563,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -2580,7 +2580,7 @@
         "x": 6.857142857142857,
         "y": 7
       },
-      "id": 94,
+      "id": 88,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -2612,8 +2612,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 74,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 68,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -2718,8 +2718,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -2735,7 +2735,7 @@
         "x": 10.285714285714285,
         "y": 7
       },
-      "id": 95,
+      "id": 89,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -2767,8 +2767,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 74,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 68,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -2873,8 +2873,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -2890,7 +2890,7 @@
         "x": 13.714285714285714,
         "y": 7
       },
-      "id": 96,
+      "id": 90,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -2922,8 +2922,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 74,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 68,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -3028,8 +3028,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -3045,7 +3045,7 @@
         "x": 17.142857142857142,
         "y": 7
       },
-      "id": 97,
+      "id": 91,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -3077,8 +3077,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 74,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 68,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -3183,8 +3183,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -3200,7 +3200,7 @@
         "x": 20.57142857142857,
         "y": 7
       },
-      "id": 98,
+      "id": 92,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -3232,8 +3232,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 74,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 68,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -3340,10 +3340,10 @@
         "x": 0,
         "y": 9
       },
-      "id": 75,
+      "id": 69,
       "panels": [],
       "repeat": null,
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 64,
       "scopedVars": {
         "servers": {
@@ -3361,8 +3361,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -3378,7 +3378,7 @@
         "x": 0,
         "y": 10
       },
-      "id": 76,
+      "id": 70,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -3410,7 +3410,7 @@
       ],
       "repeat": "repos",
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "repeatedByRow": true,
       "scopedVars": {
@@ -3516,8 +3516,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -3533,7 +3533,7 @@
         "x": 3.4285714285714284,
         "y": 10
       },
-      "id": 99,
+      "id": 93,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -3565,8 +3565,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 76,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 70,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -3671,8 +3671,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -3688,7 +3688,7 @@
         "x": 6.857142857142857,
         "y": 10
       },
-      "id": 100,
+      "id": 94,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -3720,8 +3720,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 76,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 70,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -3826,8 +3826,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -3843,7 +3843,7 @@
         "x": 10.285714285714285,
         "y": 10
       },
-      "id": 101,
+      "id": 95,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -3875,8 +3875,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 76,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 70,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -3981,8 +3981,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -3998,7 +3998,7 @@
         "x": 13.714285714285714,
         "y": 10
       },
-      "id": 102,
+      "id": 96,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -4030,8 +4030,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 76,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 70,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -4136,8 +4136,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -4153,7 +4153,7 @@
         "x": 17.142857142857142,
         "y": 10
       },
-      "id": 103,
+      "id": 97,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -4185,8 +4185,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 76,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 70,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -4291,8 +4291,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -4308,7 +4308,7 @@
         "x": 20.57142857142857,
         "y": 10
       },
-      "id": 104,
+      "id": 98,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -4340,8 +4340,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 76,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 70,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -4448,10 +4448,10 @@
         "x": 0,
         "y": 12
       },
-      "id": 77,
+      "id": 71,
       "panels": [],
       "repeat": null,
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 64,
       "scopedVars": {
         "servers": {
@@ -4469,8 +4469,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -4486,7 +4486,7 @@
         "x": 0,
         "y": 13
       },
-      "id": 78,
+      "id": 72,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -4518,7 +4518,7 @@
       ],
       "repeat": "repos",
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "repeatedByRow": true,
       "scopedVars": {
@@ -4624,8 +4624,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -4641,7 +4641,7 @@
         "x": 3.4285714285714284,
         "y": 13
       },
-      "id": 105,
+      "id": 99,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -4673,8 +4673,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 78,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 72,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -4779,8 +4779,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -4796,7 +4796,7 @@
         "x": 6.857142857142857,
         "y": 13
       },
-      "id": 106,
+      "id": 100,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -4828,8 +4828,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 78,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 72,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -4934,8 +4934,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -4951,7 +4951,7 @@
         "x": 10.285714285714285,
         "y": 13
       },
-      "id": 107,
+      "id": 101,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -4983,8 +4983,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 78,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 72,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -5089,8 +5089,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -5106,7 +5106,7 @@
         "x": 13.714285714285714,
         "y": 13
       },
-      "id": 108,
+      "id": 102,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -5138,8 +5138,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 78,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 72,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -5244,8 +5244,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -5261,7 +5261,7 @@
         "x": 17.142857142857142,
         "y": 13
       },
-      "id": 109,
+      "id": 103,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -5293,8 +5293,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 78,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 72,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -5399,8 +5399,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -5416,7 +5416,7 @@
         "x": 20.57142857142857,
         "y": 13
       },
-      "id": 110,
+      "id": 104,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -5448,8 +5448,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 78,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 72,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -5556,10 +5556,10 @@
         "x": 0,
         "y": 15
       },
-      "id": 79,
+      "id": 73,
       "panels": [],
       "repeat": null,
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 64,
       "scopedVars": {
         "servers": {
@@ -5577,8 +5577,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -5594,7 +5594,7 @@
         "x": 0,
         "y": 16
       },
-      "id": 80,
+      "id": 74,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -5626,7 +5626,7 @@
       ],
       "repeat": "repos",
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 62,
       "repeatedByRow": true,
       "scopedVars": {
@@ -5732,8 +5732,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -5749,7 +5749,7 @@
         "x": 3.4285714285714284,
         "y": 16
       },
-      "id": 111,
+      "id": 105,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -5781,8 +5781,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 80,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 74,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -5887,8 +5887,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -5904,7 +5904,7 @@
         "x": 6.857142857142857,
         "y": 16
       },
-      "id": 112,
+      "id": 106,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -5936,8 +5936,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 80,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 74,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -6042,8 +6042,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -6059,7 +6059,7 @@
         "x": 10.285714285714285,
         "y": 16
       },
-      "id": 113,
+      "id": 107,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -6091,8 +6091,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 80,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 74,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -6197,8 +6197,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -6214,7 +6214,7 @@
         "x": 13.714285714285714,
         "y": 16
       },
-      "id": 114,
+      "id": 108,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -6246,8 +6246,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 80,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 74,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -6352,8 +6352,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -6369,7 +6369,7 @@
         "x": 17.142857142857142,
         "y": 16
       },
-      "id": 115,
+      "id": 109,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -6401,8 +6401,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 80,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 74,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -6507,8 +6507,8 @@
       "colorValue": true,
       "colors": [
         "rgb(255, 255, 255)",
-        "#8AB8FF",
-        "#73BF69"
+        "rgba(150, 217, 141, 0.84)",
+        "rgb(93, 179, 80)"
       ],
       "format": "none",
       "gauge": {
@@ -6524,7 +6524,7 @@
         "x": 20.57142857142857,
         "y": 16
       },
-      "id": 116,
+      "id": 110,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -6556,8 +6556,8 @@
       ],
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
-      "repeatPanelId": 80,
+      "repeatIteration": 1561455382576,
+      "repeatPanelId": 74,
       "repeatedByRow": true,
       "scopedVars": {
         "repos": {
@@ -6836,7 +6836,7 @@
         "x": 3.4285714285714284,
         "y": 19
       },
-      "id": 123,
+      "id": 111,
       "interval": "5m",
       "legend": {
         "alignAsTable": true,
@@ -6863,7 +6863,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 18,
       "scopedVars": {
         "repos": {
@@ -6990,7 +6990,7 @@
         "x": 6.857142857142857,
         "y": 19
       },
-      "id": 124,
+      "id": 112,
       "interval": "5m",
       "legend": {
         "alignAsTable": true,
@@ -7017,7 +7017,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 18,
       "scopedVars": {
         "repos": {
@@ -7144,7 +7144,7 @@
         "x": 10.285714285714285,
         "y": 19
       },
-      "id": 125,
+      "id": 113,
       "interval": "5m",
       "legend": {
         "alignAsTable": true,
@@ -7171,7 +7171,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 18,
       "scopedVars": {
         "repos": {
@@ -7298,7 +7298,7 @@
         "x": 13.714285714285714,
         "y": 19
       },
-      "id": 126,
+      "id": 114,
       "interval": "5m",
       "legend": {
         "alignAsTable": true,
@@ -7325,7 +7325,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 18,
       "scopedVars": {
         "repos": {
@@ -7452,7 +7452,7 @@
         "x": 17.142857142857142,
         "y": 19
       },
-      "id": 127,
+      "id": 115,
       "interval": "5m",
       "legend": {
         "alignAsTable": true,
@@ -7479,7 +7479,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 18,
       "scopedVars": {
         "repos": {
@@ -7606,7 +7606,7 @@
         "x": 20.57142857142857,
         "y": 19
       },
-      "id": 128,
+      "id": 116,
       "interval": "5m",
       "legend": {
         "alignAsTable": true,
@@ -7633,7 +7633,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 18,
       "scopedVars": {
         "repos": {
@@ -7938,7 +7938,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 17,
       "scopedVars": {
         "repos": {
@@ -8082,7 +8082,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 17,
       "scopedVars": {
         "repos": {
@@ -8226,7 +8226,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 17,
       "scopedVars": {
         "repos": {
@@ -8370,7 +8370,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 17,
       "scopedVars": {
         "repos": {
@@ -8514,7 +8514,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 17,
       "scopedVars": {
         "repos": {
@@ -8658,7 +8658,7 @@
       "renderer": "flot",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1561132806846,
+      "repeatIteration": 1561455382576,
       "repeatPanelId": 17,
       "scopedVars": {
         "repos": {
@@ -9565,7 +9565,6 @@
       {
         "allValue": ".*",
         "current": {
-          "tags": [],
           "text": "All",
           "value": "$__all"
         },
@@ -9647,5 +9646,5 @@
   "timezone": "",
   "title": "CVMFS Stratum 1 Server Status",
   "uid": "XtcPRpImz",
-  "version": 39
+  "version": 44
 }
