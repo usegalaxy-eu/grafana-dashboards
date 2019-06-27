@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1559308721061,
+  "iteration": 1561638054444,
   "links": [],
   "panels": [
     {
@@ -820,158 +820,18 @@
     },
     {
       "aliasColors": {},
-      "bars": false,
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
       "fill": 1,
       "gridPos": {
-        "h": 5,
-        "w": 12,
+        "h": 7,
+        "w": 10,
         "x": 0,
         "y": 22
       },
-      "id": 89,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "general compute",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "cluster"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "group"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "cluster.alloc",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "cores"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Cluster Allocation - Cores",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "percentunit",
-          "label": null,
-          "logBase": 1,
-          "max": "1",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 12,
-        "y": 22
-      },
       "id": 90,
+      "interval": "1h",
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -987,7 +847,7 @@
         "total": false,
         "values": true
       },
-      "lines": true,
+      "lines": false,
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
@@ -1013,24 +873,12 @@
             },
             {
               "params": [
-                "cluster"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "group"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
+                "0"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "cluster.alloc",
+          "measurement": "upload-gb-in-past-hour",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1039,7 +887,7 @@
             [
               {
                 "params": [
-                  "memory"
+                  "count"
                 ],
                 "type": "field"
               },
@@ -1062,7 +910,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Cluster Allocation - Memory",
+      "title": "Data Upload / Hour",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -1079,305 +927,11 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "percentunit",
-          "label": null,
-          "logBase": 1,
-          "max": "1",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
+          "format": "decbytes",
           "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 0,
-        "y": 27
-      },
-      "id": 87,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "[[tag_cluster]] [[tag_group]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "cluster"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "group"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "cluster.alloc",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "cores"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "group",
-              "operator": "!=",
-              "value": "compute"
-            },
-            {
-              "condition": "AND",
-              "key": "group",
-              "operator": "!~",
-              "value": "/^$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Condor Cluster Suballocation - Cores",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "percentunit",
-          "label": null,
-          "logBase": 1,
-          "max": "1",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "fill": 1,
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 12,
-        "y": 27
-      },
-      "id": 88,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {},
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "[[tag_cluster]] [[tag_group]]",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "cluster"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "group"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "cluster.alloc",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "memory"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "group",
-              "operator": "!=",
-              "value": "compute"
-            },
-            {
-              "condition": "AND",
-              "key": "group",
-              "operator": "!~",
-              "value": "/^$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Condor Cluster Suballocation - Memory",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "percentunit",
-          "label": null,
-          "logBase": 1,
-          "max": "1",
-          "min": "0",
           "show": true
         },
         {
@@ -1400,7 +954,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 29
       },
       "id": 85,
       "panels": [],
@@ -1420,7 +974,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 30
       },
       "height": "500px",
       "id": 7,
@@ -1680,7 +1234,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 40
       },
       "id": 95,
       "panels": [],
@@ -1697,7 +1251,7 @@
         "h": 9,
         "w": 14,
         "x": 0,
-        "y": 44
+        "y": 41
       },
       "id": 100,
       "interval": "2m",
@@ -1876,7 +1430,7 @@
         "h": 6,
         "w": 10,
         "x": 14,
-        "y": 44
+        "y": 41
       },
       "id": 93,
       "interval": "15s",
@@ -2072,7 +1626,7 @@
         "h": 5,
         "w": 10,
         "x": 14,
-        "y": 50
+        "y": 47
       },
       "id": 98,
       "interval": "15s",
@@ -2251,7 +1805,7 @@
         "h": 7,
         "w": 14,
         "x": 0,
-        "y": 53
+        "y": 50
       },
       "id": 102,
       "interval": "60s",
@@ -2453,7 +2007,7 @@
         "h": 5,
         "w": 10,
         "x": 14,
-        "y": 55
+        "y": 52
       },
       "id": 97,
       "interval": "15s",
@@ -2649,7 +2203,7 @@
         "h": 5,
         "w": 14,
         "x": 0,
-        "y": 60
+        "y": 57
       },
       "id": 104,
       "interval": "60s",
@@ -2793,7 +2347,7 @@
         "h": 5,
         "w": 10,
         "x": 14,
-        "y": 60
+        "y": 57
       },
       "id": 96,
       "interval": "15s",
@@ -2935,7 +2489,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 65
+        "y": 62
       },
       "id": 101,
       "interval": "15s",
@@ -3077,7 +2631,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 65
+        "y": 62
       },
       "id": 99,
       "interval": "1m",
@@ -3289,5 +2843,5 @@
   "timezone": "browser",
   "title": "Galaxy",
   "uid": "000000004",
-  "version": 287
+  "version": 288
 }
