@@ -16,7 +16,7 @@ Galaxy User Statistics | galaxy,migrated | 93 | [Live](https://stats.galaxyproje
 InfluxDB |  | 11 | [Live](https://stats.galaxyproject.eu/d/000000011) | [File](./InfluxDB.json)
 Jobs Dashboard |  | 35 | [Live](https://stats.galaxyproject.eu/d/000000034) | [File](./Jobs%20Dashboard.json)
 Node Detail - Infrastructure | infrastructure,galaxy,migrated | 71 | [Live](https://stats.galaxyproject.eu/d/000000023) | [File](./Node%20Detail%20-%20Infrastructure.json)
-Public Galaxy Servers | pgs | 70 | [Live](https://stats.galaxyproject.eu/d/000000020) | [File](./Public%20Galaxy%20Servers.json)
+Public Galaxy Servers | pgs | 72 | [Live](https://stats.galaxyproject.eu/d/000000020) | [File](./Public%20Galaxy%20Servers.json)
 Public Galaxy Servers - Individual | pgs | 31 | [Live](https://stats.galaxyproject.eu/d/000000022) | [File](./Public%20Galaxy%20Servers%20-%20Individual.json)
 Public Galaxy Servers - UseGalaxy.* | pgs | 17 | [Live](https://stats.galaxyproject.eu/d/nW8PuvMZk) | [File](./Public%20Galaxy%20Servers%20-%20UseGalaxy.*.json)
 Queue depletion |  | 5 | [Live](https://stats.galaxyproject.eu/d/X735azMWk) | [File](./Queue%20depletion.json)

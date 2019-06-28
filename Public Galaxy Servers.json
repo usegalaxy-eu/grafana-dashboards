@@ -525,97 +525,6 @@
       }
     },
     {
-      "aliasColors": {},
-      "breakPoint": "50%",
-      "cacheTimeout": null,
-      "combine": {
-        "label": "Others",
-        "threshold": 0
-      },
-      "datasource": "Galaxy",
-      "fontSize": "80%",
-      "format": "short",
-      "gridPos": {
-        "h": 9,
-        "w": 4,
-        "x": 0,
-        "y": 32
-      },
-      "id": 21,
-      "interval": null,
-      "legend": {
-        "show": true,
-        "values": true
-      },
-      "legendType": "Under graph",
-      "links": [],
-      "maxDataPoints": 3,
-      "nullPointMode": "connected",
-      "options": {},
-      "pieType": "pie",
-      "strokeWidth": 1,
-      "targets": [
-        {
-          "alias": "[[tag_require_login]]",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "require_login"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "server",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "require_login",
-              "operator": "=",
-              "value": "True"
-            },
-            {
-              "condition": "OR",
-              "key": "require_login",
-              "operator": "=",
-              "value": "False"
-            }
-          ]
-        }
-      ],
-      "title": "Requiring Log-in",
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
-    },
-    {
       "columns": [
         {
           "text": "Total",
@@ -627,7 +536,7 @@
       "gridPos": {
         "h": 9,
         "w": 4,
-        "x": 4,
+        "x": 0,
         "y": 32
       },
       "hideTimeOverride": true,
@@ -708,6 +617,97 @@
       "title": "Version Distribution",
       "transform": "timeseries_aggregations",
       "type": "table"
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "datasource": "Galaxy",
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 4,
+        "y": 32
+      },
+      "id": 21,
+      "interval": null,
+      "legend": {
+        "show": true,
+        "values": true
+      },
+      "legendType": "Under graph",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "options": {},
+      "pieType": "pie",
+      "strokeWidth": 1,
+      "targets": [
+        {
+          "alias": "[[tag_require_login]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "require_login"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "require_login",
+              "operator": "=",
+              "value": "True"
+            },
+            {
+              "condition": "OR",
+              "key": "require_login",
+              "operator": "=",
+              "value": "False"
+            }
+          ]
+        }
+      ],
+      "title": "Requiring Log-in",
+      "type": "grafana-piechart-panel",
+      "valueName": "current"
     },
     {
       "aliasColors": {},
@@ -1000,7 +1000,7 @@
         "y": 32
       },
       "id": 25,
-      "interval": null,
+      "interval": "",
       "legend": {
         "show": true,
         "values": true
@@ -1014,7 +1014,7 @@
       "strokeWidth": 1,
       "targets": [
         {
-          "alias": "[[tag_enable_openid]]",
+          "alias": "[[tag_enable_oidc]]",
           "groupBy": [
             {
               "params": [
@@ -1024,7 +1024,7 @@
             },
             {
               "params": [
-                "enable_openid"
+                "enable_oidc"
               ],
               "type": "tag"
             },
@@ -1056,20 +1056,20 @@
           ],
           "tags": [
             {
-              "key": "enable_openid",
+              "key": "enable_oidc",
               "operator": "=",
               "value": "False"
             },
             {
               "condition": "OR",
-              "key": "enable_openid",
+              "key": "enable_oidc",
               "operator": "=",
               "value": "True"
             }
           ]
         }
       ],
-      "title": "Supporting OpenID",
+      "title": "Supporting OIDC",
       "type": "grafana-piechart-panel",
       "valueName": "current"
     },
@@ -1297,7 +1297,7 @@
           "measurement": "server",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT last(\"value\") FROM \"server\" WHERE \"responding\" = 'True' AND \"galaxy\" = 'True' AND $timeFilter GROUP BY time($__interval), \"name\", \"version\", \"allow_user_creation\", \"enable_quotas\", \"location\", \"require_login\", \"allow_user_creation\", \"enable_communication_server\" fill(none)",
+          "query": "SELECT last(\"value\") FROM \"server\" WHERE \"responding\" = 'True' AND \"galaxy\" = 'True' AND $timeFilter GROUP BY time($__interval), \"name\", \"version\", \"allow_user_creation\", \"enable_quotas\", \"location\", \"require_login\", \"allow_user_creation\", \"enable_oidc\" fill(none)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "table",
@@ -1377,5 +1377,5 @@
   "timezone": "browser",
   "title": "Public Galaxy Servers",
   "uid": "000000020",
-  "version": 70
+  "version": 72
 }
