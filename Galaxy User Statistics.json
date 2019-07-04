@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1561116235037,
+  "iteration": 1562230672672,
   "links": [],
   "panels": [
     {
@@ -2423,7 +2423,7 @@
           "unit": "short"
         },
         {
-          "alias": "Installed Repositories",
+          "alias": "Installed Revisions",
           "colorMode": "row",
           "colors": [
             "#82b5d8",
@@ -3125,5 +3125,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 93
+  "version": 94
 }

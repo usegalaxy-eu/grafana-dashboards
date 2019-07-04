@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1561638054444,
+  "iteration": 1562227025486,
   "links": [],
   "panels": [
     {
@@ -907,7 +907,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
+      "timeFrom": "24h",
       "timeRegions": [],
       "timeShift": null,
       "title": "Data Upload / Hour",
@@ -2843,5 +2843,5 @@
   "timezone": "browser",
   "title": "Galaxy",
   "uid": "000000004",
-  "version": 288
+  "version": 289
 }
