@@ -20,12 +20,28 @@
   "links": [],
   "panels": [
     {
+      "content": "\n# Ansible Status\n\n Apollo [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fapollo)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/apollo/)\n Build [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fbuild)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/build/)\n CVMFS [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fcvmfs)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/cvmfs/)\n Docker [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fdocker)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/docker/)\n Galaxy [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fgalaxy)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/galaxy/)\n Galaxy Test [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fgalaxy-test)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/galaxy-test/)\n Stats [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fstats)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/stats/)\n Proxy [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fhaproxy-internal)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/haproxy-internal/)\n Influx [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Finfluxdb)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/influxdb/)\n Telescope [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Ftelescope)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/telescope/)\n  \n\n",
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 65,
+      "mode": "markdown",
+      "options": {},
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Panel Title",
+      "type": "text"
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 4
       },
       "id": 9,
       "panels": [],
@@ -81,7 +97,7 @@
         "h": 6,
         "w": 10,
         "x": 0,
-        "y": 1
+        "y": 5
       },
       "id": 54,
       "legend": {
@@ -306,7 +322,7 @@
         "h": 6,
         "w": 10,
         "x": 10,
-        "y": 1
+        "y": 5
       },
       "id": 63,
       "interval": "1m",
@@ -479,7 +495,7 @@
         "h": 8,
         "w": 4,
         "x": 20,
-        "y": 1
+        "y": 5
       },
       "id": 42,
       "legend": {
@@ -623,7 +639,7 @@
         "h": 6,
         "w": 10,
         "x": 0,
-        "y": 7
+        "y": 11
       },
       "id": 61,
       "interval": "1m",
@@ -753,7 +769,7 @@
         "h": 6,
         "w": 10,
         "x": 10,
-        "y": 7
+        "y": 11
       },
       "id": 62,
       "interval": "1m",
@@ -927,7 +943,7 @@
         "h": 9,
         "w": 4,
         "x": 20,
-        "y": 9
+        "y": 13
       },
       "id": 4,
       "legend": {
@@ -1154,7 +1170,7 @@
         "h": 5,
         "w": 10,
         "x": 0,
-        "y": 13
+        "y": 17
       },
       "id": 45,
       "interval": "1m",
@@ -1292,7 +1308,7 @@
         "h": 6,
         "w": 10,
         "x": 10,
-        "y": 13
+        "y": 17
       },
       "id": 59,
       "interval": "15s",
@@ -1457,7 +1473,7 @@
         "h": 9,
         "w": 10,
         "x": 0,
-        "y": 18
+        "y": 22
       },
       "id": 40,
       "legend": {
@@ -1659,7 +1675,7 @@
         "h": 6,
         "w": 10,
         "x": 10,
-        "y": 19
+        "y": 23
       },
       "id": 57,
       "interval": "1m",
@@ -1834,7 +1850,7 @@
         "h": 5,
         "w": 10,
         "x": 10,
-        "y": 25
+        "y": 29
       },
       "id": 56,
       "interval": "2m",
@@ -1973,7 +1989,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 34
       },
       "id": 53,
       "panels": [
@@ -3491,5 +3507,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 177
+  "version": 178
 }
