@@ -1167,7 +1167,7 @@
       "dashes": false,
       "fill": 2,
       "gridPos": {
-        "h": 5,
+        "h": 6,
         "w": 10,
         "x": 0,
         "y": 17
@@ -1435,7 +1435,7 @@
           {
             "evaluator": {
               "params": [
-                95
+                2400
               ],
               "type": "gt"
             },
@@ -1444,7 +1444,7 @@
             },
             "query": {
               "params": [
-                "B",
+                "A",
                 "5m",
                 "now"
               ]
@@ -1457,12 +1457,16 @@
           }
         ],
         "executionErrorState": "keep_state",
-        "for": "0m",
-        "frequency": "60s",
+        "for": "5m",
+        "frequency": "1m",
         "handler": 1,
-        "name": "Disk Usage (NFS Mounts) alert",
-        "noDataState": "no_data",
-        "notifications": []
+        "name": "Handler not logging",
+        "noDataState": "keep_state",
+        "notifications": [
+          {
+            "id": 2
+          }
+        ]
       },
       "aliasColors": {},
       "bars": false,
@@ -1470,20 +1474,21 @@
       "dashes": false,
       "fill": 0,
       "gridPos": {
-        "h": 9,
+        "h": 12,
         "w": 10,
         "x": 0,
-        "y": 22
+        "y": 23
       },
-      "id": 40,
+      "id": 56,
+      "interval": "2m",
       "legend": {
         "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
+        "avg": true,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
         "max": true,
-        "min": true,
+        "min": false,
         "rightSide": true,
         "show": false,
         "sort": "current",
@@ -1506,8 +1511,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "[[tag_device]]",
-          "dsType": "influxdb",
+          "alias": "[[tag_service]] on [[tag_host]]",
           "groupBy": [
             {
               "params": [
@@ -1517,39 +1521,33 @@
             },
             {
               "params": [
+                "service"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
                 "host"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "path"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "device"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
+                "null"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "disk",
+          "measurement": "journalctl.lastlog",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "B",
+          "refId": "A",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "used_percent"
+                  "seconds"
                 ],
                 "type": "field"
               },
@@ -1559,25 +1557,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "fstype",
-              "operator": "=",
-              "value": "nfs"
-            },
-            {
-              "condition": "AND",
-              "key": "host",
-              "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
-            },
-            {
-              "condition": "OR",
-              "key": "fstype",
-              "operator": "=",
-              "value": "nfs4"
-            }
-          ]
+          "tags": []
         }
       ],
       "thresholds": [
@@ -1586,14 +1566,13 @@
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 95,
-          "yaxis": "left"
+          "value": 2400
         }
       ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Disk Usage (NFS Mounts)",
+      "title": "Seconds since last log message",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -1610,10 +1589,10 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "short",
-          "label": "",
+          "format": "s",
+          "label": null,
           "logBase": 1,
-          "max": "100",
+          "max": "3600",
           "min": "0",
           "show": true
         },
@@ -1808,7 +1787,7 @@
           {
             "evaluator": {
               "params": [
-                2400
+                95
               ],
               "type": "gt"
             },
@@ -1817,7 +1796,7 @@
             },
             "query": {
               "params": [
-                "A",
+                "B",
                 "5m",
                 "now"
               ]
@@ -1830,16 +1809,12 @@
           }
         ],
         "executionErrorState": "keep_state",
-        "for": "5m",
-        "frequency": "1m",
+        "for": "0m",
+        "frequency": "60s",
         "handler": 1,
-        "name": "Handler not logging",
-        "noDataState": "keep_state",
-        "notifications": [
-          {
-            "id": 2
-          }
-        ]
+        "name": "Disk Usage (NFS Mounts) alert",
+        "noDataState": "no_data",
+        "notifications": []
       },
       "aliasColors": {},
       "bars": false,
@@ -1847,21 +1822,20 @@
       "dashes": false,
       "fill": 0,
       "gridPos": {
-        "h": 5,
+        "h": 6,
         "w": 10,
         "x": 10,
         "y": 29
       },
-      "id": 56,
-      "interval": "2m",
+      "id": 40,
       "legend": {
         "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "hideEmpty": false,
-        "hideZero": false,
+        "avg": false,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
-        "min": false,
+        "min": true,
         "rightSide": true,
         "show": false,
         "sort": "current",
@@ -1884,7 +1858,8 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "[[tag_service]] on [[tag_host]]",
+          "alias": "[[tag_device]]",
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
@@ -1894,33 +1869,39 @@
             },
             {
               "params": [
-                "service"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
                 "host"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "null"
+                "path"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "device"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "journalctl.lastlog",
+          "measurement": "disk",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "A",
+          "refId": "B",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "seconds"
+                  "used_percent"
                 ],
                 "type": "field"
               },
@@ -1930,7 +1911,25 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "fstype",
+              "operator": "=",
+              "value": "nfs"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            },
+            {
+              "condition": "OR",
+              "key": "fstype",
+              "operator": "=",
+              "value": "nfs4"
+            }
+          ]
         }
       ],
       "thresholds": [
@@ -1939,13 +1938,14 @@
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 2400
+          "value": 95,
+          "yaxis": "left"
         }
       ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Seconds since last log message",
+      "title": "Disk Usage (NFS Mounts)",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -1962,10 +1962,10 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "s",
-          "label": null,
+          "format": "short",
+          "label": "",
           "logBase": 1,
-          "max": "3600",
+          "max": "100",
           "min": "0",
           "show": true
         },
@@ -1989,7 +1989,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 35
       },
       "id": 53,
       "panels": [
@@ -3507,5 +3507,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 178
+  "version": 179
 }
