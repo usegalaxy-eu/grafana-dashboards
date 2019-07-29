@@ -1,0 +1,1607 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 78,
+  "iteration": 1561446692799,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {
+        "timings": "#806eb7"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "description": "",
+      "fill": 1,
+      "gridPos": {
+        "h": 13,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "height": "500px",
+      "id": 3,
+      "interval": "15s",
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": false
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 1,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "/percentile/",
+          "color": "#000000",
+          "fill": 0,
+          "lines": true,
+          "linewidth": 2,
+          "points": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "timings",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "galaxy_page_timings.",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT percentile(\"mean\", 90) FROM \"galaxy_page_timings.\" WHERE $timeFilter GROUP BY time(5m) fill(none)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "mean"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "path",
+              "operator": "=~",
+              "value": "/^$page_timing$/"
+            }
+          ]
+        },
+        {
+          "alias": "95th percentile",
+          "groupBy": [
+            {
+              "params": [
+                "1h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "galaxy_page_timings.",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "mean"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "95"
+                ],
+                "type": "percentile"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "path",
+              "operator": "=~",
+              "value": "/^$page_timing$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "$page_timing",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "System Load": "#0a437c",
+        "timings": "#806eb7"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "description": "",
+      "fill": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "height": "500px",
+      "id": 4,
+      "interval": "15s",
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 1,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "alias": "/percentile/",
+          "color": "#000000",
+          "fill": 0,
+          "lines": true,
+          "linewidth": 2,
+          "points": false
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "System Load",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "system",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT percentile(\"mean\", 90) FROM \"galaxy_page_timings.\" WHERE $timeFilter GROUP BY time(5m) fill(none)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "load5"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "System Load",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "System Load": "#0a437c",
+        "timings": "#806eb7"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "description": "",
+      "fill": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "height": "500px",
+      "id": 5,
+      "interval": "15s",
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 1,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[tag_op]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "op"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "nfsstat",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT percentile(\"mean\", 90) FROM \"galaxy_page_timings.\" WHERE $timeFilter GROUP BY time(5m) fill(none)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "non_negative_derivative"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "NFS Operations",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "System Load": "#0a437c",
+        "timings": "#806eb7"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": null,
+      "description": "",
+      "fill": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "height": "500px",
+      "id": 6,
+      "interval": "15s",
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": false,
+        "sort": "avg",
+        "sortDesc": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 1,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT percentile(\"mean\", 90) FROM \"galaxy_page_timings.\" WHERE $timeFilter GROUP BY time(5m) fill(none)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "iops_in_progress"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [
+                  "5"
+                ],
+                "type": "moving_average"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Disk IO",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "5m",
+  "schemaVersion": 18,
+  "style": "dark",
+  "tags": [
+    "marten"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "api.uploads.create",
+          "value": "api.uploads.create"
+        },
+        "datasource": "Galaxy",
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "page_timing",
+        "options": [
+          {
+            "selected": false,
+            "text": "api..env",
+            "value": "api..env"
+          },
+          {
+            "selected": false,
+            "text": "api..git.config",
+            "value": "api..git.config"
+          },
+          {
+            "selected": false,
+            "text": "api.authenticate.get_api_key",
+            "value": "api.authenticate.get_api_key"
+          },
+          {
+            "selected": false,
+            "text": "api.configuration.index",
+            "value": "api.configuration.index"
+          },
+          {
+            "selected": false,
+            "text": "api.datasets.show",
+            "value": "api.datasets.show"
+          },
+          {
+            "selected": false,
+            "text": "api.datatypes.index",
+            "value": "api.datatypes.index"
+          },
+          {
+            "selected": false,
+            "text": "api.datatypes.mapping",
+            "value": "api.datatypes.mapping"
+          },
+          {
+            "selected": false,
+            "text": "api.folder_contents.index",
+            "value": "api.folder_contents.index"
+          },
+          {
+            "selected": false,
+            "text": "api.folders.create",
+            "value": "api.folders.create"
+          },
+          {
+            "selected": false,
+            "text": "api.folders.delete",
+            "value": "api.folders.delete"
+          },
+          {
+            "selected": false,
+            "text": "api.genomes.index",
+            "value": "api.genomes.index"
+          },
+          {
+            "selected": false,
+            "text": "api.genomes.show",
+            "value": "api.genomes.show"
+          },
+          {
+            "selected": false,
+            "text": "api.group_roles.update",
+            "value": "api.group_roles.update"
+          },
+          {
+            "selected": false,
+            "text": "api.group_users.update",
+            "value": "api.group_users.update"
+          },
+          {
+            "selected": false,
+            "text": "api.groups.create",
+            "value": "api.groups.create"
+          },
+          {
+            "selected": false,
+            "text": "api.groups.index",
+            "value": "api.groups.index"
+          },
+          {
+            "selected": false,
+            "text": "api.histories.0907130d4b66739e.contents.undefined",
+            "value": "api.histories.0907130d4b66739e.contents.undefined"
+          },
+          {
+            "selected": false,
+            "text": "api.histories.5453daf408073e1c.contents.undefined",
+            "value": "api.histories.5453daf408073e1c.contents.undefined"
+          },
+          {
+            "selected": false,
+            "text": "api.histories.968debd9750fd467.contents.undefined",
+            "value": "api.histories.968debd9750fd467.contents.undefined"
+          },
+          {
+            "selected": false,
+            "text": "api.histories.create",
+            "value": "api.histories.create"
+          },
+          {
+            "selected": false,
+            "text": "api.histories.delete",
+            "value": "api.histories.delete"
+          },
+          {
+            "selected": false,
+            "text": "api.histories.get_custom_builds_metadata",
+            "value": "api.histories.get_custom_builds_metadata"
+          },
+          {
+            "selected": false,
+            "text": "api.histories.index",
+            "value": "api.histories.index"
+          },
+          {
+            "selected": false,
+            "text": "api.histories.show",
+            "value": "api.histories.show"
+          },
+          {
+            "selected": false,
+            "text": "api.histories.update",
+            "value": "api.histories.update"
+          },
+          {
+            "selected": false,
+            "text": "api.history_contents.create",
+            "value": "api.history_contents.create"
+          },
+          {
+            "selected": false,
+            "text": "api.history_contents.delete",
+            "value": "api.history_contents.delete"
+          },
+          {
+            "selected": false,
+            "text": "api.history_contents.download_dataset_collection",
+            "value": "api.history_contents.download_dataset_collection"
+          },
+          {
+            "selected": false,
+            "text": "api.history_contents.index",
+            "value": "api.history_contents.index"
+          },
+          {
+            "selected": false,
+            "text": "api.history_contents.index_jobs_summary",
+            "value": "api.history_contents.index_jobs_summary"
+          },
+          {
+            "selected": false,
+            "text": "api.history_contents.show",
+            "value": "api.history_contents.show"
+          },
+          {
+            "selected": false,
+            "text": "api.history_contents.show_jobs_summary",
+            "value": "api.history_contents.show_jobs_summary"
+          },
+          {
+            "selected": false,
+            "text": "api.history_contents.update",
+            "value": "api.history_contents.update"
+          },
+          {
+            "selected": false,
+            "text": "api.job_files.create",
+            "value": "api.job_files.create"
+          },
+          {
+            "selected": false,
+            "text": "api.job_files.index",
+            "value": "api.job_files.index"
+          },
+          {
+            "selected": false,
+            "text": "api.jobs.build_for_rerun",
+            "value": "api.jobs.build_for_rerun"
+          },
+          {
+            "selected": false,
+            "text": "api.jobs.error",
+            "value": "api.jobs.error"
+          },
+          {
+            "selected": false,
+            "text": "api.jobs.show",
+            "value": "api.jobs.show"
+          },
+          {
+            "selected": false,
+            "text": "api.libraries.index",
+            "value": "api.libraries.index"
+          },
+          {
+            "selected": false,
+            "text": "api.library_datasets.download",
+            "value": "api.library_datasets.download"
+          },
+          {
+            "selected": false,
+            "text": "api.library_datasets.show",
+            "value": "api.library_datasets.show"
+          },
+          {
+            "selected": false,
+            "text": "api.plugins.index",
+            "value": "api.plugins.index"
+          },
+          {
+            "selected": false,
+            "text": "api.plugins.show",
+            "value": "api.plugins.show"
+          },
+          {
+            "selected": false,
+            "text": "api.quotas.index",
+            "value": "api.quotas.index"
+          },
+          {
+            "selected": false,
+            "text": "api.quotas.show",
+            "value": "api.quotas.show"
+          },
+          {
+            "selected": false,
+            "text": "api.quotas.update",
+            "value": "api.quotas.update"
+          },
+          {
+            "selected": false,
+            "text": "api.remote_files.index",
+            "value": "api.remote_files.index"
+          },
+          {
+            "selected": false,
+            "text": "api.roles.create",
+            "value": "api.roles.create"
+          },
+          {
+            "selected": false,
+            "text": "api.roles.index",
+            "value": "api.roles.index"
+          },
+          {
+            "selected": false,
+            "text": "api.tools.build",
+            "value": "api.tools.build"
+          },
+          {
+            "selected": false,
+            "text": "api.tools.citations",
+            "value": "api.tools.citations"
+          },
+          {
+            "selected": false,
+            "text": "api.tools.create",
+            "value": "api.tools.create"
+          },
+          {
+            "selected": true,
+            "text": "api.tools.index",
+            "value": "api.tools.index"
+          },
+          {
+            "selected": false,
+            "text": "api.tours.index",
+            "value": "api.tours.index"
+          },
+          {
+            "selected": false,
+            "text": "api.tours.show",
+            "value": "api.tours.show"
+          },
+          {
+            "selected": false,
+            "text": "api.uploads.create",
+            "value": "api.uploads.create"
+          },
+          {
+            "selected": false,
+            "text": "api.users.add_custom_builds",
+            "value": "api.users.add_custom_builds"
+          },
+          {
+            "selected": false,
+            "text": "api.users.get_api_key",
+            "value": "api.users.get_api_key"
+          },
+          {
+            "selected": false,
+            "text": "api.users.get_custom_builds",
+            "value": "api.users.get_custom_builds"
+          },
+          {
+            "selected": false,
+            "text": "api.users.get_information",
+            "value": "api.users.get_information"
+          },
+          {
+            "selected": false,
+            "text": "api.users.get_password",
+            "value": "api.users.get_password"
+          },
+          {
+            "selected": false,
+            "text": "api.users.get_permissions",
+            "value": "api.users.get_permissions"
+          },
+          {
+            "selected": false,
+            "text": "api.users.get_toolbox_filters",
+            "value": "api.users.get_toolbox_filters"
+          },
+          {
+            "selected": false,
+            "text": "api.users.index",
+            "value": "api.users.index"
+          },
+          {
+            "selected": false,
+            "text": "api.users.show",
+            "value": "api.users.show"
+          },
+          {
+            "selected": false,
+            "text": "api.visualizations.create",
+            "value": "api.visualizations.create"
+          },
+          {
+            "selected": false,
+            "text": "api.webhooks.all_webhooks",
+            "value": "api.webhooks.all_webhooks"
+          },
+          {
+            "selected": false,
+            "text": "api.webhooks.iframe.get_data",
+            "value": "api.webhooks.iframe.get_data"
+          },
+          {
+            "selected": false,
+            "text": "api.webhooks.webhook_data",
+            "value": "api.webhooks.webhook_data"
+          },
+          {
+            "selected": false,
+            "text": "api.workflows.build_module",
+            "value": "api.workflows.build_module"
+          },
+          {
+            "selected": false,
+            "text": "api.workflows.create",
+            "value": "api.workflows.create"
+          },
+          {
+            "selected": false,
+            "text": "api.workflows.delete",
+            "value": "api.workflows.delete"
+          },
+          {
+            "selected": false,
+            "text": "api.workflows.index",
+            "value": "api.workflows.index"
+          },
+          {
+            "selected": false,
+            "text": "api.workflows.invoke",
+            "value": "api.workflows.invoke"
+          },
+          {
+            "selected": false,
+            "text": "api.workflows.update",
+            "value": "api.workflows.update"
+          },
+          {
+            "selected": false,
+            "text": "api.workflows.workflow_dict",
+            "value": "api.workflows.workflow_dict"
+          },
+          {
+            "selected": false,
+            "text": "web..env",
+            "value": "web..env"
+          },
+          {
+            "selected": false,
+            "text": "web..git.config",
+            "value": "web..git.config"
+          },
+          {
+            "selected": false,
+            "text": "web.admin.center",
+            "value": "web.admin.center"
+          },
+          {
+            "selected": false,
+            "text": "web.admin.index",
+            "value": "web.admin.index"
+          },
+          {
+            "selected": false,
+            "text": "web.admin_toolshed.display_image_in_repository",
+            "value": "web.admin_toolshed.display_image_in_repository"
+          },
+          {
+            "selected": false,
+            "text": "web.biostar.biostar_redirect",
+            "value": "web.biostar.biostar_redirect"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.copy_datasets",
+            "value": "web.dataset.copy_datasets"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.display",
+            "value": "web.dataset.display"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.display_application",
+            "value": "web.dataset.display_application"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.get_edit",
+            "value": "web.dataset.get_edit"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.get_metadata_file",
+            "value": "web.dataset.get_metadata_file"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.index",
+            "value": "web.dataset.index"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.list",
+            "value": "web.dataset.list"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.purge_async",
+            "value": "web.dataset.purge_async"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.set_edit",
+            "value": "web.dataset.set_edit"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.show_params",
+            "value": "web.dataset.show_params"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.stderr",
+            "value": "web.dataset.stderr"
+          },
+          {
+            "selected": false,
+            "text": "web.dataset.stdout",
+            "value": "web.dataset.stdout"
+          },
+          {
+            "selected": false,
+            "text": "web.history.adjust_hidden",
+            "value": "web.history.adjust_hidden"
+          },
+          {
+            "selected": false,
+            "text": "web.history.create_new_current",
+            "value": "web.history.create_new_current"
+          },
+          {
+            "selected": false,
+            "text": "web.history.current_history_json",
+            "value": "web.history.current_history_json"
+          },
+          {
+            "selected": false,
+            "text": "web.history.display_by_username_and_slug",
+            "value": "web.history.display_by_username_and_slug"
+          },
+          {
+            "selected": false,
+            "text": "web.history.display_structured",
+            "value": "web.history.display_structured"
+          },
+          {
+            "selected": false,
+            "text": "web.history.export_archive",
+            "value": "web.history.export_archive"
+          },
+          {
+            "selected": false,
+            "text": "web.history.list",
+            "value": "web.history.list"
+          },
+          {
+            "selected": false,
+            "text": "web.history.list_published",
+            "value": "web.history.list_published"
+          },
+          {
+            "selected": false,
+            "text": "web.history.list_shared",
+            "value": "web.history.list_shared"
+          },
+          {
+            "selected": false,
+            "text": "web.history.purge_deleted_datasets",
+            "value": "web.history.purge_deleted_datasets"
+          },
+          {
+            "selected": false,
+            "text": "web.history.rate_async",
+            "value": "web.history.rate_async"
+          },
+          {
+            "selected": false,
+            "text": "web.history.rename",
+            "value": "web.history.rename"
+          },
+          {
+            "selected": false,
+            "text": "web.history.resume_paused_jobs",
+            "value": "web.history.resume_paused_jobs"
+          },
+          {
+            "selected": false,
+            "text": "web.history.set_as_current",
+            "value": "web.history.set_as_current"
+          },
+          {
+            "selected": false,
+            "text": "web.history.share",
+            "value": "web.history.share"
+          },
+          {
+            "selected": false,
+            "text": "web.history.share_restricted",
+            "value": "web.history.share_restricted"
+          },
+          {
+            "selected": false,
+            "text": "web.history.sharing",
+            "value": "web.history.sharing"
+          },
+          {
+            "selected": false,
+            "text": "web.history.switch_to_history",
+            "value": "web.history.switch_to_history"
+          },
+          {
+            "selected": false,
+            "text": "web.history.view",
+            "value": "web.history.view"
+          },
+          {
+            "selected": false,
+            "text": "web.history.view_multiple",
+            "value": "web.history.view_multiple"
+          },
+          {
+            "selected": false,
+            "text": "web.library.list",
+            "value": "web.library.list"
+          },
+          {
+            "selected": false,
+            "text": "web.page.list",
+            "value": "web.page.list"
+          },
+          {
+            "selected": false,
+            "text": "web.page.list_published",
+            "value": "web.page.list_published"
+          },
+          {
+            "selected": false,
+            "text": "web.root.&amp",
+            "value": "web.root.&amp"
+          },
+          {
+            "selected": false,
+            "text": "web.root..env",
+            "value": "web.root..env"
+          },
+          {
+            "selected": false,
+            "text": "web.root.HNAP1",
+            "value": "web.root.HNAP1"
+          },
+          {
+            "selected": false,
+            "text": "web.root.apple-touch-icon-precomposed.png",
+            "value": "web.root.apple-touch-icon-precomposed.png"
+          },
+          {
+            "selected": false,
+            "text": "web.root.apple-touch-icon.png",
+            "value": "web.root.apple-touch-icon.png"
+          },
+          {
+            "selected": false,
+            "text": "web.root.bea_wls_deployment_internal",
+            "value": "web.root.bea_wls_deployment_internal"
+          },
+          {
+            "selected": false,
+            "text": "web.root.client",
+            "value": "web.root.client"
+          },
+          {
+            "selected": false,
+            "text": "web.root.currentsetting.htm",
+            "value": "web.root.currentsetting.htm"
+          },
+          {
+            "selected": false,
+            "text": "web.root.favicon.png",
+            "value": "web.root.favicon.png"
+          },
+          {
+            "selected": false,
+            "text": "web.root.index",
+            "value": "web.root.index"
+          },
+          {
+            "selected": false,
+            "text": "web.root.jsynxfbz.html",
+            "value": "web.root.jsynxfbz.html"
+          },
+          {
+            "selected": false,
+            "text": "web.root.login",
+            "value": "web.root.login"
+          },
+          {
+            "selected": false,
+            "text": "web.root.map_ports.html",
+            "value": "web.root.map_ports.html"
+          },
+          {
+            "selected": false,
+            "text": "web.root.null",
+            "value": "web.root.null"
+          },
+          {
+            "selected": false,
+            "text": "web.root.phpmyadmin",
+            "value": "web.root.phpmyadmin"
+          },
+          {
+            "selected": false,
+            "text": "web.root.sitemap.xml",
+            "value": "web.root.sitemap.xml"
+          },
+          {
+            "selected": false,
+            "text": "web.root.undefined",
+            "value": "web.root.undefined"
+          },
+          {
+            "selected": false,
+            "text": "web.root.welcome",
+            "value": "web.root.welcome"
+          },
+          {
+            "selected": false,
+            "text": "web.root.wp-login.php",
+            "value": "web.root.wp-login.php"
+          },
+          {
+            "selected": false,
+            "text": "web.root.xmlrpc.php",
+            "value": "web.root.xmlrpc.php"
+          },
+          {
+            "selected": false,
+            "text": "web.tag.add_tag_async",
+            "value": "web.tag.add_tag_async"
+          },
+          {
+            "selected": false,
+            "text": "web.tag.tag_autocomplete_data",
+            "value": "web.tag.tag_autocomplete_data"
+          },
+          {
+            "selected": false,
+            "text": "web.tool_runner.data_source_redirect",
+            "value": "web.tool_runner.data_source_redirect"
+          },
+          {
+            "selected": false,
+            "text": "web.tool_runner.index",
+            "value": "web.tool_runner.index"
+          },
+          {
+            "selected": false,
+            "text": "web.tool_runner.rerun",
+            "value": "web.tool_runner.rerun"
+          },
+          {
+            "selected": false,
+            "text": "web.user.activate",
+            "value": "web.user.activate"
+          },
+          {
+            "selected": false,
+            "text": "web.user.change_password",
+            "value": "web.user.change_password"
+          },
+          {
+            "selected": false,
+            "text": "web.user.create",
+            "value": "web.user.create"
+          },
+          {
+            "selected": false,
+            "text": "web.user.login",
+            "value": "web.user.login"
+          },
+          {
+            "selected": false,
+            "text": "web.user.logout",
+            "value": "web.user.logout"
+          },
+          {
+            "selected": false,
+            "text": "web.user.openid_auth",
+            "value": "web.user.openid_auth"
+          },
+          {
+            "selected": false,
+            "text": "web.user.resend_verification",
+            "value": "web.user.resend_verification"
+          },
+          {
+            "selected": false,
+            "text": "web.user.reset_password",
+            "value": "web.user.reset_password"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.display_by_username_and_slug",
+            "value": "web.visualization.display_by_username_and_slug"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.gie_list",
+            "value": "web.visualization.gie_list"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.list",
+            "value": "web.visualization.list"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.list_history_datasets",
+            "value": "web.visualization.list_history_datasets"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.list_library_datasets",
+            "value": "web.visualization.list_library_datasets"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.list_published",
+            "value": "web.visualization.list_published"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.list_tracks",
+            "value": "web.visualization.list_tracks"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.render",
+            "value": "web.visualization.render"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.save",
+            "value": "web.visualization.save"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.saved",
+            "value": "web.visualization.saved"
+          },
+          {
+            "selected": false,
+            "text": "web.visualization.trackster",
+            "value": "web.visualization.trackster"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.build_from_current_history",
+            "value": "web.workflow.build_from_current_history"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.create",
+            "value": "web.workflow.create"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.display_by_id",
+            "value": "web.workflow.display_by_id"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.display_by_username_and_slug",
+            "value": "web.workflow.display_by_username_and_slug"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.editor",
+            "value": "web.workflow.editor"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.export_to_file",
+            "value": "web.workflow.export_to_file"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.gen_image",
+            "value": "web.workflow.gen_image"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.imp",
+            "value": "web.workflow.imp"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.list_published",
+            "value": "web.workflow.list_published"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.load_workflow",
+            "value": "web.workflow.load_workflow"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.rate_async",
+            "value": "web.workflow.rate_async"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.rename_async",
+            "value": "web.workflow.rename_async"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.save_workflow_as",
+            "value": "web.workflow.save_workflow_as"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.share",
+            "value": "web.workflow.share"
+          },
+          {
+            "selected": false,
+            "text": "web.workflow.sharing",
+            "value": "web.workflow.sharing"
+          }
+        ],
+        "query": "show tag values with key = \"path\"",
+        "refresh": 0,
+        "regex": "/^[aw][pe][ib].*/",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Route Timings (detail)",
+  "uid": "PVN8IiNmk",
+  "version": 16
+}
