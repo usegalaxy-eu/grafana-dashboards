@@ -95,7 +95,7 @@
       "fill": 3,
       "gridPos": {
         "h": 6,
-        "w": 10,
+        "w": 9,
         "x": 0,
         "y": 5
       },
@@ -320,8 +320,8 @@
       "fill": 2,
       "gridPos": {
         "h": 6,
-        "w": 10,
-        "x": 10,
+        "w": 9,
+        "x": 9,
         "y": 5
       },
       "id": 63,
@@ -493,9 +493,9 @@
       "datasource": "Galaxy",
       "fill": 0,
       "gridPos": {
-        "h": 8,
-        "w": 4,
-        "x": 20,
+        "h": 6,
+        "w": 6,
+        "x": 18,
         "y": 5
       },
       "id": 42,
@@ -633,7 +633,7 @@
       "fill": 1,
       "gridPos": {
         "h": 6,
-        "w": 10,
+        "w": 9,
         "x": 0,
         "y": 11
       },
@@ -763,8 +763,8 @@
       "fill": 2,
       "gridPos": {
         "h": 6,
-        "w": 10,
-        "x": 10,
+        "w": 9,
+        "x": 9,
         "y": 11
       },
       "id": 62,
@@ -937,10 +937,10 @@
       "dashes": false,
       "fill": 1,
       "gridPos": {
-        "h": 9,
-        "w": 4,
-        "x": 20,
-        "y": 13
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 11
       },
       "id": 4,
       "legend": {
@@ -1165,7 +1165,7 @@
       "fill": 2,
       "gridPos": {
         "h": 6,
-        "w": 10,
+        "w": 9,
         "x": 0,
         "y": 17
       },
@@ -1303,8 +1303,8 @@
       "fill": 3,
       "gridPos": {
         "h": 6,
-        "w": 10,
-        "x": 10,
+        "w": 9,
+        "x": 9,
         "y": 17
       },
       "id": 59,
@@ -1427,6 +1427,148 @@
       }
     },
     {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 2,
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 17
+      },
+      "id": 66,
+      "interval": "1m",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "1m"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "handler"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "queue-overview",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            },
+            {
+              "condition": "AND",
+              "key": "handler",
+              "operator": "=~",
+              "value": "/handler_main/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Job per handler",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "alert": {
         "conditions": [
           {
@@ -1471,8 +1613,8 @@
       "dashes": false,
       "fill": 0,
       "gridPos": {
-        "h": 12,
-        "w": 10,
+        "h": 6,
+        "w": 9,
         "x": 0,
         "y": 23
       },
@@ -1649,8 +1791,8 @@
       "fill": 0,
       "gridPos": {
         "h": 6,
-        "w": 10,
-        "x": 10,
+        "w": 9,
+        "x": 9,
         "y": 23
       },
       "id": 57,
@@ -1820,9 +1962,9 @@
       "fill": 0,
       "gridPos": {
         "h": 6,
-        "w": 10,
-        "x": 10,
-        "y": 29
+        "w": 6,
+        "x": 18,
+        "y": 23
       },
       "id": 40,
       "legend": {
@@ -1981,6 +2123,182 @@
       }
     },
     {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                0.7
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "15m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "0m",
+        "frequency": "60s",
+        "handler": 1,
+        "name": "CVMFS Status alert",
+        "noDataState": "keep_state",
+        "notifications": []
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 0,
+        "y": 29
+      },
+      "id": 55,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {},
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "[[tag_repo]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "repo"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "cvmfs.status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "cvmfs1-iu0.galaxyproject.org"
+            }
+          ]
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "lt",
+          "value": 0.7
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CVMFS Status",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "collapsed": true,
       "gridPos": {
         "h": 1,
@@ -2033,7 +2351,7 @@
             "h": 5,
             "w": 3,
             "x": 0,
-            "y": 28
+            "y": 36
           },
           "id": 44,
           "legend": {
@@ -2220,7 +2538,7 @@
             "h": 9,
             "w": 12,
             "x": 2,
-            "y": 33
+            "y": 41
           },
           "id": 7,
           "interval": "5m",
@@ -2365,7 +2683,7 @@
             "h": 5,
             "w": 3,
             "x": 5,
-            "y": 42
+            "y": 50
           },
           "id": 51,
           "interval": "10s",
@@ -2546,7 +2864,7 @@
             "h": 5,
             "w": 3,
             "x": 8,
-            "y": 42
+            "y": 50
           },
           "id": 18,
           "legend": {
@@ -2711,39 +3029,6 @@
           }
         },
         {
-          "alert": {
-            "conditions": [
-              {
-                "evaluator": {
-                  "params": [
-                    9500000
-                  ],
-                  "type": "gt"
-                },
-                "operator": {
-                  "type": "and"
-                },
-                "query": {
-                  "params": [
-                    "A",
-                    "5m",
-                    "now"
-                  ]
-                },
-                "reducer": {
-                  "params": [],
-                  "type": "avg"
-                },
-                "type": "query"
-              }
-            ],
-            "executionErrorState": "alerting",
-            "frequency": "60s",
-            "handler": 1,
-            "name": "Request Timings alert",
-            "noDataState": "alerting",
-            "notifications": []
-          },
           "aliasColors": {},
           "bars": false,
           "dashLength": 10,
@@ -2754,7 +3039,7 @@
             "h": 9,
             "w": 12,
             "x": 12,
-            "y": 42
+            "y": 50
           },
           "id": 43,
           "legend": {
@@ -2888,15 +3173,7 @@
               ]
             }
           ],
-          "thresholds": [
-            {
-              "colorMode": "critical",
-              "fill": true,
-              "line": true,
-              "op": "gt",
-              "value": 9500000
-            }
-          ],
+          "thresholds": [],
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
@@ -2948,7 +3225,7 @@
             "h": 9,
             "w": 4,
             "x": 2,
-            "y": 47
+            "y": 55
           },
           "id": 41,
           "interval": "1m",
@@ -3047,182 +3324,6 @@
               "logBase": 2,
               "max": null,
               "min": "1",
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "alert": {
-            "conditions": [
-              {
-                "evaluator": {
-                  "params": [
-                    0.7
-                  ],
-                  "type": "lt"
-                },
-                "operator": {
-                  "type": "and"
-                },
-                "query": {
-                  "params": [
-                    "A",
-                    "15m",
-                    "now"
-                  ]
-                },
-                "reducer": {
-                  "params": [],
-                  "type": "avg"
-                },
-                "type": "query"
-              }
-            ],
-            "executionErrorState": "alerting",
-            "for": "0m",
-            "frequency": "60s",
-            "handler": 1,
-            "name": "CVMFS Status alert",
-            "noDataState": "keep_state",
-            "notifications": []
-          },
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "fill": 1,
-          "gridPos": {
-            "h": 8,
-            "w": 6,
-            "x": 11,
-            "y": 51
-          },
-          "id": 55,
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": false,
-            "hideEmpty": false,
-            "hideZero": false,
-            "max": true,
-            "min": false,
-            "rightSide": true,
-            "show": false,
-            "sort": "current",
-            "sortDesc": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
-          "options": {},
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": true,
-          "targets": [
-            {
-              "alias": "[[tag_repo]]",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "repo"
-                  ],
-                  "type": "tag"
-                },
-                {
-                  "params": [
-                    "none"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "cvmfs.status",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "server",
-                  "operator": "=",
-                  "value": "cvmfs1-iu0.galaxyproject.org"
-                }
-              ]
-            }
-          ],
-          "thresholds": [
-            {
-              "colorMode": "critical",
-              "fill": true,
-              "line": true,
-              "op": "lt",
-              "value": 0.7
-            }
-          ],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "CVMFS Status",
-          "tooltip": {
-            "shared": true,
-            "sort": 2,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "decimals": null,
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
@@ -3463,7 +3564,7 @@
       "type": "row"
     }
   ],
-  "refresh": false,
+  "refresh": "15m",
   "schemaVersion": 18,
   "style": "dark",
   "tags": [
@@ -3504,5 +3605,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 190
+  "version": 192
 }
