@@ -2259,7 +2259,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": "30d",
+      "timeFrom": "14d",
       "timeRegions": [],
       "timeShift": null,
       "title": "Emails",
@@ -2344,7 +2344,7 @@
       "steppedLine": true,
       "targets": [
         {
-          "alias": "",
+          "alias": "running [[tag_handler]]",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -2366,6 +2366,7 @@
               "type": "fill"
             }
           ],
+          "hide": false,
           "measurement": "queue-overview",
           "orderByTime": "ASC",
           "policy": "default",
@@ -2396,6 +2397,12 @@
               "key": "handler",
               "operator": "=~",
               "value": "/handler_main/"
+            },
+            {
+              "condition": "AND",
+              "key": "state",
+              "operator": "=",
+              "value": "running"
             }
           ]
         }
@@ -2404,9 +2411,9 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Job per handler",
+      "title": "Job per handler (Running)",
       "tooltip": {
-        "shared": true,
+        "shared": false,
         "sort": 2,
         "value_type": "individual"
       },
@@ -3567,5 +3574,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 202
+  "version": 207
 }
