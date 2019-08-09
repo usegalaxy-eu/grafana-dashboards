@@ -2425,45 +2425,11 @@
       }
     },
     {
-      "alert": {
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                95
-              ],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "B",
-                "5m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "keep_state",
-        "for": "0m",
-        "frequency": "60s",
-        "handler": 1,
-        "name": "Disk Usage (NFS Mounts) alert",
-        "noDataState": "no_data",
-        "notifications": []
-      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "fill": 0,
+      "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
@@ -2471,15 +2437,16 @@
         "x": 9,
         "y": 31
       },
-      "id": 40,
+      "id": 68,
+      "interval": "6h",
       "legend": {
         "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
+        "avg": true,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
         "max": true,
-        "min": true,
+        "min": false,
         "rightSide": true,
         "show": false,
         "sort": "current",
@@ -2501,11 +2468,10 @@
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": false,
+      "steppedLine": true,
       "targets": [
         {
-          "alias": "[[tag_device]]",
-          "dsType": "influxdb",
+          "alias": "[[tag_group]]",
           "groupBy": [
             {
               "params": [
@@ -2515,39 +2481,27 @@
             },
             {
               "params": [
-                "host"
+                "group"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "path"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "device"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "none"
+                "-1"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "disk",
+          "measurement": "cleanup_datasets",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "B",
+          "refId": "A",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "used_percent"
+                  "runtime"
                 ],
                 "type": "field"
               },
@@ -2557,41 +2511,14 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "fstype",
-              "operator": "=",
-              "value": "nfs"
-            },
-            {
-              "condition": "AND",
-              "key": "host",
-              "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
-            },
-            {
-              "condition": "OR",
-              "key": "fstype",
-              "operator": "=",
-              "value": "nfs4"
-            }
-          ]
+          "tags": []
         }
       ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 95,
-          "yaxis": "left"
-        }
-      ],
-      "timeFrom": null,
+      "thresholds": [],
+      "timeFrom": "7d",
       "timeRegions": [],
       "timeShift": null,
-      "title": "Disk Usage (NFS Mounts)",
+      "title": "Cleanup Datasets Runtime",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -2609,9 +2536,9 @@
         {
           "decimals": null,
           "format": "short",
-          "label": "",
+          "label": null,
           "logBase": 1,
-          "max": "100",
+          "max": "1",
           "min": "0",
           "show": true
         },
@@ -2775,28 +2702,61 @@
       }
     },
     {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                95
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "B",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "keep_state",
+        "for": "0m",
+        "frequency": "60s",
+        "handler": 1,
+        "name": "Disk Usage (NFS Mounts) alert",
+        "noDataState": "no_data",
+        "notifications": []
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "fill": 1,
+      "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
-        "w": 5,
-        "x": 9,
-        "y": 37
+        "w": 6,
+        "x": 18,
+        "y": 31
       },
-      "id": 68,
-      "interval": "6h",
+      "id": 40,
       "legend": {
         "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "hideEmpty": false,
-        "hideZero": false,
+        "avg": false,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
         "max": true,
-        "min": false,
+        "min": true,
         "rightSide": true,
         "show": false,
         "sort": "current",
@@ -2818,10 +2778,11 @@
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": true,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "[[tag_group]]",
+          "alias": "[[tag_device]]",
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
@@ -2831,27 +2792,39 @@
             },
             {
               "params": [
-                "group"
+                "host"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "-1"
+                "path"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "device"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "cleanup_datasets",
+          "measurement": "disk",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "A",
+          "refId": "B",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "runtime"
+                  "used_percent"
                 ],
                 "type": "field"
               },
@@ -2861,14 +2834,41 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "fstype",
+              "operator": "=",
+              "value": "nfs"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            },
+            {
+              "condition": "OR",
+              "key": "fstype",
+              "operator": "=",
+              "value": "nfs4"
+            }
+          ]
         }
       ],
-      "thresholds": [],
-      "timeFrom": "7d",
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 95,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Cleanup Datasets Runtime",
+      "title": "Disk Usage (NFS Mounts)",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -2886,9 +2886,9 @@
         {
           "decimals": null,
           "format": "short",
-          "label": null,
+          "label": "",
           "logBase": 1,
-          "max": "1",
+          "max": "100",
           "min": "0",
           "show": true
         },
@@ -2912,7 +2912,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 37
       },
       "id": 53,
       "panels": [
@@ -4031,5 +4031,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 209
+  "version": 210
 }
