@@ -13,6 +13,7 @@ Galaxy Condor Cluster | galaxy,cloud | 62 | [Live](https://stats.galaxyproject.e
 Galaxy Database | migrated,infrastructure | 27 | [Live](https://stats.galaxyproject.eu/d/000000019) | [File](./Galaxy%20Database.json)
 Galaxy Docker Cluster | galaxy,docker | 9 | [Live](https://stats.galaxyproject.eu/d/000000024) | [File](./Galaxy%20Docker%20Cluster.json)
 Galaxy User Statistics | galaxy,migrated | 94 | [Live](https://stats.galaxyproject.eu/d/000000012) | [File](./Galaxy%20User%20Statistics.json)
+GitHub |  | 1 | [Live](https://stats.galaxyproject.eu/d/Wb1wN7dZz) | [File](./GitHub.json)
 InfluxDB |  | 11 | [Live](https://stats.galaxyproject.eu/d/000000011) | [File](./InfluxDB.json)
 Jobs Dashboard |  | 35 | [Live](https://stats.galaxyproject.eu/d/000000034) | [File](./Jobs%20Dashboard.json)
 Node Detail - Infrastructure | infrastructure,galaxy,migrated | 72 | [Live](https://stats.galaxyproject.eu/d/000000023) | [File](./Node%20Detail%20-%20Infrastructure.json)
