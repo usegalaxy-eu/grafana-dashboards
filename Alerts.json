@@ -1353,6 +1353,18 @@
               "key": "service",
               "operator": "=~",
               "value": "/handler/"
+            },
+            {
+              "condition": "AND",
+              "key": "service",
+              "operator": "!=",
+              "value": "galaxy-handler@10"
+            },
+            {
+              "condition": "AND",
+              "key": "service",
+              "operator": "!=",
+              "value": "galaxy-handler@11"
             }
           ]
         }
@@ -4031,5 +4043,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 210
+  "version": 211
 }
