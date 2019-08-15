@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1562230672672,
+  "iteration": 1565894016222,
   "links": [],
   "panels": [
     {
@@ -893,7 +893,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 13
       },
@@ -1014,8 +1014,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
-        "x": 5,
+        "w": 4,
+        "x": 4,
         "y": 13
       },
       "hideTimeOverride": true,
@@ -1136,7 +1136,7 @@
       "gridPos": {
         "h": 3,
         "w": 5,
-        "x": 10,
+        "x": 8,
         "y": 13
       },
       "hideTimeOverride": true,
@@ -1237,12 +1237,254 @@
       "valueName": "total"
     },
     {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Galaxy Historical",
+      "format": "s",
+      "gauge": {
+        "maxValue": 1000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 13,
+        "y": 13
+      },
+      "hideTimeOverride": true,
+      "id": 65,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "s",
+      "postfixFontSize": "150%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "sum",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "24h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server-allocated-cpu",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "cpu_seconds"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "job_runner_name",
+              "operator": "=",
+              "value": "pulsar_eu_de01"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "timeShift": null,
+      "title": "Pulsar Freiburg (Test instance)",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Galaxy Historical",
+      "format": "s",
+      "gauge": {
+        "maxValue": 1000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 18,
+        "y": 13
+      },
+      "hideTimeOverride": true,
+      "id": 66,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "s",
+      "postfixFontSize": "150%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "sum",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "24h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server-allocated-cpu",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "cpu_seconds"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "job_runner_name",
+              "operator": "=",
+              "value": "pulsar_eu_it01"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "timeShift": null,
+      "title": "Pulsar Italy",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
       "content": "This information is calculated from the assigned `galaxy_slots` multiplied by `runtime_seconds` for each job. It will not calculate the exact CPU usage but it gives and approximation for what was allocated on our infrastructure, across multiple clouds.",
       "gridPos": {
         "h": 3,
         "w": 9,
-        "x": 15,
-        "y": 13
+        "x": 7,
+        "y": 16
       },
       "id": 60,
       "links": [],
@@ -1258,11 +1500,12 @@
       "dashes": false,
       "datasource": "Galaxy Historical",
       "fill": 2,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 16
+        "y": 19
       },
       "id": 52,
       "legend": {
@@ -1279,7 +1522,9 @@
       "linewidth": 3,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1382,11 +1627,12 @@
       "dashes": false,
       "datasource": "Galaxy Historical",
       "fill": 2,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 16
+        "y": 19
       },
       "id": 53,
       "legend": {
@@ -1403,7 +1649,9 @@
       "linewidth": 3,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -1505,7 +1753,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 26
       },
       "id": 19,
       "panels": [
@@ -2159,7 +2407,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 27
       },
       "id": 31,
       "panels": [],
@@ -2179,7 +2427,7 @@
         "h": 9,
         "w": 7,
         "x": 0,
-        "y": 25
+        "y": 28
       },
       "id": 3,
       "links": [],
@@ -2286,7 +2534,7 @@
         "h": 9,
         "w": 8,
         "x": 7,
-        "y": 25
+        "y": 28
       },
       "id": 32,
       "links": [],
@@ -2393,7 +2641,7 @@
         "h": 9,
         "w": 9,
         "x": 15,
-        "y": 25
+        "y": 28
       },
       "hideTimeOverride": true,
       "id": 17,
@@ -2512,7 +2760,7 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 34
+        "y": 37
       },
       "id": 4,
       "links": [],
@@ -2619,7 +2867,7 @@
         "h": 9,
         "w": 6,
         "x": 6,
-        "y": 34
+        "y": 37
       },
       "id": 12,
       "links": [],
@@ -2726,7 +2974,7 @@
         "h": 9,
         "w": 6,
         "x": 12,
-        "y": 34
+        "y": 37
       },
       "id": 51,
       "links": [],
@@ -2833,7 +3081,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 34
+        "y": 37
       },
       "id": 50,
       "links": [],
@@ -2933,7 +3181,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 46
       },
       "id": 34,
       "panels": [],
@@ -2953,7 +3201,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 44
+        "y": 47
       },
       "id": 13,
       "links": [],
@@ -3049,7 +3297,7 @@
     }
   ],
   "refresh": "15m",
-  "schemaVersion": 18,
+  "schemaVersion": 19,
   "style": "dark",
   "tags": [
     "galaxy",
@@ -3125,5 +3373,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 94
+  "version": 98
 }
