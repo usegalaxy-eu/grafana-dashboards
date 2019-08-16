@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1565894016222,
+  "iteration": 1565956505479,
   "links": [],
   "panels": [
     {
@@ -1103,7 +1103,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Backofen Cluster",
+      "title": "AG Backofen (HPC)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -1135,7 +1135,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
+        "w": 4,
         "x": 8,
         "y": 13
       },
@@ -1256,8 +1256,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
-        "x": 13,
+        "w": 4,
+        "x": 12,
         "y": 13
       },
       "hideTimeOverride": true,
@@ -1345,7 +1345,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Pulsar Freiburg (Test instance)",
+      "title": "Freiburg (Pulsar Test instance - de.NBI cloud)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -1377,8 +1377,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
-        "x": 18,
+        "w": 3,
+        "x": 16,
         "y": 13
       },
       "hideTimeOverride": true,
@@ -1467,6 +1467,127 @@
       "timeFrom": "1d",
       "timeShift": null,
       "title": "Pulsar Italy",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Galaxy Historical",
+      "format": "s",
+      "gauge": {
+        "maxValue": 1000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 19,
+        "y": 13
+      },
+      "hideTimeOverride": true,
+      "id": 67,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "s",
+      "postfixFontSize": "150%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "sum",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "24h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server-allocated-cpu",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "cpu_seconds"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "job_runner_name",
+              "operator": "=",
+              "value": "pulsar_eu_be01"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "timeShift": null,
+      "title": "Belgium VIB",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -3373,5 +3494,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 98
+  "version": 100
 }
