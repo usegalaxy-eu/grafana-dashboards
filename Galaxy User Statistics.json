@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1565956505479,
+  "iteration": 1566045746712,
   "links": [],
   "panels": [
     {
@@ -1377,7 +1377,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
+        "w": 4,
         "x": 16,
         "y": 13
       },
@@ -1499,7 +1499,7 @@
       "gridPos": {
         "h": 3,
         "w": 3,
-        "x": 19,
+        "x": 20,
         "y": 13
       },
       "hideTimeOverride": true,
@@ -3494,5 +3494,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 100
+  "version": 101
 }
