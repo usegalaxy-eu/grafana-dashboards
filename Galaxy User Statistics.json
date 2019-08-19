@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1566045746712,
+  "iteration": 1566204486426,
   "links": [],
   "panels": [
     {
@@ -1382,7 +1382,7 @@
         "y": 13
       },
       "hideTimeOverride": true,
-      "id": 66,
+      "id": 68,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1458,7 +1458,7 @@
             {
               "key": "job_runner_name",
               "operator": "=",
-              "value": "pulsar_eu_it01"
+              "value": "pulsar_eu_de02"
             }
           ]
         }
@@ -1466,7 +1466,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Pulsar Italy",
+      "title": "Tuebingen (de.NBI cloud)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -1498,7 +1498,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
+        "w": 4,
         "x": 20,
         "y": 13
       },
@@ -1613,6 +1613,127 @@
       "options": {},
       "title": "Compute Time overview",
       "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Galaxy Historical",
+      "format": "s",
+      "gauge": {
+        "maxValue": 1000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 16,
+        "y": 16
+      },
+      "hideTimeOverride": true,
+      "id": 66,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "s",
+      "postfixFontSize": "150%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "sum",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "24h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server-allocated-cpu",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "cpu_seconds"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "job_runner_name",
+              "operator": "=",
+              "value": "pulsar_eu_it01"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "timeShift": null,
+      "title": "Pulsar Italy",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
     },
     {
       "aliasColors": {},
@@ -3494,5 +3615,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 101
+  "version": 103
 }
