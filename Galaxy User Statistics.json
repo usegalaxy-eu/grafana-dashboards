@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1566204486426,
+  "iteration": 1566261321520,
   "links": [],
   "panels": [
     {
@@ -1246,6 +1246,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
+      "decimals": 2,
       "format": "s",
       "gauge": {
         "maxValue": 1000,
@@ -1367,6 +1368,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
+      "decimals": 2,
       "format": "s",
       "gauge": {
         "maxValue": 1000,
@@ -1488,6 +1490,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
+      "decimals": 2,
       "format": "s",
       "gauge": {
         "maxValue": 1000,
@@ -1624,6 +1627,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
+      "decimals": 2,
       "format": "s",
       "gauge": {
         "maxValue": 1000,
@@ -3615,5 +3619,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 103
+  "version": 104
 }
