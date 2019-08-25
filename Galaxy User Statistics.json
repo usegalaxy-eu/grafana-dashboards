@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1566261321520,
+  "iteration": 1566764711626,
   "links": [],
   "panels": [
     {
@@ -848,7 +848,7 @@
       "content": "<a href=\"https://usegalaxy.eu/login\" target=\"_blank\"><img src=\"https://elixir-europe.org/sites/default/files/styles/right-xlarge/public/images/schemaartboard_1.png\" height=\"200px\"></a>",
       "gridPos": {
         "h": 6,
-        "w": 19,
+        "w": 5,
         "x": 5,
         "y": 6
       },
@@ -859,6 +859,127 @@
       "title": "",
       "transparent": true,
       "type": "text"
+    },
+    {
+      "circleMaxSize": 30,
+      "circleMinSize": "10",
+      "colors": [
+        "#F2CC0C",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)",
+        "#3274D9"
+      ],
+      "datasource": "Galaxy Historical",
+      "decimals": 0,
+      "description": "The European Galaxy server is built on the shoulders of our European ELIXIR partners. This map is providing you some impression of how many jobs are currently processed by external clouds across Europe. Each of the circles represents one ELIXIR partner that provides compute resources via a locally hosted pulsar server. The European Galaxy server is then submitting jobs to these pulsar servers and collects the inputs as soon as finished. If one of the sites is down Galaxy will attempt to resubmit the job to some other resources.",
+      "esMetric": "Count",
+      "gridPos": {
+        "h": 6,
+        "w": 7,
+        "x": 10,
+        "y": 6
+      },
+      "hideEmpty": false,
+      "hideZero": false,
+      "id": 69,
+      "initialZoom": "3",
+      "interval": "",
+      "jsonUrl": "https://gist.githubusercontent.com/bgruening/4ddad3cc1f51ad779efe2e9456a589d7/raw/7bdf9b55584c039ece836be8156d11bc5f4f3480/galaxy_europe_locations.json",
+      "links": [],
+      "locationData": "json endpoint",
+      "mapCenter": "Europe",
+      "mapCenterLatitude": 46,
+      "mapCenterLongitude": 14,
+      "maxDataPoints": 1,
+      "mouseWheelZoom": false,
+      "options": {},
+      "pluginVersion": "6.3.3",
+      "showLegend": true,
+      "stickyLabels": false,
+      "tableQueryOptions": {
+        "geohashField": "geohash",
+        "latitudeField": "latitude",
+        "longitudeField": "longitude",
+        "metricField": "metric",
+        "queryType": "geohash"
+      },
+      "targets": [
+        {
+          "alias": "[[tag_job_runner_name]]",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "1h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "job_runner_name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server-jobs",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "job_runner_name",
+              "operator": "!=",
+              "value": "__unknown__"
+            },
+            {
+              "condition": "AND",
+              "key": "state",
+              "operator": "=",
+              "value": "queued"
+            },
+            {
+              "condition": "OR",
+              "key": "state",
+              "operator": "=",
+              "value": "running"
+            },
+            {
+              "condition": "AND",
+              "key": "job_runner_name",
+              "operator": "!=",
+              "value": "condor"
+            }
+          ]
+        }
+      ],
+      "thresholds": "0,10,50",
+      "title": "Jobs processing across Europe",
+      "type": "grafana-worldmap-panel",
+      "unitPlural": "runnings jobs",
+      "unitSingle": "",
+      "unitSingular": "running job",
+      "valueName": "current"
     },
     {
       "collapsed": false,
@@ -3555,8 +3676,9 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "7d",
-          "value": "7d"
+          "tags": [],
+          "text": "365d",
+          "value": "365d"
         },
         "hide": 0,
         "includeAll": false,
@@ -3570,7 +3692,7 @@
             "value": "1d"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "7d",
             "value": "7d"
           },
@@ -3585,7 +3707,7 @@
             "value": "90d"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "365d",
             "value": "365d"
           }
@@ -3619,5 +3741,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 104
+  "version": 112
 }

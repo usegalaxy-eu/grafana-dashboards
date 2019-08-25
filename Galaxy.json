@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1562227025486,
+  "iteration": 1566764442901,
   "links": [],
   "panels": [
     {
@@ -39,6 +39,7 @@
       "dashLength": 10,
       "dashes": false,
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 5,
@@ -62,7 +63,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -169,6 +172,7 @@
       "dashLength": 10,
       "dashes": false,
       "fill": 0,
+      "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 5,
@@ -189,7 +193,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -348,6 +354,7 @@
       "dashLength": 10,
       "dashes": false,
       "fill": 10,
+      "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 5,
@@ -375,7 +382,9 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "null as zero",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -495,6 +504,7 @@
       "dashLength": 10,
       "dashes": false,
       "fill": 10,
+      "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 5,
@@ -522,7 +532,9 @@
       "linewidth": 0,
       "links": [],
       "nullPointMode": "null as zero",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -671,6 +683,7 @@
       "dashLength": 10,
       "dashes": false,
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 14,
         "w": 24,
@@ -698,7 +711,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null as zero",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -824,6 +839,7 @@
       "dashLength": 10,
       "dashes": false,
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 10,
@@ -851,7 +867,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 5,
       "points": false,
@@ -970,6 +988,7 @@
       "decimals": null,
       "description": "",
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 10,
         "w": 24,
@@ -996,7 +1015,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 1,
       "points": true,
@@ -2765,7 +2786,7 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 18,
+  "schemaVersion": 19,
   "style": "dark",
   "tags": [
     "galaxy"
@@ -2843,5 +2864,5 @@
   "timezone": "browser",
   "title": "Galaxy",
   "uid": "000000004",
-  "version": 289
+  "version": 290
 }
