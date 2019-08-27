@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1566847774397,
+  "iteration": 1566912017304,
   "links": [],
   "panels": [
     {
@@ -846,7 +846,7 @@
       "valueName": "current"
     },
     {
-      "circleMaxSize": 30,
+      "circleMaxSize": "10",
       "circleMinSize": "10",
       "colors": [
         "#F2CC0C",
@@ -868,7 +868,7 @@
       "hideZero": false,
       "id": 69,
       "initialZoom": "3",
-      "interval": "",
+      "interval": "1m",
       "jsonUrl": "https://raw.githubusercontent.com/usegalaxy-eu/pulsar-servers/master/servers.json",
       "links": [],
       "locationData": "json endpoint",
@@ -876,7 +876,7 @@
       "mapCenterLatitude": 46,
       "mapCenterLongitude": 14,
       "maxDataPoints": 1,
-      "mouseWheelZoom": false,
+      "mouseWheelZoom": true,
       "options": {},
       "pluginVersion": "6.3.3",
       "showLegend": true,
@@ -912,9 +912,12 @@
               "type": "fill"
             }
           ],
+          "hide": false,
           "measurement": "server-jobs",
           "orderByTime": "ASC",
           "policy": "default",
+          "query": "SELECT last(\"count\") FROM \"server-jobs\" WHERE (\"job_runner_name\" != 'condor' AND \"job_runner_name\" != '__unknown__') AND (\"state\" = 'queued' OR \"state\" = 'running') AND $timeFilter GROUP BY time(24h), \"job_runner_name\" fill(none)",
+          "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -935,6 +938,12 @@
             {
               "key": "job_runner_name",
               "operator": "!=",
+              "value": "condor"
+            },
+            {
+              "condition": "AND",
+              "key": "job_runner_name",
+              "operator": "!=",
               "value": "__unknown__"
             },
             {
@@ -948,12 +957,6 @@
               "key": "state",
               "operator": "=",
               "value": "running"
-            },
-            {
-              "condition": "AND",
-              "key": "job_runner_name",
-              "operator": "!=",
-              "value": "condor"
             }
           ]
         }
@@ -3867,5 +3870,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 122
+  "version": 126
 }
