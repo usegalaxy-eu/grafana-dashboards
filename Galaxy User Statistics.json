@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1566912017304,
+  "iteration": 1567020434692,
   "links": [],
   "panels": [
     {
@@ -846,15 +846,16 @@
       "valueName": "current"
     },
     {
-      "circleMaxSize": "10",
+      "circleMaxSize": "30",
       "circleMinSize": "10",
       "colors": [
         "#F2CC0C",
         "rgba(237, 129, 40, 0.89)",
         "rgba(50, 172, 45, 0.97)",
-        "#3274D9"
+        "#3274D9",
+        "#E02F44",
+        "rgba(7, 38, 5, 0.97)"
       ],
-      "datasource": "Galaxy Historical",
       "decimals": 0,
       "description": "The European Galaxy server is built on the shoulders of our European ELIXIR partners. This map is providing you some impression of how many jobs are currently processed by external clouds across Europe. Each of the circles represents one ELIXIR partner that provides compute resources via a locally hosted pulsar server. The European Galaxy server is then submitting jobs to these pulsar servers and collects the inputs as soon as finished. If one of the sites is down Galaxy will attempt to resubmit the job to some other resources.",
       "esMetric": "Count",
@@ -867,8 +868,8 @@
       "hideEmpty": false,
       "hideZero": false,
       "id": 69,
-      "initialZoom": "3",
-      "interval": "1m",
+      "initialZoom": "4",
+      "interval": "",
       "jsonUrl": "https://raw.githubusercontent.com/usegalaxy-eu/pulsar-servers/master/servers.json",
       "links": [],
       "locationData": "json endpoint",
@@ -913,10 +914,10 @@
             }
           ],
           "hide": false,
-          "measurement": "server-jobs",
+          "measurement": "queue-overview",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT last(\"count\") FROM \"server-jobs\" WHERE (\"job_runner_name\" != 'condor' AND \"job_runner_name\" != '__unknown__') AND (\"state\" = 'queued' OR \"state\" = 'running') AND $timeFilter GROUP BY time(24h), \"job_runner_name\" fill(none)",
+          "query": "SELECT last(\"count\") FROM \"queue-overview\" WHERE (\"job_runner_name\" =~ /^pulsar_.*/ AND \"job_runner_name\" != 'condor') AND (\"state\" = 'queued' OR \"state\" = 'running') GROUP BY time(10m), \"job_runner_name\" fill(none)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -937,14 +938,8 @@
           "tags": [
             {
               "key": "job_runner_name",
-              "operator": "!=",
-              "value": "condor"
-            },
-            {
-              "condition": "AND",
-              "key": "job_runner_name",
-              "operator": "!=",
-              "value": "__unknown__"
+              "operator": "=~",
+              "value": "/^pulsar_.*/"
             },
             {
               "condition": "AND",
@@ -957,11 +952,17 @@
               "key": "state",
               "operator": "=",
               "value": "running"
+            },
+            {
+              "condition": "AND",
+              "key": "job_runner_name",
+              "operator": "!=",
+              "value": "condor"
             }
           ]
         }
       ],
-      "thresholds": "0,10,50",
+      "thresholds": "0,5,10,50,100",
       "timeFrom": null,
       "timeShift": null,
       "title": "Jobs processing across Europe",
@@ -3815,12 +3816,12 @@
         "name": "time_interval",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "1d",
             "value": "1d"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "7d",
             "value": "7d"
           },
@@ -3870,5 +3871,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 126
+  "version": 133
 }
