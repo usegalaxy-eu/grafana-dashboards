@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1567020434692,
+  "iteration": 1567182891689,
   "links": [],
   "panels": [
     {
@@ -846,7 +846,7 @@
       "valueName": "current"
     },
     {
-      "circleMaxSize": "30",
+      "circleMaxSize": "15",
       "circleMinSize": "10",
       "colors": [
         "#F2CC0C",
@@ -3871,5 +3871,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 133
+  "version": 134
 }
