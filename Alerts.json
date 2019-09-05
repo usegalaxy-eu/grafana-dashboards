@@ -932,6 +932,12 @@
             },
             {
               "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
                 "none"
               ],
               "type": "fill"
@@ -4207,5 +4213,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 221
+  "version": 222
 }
