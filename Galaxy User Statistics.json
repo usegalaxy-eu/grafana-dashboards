@@ -16,11 +16,12 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1568722724667,
+  "iteration": 1570093275728,
   "links": [],
   "panels": [
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -92,7 +93,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -396,8 +397,8 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 5,
-        "w": 4,
+        "h": 3,
+        "w": 12,
         "x": 12,
         "y": 1
       },
@@ -511,10 +512,10 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 5,
-        "w": 4,
-        "x": 16,
-        "y": 1
+        "h": 4,
+        "w": 12,
+        "x": 12,
+        "y": 4
       },
       "hideTimeOverride": true,
       "id": 10,
@@ -608,122 +609,6 @@
       "valueName": "total"
     },
     {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "rgba(245, 54, 54, 0.9)",
-        "rgba(237, 129, 40, 0.89)",
-        "rgba(50, 172, 45, 0.97)"
-      ],
-      "datasource": "Galaxy Historical",
-      "decimals": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 1000,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 4,
-        "x": 20,
-        "y": 1
-      },
-      "hideTimeOverride": true,
-      "id": 9,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": true,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "1d"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "server-datasets",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "count"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "sum"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": "1d",
-      "timeShift": null,
-      "title": "Datasets",
-      "type": "singlestat",
-      "valueFontSize": "150%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "total"
-    },
-    {
       "circleMaxSize": "15",
       "circleMinSize": "10",
       "colors": [
@@ -734,6 +619,7 @@
         "#E02F44",
         "rgba(7, 38, 5, 0.97)"
       ],
+      "datasource": null,
       "decimals": 0,
       "description": "The European Galaxy server is built on the shoulders of our European ELIXIR partners. This map is providing you some impression of how many jobs are currently processed by external clouds across Europe. Each of the circles represents one ELIXIR partner that provides compute resources via a locally hosted pulsar server. The European Galaxy server is then submitting jobs to these pulsar servers and collects the inputs as soon as finished. If one of the sites is down Galaxy will attempt to resubmit the job to some other resources.",
       "esMetric": "Count",
@@ -911,7 +797,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": true
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -973,23 +859,124 @@
       "valueName": "current"
     },
     {
-      "content": "<a href=\"https://usegalaxy.eu/login\" target=\"_blank\"><img src=\"https://elixir-europe.org/sites/default/files/styles/right-xlarge/public/images/schemaartboard_1.png\" height=\"200px\"></a>",
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Galaxy Historical",
+      "decimals": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 1000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 12,
         "x": 12,
-        "y": 6
+        "y": 8
       },
-      "id": 62,
+      "hideTimeOverride": true,
+      "id": 9,
+      "interval": null,
       "links": [],
-      "mode": "html",
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
       "options": {},
-      "title": "",
-      "transparent": true,
-      "type": "text"
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "1d"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server-datasets",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "timeShift": null,
+      "title": "Datasets",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1003,6 +990,7 @@
     },
     {
       "content": "This information is calculated from the assigned `galaxy_slots` multiplied by `runtime_seconds` for each job. It will not calculate the exact CPU usage but it gives and approximation for what was allocated on our infrastructure, across multiple clouds.",
+      "datasource": null,
       "gridPos": {
         "h": 3,
         "w": 8,
@@ -1077,7 +1065,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -1199,7 +1187,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -1320,7 +1308,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -1441,7 +1429,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -1563,7 +1551,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -1684,7 +1672,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -1806,7 +1794,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -1928,7 +1916,7 @@
         "lineColor": "rgb(31, 120, 193)",
         "show": false
       },
-      "tableColumn": "sum",
+      "tableColumn": "",
       "targets": [
         {
           "dsType": "influxdb",
@@ -2245,6 +2233,7 @@
     },
     {
       "collapsed": true,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2899,6 +2888,7 @@
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3673,6 +3663,7 @@
     },
     {
       "collapsed": false,
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3793,7 +3784,7 @@
     }
   ],
   "refresh": "15m",
-  "schemaVersion": 19,
+  "schemaVersion": 20,
   "style": "dark",
   "tags": [
     "galaxy",
@@ -3871,5 +3862,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 135
+  "version": 136
 }
