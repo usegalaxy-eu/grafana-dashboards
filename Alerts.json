@@ -1334,14 +1334,20 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "disk",
+              "operator": "=",
+              "value": "dnb02"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": "24h",
       "timeRegions": [],
       "timeShift": null,
-      "title": "Cluster node access to NFS speed",
+      "title": "Access times on dnb02",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -1533,8 +1539,8 @@
         "x": 0,
         "y": 19
       },
-      "id": 61,
-      "interval": "1m",
+      "id": 77,
+      "interval": "",
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -1553,7 +1559,7 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "nullPointMode": "null as zero",
+      "nullPointMode": "null",
       "options": {
         "dataLinks": []
       },
@@ -1561,13 +1567,20 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "combined",
+          "color": "#052b51",
+          "fill": 0,
+          "linewidth": 2
+        }
+      ],
       "spaceLength": 10,
-      "stack": true,
+      "stack": false,
       "steppedLine": true,
       "targets": [
         {
-          "alias": "[[tag_handler]]",
+          "alias": "[[tag_server]]",
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1578,18 +1591,19 @@
             },
             {
               "params": [
-                "handler"
+                "server"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "jobs-queued-internal-by-handler",
+          "hide": false,
+          "measurement": "disk-access-time",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -1598,27 +1612,33 @@
             [
               {
                 "params": [
-                  "count"
+                  "seconds"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "sum"
+                "type": "mean"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "disk",
+              "operator": "=",
+              "value": "sn03tools"
+            }
+          ]
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
+      "timeFrom": "24h",
       "timeRegions": [],
       "timeShift": null,
-      "title": "Jobs queued but lacking cluster ID",
+      "title": "Access times to sn03",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1632,11 +1652,11 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "short",
+          "format": "s",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -1975,46 +1995,12 @@
       }
     },
     {
-      "alert": {
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                6
-              ],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "B",
-                "1h",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "keep_state",
-        "for": "1m",
-        "frequency": "60s",
-        "handler": 1,
-        "name": "Workflow Invocation States alert",
-        "noDataState": "keep_state",
-        "notifications": []
-      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 2,
+      "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
@@ -2022,7 +2008,7 @@
         "x": 0,
         "y": 25
       },
-      "id": 45,
+      "id": 61,
       "interval": "1m",
       "legend": {
         "alignAsTable": true,
@@ -2040,7 +2026,7 @@
         "values": true
       },
       "lines": true,
-      "linewidth": 3,
+      "linewidth": 1,
       "links": [],
       "nullPointMode": "null as zero",
       "options": {
@@ -2052,7 +2038,7 @@
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
-      "stack": false,
+      "stack": true,
       "steppedLine": true,
       "targets": [
         {
@@ -2078,7 +2064,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "workflow-invocation-status",
+          "measurement": "jobs-queued-internal-by-handler",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -2100,23 +2086,14 @@
           "tags": []
         }
       ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 6,
-          "yaxis": "left"
-        }
-      ],
+      "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Workflow Invocation States",
+      "title": "Jobs queued but lacking cluster ID",
       "tooltip": {
         "shared": true,
-        "sort": 2,
+        "sort": 0,
         "value_type": "individual"
       },
       "type": "graph",
@@ -2535,12 +2512,11 @@
     },
     {
       "alert": {
-        "alertRuleTags": {},
         "conditions": [
           {
             "evaluator": {
               "params": [
-                2400
+                6
               ],
               "type": "gt"
             },
@@ -2549,8 +2525,8 @@
             },
             "query": {
               "params": [
-                "A",
-                "60m",
+                "B",
+                "1h",
                 "now"
               ]
             },
@@ -2562,23 +2538,19 @@
           }
         ],
         "executionErrorState": "keep_state",
-        "for": "5m",
-        "frequency": "5m",
+        "for": "1m",
+        "frequency": "60s",
         "handler": 1,
-        "name": "Handler not logging",
+        "name": "Workflow Invocation States alert",
         "noDataState": "keep_state",
-        "notifications": [
-          {
-            "id": 2
-          }
-        ]
+        "notifications": []
       },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 0,
+      "fill": 2,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
@@ -2586,8 +2558,8 @@
         "x": 0,
         "y": 31
       },
-      "id": 56,
-      "interval": "2m",
+      "id": 45,
+      "interval": "1m",
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -2604,9 +2576,9 @@
         "values": true
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 3,
       "links": [],
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -2617,10 +2589,11 @@
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": false,
+      "steppedLine": true,
       "targets": [
         {
-          "alias": "[[tag_service]] on [[tag_host]]",
+          "alias": "[[tag_handler]]",
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
@@ -2630,13 +2603,7 @@
             },
             {
               "params": [
-                "service"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "host"
+                "handler"
               ],
               "type": "tag"
             },
@@ -2647,44 +2614,26 @@
               "type": "fill"
             }
           ],
-          "measurement": "journalctl.lastlog",
+          "measurement": "workflow-invocation-status",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "A",
+          "refId": "B",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "seconds"
+                  "count"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "sum"
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "service",
-              "operator": "=~",
-              "value": "/handler/"
-            },
-            {
-              "condition": "AND",
-              "key": "service",
-              "operator": "!=",
-              "value": "galaxy-handler@10"
-            },
-            {
-              "condition": "AND",
-              "key": "service",
-              "operator": "!=",
-              "value": "galaxy-handler@11"
-            }
-          ]
+          "tags": []
         }
       ],
       "thresholds": [
@@ -2693,13 +2642,14 @@
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 2400
+          "value": 6,
+          "yaxis": "left"
         }
       ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Seconds since last handler log message",
+      "title": "Workflow Invocation States",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -2716,11 +2666,11 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "s",
+          "format": "short",
           "label": null,
           "logBase": 1,
-          "max": "3600",
-          "min": "0",
+          "max": null,
+          "min": null,
           "show": true
         },
         {
@@ -3067,12 +3017,51 @@
       }
     },
     {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                2400
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "60m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "keep_state",
+        "for": "5m",
+        "frequency": "5m",
+        "handler": 1,
+        "name": "Handler not logging",
+        "noDataState": "keep_state",
+        "notifications": [
+          {
+            "id": 2
+          }
+        ]
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 1,
+      "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
@@ -3080,7 +3069,8 @@
         "x": 0,
         "y": 37
       },
-      "id": 67,
+      "id": 56,
+      "interval": "2m",
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -3110,10 +3100,10 @@
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": true,
+      "steppedLine": false,
       "targets": [
         {
-          "alias": "[[tag_repo]]",
+          "alias": "[[tag_service]] on [[tag_host]]",
           "groupBy": [
             {
               "params": [
@@ -3123,18 +3113,24 @@
             },
             {
               "params": [
-                "repo"
+                "service"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "none"
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "cvmfs.status",
+          "measurement": "journalctl.lastlog",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -3143,7 +3139,7 @@
             [
               {
                 "params": [
-                  "value"
+                  "seconds"
                 ],
                 "type": "field"
               },
@@ -3155,18 +3151,38 @@
           ],
           "tags": [
             {
-              "key": "server",
-              "operator": "=",
-              "value": "cvmfs1-iu0.galaxyproject.org"
+              "key": "service",
+              "operator": "=~",
+              "value": "/handler/"
+            },
+            {
+              "condition": "AND",
+              "key": "service",
+              "operator": "!=",
+              "value": "galaxy-handler@10"
+            },
+            {
+              "condition": "AND",
+              "key": "service",
+              "operator": "!=",
+              "value": "galaxy-handler@11"
             }
           ]
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 2400
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "CVMFS Status",
+      "title": "Seconds since last handler log message",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -3183,11 +3199,11 @@
       "yaxes": [
         {
           "decimals": null,
-          "format": "short",
+          "format": "s",
           "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
+          "max": "3600",
+          "min": "0",
           "show": true
         },
         {
@@ -3690,6 +3706,144 @@
       }
     },
     {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 0,
+        "y": 43
+      },
+      "id": 67,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "[[tag_repo]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "repo"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "cvmfs.status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "server",
+              "operator": "=",
+              "value": "cvmfs1-iu0.galaxyproject.org"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CVMFS Status",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "alert": {
         "alertRuleTags": {},
         "conditions": [
@@ -3736,7 +3890,7 @@
         "h": 6,
         "w": 9,
         "x": 0,
-        "y": 43
+        "y": 49
       },
       "id": 55,
       "interval": "6h",
@@ -3872,7 +4026,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 55
       },
       "id": 53,
       "panels": [
@@ -4753,5 +4907,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 229
+  "version": 230
 }
