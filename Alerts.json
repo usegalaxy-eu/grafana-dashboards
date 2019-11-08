@@ -3501,6 +3501,7 @@
     },
     {
       "alert": {
+        "alertRuleTags": {},
         "conditions": [
           {
             "evaluator": {
@@ -3527,11 +3528,11 @@
           }
         ],
         "executionErrorState": "keep_state",
-        "for": "0m",
-        "frequency": "60s",
+        "for": "10m",
+        "frequency": "5m",
         "handler": 1,
         "name": "Disk Usage (NFS Mounts) alert",
-        "noDataState": "no_data",
+        "noDataState": "ok",
         "notifications": []
       },
       "aliasColors": {},
@@ -3660,8 +3661,7 @@
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 95,
-          "yaxis": "left"
+          "value": 95
         }
       ],
       "timeFrom": null,
@@ -4907,5 +4907,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 230
+  "version": 231
 }
