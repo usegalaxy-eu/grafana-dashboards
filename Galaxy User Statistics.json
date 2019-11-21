@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1574264505221,
+  "iteration": 1574324339468,
   "links": [],
   "panels": [
     {
@@ -619,7 +619,7 @@
         "#E02F44",
         "rgba(7, 38, 5, 0.97)"
       ],
-      "datasource": null,
+      "datasource": "Galaxy",
       "decimals": 0,
       "description": "The European Galaxy server is built on the shoulders of our European ELIXIR partners. This map is providing you some impression of how many jobs are currently processed by external clouds across Europe. Each of the circles represents one ELIXIR partner that provides compute resources via a locally hosted pulsar server. The European Galaxy server is then submitting jobs to these pulsar servers and collects the inputs as soon as finished. If one of the sites is down Galaxy will attempt to resubmit the job to some other resources.",
       "esMetric": "Count",
@@ -681,7 +681,7 @@
           "measurement": "queue-overview",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT last(\"count\") FROM \"queue-overview\" WHERE (\"job_runner_name\" =~ /^pulsar_.*/ AND \"job_runner_name\" != 'condor') AND (\"state\" = 'queued' OR \"state\" = 'running') GROUP BY time(10m), \"job_runner_name\" fill(none)",
+          "query": "SELECT last(\"count\") FROM \"queue-overview\" WHERE (\"job_runner_name\" =~ /^pulsar_.*/ AND \"job_runner_name\" != 'condor')  AND (\"state\" = 'queued' OR \"state\" = 'running')  GROUP BY time(10m), \"job_runner_name\" fill(none)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1030,7 +1030,7 @@
         "y": 13
       },
       "hideTimeOverride": true,
-      "id": 68,
+      "id": 65,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1106,7 +1106,7 @@
             {
               "key": "job_runner_name",
               "operator": "=",
-              "value": "pulsar_eu_de02"
+              "value": "pulsar_eu_de01"
             }
           ]
         }
@@ -1114,7 +1114,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Pulsar Germany (Tübingen - de.NBI cloud)",
+      "title": "Pulsar DE01(Freiburg - de.NBI cloud)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -1236,7 +1236,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Pulsar Italy (Bari)",
+      "title": "Pulsar IT01 (Bari - RECAS)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -1379,6 +1379,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
+      "decimals": 2,
       "format": "s",
       "gauge": {
         "maxValue": 1000,
@@ -1394,7 +1395,7 @@
         "y": 16
       },
       "hideTimeOverride": true,
-      "id": 56,
+      "id": 68,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1470,7 +1471,7 @@
             {
               "key": "job_runner_name",
               "operator": "=",
-              "value": "pulsar_eu_cz"
+              "value": "pulsar_eu_de02"
             }
           ]
         }
@@ -1478,7 +1479,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Pulsar Czech Republic (CESNET)",
+      "title": "Pulsar DE02 (Tübingen - de.NBI cloud)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -1516,7 +1517,7 @@
         "y": 16
       },
       "hideTimeOverride": true,
-      "id": 67,
+      "id": 72,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1592,7 +1593,7 @@
             {
               "key": "job_runner_name",
               "operator": "=",
-              "value": "pulsar_eu_be01"
+              "value": "pulsar_eu_it01"
             }
           ]
         }
@@ -1600,7 +1601,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Pulsar Belgium (VIB)",
+      "title": "Pulsar IT02 (Bari - RECAS)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -1759,7 +1760,7 @@
         "y": 19
       },
       "hideTimeOverride": true,
-      "id": 65,
+      "id": 71,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -1835,7 +1836,7 @@
             {
               "key": "job_runner_name",
               "operator": "=",
-              "value": "pulsar_eu_de01"
+              "value": "pulsar_eu_de03"
             }
           ]
         }
@@ -1843,7 +1844,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Pulsar Germany(Freiburg Test - de.NBI cloud)",
+      "title": "Pulsar DE03 (Freiburg - GPUs - de.NBI cloud)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -1879,6 +1880,249 @@
         "w": 8,
         "x": 16,
         "y": 19
+      },
+      "hideTimeOverride": true,
+      "id": 67,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "s",
+      "postfixFontSize": "150%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "24h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server-allocated-cpu",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "cpu_seconds"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "job_runner_name",
+              "operator": "=",
+              "value": "pulsar_eu_be01"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "timeShift": null,
+      "title": "Pulsar BE01 (Brussel - VIB)",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Galaxy Historical",
+      "format": "s",
+      "gauge": {
+        "maxValue": 1000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 8,
+        "y": 22
+      },
+      "hideTimeOverride": true,
+      "id": 56,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "s",
+      "postfixFontSize": "150%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "24h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server-allocated-cpu",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "cpu_seconds"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "job_runner_name",
+              "operator": "=",
+              "value": "pulsar_eu_cz"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "timeShift": null,
+      "title": "Pulsar Czech Republic (CESNET)",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Galaxy Historical",
+      "decimals": 2,
+      "format": "s",
+      "gauge": {
+        "maxValue": 1000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 16,
+        "y": 22
       },
       "hideTimeOverride": true,
       "id": 70,
@@ -1965,7 +2209,7 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Pulsar Portugal",
+      "title": "Pulsar PT01 (Lisbon - Tecnico ULisboa)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
@@ -1984,7 +2228,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 25
       },
       "id": 19,
       "panels": [
@@ -2909,7 +3153,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 26
       },
       "id": 31,
       "panels": [
@@ -3685,7 +3929,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 27
       },
       "id": 34,
       "panels": [
@@ -3825,7 +4069,7 @@
         "name": "time_interval",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "1d",
             "value": "1d"
           },
@@ -3845,7 +4089,7 @@
             "value": "90d"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "365d",
             "value": "365d"
           }
@@ -3880,5 +4124,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 137
+  "version": 138
 }
