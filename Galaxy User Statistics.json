@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1574324339468,
+  "iteration": 1574413329866,
   "links": [],
   "panels": [
     {
@@ -43,7 +43,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
-      "format": "none",
+      "format": "locale",
       "gauge": {
         "maxValue": 1000,
         "minValue": 0,
@@ -158,7 +158,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
-      "format": "none",
+      "format": "locale",
       "gauge": {
         "maxValue": 1000,
         "minValue": 0,
@@ -273,7 +273,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
-      "format": "none",
+      "format": "locale",
       "gauge": {
         "maxValue": 1000,
         "minValue": 0,
@@ -388,7 +388,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
-      "format": "none",
+      "format": "locale",
       "gauge": {
         "maxValue": 1000,
         "minValue": 0,
@@ -503,7 +503,7 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
-      "format": "none",
+      "format": "locale",
       "gauge": {
         "maxValue": 1000,
         "minValue": 0,
@@ -869,7 +869,7 @@
       ],
       "datasource": "Galaxy Historical",
       "decimals": null,
-      "format": "none",
+      "format": "locale",
       "gauge": {
         "maxValue": 1000,
         "minValue": 0,
@@ -1107,6 +1107,12 @@
               "key": "job_runner_name",
               "operator": "=",
               "value": "pulsar_eu_de01"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
             }
           ]
         }
@@ -1229,6 +1235,12 @@
               "key": "job_runner_name",
               "operator": "=",
               "value": "pulsar_eu_it01"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
             }
           ]
         }
@@ -1350,6 +1362,12 @@
               "key": "job_runner_name",
               "operator": "=",
               "value": "condor"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
             }
           ]
         }
@@ -1472,6 +1490,12 @@
               "key": "job_runner_name",
               "operator": "=",
               "value": "pulsar_eu_de02"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
             }
           ]
         }
@@ -1593,7 +1617,13 @@
             {
               "key": "job_runner_name",
               "operator": "=",
-              "value": "pulsar_eu_it01"
+              "value": "pulsar_eu_it02"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
             }
           ]
         }
@@ -1837,6 +1867,12 @@
               "key": "job_runner_name",
               "operator": "=",
               "value": "pulsar_eu_de03"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
             }
           ]
         }
@@ -1959,6 +1995,12 @@
               "key": "job_runner_name",
               "operator": "=",
               "value": "pulsar_eu_be01"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
             }
           ]
         }
@@ -2080,6 +2122,12 @@
               "key": "job_runner_name",
               "operator": "=",
               "value": "pulsar_eu_cz"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
             }
           ]
         }
@@ -2202,6 +2250,12 @@
               "key": "job_runner_name",
               "operator": "=",
               "value": "pulsar_eu_pt01"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
             }
           ]
         }
@@ -4124,5 +4178,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 138
+  "version": 141
 }
