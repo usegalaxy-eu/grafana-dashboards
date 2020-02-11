@@ -38,6 +38,7 @@
         "x": 0,
         "y": 0
       },
+      "hiddenSeries": false,
       "id": 74,
       "legend": {
         "avg": false,
@@ -260,6 +261,7 @@
         "x": 8,
         "y": 0
       },
+      "hiddenSeries": false,
       "id": 72,
       "legend": {
         "avg": false,
@@ -481,6 +483,7 @@
         "x": 16,
         "y": 0
       },
+      "hiddenSeries": false,
       "id": 76,
       "legend": {
         "avg": false,
@@ -864,6 +867,7 @@
         "x": 0,
         "y": 6
       },
+      "hiddenSeries": false,
       "id": 54,
       "legend": {
         "alignAsTable": true,
@@ -1093,6 +1097,7 @@
         "x": 9,
         "y": 6
       },
+      "hiddenSeries": false,
       "id": 63,
       "interval": "1m",
       "legend": {
@@ -1251,6 +1256,7 @@
         "x": 0,
         "y": 13
       },
+      "hiddenSeries": false,
       "id": 70,
       "interval": "",
       "legend": {
@@ -1399,6 +1405,7 @@
         "x": 9,
         "y": 13
       },
+      "hiddenSeries": false,
       "id": 62,
       "interval": "1m",
       "legend": {
@@ -1539,6 +1546,7 @@
         "x": 0,
         "y": 19
       },
+      "hiddenSeries": false,
       "id": 77,
       "interval": "",
       "legend": {
@@ -1674,6 +1682,42 @@
       }
     },
     {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                84
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "B",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "keep_state",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "message": "uWSGI socket queue is full, UI probably unresponsive for users",
+        "name": "uWSGI Socket queue alert",
+        "noDataState": "keep_state",
+        "notifications": []
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1687,6 +1731,7 @@
         "x": 9,
         "y": 19
       },
+      "hiddenSeries": false,
       "id": 59,
       "interval": "15s",
       "legend": {
@@ -1772,7 +1817,15 @@
           "tags": []
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 84
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -1865,6 +1918,7 @@
         "x": 18,
         "y": 19
       },
+      "hiddenSeries": false,
       "id": 42,
       "interval": "",
       "legend": {
@@ -2008,6 +2062,7 @@
         "x": 0,
         "y": 25
       },
+      "hiddenSeries": false,
       "id": 61,
       "interval": "1m",
       "legend": {
@@ -2142,6 +2197,7 @@
         "x": 9,
         "y": 25
       },
+      "hiddenSeries": false,
       "id": 69,
       "interval": "2m",
       "legend": {
@@ -2327,6 +2383,7 @@
         "x": 18,
         "y": 25
       },
+      "hiddenSeries": false,
       "id": 4,
       "legend": {
         "alignAsTable": true,
@@ -2558,6 +2615,7 @@
         "x": 0,
         "y": 31
       },
+      "hiddenSeries": false,
       "id": 45,
       "interval": "1m",
       "legend": {
@@ -2736,6 +2794,7 @@
         "x": 9,
         "y": 31
       },
+      "hiddenSeries": false,
       "id": 57,
       "interval": "1m",
       "legend": {
@@ -2877,6 +2936,7 @@
         "x": 18,
         "y": 31
       },
+      "hiddenSeries": false,
       "id": 66,
       "interval": "1m",
       "legend": {
@@ -3069,6 +3129,7 @@
         "x": 0,
         "y": 37
       },
+      "hiddenSeries": false,
       "id": 56,
       "interval": "2m",
       "legend": {
@@ -3234,6 +3295,7 @@
         "x": 9,
         "y": 37
       },
+      "hiddenSeries": false,
       "id": 68,
       "interval": "6h",
       "legend": {
@@ -3367,6 +3429,7 @@
         "x": 14,
         "y": 37
       },
+      "hiddenSeries": false,
       "hideTimeOverride": true,
       "id": 44,
       "legend": {
@@ -3548,6 +3611,7 @@
         "x": 18,
         "y": 37
       },
+      "hiddenSeries": false,
       "id": 40,
       "legend": {
         "alignAsTable": true,
@@ -4867,7 +4931,7 @@
     }
   ],
   "refresh": "15m",
-  "schemaVersion": 20,
+  "schemaVersion": 22,
   "style": "dark",
   "tags": [
     "infrastructure"
@@ -4907,5 +4971,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 231
+  "version": 232
 }
