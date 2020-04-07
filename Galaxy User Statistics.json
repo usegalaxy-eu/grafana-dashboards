@@ -2,6 +2,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:98",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -16,7 +17,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1576085341882,
+  "iteration": 1586273360390,
   "links": [],
   "panels": [
     {
@@ -75,7 +76,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -190,7 +190,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -305,7 +304,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -420,7 +418,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -535,7 +532,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -642,7 +638,6 @@
       "mapCenterLongitude": 14,
       "maxDataPoints": 1,
       "mouseWheelZoom": true,
-      "options": {},
       "pluginVersion": "6.3.3",
       "showLegend": true,
       "stickyLabels": false,
@@ -779,7 +774,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -901,7 +895,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
       "prefix": "",
@@ -1000,7 +993,6 @@
       "id": 60,
       "links": [],
       "mode": "markdown",
-      "options": {},
       "title": "Compute Time overview",
       "type": "text"
     },
@@ -1047,7 +1039,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -1175,7 +1166,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -1302,7 +1292,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -1430,7 +1419,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -1558,7 +1546,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -1685,7 +1672,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -1807,7 +1793,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -1935,7 +1920,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -2062,7 +2046,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -2190,7 +2173,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -2317,7 +2299,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -2412,7 +2393,6 @@
         "rgba(50, 172, 45, 0.97)"
       ],
       "datasource": "Galaxy Historical",
-      "decimals": 2,
       "format": "s",
       "gauge": {
         "maxValue": 1000,
@@ -2426,6 +2406,136 @@
         "w": 8,
         "x": 16,
         "y": 25
+      },
+      "hideTimeOverride": true,
+      "id": 75,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "$$hashKey": "object:270",
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "$$hashKey": "object:271",
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "s",
+      "postfixFontSize": "150%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": true,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "24h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "server-allocated-cpu",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "cpu_seconds"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "job_runner_name",
+              "operator": "=",
+              "value": "pulsar_eu_de01"
+            },
+            {
+              "condition": "AND",
+              "key": "host",
+              "operator": "=",
+              "value": "sn04.bi.uni-freiburg.de"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": "1d",
+      "timeShift": null,
+      "title": "Pulsar FI01 (CSC)",
+      "type": "singlestat",
+      "valueFontSize": "150%",
+      "valueMaps": [
+        {
+          "$$hashKey": "object:273",
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "Galaxy Historical",
+      "decimals": 2,
+      "format": "s",
+      "gauge": {
+        "maxValue": 1000,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 16,
+        "y": 28
       },
       "hideTimeOverride": true,
       "id": 73,
@@ -2445,7 +2555,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "s",
       "postfixFontSize": "150%",
       "prefix": "",
@@ -2537,7 +2646,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 31
       },
       "id": 19,
       "panels": [
@@ -3462,7 +3571,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 32
       },
       "id": 31,
       "panels": [
@@ -3494,6 +3603,7 @@
           "styles": [
             {
               "alias": "Extension",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -3509,6 +3619,7 @@
             },
             {
               "alias": "Instances",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -3601,6 +3712,7 @@
           "styles": [
             {
               "alias": "Extension",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -3616,6 +3728,7 @@
             },
             {
               "alias": "Value",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -3709,6 +3822,7 @@
           "styles": [
             {
               "alias": "Group",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -3724,6 +3838,7 @@
             },
             {
               "alias": "Installed Revisions",
+              "align": "auto",
               "colorMode": "row",
               "colors": [
                 "#82b5d8",
@@ -3827,6 +3942,7 @@
           "styles": [
             {
               "alias": "Extension",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -3842,6 +3958,7 @@
             },
             {
               "alias": "Instances",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -3934,6 +4051,7 @@
           "styles": [
             {
               "alias": "State",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -3949,6 +4067,7 @@
             },
             {
               "alias": "Count",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -4041,6 +4160,7 @@
           "styles": [
             {
               "alias": "",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -4056,6 +4176,7 @@
             },
             {
               "alias": "Count",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -4148,6 +4269,7 @@
           "styles": [
             {
               "alias": "",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -4163,6 +4285,7 @@
             },
             {
               "alias": "Size",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -4238,7 +4361,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 33
       },
       "id": 34,
       "panels": [
@@ -4270,6 +4393,7 @@
           "styles": [
             {
               "alias": "Build",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -4285,6 +4409,7 @@
             },
             {
               "alias": "Count",
+              "align": "auto",
               "colorMode": null,
               "colors": [
                 "rgba(245, 54, 54, 0.9)",
@@ -4355,7 +4480,7 @@
     }
   ],
   "refresh": "15m",
-  "schemaVersion": 21,
+  "schemaVersion": 22,
   "style": "dark",
   "tags": [
     "galaxy",
@@ -4433,5 +4558,8 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 146
+  "variables": {
+    "list": []
+  },
+  "version": 147
 }
