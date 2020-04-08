@@ -17,7 +17,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1586273360390,
+  "iteration": 1586301460264,
   "links": [],
   "panels": [
     {
@@ -2485,7 +2485,7 @@
             {
               "key": "job_runner_name",
               "operator": "=",
-              "value": "pulsar_eu_de01"
+              "value": "pulsar_eu_fi01"
             },
             {
               "condition": "AND",
@@ -4561,5 +4561,5 @@
   "variables": {
     "list": []
   },
-  "version": 147
+  "version": 148
 }
