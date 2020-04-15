@@ -17,7 +17,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1586301460264,
+  "iteration": 1586962323199,
   "links": [],
   "panels": [
     {
@@ -1909,10 +1909,12 @@
       "mappingType": 1,
       "mappingTypes": [
         {
+          "$$hashKey": "object:181",
           "name": "value to text",
           "value": 1
         },
         {
+          "$$hashKey": "object:182",
           "name": "range to text",
           "value": 2
         }
@@ -1992,11 +1994,12 @@
       "thresholds": "",
       "timeFrom": "1d",
       "timeShift": null,
-      "title": "Pulsar BE01 (Brussel - VIB)",
+      "title": "Pulsar BE01 (Ghent - VIB)",
       "type": "singlestat",
       "valueFontSize": "150%",
       "valueMaps": [
         {
+          "$$hashKey": "object:184",
           "op": "=",
           "text": "N/A",
           "value": "null"
@@ -4561,5 +4564,5 @@
   "variables": {
     "list": []
   },
-  "version": 148
+  "version": 149
 }
