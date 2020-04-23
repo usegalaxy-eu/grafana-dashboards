@@ -17,7 +17,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 12,
-  "iteration": 1586962323199,
+  "iteration": 1587643795153,
   "links": [],
   "panels": [
     {
@@ -628,7 +628,7 @@
       "hideEmpty": false,
       "hideZero": false,
       "id": 69,
-      "initialZoom": "4",
+      "initialZoom": "2",
       "interval": "",
       "jsonUrl": "https://raw.githubusercontent.com/usegalaxy-eu/pulsar-servers/master/servers.json",
       "links": [],
@@ -4564,5 +4564,5 @@
   "variables": {
     "list": []
   },
-  "version": 149
+  "version": 150
 }
