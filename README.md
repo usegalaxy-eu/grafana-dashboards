@@ -24,12 +24,13 @@ Public Galaxy Servers - UseGalaxy.* | pgs | 20 | [Live](https://stats.galaxyproj
 Queue depletion |  | 6 | [Live](https://stats.galaxyproject.eu/d/X735azMWk) | [File](./Queue%20depletion.json)
 RabbitMQ - Galaxy | infrastructure,migrated | 11 | [Live](https://stats.galaxyproject.eu/d/gwQTkRNiz) | [File](./RabbitMQ%20-%20Galaxy.json)
 RabbitMQ - Pulsar |  | 50 | [Live](https://stats.galaxyproject.eu/d/000000030) | [File](./RabbitMQ%20-%20Pulsar.json)
-Route Timings (detail) | marten | 16 | [Live](https://stats.galaxyproject.eu/d/PVN8IiNmk) | [File](./Route%20Timings%20(detail).json)
+Route Timings (detail) | marten,bjoern | 19 | [Live](https://stats.galaxyproject.eu/d/PVN8IiNmk) | [File](./Route%20Timings%20(detail).json)
 Squid |  | 11 | [Live](https://stats.galaxyproject.eu/d/AbGoj5Iik) | [File](./Squid.json)
 TIaaS | wip | 15 | [Live](https://stats.galaxyproject.eu/d/7hY6kQfiz) | [File](./TIaaS.json)
 Tomcat |  | 3 | [Live](https://stats.galaxyproject.eu/d/000000058) | [File](./Tomcat.json)
 helena-testing |  | 13 | [Live](https://stats.galaxyproject.eu/d/IHFHo23iz) | [File](./helena-testing.json)
 memory |  | 13 | [Live](https://stats.galaxyproject.eu/d/S03osH7Wz) | [File](./memory.json)
+uWSGI |  | 5 | [Live](https://stats.galaxyproject.eu/d/DImgCuRMz) | [File](./uWSGI.json)
 
 ## License
 

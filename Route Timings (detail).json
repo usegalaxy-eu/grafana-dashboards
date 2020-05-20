@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 78,
-  "iteration": 1561446692799,
+  "iteration": 1589967050809,
   "links": [],
   "panels": [
     {
@@ -26,9 +26,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": null,
       "decimals": null,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 13,
         "w": 24,
@@ -36,6 +44,7 @@
         "y": 0
       },
       "height": "500px",
+      "hiddenSeries": false,
       "id": 3,
       "interval": "15s",
       "legend": {
@@ -57,15 +66,27 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "alias": "/percentile/",
-          "color": "#000000",
+          "$$hashKey": "object:373",
+          "alias": "95th percentile",
+          "color": "rgba(0, 0, 0, 0.56)",
+          "fill": 0,
+          "lines": true,
+          "linewidth": 2,
+          "points": false
+        },
+        {
+          "$$hashKey": "object:388",
+          "alias": "99th percentile",
+          "color": "rgb(0, 0, 0)",
           "fill": 0,
           "lines": true,
           "linewidth": 2,
@@ -165,6 +186,52 @@
               "value": "/^$page_timing$/"
             }
           ]
+        },
+        {
+          "alias": "99th percentile",
+          "groupBy": [
+            {
+              "params": [
+                "1h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "galaxy_page_timings.",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "mean"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "99"
+                ],
+                "type": "percentile"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "path",
+              "operator": "=~",
+              "value": "/^$page_timing$/"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -217,9 +284,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": null,
       "decimals": null,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 4,
         "w": 24,
@@ -227,6 +302,7 @@
         "y": 13
       },
       "height": "500px",
+      "hiddenSeries": false,
       "id": 4,
       "interval": "15s",
       "legend": {
@@ -248,7 +324,9 @@
       "linewidth": 2,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 1,
       "points": false,
@@ -363,9 +441,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": null,
       "decimals": null,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 4,
         "w": 24,
@@ -373,6 +459,7 @@
         "y": 17
       },
       "height": "500px",
+      "hiddenSeries": false,
       "id": 5,
       "interval": "15s",
       "legend": {
@@ -394,7 +481,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 1,
       "points": false,
@@ -505,6 +594,162 @@
       }
     },
     {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "hiddenSeries": false,
+      "id": 8,
+      "interval": "",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:282",
+          "alias": "combined",
+          "color": "#052b51",
+          "fill": 0,
+          "linewidth": 2
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "[[tag_server]]",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "server"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "disk-access-time",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "seconds"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "disk",
+              "operator": "=",
+              "value": "dnb02"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "24h",
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Access times on dnb02",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "aliasColors": {
         "System Load": "#0a437c",
         "timings": "#806eb7"
@@ -512,16 +757,25 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": null,
       "decimals": null,
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 4,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 25
       },
       "height": "500px",
+      "hiddenSeries": false,
       "id": 6,
       "interval": "15s",
       "legend": {
@@ -543,7 +797,9 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
-      "options": {},
+      "options": {
+        "dataLinks": []
+      },
       "percentage": false,
       "pointradius": 1,
       "points": false,
@@ -655,10 +911,11 @@
     }
   ],
   "refresh": "5m",
-  "schemaVersion": 18,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [
-    "marten"
+    "marten",
+    "bjoern"
   ],
   "templating": {
     "list": [
@@ -813,7 +1070,7 @@
             "value": "api.history_contents.delete"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "api.history_contents.download_dataset_collection",
             "value": "api.history_contents.download_dataset_collection"
           },
@@ -938,7 +1195,7 @@
             "value": "api.tools.create"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "api.tools.index",
             "value": "api.tools.index"
           },
@@ -1577,7 +1834,6 @@
   },
   "timepicker": {
     "refresh_intervals": [
-      "5s",
       "10s",
       "30s",
       "1m",
@@ -1603,5 +1859,5 @@
   "timezone": "",
   "title": "Route Timings (detail)",
   "uid": "PVN8IiNmk",
-  "version": 16
+  "version": 19
 }
