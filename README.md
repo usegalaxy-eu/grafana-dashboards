@@ -30,7 +30,7 @@ TIaaS | wip | 15 | [Live](https://stats.galaxyproject.eu/d/7hY6kQfiz) | [File](.
 Tomcat |  | 3 | [Live](https://stats.galaxyproject.eu/d/000000058) | [File](./Tomcat.json)
 helena-testing |  | 13 | [Live](https://stats.galaxyproject.eu/d/IHFHo23iz) | [File](./helena-testing.json)
 memory |  | 13 | [Live](https://stats.galaxyproject.eu/d/S03osH7Wz) | [File](./memory.json)
-uWSGI |  | 5 | [Live](https://stats.galaxyproject.eu/d/DImgCuRMz) | [File](./uWSGI.json)
+uWSGI |  | 6 | [Live](https://stats.galaxyproject.eu/d/DImgCuRMz) | [File](./uWSGI.json)
 
 ## License
 

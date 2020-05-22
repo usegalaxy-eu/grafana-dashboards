@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 89,
-  "iteration": 1589981734206,
+  "iteration": 1590143476895,
   "links": [],
   "panels": [
     {
@@ -1683,7 +1683,7 @@
           "label": null,
           "logBase": 2,
           "max": null,
-          "min": "0",
+          "min": "1",
           "show": true
         },
         {
@@ -3323,5 +3323,5 @@
   "timezone": "browser",
   "title": "uWSGI",
   "uid": "DImgCuRMz",
-  "version": 5
+  "version": 6
 }
