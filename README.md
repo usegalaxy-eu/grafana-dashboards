@@ -29,7 +29,7 @@ Squid |  | 11 | [Live](https://stats.galaxyproject.eu/d/AbGoj5Iik) | [File](./Sq
 TIaaS | wip | 15 | [Live](https://stats.galaxyproject.eu/d/7hY6kQfiz) | [File](./TIaaS.json)
 Tomcat |  | 3 | [Live](https://stats.galaxyproject.eu/d/000000058) | [File](./Tomcat.json)
 helena-testing |  | 13 | [Live](https://stats.galaxyproject.eu/d/IHFHo23iz) | [File](./helena-testing.json)
-memory |  | 13 | [Live](https://stats.galaxyproject.eu/d/S03osH7Wz) | [File](./memory.json)
+memory |  | 14 | [Live](https://stats.galaxyproject.eu/d/S03osH7Wz) | [File](./memory.json)
 uWSGI |  | 6 | [Live](https://stats.galaxyproject.eu/d/DImgCuRMz) | [File](./uWSGI.json)
 
 ## License
