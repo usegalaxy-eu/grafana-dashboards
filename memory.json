@@ -71,7 +71,7 @@
           "groupBy": [
             {
               "params": [
-                "2m"
+                "$__interval"
               ],
               "type": "time"
             },
@@ -137,7 +137,8 @@
       },
       "yaxes": [
         {
-          "decimals": 1,
+          "$$hashKey": "object:494",
+          "decimals": null,
           "format": "decbytes",
           "label": "",
           "logBase": 1,
@@ -146,6 +147,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:495",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -212,7 +214,7 @@
           "groupBy": [
             {
               "params": [
-                "2m"
+                "$__interval"
               ],
               "type": "time"
             },
@@ -279,7 +281,7 @@
       "yaxes": [
         {
           "$$hashKey": "object:158",
-          "decimals": 1,
+          "decimals": null,
           "format": "decbytes",
           "label": "",
           "logBase": 1,
@@ -420,6 +422,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:986",
           "format": "decbytes",
           "label": null,
           "logBase": 1,
@@ -428,6 +431,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:987",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -566,6 +570,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:741",
           "format": "percent",
           "label": null,
           "logBase": 1,
@@ -574,6 +579,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:742",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -652,7 +658,7 @@
             },
             {
               "params": [
-                "null"
+                "0"
               ],
               "type": "fill"
             }
@@ -713,10 +719,11 @@
       "yaxes": [
         {
           "$$hashKey": "object:288",
+          "decimals": null,
           "format": "percent",
           "label": null,
           "logBase": 1,
-          "max": null,
+          "max": "100",
           "min": "0",
           "show": true
         },
@@ -921,5 +928,5 @@
   "timezone": "",
   "title": "memory",
   "uid": "S03osH7Wz",
-  "version": 14
+  "version": 16
 }

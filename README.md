@@ -4,7 +4,7 @@ See the live versions on [stats.galaxyproject.eu](https://stats.galaxyproject.eu
 
 Name | Tags | Version | Live | JSON
 --- | --- | --- | --- | ---
-Alerts | infrastructure | 232 | [Live](https://stats.galaxyproject.eu/d/000000052) | [File](./Alerts.json)
+Alerts | infrastructure | 244 | [Live](https://stats.galaxyproject.eu/d/000000052) | [File](./Alerts.json)
 CVMFS Stratum 1 Server Status |  | 44 | [Live](https://stats.galaxyproject.eu/d/XtcPRpImz) | [File](./CVMFS%20Stratum%201%20Server%20Status.json)
 GRT Tool Comparison | galaxy,migrated | 6 | [Live](https://stats.galaxyproject.eu/d/kSDduH5Zi) | [File](./GRT%20Tool%20Comparison.json)
 GRT Tool Usage | migrated,galaxy | 46 | [Live](https://stats.galaxyproject.eu/d/SDduH5Zik) | [File](./GRT%20Tool%20Usage.json)
@@ -29,7 +29,7 @@ Squid |  | 11 | [Live](https://stats.galaxyproject.eu/d/AbGoj5Iik) | [File](./Sq
 TIaaS | wip | 15 | [Live](https://stats.galaxyproject.eu/d/7hY6kQfiz) | [File](./TIaaS.json)
 Tomcat |  | 3 | [Live](https://stats.galaxyproject.eu/d/000000058) | [File](./Tomcat.json)
 helena-testing |  | 13 | [Live](https://stats.galaxyproject.eu/d/IHFHo23iz) | [File](./helena-testing.json)
-memory |  | 14 | [Live](https://stats.galaxyproject.eu/d/S03osH7Wz) | [File](./memory.json)
+memory |  | 16 | [Live](https://stats.galaxyproject.eu/d/S03osH7Wz) | [File](./memory.json)
 uWSGI |  | 6 | [Live](https://stats.galaxyproject.eu/d/DImgCuRMz) | [File](./uWSGI.json)
 
 ## License

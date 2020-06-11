@@ -30,6 +30,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 3,
       "fillGradient": 0,
       "gridPos": {
@@ -253,6 +259,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -475,6 +487,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -816,49 +834,17 @@
       "type": "row"
     },
     {
-      "alert": {
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                50000
-              ],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "A",
-                "15m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "keep_state",
-        "for": "3m",
-        "frequency": "60s",
-        "handler": 1,
-        "name": "Disk IO time sn04 alert",
-        "noDataState": "no_data",
-        "notifications": [
-          {
-            "id": 2
-          }
-        ]
-      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 3,
       "fillGradient": 0,
       "gridPos": {
@@ -897,6 +883,7 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
+          "$$hashKey": "object:537",
           "alias": "combined",
           "color": "#052b51",
           "fill": 0,
@@ -1033,15 +1020,7 @@
           ]
         }
       ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 50000
-        }
-      ],
+      "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -1061,15 +1040,17 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:548",
           "decimals": null,
           "format": "short",
           "label": null,
           "logBase": 1,
-          "max": "61000",
+          "max": "10000",
           "min": "0",
           "show": true
         },
         {
+          "$$hashKey": "object:549",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1089,6 +1070,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 2,
       "fillGradient": 0,
       "gridPos": {
@@ -1227,6 +1214,12 @@
     {
       "content": "Server | Playbook\n--- | ---\nApollo | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fapollo)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/apollo/)\nBuild  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fbuild)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/build/)\nCondor CM  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fcentral-manager)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/central-manager/)\nCVMFS  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fcvmfs)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/cvmfs/)\nDocker  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fdocker)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/docker/)\nGalaxy  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fgalaxy)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/galaxy/)\nGalaxy Test  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fgalaxy-test)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/galaxy-test/)\nStats  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fstats)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/stats/)\nProxy  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fhaproxy-internal)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/haproxy-internal/)\nInflux |  [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Finfluxdb)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/influxdb/)\nTelescope  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Ftelescope)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/telescope/)\n  \n\n",
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 13,
         "w": 5,
@@ -1236,7 +1229,6 @@
       "id": 65,
       "links": [],
       "mode": "markdown",
-      "options": {},
       "timeFrom": null,
       "timeShift": null,
       "title": "Ansible Status",
@@ -1248,6 +1240,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1287,6 +1285,7 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
+          "$$hashKey": "object:338",
           "alias": "combined",
           "color": "#052b51",
           "fill": 0,
@@ -1369,6 +1368,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:349",
           "decimals": null,
           "format": "s",
           "label": null,
@@ -1378,6 +1378,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:350",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1397,6 +1398,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 2,
       "fillGradient": 0,
       "gridPos": {
@@ -1538,6 +1545,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1723,6 +1736,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 3,
       "fillGradient": 0,
       "gridPos": {
@@ -1869,11 +1888,12 @@
     },
     {
       "alert": {
+        "alertRuleTags": {},
         "conditions": [
           {
             "evaluator": {
               "params": [
-                2000000
+                2064525
               ],
               "type": "lt"
             },
@@ -1883,7 +1903,7 @@
             "query": {
               "params": [
                 "A",
-                "24h",
+                "5m",
                 "now"
               ]
             },
@@ -1895,21 +1915,24 @@
           }
         ],
         "executionErrorState": "keep_state",
-        "frequency": "60s",
+        "for": "5m",
+        "frequency": "1m",
         "handler": 1,
         "name": "SSL Cert Expiration alert",
         "noDataState": "keep_state",
-        "notifications": [
-          {
-            "id": 2
-          }
-        ]
+        "notifications": []
       },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "Galaxy",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -2000,11 +2023,13 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:2538",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "lt",
-          "value": 2000000
+          "value": 2064525,
+          "yaxis": "left"
         }
       ],
       "timeFrom": "2w",
@@ -2026,6 +2051,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:700",
           "decimals": null,
           "format": "s",
           "label": null,
@@ -2035,6 +2061,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:701",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2054,6 +2081,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2189,6 +2222,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -2346,7 +2385,7 @@
             "query": {
               "params": [
                 "A",
-                "30m",
+                "5m",
                 "now"
               ]
             },
@@ -2357,24 +2396,25 @@
             "type": "query"
           }
         ],
-        "executionErrorState": "keep_state",
-        "for": "0m",
-        "frequency": "60s",
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
         "handler": 1,
-        "message": "Swapping badly.",
         "name": "Swap alert",
         "noDataState": "no_data",
-        "notifications": [
-          {
-            "id": 2
-          }
-        ]
+        "notifications": []
       },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2519,11 +2559,13 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:2387",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 15
+          "value": 15,
+          "yaxis": "left"
         }
       ],
       "timeFrom": null,
@@ -2545,6 +2587,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:898",
           "decimals": null,
           "format": "short",
           "label": null,
@@ -2554,6 +2597,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:899",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2568,55 +2612,27 @@
       }
     },
     {
-      "alert": {
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                6
-              ],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "B",
-                "1h",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "keep_state",
-        "for": "1m",
-        "frequency": "60s",
-        "handler": 1,
-        "name": "Workflow Invocation States alert",
-        "noDataState": "keep_state",
-        "notifications": []
-      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 2,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
+        "h": 4,
         "w": 9,
         "x": 0,
         "y": 31
       },
       "hiddenSeries": false,
-      "id": 45,
+      "id": 78,
       "interval": "1m",
       "legend": {
         "alignAsTable": true,
@@ -2650,18 +2666,18 @@
       "steppedLine": true,
       "targets": [
         {
-          "alias": "[[tag_handler]]",
+          "alias": "[[tag_state]]",
           "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "1m"
               ],
               "type": "time"
             },
             {
               "params": [
-                "handler"
+                "state"
               ],
               "type": "tag"
             },
@@ -2672,7 +2688,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "workflow-invocation-status",
+          "measurement": "workflow-invocation-totals",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "B",
@@ -2688,22 +2704,19 @@
               {
                 "params": [],
                 "type": "sum"
+              },
+              {
+                "params": [
+                  "1m"
+                ],
+                "type": "derivative"
               }
             ]
           ],
           "tags": []
         }
       ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 6,
-          "yaxis": "left"
-        }
-      ],
+      "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -2723,6 +2736,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:184",
           "decimals": null,
           "format": "short",
           "label": null,
@@ -2732,6 +2746,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:185",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2786,6 +2801,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -2928,6 +2949,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 2,
       "fillGradient": 0,
       "gridPos": {
@@ -3078,12 +3105,11 @@
     },
     {
       "alert": {
-        "alertRuleTags": {},
         "conditions": [
           {
             "evaluator": {
               "params": [
-                2400
+                6
               ],
               "type": "gt"
             },
@@ -3092,8 +3118,8 @@
             },
             "query": {
               "params": [
-                "A",
-                "60m",
+                "B",
+                "1h",
                 "now"
               ]
             },
@@ -3105,33 +3131,35 @@
           }
         ],
         "executionErrorState": "keep_state",
-        "for": "5m",
-        "frequency": "5m",
+        "for": "1m",
+        "frequency": "60s",
         "handler": 1,
-        "name": "Handler not logging",
+        "name": "Workflow Invocation States alert",
         "noDataState": "keep_state",
-        "notifications": [
-          {
-            "id": 2
-          }
-        ]
+        "notifications": []
       },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "fill": 0,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 2,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 9,
         "x": 0,
-        "y": 37
+        "y": 35
       },
       "hiddenSeries": false,
-      "id": 56,
-      "interval": "2m",
+      "id": 45,
+      "interval": "1m",
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -3148,9 +3176,9 @@
         "values": true
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 3,
       "links": [],
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "dataLinks": []
       },
@@ -3161,10 +3189,11 @@
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": false,
+      "steppedLine": true,
       "targets": [
         {
-          "alias": "[[tag_service]] on [[tag_host]]",
+          "alias": "[[tag_handler]]/[[tag_state]]",
+          "dsType": "influxdb",
           "groupBy": [
             {
               "params": [
@@ -3174,13 +3203,13 @@
             },
             {
               "params": [
-                "service"
+                "handler"
               ],
               "type": "tag"
             },
             {
               "params": [
-                "host"
+                "state"
               ],
               "type": "tag"
             },
@@ -3191,59 +3220,43 @@
               "type": "fill"
             }
           ],
-          "measurement": "journalctl.lastlog",
+          "measurement": "workflow-invocation-status",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "A",
+          "refId": "B",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "seconds"
+                  "count"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "sum"
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "service",
-              "operator": "=~",
-              "value": "/handler/"
-            },
-            {
-              "condition": "AND",
-              "key": "service",
-              "operator": "!=",
-              "value": "galaxy-handler@10"
-            },
-            {
-              "condition": "AND",
-              "key": "service",
-              "operator": "!=",
-              "value": "galaxy-handler@11"
-            }
-          ]
+          "tags": []
         }
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:212",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 2400
+          "value": 6,
+          "yaxis": "left"
         }
       ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Seconds since last handler log message",
+      "title": "Workflow Invocation States",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -3259,15 +3272,17 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:184",
           "decimals": null,
-          "format": "s",
+          "format": "short",
           "label": null,
           "logBase": 1,
-          "max": "3600",
-          "min": "0",
+          "max": null,
+          "min": null,
           "show": true
         },
         {
+          "$$hashKey": "object:185",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -3287,6 +3302,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -3421,6 +3442,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -3603,6 +3630,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -3721,11 +3754,13 @@
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:1232",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 95
+          "value": 95,
+          "yaxis": "left"
         }
       ],
       "timeFrom": null,
@@ -3747,6 +3782,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:1204",
           "decimals": null,
           "format": "short",
           "label": "",
@@ -3756,6 +3792,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:1205",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -3775,14 +3812,374 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 0,
+        "y": 41
+      },
+      "hiddenSeries": false,
+      "id": 56,
+      "interval": "2m",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "[[tag_service]] on [[tag_host]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "service"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "host"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "journalctl.lastlog",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "seconds"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "service",
+              "operator": "=~",
+              "value": "/handler/"
+            },
+            {
+              "condition": "AND",
+              "key": "service",
+              "operator": "!=",
+              "value": "galaxy-handler@10"
+            },
+            {
+              "condition": "AND",
+              "key": "service",
+              "operator": "!=",
+              "value": "galaxy-handler@11"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Seconds since last handler log message",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1362",
+          "decimals": null,
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": "3600",
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1363",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                0.7
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "15m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "12h",
+        "frequency": "1d",
+        "handler": 1,
+        "name": "Cleanup Datasets is failing",
+        "noDataState": "keep_state",
+        "notifications": []
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 9,
+        "y": 43
+      },
+      "hiddenSeries": false,
+      "id": 55,
+      "interval": "6h",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "[[tag_group]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "group"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "0"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "cleanup_datasets",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "success"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [
+        {
+          "$$hashKey": "object:1535",
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "lt",
+          "value": 0.7,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": "7d",
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Cleanup Datasets Status",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1507",
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": "1",
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1508",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 6,
         "w": 9,
         "x": 0,
-        "y": 43
+        "y": 47
       },
+      "hiddenSeries": false,
       "id": 67,
       "legend": {
         "alignAsTable": true,
@@ -3908,246 +4305,38 @@
       }
     },
     {
-      "alert": {
-        "alertRuleTags": {},
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                0.7
-              ],
-              "type": "lt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "A",
-                "15m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "alerting",
-        "for": "12h",
-        "frequency": "1d",
-        "handler": 1,
-        "name": "Cleanup Datasets is failing",
-        "noDataState": "keep_state",
-        "notifications": []
-      },
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 9,
-        "x": 0,
-        "y": 49
-      },
-      "id": 55,
-      "interval": "6h",
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": false,
-        "rightSide": true,
-        "show": false,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "alias": "[[tag_group]]",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "group"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "0"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "cleanup_datasets",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "success"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "lt",
-          "value": 0.7
-        }
-      ],
-      "timeFrom": "7d",
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Cleanup Datasets Status",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": null,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": "1",
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
       "collapsed": true,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 55
+        "y": 53
       },
       "id": 53,
       "panels": [
         {
-          "alert": {
-            "alertRuleTags": {},
-            "conditions": [
-              {
-                "evaluator": {
-                  "params": [
-                    0.1
-                  ],
-                  "type": "lt"
-                },
-                "operator": {
-                  "type": "and"
-                },
-                "query": {
-                  "params": [
-                    "B",
-                    "10m",
-                    "now"
-                  ]
-                },
-                "reducer": {
-                  "params": [],
-                  "type": "avg"
-                },
-                "type": "query"
-              }
-            ],
-            "executionErrorState": "keep_state",
-            "for": "0m",
-            "frequency": "60s",
-            "handler": 1,
-            "name": "DNS alert",
-            "noDataState": "keep_state",
-            "notifications": [
-              {
-                "id": 2
-              }
-            ]
-          },
           "aliasColors": {},
           "bars": false,
           "dashLength": 10,
           "dashes": false,
           "datasource": null,
           "decimals": 2,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 12,
             "x": 2,
-            "y": 45
+            "y": 50
           },
+          "hiddenSeries": false,
           "id": 7,
           "interval": "5m",
           "legend": {
@@ -4233,15 +4422,7 @@
               "tags": []
             }
           ],
-          "thresholds": [
-            {
-              "colorMode": "critical",
-              "fill": true,
-              "line": true,
-              "op": "lt",
-              "value": 0.1
-            }
-          ],
+          "thresholds": [],
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
@@ -4261,6 +4442,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:1652",
               "decimals": null,
               "format": "ms",
               "label": null,
@@ -4270,6 +4452,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:1653",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -4289,14 +4472,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 5,
             "w": 3,
             "x": 5,
-            "y": 54
+            "y": 59
           },
+          "hiddenSeries": false,
           "id": 51,
           "interval": "10s",
           "legend": {
@@ -4441,14 +4631,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 5,
             "w": 3,
             "x": 8,
-            "y": 54
+            "y": 59
           },
+          "hiddenSeries": false,
           "id": 18,
           "legend": {
             "alignAsTable": true,
@@ -4612,14 +4809,21 @@
           "dashes": false,
           "datasource": null,
           "decimals": 2,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 2,
           "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 12,
             "x": 12,
-            "y": 54
+            "y": 59
           },
+          "hiddenSeries": false,
           "id": 43,
           "legend": {
             "alignAsTable": true,
@@ -4802,14 +5006,21 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "fill": 0,
           "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 4,
             "x": 2,
-            "y": 59
+            "y": 64
           },
+          "hiddenSeries": false,
           "id": 41,
           "interval": "1m",
           "legend": {
@@ -4931,7 +5142,7 @@
     }
   ],
   "refresh": "15m",
-  "schemaVersion": 22,
+  "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "infrastructure"
@@ -4945,7 +5156,6 @@
   },
   "timepicker": {
     "refresh_intervals": [
-      "5s",
       "10s",
       "30s",
       "1m",
@@ -4971,5 +5181,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 232
+  "version": 244
 }
