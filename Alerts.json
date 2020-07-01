@@ -2369,41 +2369,6 @@
       }
     },
     {
-      "alert": {
-        "alertRuleTags": {},
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                15
-              ],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "A",
-                "5m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "alerting",
-        "for": "5m",
-        "frequency": "1m",
-        "handler": 1,
-        "name": "Swap alert",
-        "noDataState": "no_data",
-        "notifications": []
-      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -2557,17 +2522,7 @@
           ]
         }
       ],
-      "thresholds": [
-        {
-          "$$hashKey": "object:2387",
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 15,
-          "yaxis": "left"
-        }
-      ],
+      "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -5181,5 +5136,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 244
+  "version": 245
 }
