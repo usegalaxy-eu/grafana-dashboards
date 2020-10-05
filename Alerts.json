@@ -3545,41 +3545,6 @@
       }
     },
     {
-      "alert": {
-        "alertRuleTags": {},
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                95
-              ],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "B",
-                "5m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "keep_state",
-        "for": "10m",
-        "frequency": "5m",
-        "handler": 1,
-        "name": "Disk Usage (NFS Mounts) alert",
-        "noDataState": "ok",
-        "notifications": []
-      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -3707,17 +3672,7 @@
           ]
         }
       ],
-      "thresholds": [
-        {
-          "$$hashKey": "object:1232",
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 95,
-          "yaxis": "left"
-        }
-      ],
+      "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -5136,5 +5091,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 245
+  "version": 246
 }
