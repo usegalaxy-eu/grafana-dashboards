@@ -8,7 +8,7 @@ Alerts | infrastructure | 246 | [Live](https://stats.galaxyproject.eu/d/00000005
 CVMFS Stratum 1 Server Status |  | 44 | [Live](https://stats.galaxyproject.eu/d/XtcPRpImz) | [File](./CVMFS%20Stratum%201%20Server%20Status.json)
 GRT Tool Comparison | galaxy,migrated | 6 | [Live](https://stats.galaxyproject.eu/d/kSDduH5Zi) | [File](./GRT%20Tool%20Comparison.json)
 GRT Tool Usage | migrated,galaxy | 46 | [Live](https://stats.galaxyproject.eu/d/SDduH5Zik) | [File](./GRT%20Tool%20Usage.json)
-Galaxy | galaxy | 292 | [Live](https://stats.galaxyproject.eu/d/000000004) | [File](./Galaxy.json)
+Galaxy | galaxy | 297 | [Live](https://stats.galaxyproject.eu/d/000000004) | [File](./Galaxy.json)
 Galaxy Condor Cluster | galaxy,cloud | 62 | [Live](https://stats.galaxyproject.eu/d/000000021) | [File](./Galaxy%20Condor%20Cluster.json)
 Galaxy Database | migrated,infrastructure | 27 | [Live](https://stats.galaxyproject.eu/d/000000019) | [File](./Galaxy%20Database.json)
 Galaxy Docker Cluster | galaxy,docker | 9 | [Live](https://stats.galaxyproject.eu/d/000000024) | [File](./Galaxy%20Docker%20Cluster.json)
