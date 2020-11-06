@@ -46,6 +46,7 @@
       },
       "hiddenSeries": false,
       "id": 74,
+      "interval": "10s",
       "legend": {
         "avg": false,
         "current": false,
@@ -82,7 +83,7 @@
             },
             {
               "params": [
-                "none"
+                "null"
               ],
               "type": "fill"
             }
@@ -231,6 +232,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:234",
           "decimals": 0,
           "format": "decbytes",
           "label": "",
@@ -240,6 +242,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:235",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -275,6 +278,7 @@
       },
       "hiddenSeries": false,
       "id": 72,
+      "interval": "10s",
       "legend": {
         "avg": false,
         "current": false,
@@ -311,7 +315,7 @@
             },
             {
               "params": [
-                "none"
+                "null"
               ],
               "type": "fill"
             }
@@ -460,6 +464,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:531",
           "format": "short",
           "label": null,
           "logBase": 2,
@@ -468,6 +473,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:532",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -503,6 +509,7 @@
       },
       "hiddenSeries": false,
       "id": 76,
+      "interval": "10s",
       "legend": {
         "avg": false,
         "current": false,
@@ -539,7 +546,7 @@
             },
             {
               "params": [
-                "none"
+                "null"
               ],
               "type": "fill"
             }
@@ -796,6 +803,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:786",
           "decimals": null,
           "format": "short",
           "label": null,
@@ -805,6 +813,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:787",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -4215,13 +4224,168 @@
       }
     },
     {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 9,
+        "y": 49
+      },
+      "hiddenSeries": false,
+      "id": 79,
+      "interval": "",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "alias": "Active Users",
+          "groupBy": [
+            {
+              "params": [
+                "10m"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "repo"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "journalctl.activeusers",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "count"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "7d",
+      "timeRegions": [
+        {
+          "$$hashKey": "object:535",
+          "colorMode": "blue",
+          "fill": true,
+          "fillColor": "rgba(234, 112, 112, 0.12)",
+          "from": "10:00",
+          "line": false,
+          "lineColor": "rgba(237, 46, 24, 0.60)",
+          "op": "time",
+          "to": "18:00"
+        }
+      ],
+      "timeShift": null,
+      "title": "Active Users",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:267",
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:268",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "collapsed": true,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 53
+        "y": 55
       },
       "id": 53,
       "panels": [
@@ -5051,7 +5215,7 @@
       "type": "row"
     }
   ],
-  "refresh": "15m",
+  "refresh": false,
   "schemaVersion": 25,
   "style": "dark",
   "tags": [
@@ -5091,5 +5255,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 246
+  "version": 250
 }
