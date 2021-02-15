@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1613400749564,
+  "iteration": 1613401171789,
   "links": [],
   "panels": [
     {
@@ -252,7 +252,7 @@
             },
             {
               "params": [
-                "null"
+                "linear"
               ],
               "type": "fill"
             }
@@ -1876,7 +1876,7 @@
             },
             {
               "params": [
-                "null"
+                "linear"
               ],
               "type": "fill"
             }
@@ -2449,7 +2449,7 @@
             },
             {
               "params": [
-                "null"
+                "linear"
               ],
               "type": "fill"
             }
@@ -2664,7 +2664,7 @@
             },
             {
               "params": [
-                "null"
+                "none"
               ],
               "type": "fill"
             }
@@ -3292,5 +3292,5 @@
   "timezone": "browser",
   "title": "Galaxy",
   "uid": "000000004",
-  "version": 2
+  "version": 3
 }
