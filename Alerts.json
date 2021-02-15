@@ -16,7 +16,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 52,
   "links": [],
   "panels": [
     {
@@ -32,7 +31,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -61,9 +61,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -83,7 +84,7 @@
             },
             {
               "params": [
-                "null"
+                "linear"
               ],
               "type": "fill"
             }
@@ -207,7 +208,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         }
@@ -264,7 +265,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -293,9 +295,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -315,7 +318,7 @@
             },
             {
               "params": [
-                "null"
+                "linear"
               ],
               "type": "fill"
             }
@@ -439,7 +442,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         }
@@ -495,7 +498,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -524,9 +528,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -778,7 +783,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         }
@@ -850,7 +855,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -884,9 +890,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -962,7 +969,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         },
@@ -1033,7 +1040,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Disk IO time sn04",
+      "title": "Disk IO time sn06",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -1081,7 +1088,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -1116,9 +1124,10 @@
       "links": [],
       "nullPointMode": "null as zero",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1145,7 +1154,7 @@
             },
             {
               "params": [
-                "null"
+                "linear"
               ],
               "type": "fill"
             }
@@ -1173,7 +1182,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         }
@@ -1221,7 +1230,6 @@
       }
     },
     {
-      "content": "Server | Playbook\n--- | ---\nApollo | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fapollo)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/apollo/)\nBuild  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fbuild)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/build/)\nCondor CM  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fcentral-manager)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/central-manager/)\nCVMFS  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fcvmfs)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/cvmfs/)\nDocker  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fdocker)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/docker/)\nGalaxy  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fgalaxy)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/galaxy/)\nGalaxy Test  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fgalaxy-test)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/galaxy-test/)\nStats  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fstats)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/stats/)\nProxy  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fhaproxy-internal)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/haproxy-internal/)\nInflux |  [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Finfluxdb)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/influxdb/)\nTelescope  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Ftelescope)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/telescope/)\n  \n\n",
       "datasource": null,
       "fieldConfig": {
         "defaults": {
@@ -1237,7 +1245,11 @@
       },
       "id": 65,
       "links": [],
-      "mode": "markdown",
+      "options": {
+        "content": "Server | Playbook\n--- | ---\nApollo | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fapollo)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/apollo/)\nBuild  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fbuild)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/build/)\nCondor CM  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fcentral-manager)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/central-manager/)\nCVMFS  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fcvmfs)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/cvmfs/)\nDocker  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fdocker)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/docker/)\nGalaxy  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fgalaxy)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/galaxy/)\nGalaxy Test  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fgalaxy-test)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/galaxy-test/)\nStats  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fstats)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/stats/)\nProxy  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Fhaproxy-internal)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/haproxy-internal/)\nInflux |  [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Finfluxdb)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/influxdb/)\nTelescope  | [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Fplaybooks%2Ftelescope)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/playbooks/job/telescope/)\n  \n\n",
+        "mode": "markdown"
+      },
+      "pluginVersion": "7.4.1",
       "timeFrom": null,
       "timeShift": null,
       "title": "Ansible Status",
@@ -1251,7 +1263,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -1286,9 +1299,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1409,7 +1423,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -1444,9 +1459,10 @@
       "links": [],
       "nullPointMode": "null as zero",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1501,7 +1517,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         }
@@ -1556,7 +1572,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -1591,9 +1608,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1747,7 +1765,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -1782,9 +1801,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1851,7 +1871,8 @@
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 84
+          "value": 84,
+          "visible": true
         }
       ],
       "timeFrom": null,
@@ -1938,7 +1959,8 @@
       "datasource": "Galaxy",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -1973,9 +1995,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2032,13 +2055,12 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:2538",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "lt",
           "value": 2064525,
-          "yaxis": "left"
+          "visible": true
         }
       ],
       "timeFrom": "2w",
@@ -2092,7 +2114,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -2127,9 +2150,10 @@
       "links": [],
       "nullPointMode": "null as zero",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2233,7 +2257,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -2268,9 +2293,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2385,7 +2411,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -2419,9 +2446,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2583,7 +2611,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -2618,9 +2647,10 @@
       "links": [],
       "nullPointMode": "null as zero",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2767,7 +2797,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -2802,9 +2833,10 @@
       "links": [],
       "nullPointMode": "null as zero",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2863,7 +2895,8 @@
           "fill": true,
           "line": true,
           "op": "gt",
-          "value": 5
+          "value": 5,
+          "visible": true
         }
       ],
       "timeFrom": null,
@@ -2915,7 +2948,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -2950,9 +2984,10 @@
       "links": [],
       "nullPointMode": "null as zero",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3008,7 +3043,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             },
             {
               "condition": "AND",
@@ -3109,7 +3144,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -3144,9 +3180,10 @@
       "links": [],
       "nullPointMode": "null as zero",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3208,13 +3245,12 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:212",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "gt",
           "value": 6,
-          "yaxis": "left"
+          "visible": true
         }
       ],
       "timeFrom": null,
@@ -3268,7 +3304,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -3303,9 +3340,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3408,7 +3446,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -3443,9 +3482,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3561,7 +3601,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -3595,9 +3636,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3733,7 +3775,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -3768,9 +3811,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3934,7 +3978,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -3969,9 +4014,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -4026,13 +4072,12 @@
       ],
       "thresholds": [
         {
-          "$$hashKey": "object:1535",
           "colorMode": "critical",
           "fill": true,
           "line": true,
           "op": "lt",
           "value": 0.7,
-          "yaxis": "left"
+          "visible": true
         }
       ],
       "timeFrom": "7d",
@@ -4086,7 +4131,8 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -4120,9 +4166,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -4232,7 +4279,8 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
@@ -4267,9 +4315,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.4.1",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -5216,7 +5265,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 25,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [
     "infrastructure"
@@ -5225,7 +5274,7 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -5255,5 +5304,5 @@
   "timezone": "",
   "title": "Alerts",
   "uid": "000000052",
-  "version": 250
+  "version": 1
 }
