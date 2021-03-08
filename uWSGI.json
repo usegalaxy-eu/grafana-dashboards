@@ -1347,7 +1347,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             },
             {
               "condition": "AND",
@@ -3257,8 +3257,8 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "sn04.bi.uni-freiburg.de",
-          "value": "sn04.bi.uni-freiburg.de"
+          "text": "sn06.galaxyproject.eu",
+          "value": "sn06.galaxyproject.eu"
         },
         "datasource": "Galaxy",
         "definition": "SHOW TAG VALUES FROM \"cluster.queue\" WITH KEY = \"host\"",
@@ -3270,8 +3270,8 @@
         "options": [
           {
             "selected": true,
-            "text": "sn04.bi.uni-freiburg.de",
-            "value": "sn04.bi.uni-freiburg.de"
+            "text": "sn06.galaxyproject.eu",
+            "value": "sn06.galaxyproject.eu"
           },
           {
             "selected": false,

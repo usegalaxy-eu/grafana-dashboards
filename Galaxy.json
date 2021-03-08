@@ -3232,11 +3232,6 @@
         "name": "host",
         "options": [
           {
-            "selected": false,
-            "text": "sn04.bi.uni-freiburg.de",
-            "value": "sn04.bi.uni-freiburg.de"
-          },
-          {
             "selected": true,
             "text": "sn06.galaxyproject.eu",
             "value": "sn06.galaxyproject.eu"

@@ -383,7 +383,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         }
@@ -514,7 +514,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "sn04.bi.uni-freiburg.de"
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         }
