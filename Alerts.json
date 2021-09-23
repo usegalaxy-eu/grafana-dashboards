@@ -3049,7 +3049,7 @@
               "condition": "AND",
               "key": "handler",
               "operator": "=~",
-              "value": "/handler_main/"
+              "value": "/handler_key/"
             },
             {
               "condition": "AND",
