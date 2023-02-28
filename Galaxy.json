@@ -3,24 +3,36 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
   },
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "iteration": 1613401171789,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -29,7 +41,15 @@
       },
       "id": 83,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Schedulers",
       "type": "row"
     },
@@ -38,10 +58,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -76,7 +98,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -87,6 +109,10 @@
       "targets": [
         {
           "alias": "[[tag_state]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -136,9 +162,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Condor Job States",
       "tooltip": {
         "shared": true,
@@ -147,33 +171,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -181,10 +197,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -216,7 +234,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -242,6 +260,10 @@
       "targets": [
         {
           "alias": "",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -328,9 +350,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Load",
       "tooltip": {
         "shared": true,
@@ -339,9 +359,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -350,22 +368,17 @@
           "format": "short",
           "label": "",
           "logBase": 2,
-          "max": null,
           "min": "1",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -373,10 +386,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -415,7 +430,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -426,6 +441,10 @@
       "targets": [
         {
           "alias": "[[tag_tool_id]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -488,9 +507,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Galaxy Queued Jobs",
       "tooltip": {
         "shared": true,
@@ -499,33 +516,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -533,10 +542,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -575,7 +586,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -586,6 +597,10 @@
       "targets": [
         {
           "alias": "[[tag_tool_id]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -648,9 +663,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Galaxy Unscheduled Jobs",
       "tooltip": {
         "shared": true,
@@ -659,42 +672,31 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
       },
       "gridPos": {
         "h": 6,
@@ -705,21 +707,37 @@
       "id": 81,
       "links": [],
       "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
         "content": "## About\n\nThese graphs show you the current status of our clusters and which tools are being run on [UseGalaxy.eu](https://usegalaxy.eu). Our primary cluster is a Condor cluster running in the [deNBI cloud](https://www.denbi.de/).",
         "mode": "markdown"
       },
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "The UseGalaxy.EU Queue",
       "type": "text"
     },
     {
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "thresholds"
           },
-          "custom": {},
           "mappings": [],
           "min": 0,
           "thresholds": {
@@ -756,9 +774,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -773,7 +795,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "journalctl.activeusers",
+          "measurement": "active_users",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -782,7 +804,7 @@
             [
               {
                 "params": [
-                  "count"
+                  "users"
                 ],
                 "type": "field"
               },
@@ -792,17 +814,24 @@
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "sn06.galaxyproject.eu"
+            }
+          ]
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
       "title": "Active Users (10 minutes)",
       "type": "stat"
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -811,7 +840,15 @@
       },
       "id": 84,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "UseGalaxy.eu Cluster",
       "type": "row"
     },
@@ -820,10 +857,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -862,7 +901,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -873,6 +912,10 @@
       "targets": [
         {
           "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -941,7 +984,6 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
       "timeShift": "1m",
       "title": "Galaxy Running Tools",
@@ -952,33 +994,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -986,10 +1020,12 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -1028,7 +1064,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1039,6 +1075,10 @@
       "targets": [
         {
           "alias": "general compute`",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1085,7 +1125,6 @@
       "thresholds": [],
       "timeFrom": "24h",
       "timeRegions": [],
-      "timeShift": null,
       "title": "Data Upload / Hour",
       "tooltip": {
         "shared": true,
@@ -1094,34 +1133,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
-          "decimals": null,
           "format": "decbytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1129,10 +1158,12 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -1171,7 +1202,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1182,6 +1213,10 @@
       "targets": [
         {
           "alias": "Pulsar",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -1244,6 +1279,10 @@
         },
         {
           "alias": "Not Pulsar",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -1306,7 +1345,6 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
       "timeShift": "1m",
       "title": "Job Destinations",
@@ -1317,38 +1355,33 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1357,7 +1390,15 @@
       },
       "id": 85,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Galaxy / Route Timings",
       "type": "row"
     },
@@ -1366,8 +1407,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
-      "decimals": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1429,6 +1472,10 @@
       "targets": [
         {
           "alias": "90th percentile (api)",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -1486,6 +1533,10 @@
         },
         {
           "alias": "[[tag_path]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -1542,6 +1593,10 @@
         },
         {
           "alias": "90th percentile (web)",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -1599,9 +1654,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Galaxy Route Timings",
       "tooltip": {
         "shared": true,
@@ -1610,17 +1663,13 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
-          "decimals": null,
           "format": "ms",
-          "label": null,
           "logBase": 1,
           "max": "10000",
           "min": "0",
@@ -1628,21 +1677,20 @@
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1651,6 +1699,15 @@
       },
       "id": 95,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "uWSGI",
       "type": "row"
     },
@@ -1659,7 +1716,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1708,6 +1768,10 @@
       "targets": [
         {
           "alias": "[[tag_id]] @ [[tag_addr]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -1769,9 +1833,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Requests / time unit",
       "tooltip": {
         "shared": true,
@@ -1780,33 +1842,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1814,7 +1868,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1861,6 +1918,10 @@
       "targets": [
         {
           "alias": "",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -1970,9 +2031,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Socket queue",
       "tooltip": {
         "shared": true,
@@ -1981,9 +2040,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1991,7 +2048,6 @@
         {
           "$$hashKey": "object:332",
           "format": "short",
-          "label": null,
           "logBase": 1,
           "max": "105",
           "min": "0",
@@ -2000,16 +2056,12 @@
         {
           "$$hashKey": "object:333",
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2017,7 +2069,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2066,6 +2121,10 @@
       "targets": [
         {
           "alias": "[[tag_id]] [[tag_addr]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -2127,7 +2186,6 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
       "timeShift": "5m",
       "title": "Exceptions",
@@ -2138,33 +2196,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2172,7 +2222,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2227,6 +2280,10 @@
       "targets": [
         {
           "alias": "[[tag_id]] @ [[tag_addr]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -2283,6 +2340,10 @@
         },
         {
           "alias": "average",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -2333,9 +2394,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Busy(1)/Idle(0)",
       "tooltip": {
         "shared": true,
@@ -2344,17 +2403,13 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
-          "decimals": null,
           "format": "none",
-          "label": null,
           "logBase": 1,
           "max": "1",
           "min": "0",
@@ -2362,16 +2417,12 @@
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2379,7 +2430,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2428,6 +2482,10 @@
       "targets": [
         {
           "alias": "",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -2543,9 +2601,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "uWSGI Queue",
       "tooltip": {
         "shared": true,
@@ -2554,33 +2610,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2588,7 +2635,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2643,6 +2693,10 @@
       "targets": [
         {
           "alias": "[[tag_id]] @ [[tag_addr]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -2699,9 +2753,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Harakiri count",
       "tooltip": {
         "shared": true,
@@ -2710,34 +2762,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
-          "decimals": null,
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2745,7 +2788,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2794,6 +2840,10 @@
       "targets": [
         {
           "alias": "[[tag_group]] [[tag_addr]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -2855,9 +2905,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "uWSGI locks",
       "tooltip": {
         "shared": true,
@@ -2866,33 +2914,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2900,7 +2939,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2949,6 +2991,10 @@
       "targets": [
         {
           "alias": "[[tag_id]] @ [[tag_addr]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -3010,9 +3056,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "TX",
       "tooltip": {
         "shared": true,
@@ -3021,33 +3065,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -3055,7 +3091,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P9B81C0353945995B"
+      },
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -3104,6 +3143,10 @@
       "targets": [
         {
           "alias": "[[tag_id]] @ [[tag_addr]]",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "groupBy": [
             {
               "params": [
@@ -3165,9 +3208,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Average response time (moving avg)",
       "tooltip": {
         "shared": true,
@@ -3176,38 +3217,30 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "µs",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 27,
+  "schemaVersion": 37,
   "style": "dark",
   "tags": [
     "galaxy"
@@ -3215,40 +3248,28 @@
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
           "selected": false,
           "text": "sn06.galaxyproject.eu",
           "value": "sn06.galaxyproject.eu"
         },
-        "datasource": "Galaxy",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "definition": "SHOW TAG VALUES FROM \"cluster.queue\" WITH KEY = \"host\"",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Galaxy Host",
         "multi": false,
         "name": "host",
-        "options": [
-          {
-            "selected": true,
-            "text": "sn06.galaxyproject.eu",
-            "value": "sn06.galaxyproject.eu"
-          },
-          {
-            "selected": false,
-            "text": "test.galaxyproject.eu",
-            "value": "test.galaxyproject.eu"
-          }
-        ],
+        "options": [],
         "query": "SHOW TAG VALUES FROM \"cluster.queue\" WITH KEY = \"host\"",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -3287,5 +3308,6 @@
   "timezone": "browser",
   "title": "Galaxy",
   "uid": "000000004",
-  "version": 3
+  "version": 60,
+  "weekStart": ""
 }
