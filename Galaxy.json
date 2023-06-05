@@ -798,6 +798,8 @@
           "measurement": "active_users",
           "orderByTime": "ASC",
           "policy": "default",
+          "query": "SELECT \"users\" FROM \"active_users\" WHERE (\"host\" = 'sn06.galaxyproject.eu') AND $timeFilter GROUP BY \"timespan\"",
+          "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -807,10 +809,6 @@
                   "users"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
               }
             ]
           ],
