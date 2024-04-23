@@ -1412,7 +1412,6 @@
       "description": "",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
           "links": []
         },
         "overrides": []
@@ -1450,7 +1449,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.1",
+      "pluginVersion": "9.2.10",
       "pointradius": 1,
       "points": true,
       "renderer": "flot",
@@ -1524,8 +1523,8 @@
             {
               "condition": "AND",
               "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
+              "operator": "=",
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         },
@@ -1584,8 +1583,8 @@
             {
               "condition": "AND",
               "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
+              "operator": "=",
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         },
@@ -1645,8 +1644,8 @@
             {
               "condition": "AND",
               "key": "host",
-              "operator": "=~",
-              "value": "/^$host$/"
+              "operator": "=",
+              "value": "sn06.galaxyproject.eu"
             }
           ]
         }
@@ -1667,6 +1666,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:58",
           "format": "ms",
           "logBase": 1,
           "max": "10000",
@@ -1674,6 +1674,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:59",
           "format": "short",
           "logBase": 1,
           "show": true
@@ -1753,6 +1754,6 @@
   "timezone": "browser",
   "title": "Galaxy",
   "uid": "000000004",
-  "version": 60,
+  "version": 61,
   "weekStart": ""
 }
