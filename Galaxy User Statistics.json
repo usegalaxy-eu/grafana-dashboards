@@ -1165,7 +1165,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -1298,7 +1298,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -1430,7 +1430,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -1563,7 +1563,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -1696,7 +1696,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -1955,7 +1955,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -2090,7 +2090,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -2223,7 +2223,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -2356,7 +2356,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -2488,7 +2488,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -2622,7 +2622,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -2756,7 +2756,7 @@
               "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "value": "maintenance.galaxyproject.eu"
             }
           ]
         }
@@ -4697,5 +4697,5 @@
   "timezone": "browser",
   "title": "Galaxy User Statistics",
   "uid": "000000012",
-  "version": 1
+  "version": 2
 }
