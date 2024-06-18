@@ -1,0 +1,30 @@
+name: Update repositories where this repository is used as Git submodule.
+
+"on":
+  workflow_dispatch:
+  push:
+    branches: 
+      - master
+
+jobs:
+  usegalaxy-eu_infrastructure-playbook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: usegalaxy-eu/infrastructure-playbook
+          ssh-key: ${{ secrets.USEGALAXY_EU_INFRASTRUCTURE_PLAYBOOK_DEPLOY_KEY }}
+          submodules: false
+
+      - name: Update submodules
+        run: |
+          git submodule update --init --force --recursive --remote files/grafana
+
+      - name: Commit updates
+        run: |
+          set -e
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add files/grafana
+          git commit -m "Update submodule files/grafana" || echo "Submodule files/grafana is already up to date"
+          git push
