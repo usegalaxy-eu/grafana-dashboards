@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 30,
+  "id": null,
   "iteration": 1560766662691,
   "links": [],
   "panels": [
@@ -9284,5 +9284,5 @@
   "timezone": "",
   "title": "RabbitMQ - Pulsar",
   "uid": "000000030",
-  "version": 50
+  "version": 1
 }

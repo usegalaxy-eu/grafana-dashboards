@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 80,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -426,5 +426,5 @@
   "timezone": "",
   "title": "TIaaS",
   "uid": "7hY6kQfiz",
-  "version": 15
+  "version": 1
 }

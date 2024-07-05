@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 83,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -600,5 +600,5 @@
   "timezone": "",
   "title": "Queue depletion",
   "uid": "X735azMWk",
-  "version": 6
+  "version": 1
 }

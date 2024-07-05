@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 24,
+  "id": null,
   "iteration": 1525196221304,
   "links": [],
   "panels": [
@@ -953,5 +953,5 @@
   "timezone": "",
   "title": "Galaxy Docker Cluster",
   "uid": "000000024",
-  "version": 9
+  "version": 1
 }

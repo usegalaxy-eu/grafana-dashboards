@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 20,
+  "id": null,
   "links": [
     {
       "asDropdown": false,
@@ -1377,5 +1377,5 @@
   "timezone": "browser",
   "title": "Public Galaxy Servers",
   "uid": "000000020",
-  "version": 72
+  "version": 1
 }

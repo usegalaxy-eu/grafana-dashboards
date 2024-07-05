@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 86,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -928,5 +928,5 @@
   "timezone": "",
   "title": "memory",
   "uid": "S03osH7Wz",
-  "version": 16
+  "version": 1
 }

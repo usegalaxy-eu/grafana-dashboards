@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 79,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -454,5 +454,5 @@
   "timezone": "",
   "title": "GRT Tool Comparison",
   "uid": "kSDduH5Zi",
-  "version": 6
+  "version": 1
 }

@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 23,
+  "id": null,
   "iteration": 1564415994274,
   "links": [],
   "panels": [
@@ -5580,5 +5580,5 @@
   "timezone": "",
   "title": "Node Detail - Infrastructure",
   "uid": "000000023",
-  "version": 72
+  "version": 1
 }
