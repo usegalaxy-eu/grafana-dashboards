@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 58,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -747,5 +747,5 @@
   "timezone": "",
   "title": "Tomcat",
   "uid": "000000058",
-  "version": 3
+  "version": 1
 }

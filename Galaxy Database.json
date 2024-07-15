@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 19,
+  "id": null,
   "iteration": 1565256339918,
   "links": [],
   "panels": [
@@ -1931,5 +1931,5 @@
   "timezone": "browser",
   "title": "Galaxy Database",
   "uid": "000000019",
-  "version": 27
+  "version": 1
 }

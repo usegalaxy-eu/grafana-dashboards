@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 77,
+  "id": null,
   "iteration": 1560768725911,
   "links": [],
   "panels": [
@@ -2113,5 +2113,5 @@
   "timezone": "",
   "title": "RabbitMQ - Galaxy",
   "uid": "gwQTkRNiz",
-  "version": 11
+  "version": 1
 }

@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 11,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -645,5 +645,5 @@
   "timezone": "browser",
   "title": "InfluxDB",
   "uid": "000000011",
-  "version": 11
+  "version": 1
 }

@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 46,
+  "id": 44,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1524,8 +1524,8 @@
             {
               "condition": "AND",
               "key": "host",
-              "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "operator": "=~",
+              "value": "/^$host$/"
             }
           ]
         },
@@ -1584,8 +1584,8 @@
             {
               "condition": "AND",
               "key": "host",
-              "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "operator": "=~",
+              "value": "/^$host$/"
             }
           ]
         },
@@ -1645,8 +1645,8 @@
             {
               "condition": "AND",
               "key": "host",
-              "operator": "=",
-              "value": "sn06.galaxyproject.eu"
+              "operator": "=~",
+              "value": "/^$host$/"
             }
           ]
         }
@@ -1667,7 +1667,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:58",
           "format": "ms",
           "logBase": 1,
           "max": "10000",
@@ -1675,7 +1674,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:59",
           "format": "short",
           "logBase": 1,
           "show": true
@@ -1753,8 +1751,8 @@
     ]
   },
   "timezone": "browser",
-  "title": "Galaxy",
-  "uid": "000000004",
-  "version": 10,
+  "title": "galaxy-stats-test-import",
+  "uid": "-aO2Bdl4z",
+  "version": 2,
   "weekStart": ""
 }

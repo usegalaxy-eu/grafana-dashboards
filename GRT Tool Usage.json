@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 71,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -853,5 +853,5 @@
   "timezone": "",
   "title": "GRT Tool Usage",
   "uid": "SDduH5Zik",
-  "version": 46
+  "version": 1
 }
