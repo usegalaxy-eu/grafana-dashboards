@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
+  "id": 76,
   "iteration": 1561455382576,
   "links": [],
   "panels": [
@@ -9646,5 +9646,5 @@
   "timezone": "",
   "title": "CVMFS Stratum 1 Server Status",
   "uid": "XtcPRpImz",
-  "version": 1
+  "version": 44
 }

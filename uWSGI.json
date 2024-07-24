@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": null,
+  "id": 89,
   "iteration": 1590143476895,
   "links": [],
   "panels": [
@@ -3323,5 +3323,5 @@
   "timezone": "browser",
   "title": "uWSGI",
   "uid": "DImgCuRMz",
-  "version": 1
+  "version": 6
 }

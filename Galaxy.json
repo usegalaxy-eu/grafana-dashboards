@@ -24,7 +24,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 46,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1755,6 +1754,6 @@
   "timezone": "browser",
   "title": "Galaxy",
   "uid": "000000004",
-  "version": 10,
+  "version": 61,
   "weekStart": ""
 }
