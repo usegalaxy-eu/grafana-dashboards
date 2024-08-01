@@ -50,4 +50,4 @@ zfs |  | 60 | [Live](https://stats.galaxyproject.eu/d/IUk_uK04z) | [File](./zfs.
 
 ## License
 
-CC BY 4.0
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
