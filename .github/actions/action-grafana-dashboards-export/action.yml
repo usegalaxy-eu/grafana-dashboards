@@ -1,0 +1,16 @@
+name: Grafana dashboards export
+description: Export publicly accessible dashboards from any Grafana instance
+inputs:
+  grafana_url:
+    description: URL of the Grafana instance to export dashboards from
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    # Grafana instance URL
+    - ${{ inputs.grafana_url }}
+    # directory where action's Python script running within the Docker container will save the dashboards
+    # the working directory of the action gets mounted on /github/workspace, read more here
+    # https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action#accessing-files-created-by-a-container-action
+    - /github/workspace

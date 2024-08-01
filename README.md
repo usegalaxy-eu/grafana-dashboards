@@ -1,7 +1,9 @@
 # Grafana Dashbaords
 See the live versions on [stats.galaxyproject.eu](https://stats.galaxyproject.eu):
+
+<!---dashboards-->
 Name | Tags | Version | Live | JSON
---- | --- | --- | --- | ---
+---- | ---- | ------- | ---- | ----
 Alerts | infrastructure | 1 | [Live](https://stats.galaxyproject.eu/d/000000052) | [File](./Alerts.json)
 BY-COVID |  | 4 | [Live](https://stats.galaxyproject.eu/d/G09PBrEVz) | [File](./BY-COVID.json)
 CVMFS Stratum 1 Server Status |  | 1 | [Live](https://stats.galaxyproject.eu/d/XtcPRpImz) | [File](./CVMFS%20Stratum%201%20Server%20Status.json)
@@ -44,5 +46,7 @@ helena-testing |  | 1 | [Live](https://stats.galaxyproject.eu/d/IHFHo23iz) | [Fi
 memory |  | 1 | [Live](https://stats.galaxyproject.eu/d/S03osH7Wz) | [File](./memory.json)
 uWSGI |  | 1 | [Live](https://stats.galaxyproject.eu/d/DImgCuRMz) | [File](./uWSGI.json)
 zfs |  | 60 | [Live](https://stats.galaxyproject.eu/d/IUk_uK04z) | [File](./zfs.json)
+<!---dashboards-->
+
 ## License
 GPLv3 I guess? Can your really license some json files with queries in them?
