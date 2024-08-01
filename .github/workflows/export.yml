@@ -27,7 +27,7 @@ jobs:
         # update the contents of the table.
         run: |
           file="README.md"
-          rows=$(jq -r '[.dashboard.title, (.dashboard.tags | join(",")), .dashboard.version, "[Live](https://stats.galaxyproject.eu/d/" + .dashboard.uid + ")", "[File](./" + input_filename + ")"] | join(" | ")' *.json)
+          rows=$(jq -r '[.dashboard.title, (.dashboard.tags | join(",")), .dashboard.version, "[Live](https://stats.galaxyproject.eu/d/" + .dashboard.uid + ")", "[File](./" + (input_filename | @uri) + ")"] | join(" | ")' *.json)
 
           gawk -i inplace -v replacement="$rows" '
           BEGIN {
