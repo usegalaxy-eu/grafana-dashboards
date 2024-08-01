@@ -49,4 +49,5 @@ zfs |  | 60 | [Live](https://stats.galaxyproject.eu/d/IUk_uK04z) | [File](./zfs.
 <!---dashboards-->
 
 ## License
-GPLv3 I guess? Can your really license some json files with queries in them?
+
+CC BY 4.0
