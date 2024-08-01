@@ -1,0 +1,68 @@
+name: Export UseGalaxy.eu Grafana dashboards
+
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  export-dashboards:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Clear existing dashboards
+        run: rm *.json
+
+      - name: Retrieve dashboards from stats.galaxyproject.eu
+        uses: ./.github/actions/action-grafana-dashboards-export
+        with:
+          grafana_url: https://stats.galaxyproject.eu
+
+      - name: Update dashboards table in README.md
+        # README.md contains a table of dashboards between two HTML comments
+        # `<!---dashboards-->`. This workflow step updates the contents of the
+        # table. It uses `jq` to read the downloaded dashboards and `awk` to
+        # update the contents of the table.
+        run: |
+          file="README.md"
+          rows=$(jq -r '[.dashboard.title, (.dashboard.tags | join(",")), .dashboard.version, "[Live](https://stats.galaxyproject.eu/d/" + .dashboard.uid + ")", "[File](./" + input_filename + ")"] | join(" | ")' *.json)
+
+          gawk -i inplace -v replacement="$rows" '
+          BEGIN {
+            # Define <!---dashboards--> as record separator. By default, awk
+            # reads each line of input as a separate record. Changing the
+            # record separator allows operating on that specific section of the
+            # file, even if it spawns multiple lines.
+            RS="<!---dashboards-->";
+            # do not append anything between records when writing output (set
+            # record separator to an empty string)
+            ORS="";  # do not print anything after a re
+            section_number=0;
+          }
+          
+          {
+            section_number++;
+            if (section_number == 2) {
+              # section allocated to the table
+              print RS "\n"
+              print "Name | Tags | Version | Live | JSON" "\n"
+              print "---- | ---- | ------- | ---- | ----" "\n"
+              print replacement "\n"
+              print RS
+            } else {
+              # other sections
+              print $0
+            }
+          }
+          ' "$file"
+
+      - name: Commit changes
+        run: |
+          set -e
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add -A
+          git commit -m "Export dashboards from stats.galaxyproject.eu" || echo "Dashboards are up to date"
+          git push
