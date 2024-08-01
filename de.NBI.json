@@ -6,14 +6,14 @@
     "canAdmin": false,
     "canStar": false,
     "canDelete": false,
-    "slug": "by-covid",
-    "url": "/d/G09PBrEVz/by-covid",
+    "slug": "de-nbi",
+    "url": "/d/tykawvlSz/de-nbi",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2023-04-24T14:59:56+02:00",
-    "updated": "2024-07-26T10:53:03+02:00",
-    "updatedBy": "kysrpex",
+    "created": "2024-07-07T16:44:44+02:00",
+    "updated": "2024-07-25T19:02:05+02:00",
+    "updatedBy": "admin",
     "createdBy": "admin",
-    "version": 5,
+    "version": 4,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 2,
@@ -62,7 +62,7 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 42,
+    "id": 54,
     "links": [],
     "liveNow": false,
     "panels": [
@@ -219,7 +219,6 @@
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "description": "",
         "gridPos": {
           "h": 7,
           "w": 3,
@@ -233,8 +232,8 @@
             "showLineNumbers": false,
             "showMiniMap": false
           },
-          "content": "<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n\n<img src=\"https://raw.githubusercontent.com/usegalaxy-eu/website/master/assets/media/BYCOVID_logo.png\" alt=\"BY-COVID\" style=\"\"/>",
-          "mode": "markdown"
+          "content": "<br/>\n<br/>\n<br/>\n<div style=\"margin:0 auto; text-align: center;\">\n    <img src=\"https://denbi-ev.de/sites/default/files/deNBIeV_Logo.svg\" alt=\"de.NBI e.V.\" style=\"width:100%;\"/>\n    <img src=\"https://kommunaltopinform.de/wp-content/uploads/2022/05/Ministerium-f-Wissenschaft-Forschg-Kunst_Logo_web.png\" alt=\"MVK\" style=\"width:60%;\"/>\n</div>\n",
+          "mode": "html"
         },
         "pluginVersion": "11.0.0",
         "transparent": true,
@@ -515,7 +514,7 @@
             "showLineNumbers": false,
             "showMiniMap": false
           },
-          "content": "# [BY-COVID](https://by-covid.org/)\n\nThe BeYond-COVID project aims to make COVID-19 data accessible to scientists in laboratories but also\nto anyone who can use it, such as medical staff in hospitals or government officials.\n\nGoing beyond SARS-CoV-2 data, the project will provide a framework for making data from\nother infectious diseases open and accessible to everyone.\n\nThe [European Galaxy Server](https://usegalaxy.eu) is used by users beyond BY-COVID and covers other\nuser cases as well. The numbers shown here are a aggregation from the overall usage.\n\n\n",
+          "content": "<br/>\n\n# [European Galaxy Server](https://usegalaxy.eu)\n\n[Galaxy](https://galaxyproject.org/eu/) is an open, web-based platform for data-intensive computational\nresearch that spans beyond the life sciences. It allows researchers without programming experience\nto run analysis workflows on\ntheir data, share their results, and enable others to repeat the same analyses. Galaxy makes\nscience reproducible, facilitates sharing of data and results, and removes the hassle of installing\nsoftware tools from users.\n\nThe [European Galaxy Server](https://usegalaxy.eu) is a de.NBI and an ELIXIR service and\npart of the [ELIXIR Galaxy community](https://elixir-europe.org/communities/galaxy).\n\n\n",
           "mode": "markdown"
         },
         "pluginVersion": "11.0.0",
@@ -1082,7 +1081,7 @@
         ],
         "timeFrom": "7d",
         "timeShift": "1h",
-        "title": "ELIXIR AAI Users",
+        "title": "AAI Users",
         "type": "stat"
       },
       {
@@ -1112,12 +1111,10 @@
         "gridPos": {
           "h": 6,
           "w": 4,
-          "x": 9,
+          "x": 10,
           "y": 15
         },
-        "hideTimeOverride": true,
-        "id": 20,
-        "interval": "10m",
+        "id": 24,
         "options": {
           "colorMode": "value",
           "graphMode": "area",
@@ -1156,7 +1153,7 @@
                 "type": "fill"
               }
             ],
-            "measurement": "journalctl.activeusers",
+            "measurement": "active_users",
             "orderByTime": "ASC",
             "policy": "default",
             "query": "SELECT \"users\" FROM \"active_users\" WHERE (\"host\" = 'sn06.galaxyproject.eu') AND $timeFilter GROUP BY \"timespan\"",
@@ -1167,21 +1164,22 @@
               [
                 {
                   "params": [
-                    "count"
+                    "users"
                   ],
                   "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
                 }
               ]
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "sn06.galaxyproject.eu"
+              }
+            ]
           }
         ],
-        "timeFrom": "1h",
-        "title": "Active Users (last 10 minutes)",
+        "title": "Active Users (10 minutes)",
         "type": "stat"
       }
     ],
@@ -1198,9 +1196,9 @@
     "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {},
     "timezone": "",
-    "title": "BY-COVID",
-    "uid": "G09PBrEVz",
-    "version": 5,
+    "title": "de.NBI",
+    "uid": "tykawvlSz",
+    "version": 4,
     "weekStart": ""
   }
 }
