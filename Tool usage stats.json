@@ -10,10 +10,10 @@
     "url": "/d/DYDPhX-Sk/tool-usage-stats",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2024-04-18T13:30:43+02:00",
-    "updated": "2024-07-09T06:19:02+02:00",
-    "updatedBy": "sanjaysrikakulam",
+    "updated": "2024-08-04T10:18:43+02:00",
+    "updatedBy": "admin",
     "createdBy": "admin",
-    "version": 37,
+    "version": 39,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 0,
@@ -86,7 +86,7 @@
           "content": "# Tool usage stats from the [European Galaxy server](https://usegalaxy.eu)\n\nTo see the stats of a given tool you need to select a tool from the \"Tool ID\" drop-down list on the top left.",
           "mode": "markdown"
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "11.0.0",
         "type": "text"
       },
       {
@@ -135,9 +135,11 @@
             "fields": "",
             "values": false
           },
-          "textMode": "auto"
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
             "datasource": {
@@ -198,6 +200,7 @@
               "mode": "continuous-BlYlRd"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
@@ -212,6 +215,9 @@
               "lineWidth": 3,
               "scaleDistribution": {
                 "type": "linear"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
               }
             },
             "mappings": [],
@@ -263,6 +269,7 @@
           "barRadius": 0.05,
           "barWidth": 0.46,
           "colorByField": "count",
+          "fullHighlight": false,
           "groupWidth": 0.56,
           "legend": {
             "calcs": [],
@@ -274,6 +281,7 @@
           "showValue": "always",
           "stacking": "none",
           "tooltip": {
+            "maxHeight": 600,
             "mode": "multi",
             "sort": "asc"
           },
@@ -353,8 +361,7 @@
         "type": "barchart"
       }
     ],
-    "schemaVersion": 37,
-    "style": "dark",
+    "schemaVersion": 39,
     "tags": [],
     "templating": {
       "list": [
@@ -390,13 +397,14 @@
       "from": "now-6h",
       "to": "now"
     },
+    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "hidden": true
     },
     "timezone": "",
     "title": "Tool usage stats",
     "uid": "DYDPhX-Sk",
-    "version": 37,
+    "version": 39,
     "weekStart": ""
   }
 }

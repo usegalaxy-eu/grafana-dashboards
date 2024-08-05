@@ -37,7 +37,7 @@ Storage |  | 6 | [Live](https://stats.galaxyproject.eu/d/uNbBNv04k) | [File](./S
 TIaaS | wip | 1 | [Live](https://stats.galaxyproject.eu/d/7hY6kQfiz) | [File](./TIaaS.json)
 Tomcat |  | 1 | [Live](https://stats.galaxyproject.eu/d/000000058) | [File](./Tomcat.json)
 Tool usage stats Copy |  | 2 | [Live](https://stats.galaxyproject.eu/d/6rsDAVfSk) | [File](./Tool%20usage%20stats%20Copy.json)
-Tool usage stats |  | 37 | [Live](https://stats.galaxyproject.eu/d/DYDPhX-Sk) | [File](./Tool%20usage%20stats.json)
+Tool usage stats |  | 39 | [Live](https://stats.galaxyproject.eu/d/DYDPhX-Sk) | [File](./Tool%20usage%20stats.json)
 Traefik |  | 17 | [Live](https://stats.galaxyproject.eu/d/l2U_DcASz) | [File](./Traefik.json)
 VGCN monitoring |  | 24 | [Live](https://stats.galaxyproject.eu/d/Zn2z0NYVk) | [File](./VGCN%20monitoring.json)
 Wendy's playground |  | 4 | [Live](https://stats.galaxyproject.eu/d/vdBNXqVIz) | [File](./Wendy's%20playground.json)
