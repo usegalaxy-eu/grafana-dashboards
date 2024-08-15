@@ -9,10 +9,10 @@
     "slug": "grt-tool-comparison",
     "url": "/d/kSDduH5Zi/grt-tool-comparison",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-24T14:02:58+02:00",
-    "updated": "2024-07-24T14:02:58+02:00",
-    "updatedBy": "admin",
-    "createdBy": "admin",
+    "created": "2022-03-14T14:02:15+01:00",
+    "updated": "2022-03-14T14:02:15+01:00",
+    "updatedBy": "Anonymous",
+    "createdBy": "Anonymous",
     "version": 1,
     "hasAcl": false,
     "isFolder": false,
@@ -20,30 +20,30 @@
     "folderUid": "",
     "folderTitle": "General",
     "folderUrl": "",
-    "provisioned": false,
-    "provisionedExternalId": "",
+    "provisioned": true,
+    "provisionedExternalId": "GRT Tool Comparison.json",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    }
+    },
+    "publicDashboardAccessToken": "",
+    "publicDashboardUid": "",
+    "publicDashboardEnabled": false
   },
   "dashboard": {
     "annotations": {
       "list": [
         {
           "builtIn": 1,
-          "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
-          },
+          "datasource": "-- Grafana --",
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -54,71 +54,18 @@
     },
     "description": "Get an overview about the tool usage on public Galaxy servers.",
     "editable": true,
-    "fiscalYearStartMonth": 0,
+    "gnetId": null,
     "graphTooltip": 0,
-    "id": 69,
+    "id": 23,
     "links": [],
     "panels": [
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "PA4245ACF5D5D4D2B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 100,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 0,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "normal"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "GRT Tool Usage",
+        "fill": 10,
         "gridPos": {
           "h": 17,
           "w": 12,
@@ -126,29 +73,34 @@
           "y": 0
         },
         "id": 2,
-        "options": {
-          "legend": {
-            "calcs": [
-              "max",
-              "sum"
-            ],
-            "displayMode": "table",
-            "placement": "right",
-            "showLegend": true
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "none"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": false,
+          "current": false,
+          "max": true,
+          "min": false,
+          "rightSide": true,
+          "show": true,
+          "sort": "total",
+          "sortDesc": true,
+          "total": true,
+          "values": true
         },
+        "lines": true,
+        "linewidth": 0,
+        "links": [],
+        "nullPointMode": "null",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": true,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_tool_id]] [[tag_tool_version]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "PA4245ACF5D5D4D2B"
-            },
             "groupBy": [
               {
                 "params": [
@@ -209,69 +161,54 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "$tool_id usage over time",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "PA4245ACF5D5D4D2B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 100,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 0,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "normal"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "GRT Tool Usage",
+        "fill": 10,
         "gridPos": {
           "h": 17,
           "w": 12,
@@ -279,29 +216,34 @@
           "y": 0
         },
         "id": 3,
-        "options": {
-          "legend": {
-            "calcs": [
-              "max",
-              "sum"
-            ],
-            "displayMode": "table",
-            "placement": "right",
-            "showLegend": true
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "none"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": false,
+          "current": false,
+          "max": true,
+          "min": false,
+          "rightSide": true,
+          "show": true,
+          "sort": "total",
+          "sortDesc": true,
+          "total": true,
+          "values": true
         },
+        "lines": true,
+        "linewidth": 0,
+        "links": [],
+        "nullPointMode": "null",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": true,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_tool_id]] [[tag_tool_version]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "PA4245ACF5D5D4D2B"
-            },
             "groupBy": [
               {
                 "params": [
@@ -362,12 +304,51 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "$tool_b usage over time",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       }
     ],
     "refresh": "15m",
-    "schemaVersion": 39,
+    "schemaVersion": 18,
+    "style": "dark",
     "tags": [
       "galaxy",
       "migrated"
@@ -375,16 +356,13 @@
     "templating": {
       "list": [
         {
+          "allValue": null,
           "current": {
-            "isNone": true,
-            "selected": false,
-            "text": "None",
-            "value": ""
+            "tags": [],
+            "text": "tophat",
+            "value": "tophat"
           },
-          "datasource": {
-            "type": "influxdb",
-            "uid": "PA4245ACF5D5D4D2B"
-          },
+          "datasource": "GRT Tool Usage",
           "definition": "SHOW TAG VALUES FROM \"iquery-grt-export\" WITH KEY = \"tool_id\"",
           "hide": 0,
           "includeAll": false,
@@ -398,21 +376,19 @@
           "skipUrlSync": false,
           "sort": 1,
           "tagValuesQuery": "",
+          "tags": [],
           "tagsQuery": "",
           "type": "query",
           "useTags": false
         },
         {
+          "allValue": null,
           "current": {
-            "isNone": true,
-            "selected": false,
-            "text": "None",
-            "value": ""
+            "tags": [],
+            "text": "tophat2",
+            "value": "tophat2"
           },
-          "datasource": {
-            "type": "influxdb",
-            "uid": "PA4245ACF5D5D4D2B"
-          },
+          "datasource": "GRT Tool Usage",
           "definition": "SHOW TAG VALUES FROM \"iquery-grt-export\" WITH KEY = \"tool_id\"",
           "hide": 0,
           "includeAll": false,
@@ -426,24 +402,18 @@
           "skipUrlSync": false,
           "sort": 1,
           "tagValuesQuery": "",
+          "tags": [],
           "tagsQuery": "",
           "type": "query",
           "useTags": false
         },
         {
+          "allValue": null,
           "current": {
-            "selected": true,
-            "text": [
-              "All"
-            ],
-            "value": [
-              "$__all"
-            ]
+            "text": "All",
+            "value": "$__all"
           },
-          "datasource": {
-            "type": "influxdb",
-            "uid": "PA4245ACF5D5D4D2B"
-          },
+          "datasource": "GRT Tool Usage",
           "definition": "SHOW TAG VALUES FROM \"iquery-grt-export\" WITH KEY = \"instance\"",
           "hide": 0,
           "includeAll": true,
@@ -457,13 +427,15 @@
           "skipUrlSync": false,
           "sort": 1,
           "tagValuesQuery": "",
+          "tags": [],
           "tagsQuery": "",
           "type": "query",
           "useTags": false
         },
         {
+          "allValue": null,
           "current": {
-            "selected": false,
+            "selected": true,
             "text": "30d",
             "value": "30d"
           },
@@ -494,7 +466,6 @@
       "from": "now-5y",
       "to": "now"
     },
-    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "refresh_intervals": [
         "5s",
@@ -523,7 +494,6 @@
     "timezone": "",
     "title": "GRT Tool Comparison",
     "uid": "kSDduH5Zi",
-    "version": 1,
-    "weekStart": ""
+    "version": 1
   }
 }

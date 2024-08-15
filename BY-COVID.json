@@ -9,11 +9,11 @@
     "slug": "by-covid",
     "url": "/d/G09PBrEVz/by-covid",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2023-04-24T14:59:56+02:00",
-    "updated": "2024-07-26T10:53:03+02:00",
-    "updatedBy": "kysrpex",
+    "created": "2023-04-24T16:59:56+02:00",
+    "updated": "2023-06-05T11:53:18+02:00",
+    "updatedBy": "sanjaysrikakulam",
     "createdBy": "admin",
-    "version": 5,
+    "version": 3,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 2,
@@ -24,16 +24,19 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    }
+    },
+    "publicDashboardAccessToken": "",
+    "publicDashboardUid": "",
+    "publicDashboardEnabled": false
   },
   "dashboard": {
     "annotations": {
@@ -77,7 +80,6 @@
               "mode": "palette-classic"
             },
             "custom": {
-              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
@@ -91,7 +93,6 @@
                 "tooltip": false,
                 "viz": false
               },
-              "insertNulls": false,
               "lineInterpolation": "stepAfter",
               "lineWidth": 3,
               "pointSize": 5,
@@ -151,6 +152,7 @@
           "y": 0
         },
         "id": 2,
+        "links": [],
         "options": {
           "legend": {
             "calcs": [],
@@ -159,7 +161,6 @@
             "showLegend": false
           },
           "tooltip": {
-            "maxHeight": 600,
             "mode": "multi",
             "sort": "none"
           }
@@ -221,7 +222,7 @@
         },
         "description": "",
         "gridPos": {
-          "h": 7,
+          "h": 5,
           "w": 3,
           "x": 9,
           "y": 0
@@ -233,10 +234,10 @@
             "showLineNumbers": false,
             "showMiniMap": false
           },
-          "content": "<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n\n<img src=\"https://raw.githubusercontent.com/usegalaxy-eu/website/master/assets/media/BYCOVID_logo.png\" alt=\"BY-COVID\" style=\"\"/>",
+          "content": "<img src=\"https://raw.githubusercontent.com/usegalaxy-eu/website/master/assets/media/BYCOVID_logo.png\" alt=\"BY-COVID\" style=\"\"/>",
           "mode": "markdown"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "transparent": true,
         "type": "text"
       },
@@ -251,7 +252,6 @@
               "mode": "palette-classic"
             },
             "custom": {
-              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
@@ -265,7 +265,6 @@
                 "tooltip": false,
                 "viz": false
               },
-              "insertNulls": false,
               "lineInterpolation": "stepAfter",
               "lineWidth": 3,
               "pointSize": 5,
@@ -325,6 +324,7 @@
           "y": 0
         },
         "id": 4,
+        "links": [],
         "options": {
           "legend": {
             "calcs": [],
@@ -333,7 +333,6 @@
             "showLegend": false
           },
           "tooltip": {
-            "maxHeight": 600,
             "mode": "multi",
             "sort": "none"
           }
@@ -432,6 +431,7 @@
         },
         "hideTimeOverride": true,
         "id": 14,
+        "links": [],
         "maxDataPoints": 100,
         "options": {
           "colorMode": "none",
@@ -445,11 +445,9 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -515,10 +513,10 @@
             "showLineNumbers": false,
             "showMiniMap": false
           },
-          "content": "# [BY-COVID](https://by-covid.org/)\n\nThe BeYond-COVID project aims to make COVID-19 data accessible to scientists in laboratories but also\nto anyone who can use it, such as medical staff in hospitals or government officials.\n\nGoing beyond SARS-CoV-2 data, the project will provide a framework for making data from\nother infectious diseases open and accessible to everyone.\n\nThe [European Galaxy Server](https://usegalaxy.eu) is used by users beyond BY-COVID and covers other\nuser cases as well. The numbers shown here are a aggregation from the overall usage.\n\n\n",
+          "content": "<br/>\n\n# [BY-COVID](https://by-covid.org/)\n\nThe BeYond-COVID project aims to make COVID-19 data accessible to scientists in laboratories but also\nto anyone who can use it, such as medical staff in hospitals or government officials.\n\nGoing beyond SARS-CoV-2 data, the project will provide a framework for making data from\nother infectious diseases open and accessible to everyone.\n\nThe [European Galaxy Server](https://usegalaxy.eu) is used by users beyond BY-COVID and covers other\nuser cases as well. The numbers shown here are a aggregation from the overall usage.\n\n\n",
           "mode": "markdown"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "type": "text"
       },
       {
@@ -567,6 +565,7 @@
         },
         "hideTimeOverride": true,
         "id": 10,
+        "links": [],
         "maxDataPoints": 100,
         "options": {
           "colorMode": "none",
@@ -580,11 +579,9 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -678,6 +675,7 @@
         },
         "hideTimeOverride": true,
         "id": 6,
+        "links": [],
         "maxDataPoints": 100,
         "options": {
           "colorMode": "none",
@@ -691,11 +689,9 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -789,6 +785,7 @@
         },
         "hideTimeOverride": true,
         "id": 12,
+        "links": [],
         "maxDataPoints": 100,
         "options": {
           "colorMode": "none",
@@ -802,11 +799,9 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -900,6 +895,7 @@
         },
         "hideTimeOverride": true,
         "id": 8,
+        "links": [],
         "maxDataPoints": 100,
         "options": {
           "colorMode": "none",
@@ -913,11 +909,9 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -1013,6 +1007,7 @@
         },
         "hideTimeOverride": true,
         "id": 18,
+        "links": [],
         "maxDataPoints": 100,
         "options": {
           "colorMode": "none",
@@ -1026,11 +1021,9 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -1112,7 +1105,7 @@
         "gridPos": {
           "h": 6,
           "w": 4,
-          "x": 9,
+          "x": 10,
           "y": 15
         },
         "hideTimeOverride": true,
@@ -1130,12 +1123,10 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
           "text": {},
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -1186,7 +1177,8 @@
       }
     ],
     "refresh": false,
-    "schemaVersion": 39,
+    "schemaVersion": 37,
+    "style": "dark",
     "tags": [],
     "templating": {
       "list": []
@@ -1195,12 +1187,11 @@
       "from": "now-5y",
       "to": "now"
     },
-    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {},
     "timezone": "",
     "title": "BY-COVID",
     "uid": "G09PBrEVz",
-    "version": 5,
+    "version": 3,
     "weekStart": ""
   }
 }

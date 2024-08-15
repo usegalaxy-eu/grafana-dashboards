@@ -9,10 +9,10 @@
     "slug": "galaxy-database",
     "url": "/d/000000019/galaxy-database",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-24T13:59:31+02:00",
-    "updated": "2024-07-24T13:59:31+02:00",
-    "updatedBy": "admin",
-    "createdBy": "admin",
+    "created": "2022-03-14T14:02:15+01:00",
+    "updated": "2022-03-14T14:02:15+01:00",
+    "updatedBy": "Anonymous",
+    "createdBy": "Anonymous",
     "version": 1,
     "hasAcl": false,
     "isFolder": false,
@@ -20,30 +20,30 @@
     "folderUid": "hR-aRIP7z",
     "folderTitle": "Infrastructure",
     "folderUrl": "/dashboards/f/hR-aRIP7z/infrastructure",
-    "provisioned": false,
-    "provisionedExternalId": "",
+    "provisioned": true,
+    "provisionedExternalId": "Infrastructure/Galaxy Database.json",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    }
+    },
+    "publicDashboardAccessToken": "",
+    "publicDashboardUid": "",
+    "publicDashboardEnabled": false
   },
   "dashboard": {
     "annotations": {
       "list": [
         {
           "builtIn": 1,
-          "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
-          },
+          "datasource": "-- Grafana --",
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -53,71 +53,19 @@
       ]
     },
     "editable": true,
-    "fiscalYearStartMonth": 0,
+    "gnetId": null,
     "graphTooltip": 0,
-    "id": 62,
+    "id": 29,
+    "iteration": 1565256339918,
     "links": [],
     "panels": [
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "rpm"
-          },
-          "overrides": []
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 4,
@@ -125,26 +73,33 @@
           "y": 0
         },
         "id": 29,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "none"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_db]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -194,92 +149,54 @@
             "tags": []
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "blk_read",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "rpm",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "decimals": 2,
-            "mappings": [],
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "percentunit"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byValue",
-                "options": {
-                  "op": "gte",
-                  "reducer": "allIsZero",
-                  "value": 0
-                }
-              },
-              "properties": [
-                {
-                  "id": "custom.hideFrom",
-                  "value": {
-                    "legend": true,
-                    "tooltip": true,
-                    "viz": false
-                  }
-                }
-              ]
-            }
-          ]
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 4,
@@ -288,26 +205,34 @@
         },
         "id": 22,
         "interval": "",
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "desc"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -345,91 +270,55 @@
             "tags": []
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "PG Cache Hit Ratio",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 2,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "decimals": 2,
+            "format": "percentunit",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byValue",
-                "options": {
-                  "op": "gte",
-                  "reducer": "allIsZero",
-                  "value": 0
-                }
-              },
-              "properties": [
-                {
-                  "id": "custom.hideFrom",
-                  "value": {
-                    "legend": true,
-                    "tooltip": true,
-                    "viz": false
-                  }
-                }
-              ]
-            }
-          ]
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 4,
@@ -438,26 +327,34 @@
         },
         "id": 38,
         "interval": "",
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "desc"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_relname]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -507,91 +404,55 @@
             "tags": []
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Sequential Scans",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 2,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "decimals": null,
+            "format": "none",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byValue",
-                "options": {
-                  "op": "gte",
-                  "reducer": "allIsZero",
-                  "value": 0
-                }
-              },
-              "properties": [
-                {
-                  "id": "custom.hideFrom",
-                  "value": {
-                    "legend": true,
-                    "tooltip": true,
-                    "viz": false
-                  }
-                }
-              ]
-            }
-          ]
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 4,
@@ -600,26 +461,34 @@
         },
         "id": 36,
         "interval": "",
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "desc"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_relname]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -669,91 +538,55 @@
             "tags": []
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "\u03b4Table Size Change/\u03b4t",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 2,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "decimals": null,
+            "format": "none",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byValue",
-                "options": {
-                  "op": "gte",
-                  "reducer": "allIsZero",
-                  "value": 0
-                }
-              },
-              "properties": [
-                {
-                  "id": "custom.hideFrom",
-                  "value": {
-                    "legend": true,
-                    "tooltip": true,
-                    "viz": false
-                  }
-                }
-              ]
-            }
-          ]
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 4,
@@ -762,26 +595,34 @@
         },
         "id": 37,
         "interval": "",
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "desc"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_relname]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -831,91 +672,55 @@
             "tags": []
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "\u03b4Dead Tuples / \u03b4time",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 2,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "decimals": null,
+            "format": "none",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byValue",
-                "options": {
-                  "op": "gte",
-                  "reducer": "allIsZero",
-                  "value": 0
-                }
-              },
-              "properties": [
-                {
-                  "id": "custom.hideFrom",
-                  "value": {
-                    "legend": true,
-                    "tooltip": true,
-                    "viz": false
-                  }
-                }
-              ]
-            }
-          ]
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 4,
@@ -924,26 +729,34 @@
         },
         "id": 39,
         "interval": "",
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "desc"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_relname]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -993,8 +806,47 @@
             "tags": []
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Autovacuums",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 2,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "decimals": null,
+            "format": "none",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
         "columns": [
@@ -1003,10 +855,6 @@
             "value": "current"
           }
         ],
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "fontSize": "100%",
         "gridPos": {
           "h": 9,
@@ -1016,6 +864,9 @@
         },
         "id": 40,
         "interval": "",
+        "links": [],
+        "options": {},
+        "pageSize": null,
         "scroll": true,
         "showHeader": true,
         "sort": {
@@ -1025,15 +876,15 @@
         "styles": [
           {
             "alias": "Size",
-            "align": "auto",
             "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": null,
             "pattern": "Current",
             "type": "number",
             "unit": "decbytes"
           },
           {
             "alias": "",
-            "align": "auto",
+            "colorMode": null,
             "colors": [
               "rgba(245, 54, 54, 0.9)",
               "rgba(237, 129, 40, 0.89)",
@@ -1049,10 +900,6 @@
         "targets": [
           {
             "alias": "[[tag_relname]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1096,9 +943,11 @@
             "tags": []
           }
         ],
+        "timeFrom": null,
+        "timeShift": null,
         "title": "Table Sizes",
         "transform": "timeseries_aggregations",
-        "type": "table-old"
+        "type": "table"
       },
       {
         "columns": [
@@ -1107,10 +956,6 @@
             "value": "current"
           }
         ],
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "fontSize": "100%",
         "gridPos": {
           "h": 9,
@@ -1120,6 +965,9 @@
         },
         "id": 41,
         "interval": "",
+        "links": [],
+        "options": {},
+        "pageSize": null,
         "scroll": true,
         "showHeader": true,
         "sort": {
@@ -1129,15 +977,15 @@
         "styles": [
           {
             "alias": "Size",
-            "align": "auto",
             "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": null,
             "pattern": "Current",
             "type": "number",
             "unit": "decbytes"
           },
           {
             "alias": "",
-            "align": "auto",
+            "colorMode": null,
             "colors": [
               "rgba(245, 54, 54, 0.9)",
               "rgba(237, 129, 40, 0.89)",
@@ -1153,10 +1001,6 @@
         "targets": [
           {
             "alias": "[[tag_relname]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1200,16 +1044,14 @@
             "tags": []
           }
         ],
+        "timeFrom": null,
+        "timeShift": null,
         "title": "Index Sizes",
         "transform": "timeseries_aggregations",
-        "type": "table-old"
+        "type": "table"
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1218,78 +1060,17 @@
         },
         "id": 35,
         "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "refId": "A"
-          }
-        ],
+        "repeat": null,
         "title": "$DB metrics",
         "type": "row"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "wpm"
-          },
-          "overrides": []
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 6,
@@ -1298,26 +1079,33 @@
         },
         "id": 26,
         "interval": "",
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "none"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1421,69 +1209,54 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Tuples Modified",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "wpm",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 6,
@@ -1491,26 +1264,33 @@
           "y": 15
         },
         "id": 21,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "none"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_db]]:commit",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1568,10 +1348,6 @@
           },
           {
             "alias": "[[tag_db]]:rollback",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1628,69 +1404,54 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Transactions",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "rpm"
-          },
-          "overrides": []
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 6,
@@ -1698,26 +1459,33 @@
           "y": 15
         },
         "id": 27,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "none"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1797,69 +1565,54 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Tuples Fetched",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "rpm",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "stepAfter",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 5,
           "w": 6,
@@ -1868,26 +1621,33 @@
         },
         "id": 24,
         "interval": "",
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "none"
-          }
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": false,
+          "total": false,
+          "values": false
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "dataLinks": []
+        },
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": true,
         "targets": [
           {
             "alias": "",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1931,19 +1691,52 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Backends",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
         "aliasColors": {},
-        "autoMigrateFrom": "graph",
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
@@ -1964,6 +1757,7 @@
         },
         "lines": true,
         "linewidth": 1,
+        "links": [],
         "nullPointMode": "null",
         "options": {
           "dataLinks": []
@@ -1979,10 +1773,6 @@
         "targets": [
           {
             "alias": "",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -2027,38 +1817,50 @@
           }
         ],
         "thresholds": [],
+        "timeFrom": null,
         "timeRegions": [],
+        "timeShift": null,
         "title": "Conflicts",
         "tooltip": {
           "shared": true,
           "sort": 0,
           "value_type": "individual"
         },
-        "type": "timeseries",
+        "type": "graph",
         "xaxis": {
+          "buckets": null,
           "mode": "time",
+          "name": null,
           "show": true,
           "values": []
         },
         "yaxes": [
           {
             "format": "short",
+            "label": null,
             "logBase": 1,
+            "max": null,
+            "min": null,
             "show": true
           },
           {
             "format": "short",
+            "label": null,
             "logBase": 1,
+            "max": null,
+            "min": null,
             "show": true
           }
         ],
         "yaxis": {
-          "align": false
+          "align": false,
+          "alignLevel": null
         }
       }
     ],
     "refresh": "5m",
-    "schemaVersion": 39,
+    "schemaVersion": 19,
+    "style": "dark",
     "tags": [
       "migrated",
       "infrastructure"
@@ -2066,19 +1868,31 @@
     "templating": {
       "list": [
         {
+          "allValue": null,
           "current": {
-            "selected": true,
-            "text": [
-              "None"
-            ],
+            "text": "dataset + dataset_permissions + galaxy_session + history_dataset_association + job + job_external_output_metadata + job_metric_numeric + job_parameter + job_state_history + job_to_input_dataset + job_to_output_dataset + post_job_action_association + tag + task + task_metric_numeric + tool_shed_repository + workflow_invocation_step + workflow_request_step_states",
             "value": [
-              ""
+              "dataset",
+              "dataset_permissions",
+              "galaxy_session",
+              "history_dataset_association",
+              "job",
+              "job_external_output_metadata",
+              "job_metric_numeric",
+              "job_parameter",
+              "job_state_history",
+              "job_to_input_dataset",
+              "job_to_output_dataset",
+              "post_job_action_association",
+              "tag",
+              "task",
+              "task_metric_numeric",
+              "tool_shed_repository",
+              "workflow_invocation_step",
+              "workflow_request_step_states"
             ]
           },
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P9B81C0353945995B"
-          },
+          "datasource": "Galaxy",
           "definition": "",
           "hide": 0,
           "includeAll": false,
@@ -2091,20 +1905,20 @@
           "regex": "",
           "skipUrlSync": false,
           "sort": 0,
+          "tagValuesQuery": "/^job/",
+          "tags": [],
+          "tagsQuery": "jobs",
           "type": "query",
           "useTags": false
         },
         {
+          "allValue": null,
           "current": {
-            "isNone": true,
-            "selected": false,
-            "text": "None",
-            "value": ""
+            "tags": [],
+            "text": "galaxy",
+            "value": "galaxy"
           },
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P9B81C0353945995B"
-          },
+          "datasource": "Galaxy",
           "definition": "show tag values with key = \"db\"",
           "hide": 0,
           "includeAll": false,
@@ -2117,6 +1931,9 @@
           "regex": "",
           "skipUrlSync": false,
           "sort": 0,
+          "tagValuesQuery": "/^job/",
+          "tags": [],
+          "tagsQuery": "jobs",
           "type": "query",
           "useTags": false
         }
@@ -2126,7 +1943,6 @@
       "from": "now-12h",
       "to": "now"
     },
-    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "refresh_intervals": [
         "5s",
@@ -2155,7 +1971,6 @@
     "timezone": "browser",
     "title": "Galaxy Database",
     "uid": "000000019",
-    "version": 1,
-    "weekStart": ""
+    "version": 1
   }
 }

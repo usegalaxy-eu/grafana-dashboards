@@ -9,11 +9,11 @@
     "slug": "ecology",
     "url": "/d/U5vwgGGVz/ecology",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2022-09-03T08:47:24+02:00",
-    "updated": "2024-07-26T10:52:44+02:00",
-    "updatedBy": "kysrpex",
+    "created": "2022-09-03T10:47:24+02:00",
+    "updated": "2023-06-05T11:55:08+02:00",
+    "updatedBy": "sanjaysrikakulam",
     "createdBy": "admin",
-    "version": 7,
+    "version": 5,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 35,
@@ -24,16 +24,19 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    }
+    },
+    "publicDashboardAccessToken": "",
+    "publicDashboardUid": "",
+    "publicDashboardEnabled": false
   },
   "dashboard": {
     "annotations": {
@@ -72,9 +75,9 @@
           "uid": "P9B81C0353945995B"
         },
         "gridPos": {
-          "h": 10,
-          "w": 17,
-          "x": 3,
+          "h": 6,
+          "w": 9,
+          "x": 0,
           "y": 0
         },
         "id": 22,
@@ -87,9 +90,458 @@
           "content": "<img src=\"https://raw.githubusercontent.com/usegalaxy-eu/website/master/assets/media/Galaxy-E-concarneau-team-2018-logo.gif\" alt=\"ELIXIR Europe\" style=\"width:100%;\"/>",
           "mode": "markdown"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "transparent": true,
         "type": "text"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "locale"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 14,
+          "y": 0
+        },
+        "hideTimeOverride": true,
+        "id": 10,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.2.10",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "1d"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-workflow-invocations",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Workflow Invocations",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "locale"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 18,
+          "y": 0
+        },
+        "hideTimeOverride": true,
+        "id": 6,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.2.10",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "24h"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-users",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Galaxy Users",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "locale"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 14,
+          "y": 4
+        },
+        "hideTimeOverride": true,
+        "id": 8,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.2.10",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "1d"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-workflows",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Workflows",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "Users that used the [ELIXIR AAI](https://elixir-europe.org/services/compute/aai) (Authentication and Authorisation Infrastructure) to log into the European Galaxy server.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "rgb(31, 120, 193)",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 18,
+          "y": 4
+        },
+        "hideTimeOverride": true,
+        "id": 18,
+        "links": [],
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.2.10",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "provider"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "users-with-oidc",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "7d",
+        "timeShift": "1h",
+        "title": "ELIXIR AAI Users",
+        "type": "stat"
       },
       {
         "datasource": {
@@ -102,7 +554,6 @@
               "mode": "palette-classic"
             },
             "custom": {
-              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
@@ -116,7 +567,6 @@
                 "tooltip": false,
                 "viz": false
               },
-              "insertNulls": false,
               "lineInterpolation": "stepAfter",
               "lineWidth": 3,
               "pointSize": 5,
@@ -170,12 +620,13 @@
           ]
         },
         "gridPos": {
-          "h": 8,
-          "w": 8,
+          "h": 7,
+          "w": 9,
           "x": 0,
-          "y": 10
+          "y": 6
         },
         "id": 2,
+        "links": [],
         "options": {
           "legend": {
             "calcs": [],
@@ -184,7 +635,6 @@
             "showLegend": false
           },
           "tooltip": {
-            "maxHeight": 600,
             "mode": "multi",
             "sort": "none"
           }
@@ -242,30 +692,6 @@
       {
         "datasource": {
           "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 7,
-          "x": 8,
-          "y": 10
-        },
-        "id": 16,
-        "options": {
-          "code": {
-            "language": "plaintext",
-            "showLineNumbers": false,
-            "showMiniMap": false
-          },
-          "content": "<br/>\n\n# [ELIXIR Galaxy community](https://elixir-europe.org/communities/galaxy)\n\n[Galaxy](https://galaxyproject.org) is an open, web-based platform for data-intensive computational\nresearch that spans beyond the life sciences. It allows researchers without programming experience\nto run analysis workflows on\ntheir data, share their results, and enable others to repeat the same analyses. Galaxy makes\nscience reproducible, facilitates sharing of data and results, and removes the hassle of installing\nsoftware tools from users.\n\nThe [ELIXIR Galaxy community](https://elixir-europe.org/communities/galaxy) is running various\nnational Galaxy servers and the [European Galaxy Server](https://usegalaxy.eu).\n\n\n",
-          "mode": "markdown"
-        },
-        "pluginVersion": "11.0.0",
-        "type": "text"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
           "uid": "PEBD82B4560F292BD"
         },
         "fieldConfig": {
@@ -274,7 +700,6 @@
               "mode": "palette-classic"
             },
             "custom": {
-              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
@@ -288,7 +713,6 @@
                 "tooltip": false,
                 "viz": false
               },
-              "insertNulls": false,
               "lineInterpolation": "stepAfter",
               "lineWidth": 3,
               "pointSize": 5,
@@ -342,12 +766,13 @@
           ]
         },
         "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 15,
-          "y": 10
+          "h": 7,
+          "w": 10,
+          "x": 9,
+          "y": 8
         },
         "id": 4,
+        "links": [],
         "options": {
           "legend": {
             "calcs": [],
@@ -356,7 +781,6 @@
             "showLegend": false
           },
           "tooltip": {
-            "maxHeight": 600,
             "mode": "multi",
             "sort": "none"
           }
@@ -448,223 +872,14 @@
           "overrides": []
         },
         "gridPos": {
-          "h": 5,
-          "w": 4,
+          "h": 4,
+          "w": 6,
           "x": 0,
-          "y": 18
-        },
-        "hideTimeOverride": true,
-        "id": 6,
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "none",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "sum"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "11.0.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "PEBD82B4560F292BD"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "24h"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "0"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "server-users",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": []
-          }
-        ],
-        "timeFrom": "1d",
-        "title": "Galaxy Users",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 4,
-          "y": 18
-        },
-        "hideTimeOverride": true,
-        "id": 20,
-        "interval": "10m",
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "text": {},
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "11.0.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "journalctl.activeusers",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT \"users\" FROM \"active_users\" WHERE (\"host\" = 'sn06.galaxyproject.eu') AND $timeFilter GROUP BY \"timespan\"",
-            "rawQuery": true,
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": []
-          }
-        ],
-        "timeFrom": "1h",
-        "title": "Active Users (last 10 minutes)",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "PEBD82B4560F292BD"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [
-              {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
-              }
-            ],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "locale"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 15,
-          "y": 18
+          "y": 13
         },
         "hideTimeOverride": true,
         "id": 14,
+        "links": [],
         "maxDataPoints": 100,
         "options": {
           "colorMode": "none",
@@ -678,11 +893,9 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -733,233 +946,26 @@
       {
         "datasource": {
           "type": "influxdb",
-          "uid": "PEBD82B4560F292BD"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [
-              {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
-              }
-            ],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "locale"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 19,
-          "y": 18
-        },
-        "hideTimeOverride": true,
-        "id": 8,
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "none",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "sum"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "11.0.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "PEBD82B4560F292BD"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "1d"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "server-workflows",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": []
-          }
-        ],
-        "timeFrom": "1d",
-        "title": "Workflows",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "description": "Users that used the [ELIXIR AAI](https://elixir-europe.org/services/compute/aai) (Authentication and Authorisation Infrastructure) to log into the European Galaxy server.",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "fixedColor": "rgb(31, 120, 193)",
-              "mode": "fixed"
-            },
-            "mappings": [
-              {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
-              }
-            ],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": []
-        },
         "gridPos": {
-          "h": 4,
+          "h": 8,
           "w": 8,
-          "x": 0,
-          "y": 23
+          "x": 6,
+          "y": 15
         },
-        "hideTimeOverride": true,
-        "id": 18,
-        "maxDataPoints": 100,
+        "id": 16,
         "options": {
-          "colorMode": "none",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "content": "<br/>\n\n# [ELIXIR Galaxy community](https://elixir-europe.org/communities/galaxy)\n\n[Galaxy](https://galaxyproject.org) is an open, web-based platform for data-intensive computational\nresearch that spans beyond the life sciences. It allows researchers without programming experience\nto run analysis workflows on\ntheir data, share their results, and enable others to repeat the same analyses. Galaxy makes\nscience reproducible, facilitates sharing of data and results, and removes the hassle of installing\nsoftware tools from users.\n\nThe [ELIXIR Galaxy community](https://elixir-europe.org/communities/galaxy) is running various\nnational Galaxy servers and the [European Galaxy Server](https://usegalaxy.eu).\n\n\n",
+          "mode": "markdown"
         },
-        "pluginVersion": "11.0.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "provider"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "0"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "users-with-oidc",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "last"
-                }
-              ]
-            ],
-            "tags": []
-          }
-        ],
-        "timeFrom": "7d",
-        "timeShift": "1h",
-        "title": "ELIXIR AAI Users",
-        "type": "stat"
+        "pluginVersion": "9.2.10",
+        "type": "text"
       },
       {
         "datasource": {
@@ -1001,12 +1007,13 @@
         },
         "gridPos": {
           "h": 4,
-          "w": 4,
-          "x": 15,
-          "y": 23
+          "w": 6,
+          "x": 0,
+          "y": 17
         },
         "hideTimeOverride": true,
         "id": 12,
+        "links": [],
         "maxDataPoints": 100,
         "options": {
           "colorMode": "none",
@@ -1020,11 +1027,9 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -1075,78 +1080,62 @@
       {
         "datasource": {
           "type": "influxdb",
-          "uid": "PEBD82B4560F292BD"
+          "uid": "P9B81C0353945995B"
         },
         "fieldConfig": {
           "defaults": {
             "color": {
               "mode": "thresholds"
             },
-            "mappings": [
-              {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
-              }
-            ],
+            "mappings": [],
+            "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
                   "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
                 }
               ]
-            },
-            "unit": "locale"
+            }
           },
           "overrides": []
         },
         "gridPos": {
-          "h": 4,
+          "h": 6,
           "w": 4,
-          "x": 19,
+          "x": 10,
           "y": 23
         },
         "hideTimeOverride": true,
-        "id": 10,
-        "maxDataPoints": 100,
+        "id": 20,
+        "interval": "10m",
         "options": {
-          "colorMode": "none",
-          "graphMode": "none",
+          "colorMode": "value",
+          "graphMode": "area",
           "justifyMode": "auto",
-          "orientation": "horizontal",
+          "orientation": "auto",
           "reduceOptions": {
             "calcs": [
-              "sum"
+              "last"
             ],
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "text": {},
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
               "type": "influxdb",
-              "uid": "PEBD82B4560F292BD"
+              "uid": "P9B81C0353945995B"
             },
-            "dsType": "influxdb",
             "groupBy": [
               {
                 "params": [
-                  "1d"
+                  "1m"
                 ],
                 "type": "time"
               },
@@ -1157,9 +1146,11 @@
                 "type": "fill"
               }
             ],
-            "measurement": "server-workflow-invocations",
+            "measurement": "journalctl.activeusers",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT \"users\" FROM \"active_users\" WHERE (\"host\" = 'sn06.galaxyproject.eu') AND $timeFilter GROUP BY \"timespan\"",
+            "rawQuery": true,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
@@ -1172,20 +1163,21 @@
                 },
                 {
                   "params": [],
-                  "type": "sum"
+                  "type": "mean"
                 }
               ]
             ],
             "tags": []
           }
         ],
-        "timeFrom": "1d",
-        "title": "Workflow Invocations",
+        "timeFrom": "1h",
+        "title": "Active Users (last 10 minutes)",
         "type": "stat"
       }
     ],
     "refresh": false,
-    "schemaVersion": 39,
+    "schemaVersion": 37,
+    "style": "dark",
     "tags": [],
     "templating": {
       "list": []
@@ -1194,12 +1186,11 @@
       "from": "now-5y",
       "to": "now"
     },
-    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {},
     "timezone": "",
     "title": "Ecology",
     "uid": "U5vwgGGVz",
-    "version": 7,
+    "version": 5,
     "weekStart": ""
   }
 }

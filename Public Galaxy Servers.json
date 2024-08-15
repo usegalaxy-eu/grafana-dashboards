@@ -9,41 +9,41 @@
     "slug": "public-galaxy-servers",
     "url": "/d/000000020/public-galaxy-servers",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-24T14:04:21+02:00",
-    "updated": "2024-07-26T13:58:53+02:00",
-    "updatedBy": "kysrpex",
-    "createdBy": "admin",
-    "version": 2,
+    "created": "2022-03-14T14:02:15+01:00",
+    "updated": "2022-03-14T14:02:15+01:00",
+    "updatedBy": "Anonymous",
+    "createdBy": "Anonymous",
+    "version": 1,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 0,
     "folderUid": "",
     "folderTitle": "General",
     "folderUrl": "",
-    "provisioned": false,
-    "provisionedExternalId": "",
+    "provisioned": true,
+    "provisionedExternalId": "Public Galaxy Servers.json",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    }
+    },
+    "publicDashboardAccessToken": "",
+    "publicDashboardUid": "",
+    "publicDashboardEnabled": false
   },
   "dashboard": {
     "annotations": {
       "list": [
         {
           "builtIn": 1,
-          "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
-          },
+          "datasource": "-- Grafana --",
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -54,9 +54,9 @@
     },
     "description": "",
     "editable": true,
-    "fiscalYearStartMonth": 0,
+    "gnetId": null,
     "graphTooltip": 0,
-    "id": 75,
+    "id": 17,
     "links": [
       {
         "asDropdown": false,
@@ -72,10 +72,7 @@
     ],
     "panels": [
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
+        "content": "This dashboard shows information about some of the \n<a href=\"https://github.com/martenson/public-galaxy-servers/\">public galaxy servers</a>. \n To build the dashboard, we made requests to these public servers' APIs every hour asking for their\n configuration information. We then aggregated that information into dashboards. Please note that \n uptime percentages may not be perfectly accurate. Additionally, response times may be different than \n what you see as all requests were made from a server in Freiburg, Germany. The\n<a target=\"_blank\" href=\"https://stats.galaxyproject.eu/raw/\">collected data</a> is freely accessible \n from our server so everyone can build off of it (license CC0). If your server is missing from the\n dashboard or you believe the data is wrong, just open an\n<a href=\"https://github.com/martenson/public-galaxy-servers/issues\">issue</a> or a \n<a href=\"https://github.com/martenson/public-galaxy-servers/edit/master/servers.csv\">PR</a> with the\n relevant information. We've also made\n <a href=\"https://stats.galaxyproject.eu/raw/badges/\" target=\"_blank\">uptime badges</a> available\n if you want to show off. Feel free to embed a link directly to the image, e.g.\n  <img src=\"https://stats.galaxyproject.eu/raw/badges/UseGalaxy_eu.svg\" />  ",
         "gridPos": {
           "h": 4,
           "w": 24,
@@ -83,146 +80,53 @@
           "y": 0
         },
         "id": 19,
-        "options": {
-          "code": {
-            "language": "plaintext",
-            "showLineNumbers": false,
-            "showMiniMap": false
-          },
-          "content": "This dashboard shows information about some of the \n<a href=\"https://github.com/martenson/public-galaxy-servers/\">public galaxy servers</a>. \n To build the dashboard, we made requests to these public servers' APIs every hour asking for their\n configuration information. We then aggregated that information into dashboards. Please note that \n uptime percentages may not be perfectly accurate. Additionally, response times may be different than \n what you see as all requests were made from a server in Freiburg, Germany. The\n<a target=\"_blank\" href=\"https://stats.galaxyproject.eu/raw/\">collected data</a> is freely accessible \n from our server so everyone can build off of it (license CC0). If your server is missing from the\n dashboard or you believe the data is wrong, just open an\n<a href=\"https://github.com/martenson/public-galaxy-servers/issues\">issue</a> or a \n<a href=\"https://github.com/martenson/public-galaxy-servers/edit/master/servers.csv\">PR</a> with the\n relevant information. We've also made\n <a href=\"https://stats.galaxyproject.eu/raw/badges/\" target=\"_blank\">uptime badges</a> available\n if you want to show off. Feel free to embed a link directly to the image, e.g.\n  <img src=\"https://stats.galaxyproject.eu/raw/badges/UseGalaxy_eu.svg\" />  ",
-          "mode": "html"
-        },
-        "pluginVersion": "11.0.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "refId": "A"
-          }
-        ],
+        "links": [],
+        "mode": "html",
+        "options": {},
         "title": "About",
         "type": "text"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "custom": {
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "rgba(245, 54, 54, 0.9)",
-                  "value": null
-                },
-                {
-                  "color": "#3274D9",
-                  "value": 0
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
+        "circleMaxSize": 30,
+        "circleMinSize": "3",
+        "colors": [
+          "rgba(245, 54, 54, 0.9)",
+          "#3274D9"
+        ],
+        "datasource": "Galaxy",
+        "decimals": 0,
+        "esMetric": "Count",
         "gridPos": {
           "h": 13,
           "w": 16,
           "x": 0,
           "y": 4
         },
+        "hideEmpty": true,
         "hideTimeOverride": false,
+        "hideZero": false,
         "id": 2,
+        "initialZoom": 1,
+        "links": [],
+        "locationData": "countries",
+        "mapCenter": "(0\u00b0, 0\u00b0)",
+        "mapCenterLatitude": 0,
+        "mapCenterLongitude": 0,
         "maxDataPoints": 1,
-        "options": {
-          "basemap": {
-            "name": "Basemap",
-            "type": "default"
-          },
-          "controls": {
-            "mouseWheelZoom": false,
-            "showAttribution": true,
-            "showDebug": false,
-            "showMeasure": false,
-            "showScale": false,
-            "showZoom": true
-          },
-          "layers": [
-            {
-              "config": {
-                "showLegend": true,
-                "style": {
-                  "color": {
-                    "fixed": "dark-green"
-                  },
-                  "opacity": 0.4,
-                  "rotation": {
-                    "fixed": 0,
-                    "max": 360,
-                    "min": -360,
-                    "mode": "mod"
-                  },
-                  "size": {
-                    "fixed": 5,
-                    "max": 30,
-                    "min": 3
-                  },
-                  "symbol": {
-                    "fixed": "img/icons/marker/circle.svg",
-                    "mode": "fixed"
-                  },
-                  "symbolAlign": {
-                    "horizontal": "center",
-                    "vertical": "center"
-                  },
-                  "textConfig": {
-                    "fontSize": 12,
-                    "offsetX": 0,
-                    "offsetY": 0,
-                    "textAlign": "center",
-                    "textBaseline": "middle"
-                  }
-                }
-              },
-              "location": {
-                "gazetteer": "public/gazetteer/countries.json",
-                "mode": "lookup"
-              },
-              "name": "Layer 0",
-              "tooltip": true,
-              "type": "markers"
-            }
-          ],
-          "tooltip": {
-            "mode": "details"
-          },
-          "view": {
-            "allLayers": true,
-            "id": "zero",
-            "lat": 0,
-            "lon": 0,
-            "zoom": 1
-          }
+        "mouseWheelZoom": false,
+        "options": {},
+        "showLegend": true,
+        "stickyLabels": true,
+        "tableQueryOptions": {
+          "geohashField": "geohash",
+          "latitudeField": "latitude",
+          "longitudeField": "longitude",
+          "metricField": "metric",
+          "queryType": "geohash"
         },
-        "pluginVersion": "11.0.0",
         "targets": [
           {
             "alias": "$tag_location",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -268,100 +172,25 @@
             "tags": []
           }
         ],
+        "thresholds": "0",
         "timeFrom": "1h",
+        "timeShift": null,
         "title": "Galaxies Across the World",
-        "transformations": [
-          {
-            "id": "reduce",
-            "options": {
-              "reducers": [
-                "lastNotNull"
-              ]
-            }
-          }
-        ],
-        "type": "geomap"
+        "type": "grafana-worldmap-panel",
+        "unitPlural": "",
+        "unitSingle": "",
+        "unitSingular": "",
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "custom": {
-              "cellOptions": {
-                "type": "auto"
-              },
-              "inspect": false
-            },
-            "decimals": 2,
-            "displayName": "",
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Metric"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Server"
-                },
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Avg"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Uptime"
-                },
-                {
-                  "id": "unit",
-                  "value": "percentunit"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            }
-          ]
-        },
+        "columns": [
+          {
+            "text": "Avg",
+            "value": "avg"
+          }
+        ],
+        "datasource": "Galaxy",
+        "fontSize": "100%",
         "gridPos": {
           "h": 13,
           "w": 8,
@@ -370,26 +199,64 @@
         },
         "id": 17,
         "interval": "1h",
-        "options": {
-          "cellHeight": "sm",
-          "footer": {
-            "countRows": false,
-            "fields": "",
-            "reducer": [
-              "sum"
-            ],
-            "show": false
-          },
-          "showHeader": true
+        "links": [],
+        "options": {},
+        "pageSize": null,
+        "scroll": true,
+        "showHeader": true,
+        "sort": {
+          "col": 1,
+          "desc": true
         },
-        "pluginVersion": "11.0.0",
+        "styles": [
+          {
+            "alias": "Server",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "pattern": "Metric",
+            "thresholds": [],
+            "type": "string",
+            "unit": "short"
+          },
+          {
+            "alias": "Uptime",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "pattern": "Avg",
+            "thresholds": [],
+            "type": "number",
+            "unit": "percentunit"
+          },
+          {
+            "alias": "",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "decimals": 2,
+            "pattern": "/.*/",
+            "thresholds": [],
+            "type": "number",
+            "unit": "short"
+          }
+        ],
         "targets": [
           {
             "alias": "[[tag_name]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -434,81 +301,19 @@
           }
         ],
         "timeFrom": "30d",
+        "timeShift": null,
         "title": "30 Day Uptime",
-        "transformations": [
-          {
-            "id": "reduce",
-            "options": {
-              "includeTimeField": false,
-              "reducers": [
-                "mean"
-              ]
-            }
-          }
-        ],
+        "transform": "timeseries_aggregations",
         "type": "table"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Galaxy",
         "description": "Time for the server to respond to our request. 40 indicates a timeout / inability to reach the server.",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "fill": 0,
         "gridPos": {
           "h": 9,
           "w": 24,
@@ -517,31 +322,33 @@
         },
         "id": 18,
         "interval": "1h",
-        "options": {
-          "legend": {
-            "calcs": [
-              "mean",
-              "lastNotNull",
-              "max",
-              "min"
-            ],
-            "displayMode": "table",
-            "placement": "right",
-            "showLegend": true
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "none"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": true,
+          "current": true,
+          "max": true,
+          "min": true,
+          "rightSide": true,
+          "show": true,
+          "total": false,
+          "values": true
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {},
+        "percentage": false,
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
         "targets": [
           {
             "alias": "[[tag_name]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -585,112 +392,55 @@
             "tags": []
           }
         ],
+        "thresholds": [],
         "timeFrom": "1w",
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Response Time",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Galaxy",
         "description": "Time for the server to respond to our request. 40 indicates a timeout / inability to reach the server.",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byValue",
-                "options": {
-                  "op": "gte",
-                  "reducer": "allIsZero",
-                  "value": 0
-                }
-              },
-              "properties": [
-                {
-                  "id": "custom.hideFrom",
-                  "value": {
-                    "legend": true,
-                    "tooltip": true,
-                    "viz": false
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byValue",
-                "options": {
-                  "op": "gte",
-                  "reducer": "allIsNull",
-                  "value": 0
-                }
-              },
-              "properties": [
-                {
-                  "id": "custom.hideFrom",
-                  "value": {
-                    "legend": true,
-                    "tooltip": true,
-                    "viz": false
-                  }
-                }
-              ]
-            }
-          ]
-        },
+        "fill": 0,
         "gridPos": {
           "h": 6,
           "w": 24,
@@ -699,28 +449,37 @@
         },
         "id": 26,
         "interval": "1h",
-        "options": {
-          "legend": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "displayMode": "table",
-            "placement": "right",
-            "showLegend": true
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "desc"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": false,
+          "current": true,
+          "hideEmpty": true,
+          "hideZero": true,
+          "max": false,
+          "min": false,
+          "rightSide": true,
+          "show": true,
+          "sort": "current",
+          "sortDesc": true,
+          "total": false,
+          "values": true
         },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null as zero",
+        "options": {},
+        "percentage": false,
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
         "targets": [
           {
             "alias": "[[tag_name]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -764,57 +523,56 @@
             "tags": []
           }
         ],
+        "thresholds": [],
         "timeFrom": "1w",
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Tools",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 2,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "custom": {
-              "align": "auto",
-              "cellOptions": {
-                "type": "auto"
-              },
-              "inspect": false
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Total"
-              },
-              "properties": [
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            }
-          ]
-        },
+        "columns": [
+          {
+            "text": "Total",
+            "value": "total"
+          }
+        ],
+        "datasource": "Galaxy",
+        "fontSize": "100%",
         "gridPos": {
           "h": 9,
           "w": 4,
@@ -823,26 +581,35 @@
         },
         "hideTimeOverride": true,
         "id": 12,
-        "options": {
-          "cellHeight": "sm",
-          "footer": {
-            "countRows": false,
-            "fields": "",
-            "reducer": [
-              "sum"
-            ],
-            "show": false
-          },
-          "showHeader": true
+        "links": [],
+        "options": {},
+        "pageSize": null,
+        "scroll": true,
+        "showHeader": true,
+        "sort": {
+          "col": 0,
+          "desc": true
         },
-        "pluginVersion": "11.0.0",
+        "styles": [
+          {
+            "alias": "",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 0,
+            "pattern": "Total",
+            "thresholds": [],
+            "type": "number",
+            "unit": "short"
+          }
+        ],
         "targets": [
           {
             "alias": "[[tag_version]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -888,42 +655,20 @@
         ],
         "timeFrom": "1h",
         "title": "Version Distribution",
-        "transformations": [
-          {
-            "id": "reduce",
-            "options": {
-              "includeTimeField": false,
-              "reducers": [
-                "sum"
-              ]
-            }
-          }
-        ],
+        "transform": "timeseries_aggregations",
         "type": "table"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
+        "aliasColors": {},
+        "breakPoint": "50%",
+        "cacheTimeout": null,
+        "combine": {
+          "label": "Others",
+          "threshold": 0
         },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              }
-            },
-            "decimals": 0,
-            "mappings": [],
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "datasource": "Galaxy",
+        "fontSize": "80%",
+        "format": "short",
         "gridPos": {
           "h": 9,
           "w": 4,
@@ -931,38 +676,21 @@
           "y": 32
         },
         "id": 21,
-        "maxDataPoints": 3,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true,
-            "values": [
-              "value"
-            ]
-          },
-          "pieType": "pie",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "single",
-            "sort": "none"
-          }
+        "interval": null,
+        "legend": {
+          "show": true,
+          "values": true
         },
+        "legendType": "Under graph",
+        "links": [],
+        "maxDataPoints": 3,
+        "nullPointMode": "connected",
+        "options": {},
+        "pieType": "pie",
+        "strokeWidth": 1,
         "targets": [
           {
             "alias": "[[tag_require_login]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "groupBy": [
               {
                 "params": [
@@ -1018,31 +746,20 @@
           }
         ],
         "title": "Requiring Log-in",
-        "type": "piechart"
+        "type": "grafana-piechart-panel",
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
+        "aliasColors": {},
+        "breakPoint": "50%",
+        "cacheTimeout": null,
+        "combine": {
+          "label": "Others",
+          "threshold": 0
         },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              }
-            },
-            "decimals": 0,
-            "mappings": [],
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "datasource": "Galaxy",
+        "fontSize": "80%",
+        "format": "short",
         "gridPos": {
           "h": 9,
           "w": 4,
@@ -1050,38 +767,21 @@
           "y": 32
         },
         "id": 22,
-        "maxDataPoints": 3,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true,
-            "values": [
-              "value"
-            ]
-          },
-          "pieType": "pie",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "single",
-            "sort": "none"
-          }
+        "interval": null,
+        "legend": {
+          "show": true,
+          "values": true
         },
+        "legendType": "Under graph",
+        "links": [],
+        "maxDataPoints": 3,
+        "nullPointMode": "connected",
+        "options": {},
+        "pieType": "pie",
+        "strokeWidth": 1,
         "targets": [
           {
             "alias": "[[tag_enable_quotas]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "groupBy": [
               {
                 "params": [
@@ -1137,31 +837,20 @@
           }
         ],
         "title": "Enabling Quotas",
-        "type": "piechart"
+        "type": "grafana-piechart-panel",
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
+        "aliasColors": {},
+        "breakPoint": "50%",
+        "cacheTimeout": null,
+        "combine": {
+          "label": "Others",
+          "threshold": 0
         },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              }
-            },
-            "decimals": 0,
-            "mappings": [],
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "datasource": "Galaxy",
+        "fontSize": "80%",
+        "format": "short",
         "gridPos": {
           "h": 9,
           "w": 4,
@@ -1169,38 +858,21 @@
           "y": 32
         },
         "id": 23,
-        "maxDataPoints": 3,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true,
-            "values": [
-              "value"
-            ]
-          },
-          "pieType": "pie",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "single",
-            "sort": "none"
-          }
+        "interval": null,
+        "legend": {
+          "show": true,
+          "values": true
         },
+        "legendType": "Under graph",
+        "links": [],
+        "maxDataPoints": 3,
+        "nullPointMode": "connected",
+        "options": {},
+        "pieType": "pie",
+        "strokeWidth": 1,
         "targets": [
           {
             "alias": "[[tag_allow_user_creation]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "groupBy": [
               {
                 "params": [
@@ -1256,31 +928,20 @@
           }
         ],
         "title": "Allowing User Creation",
-        "type": "piechart"
+        "type": "grafana-piechart-panel",
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
+        "aliasColors": {},
+        "breakPoint": "50%",
+        "cacheTimeout": null,
+        "combine": {
+          "label": "Others",
+          "threshold": 0
         },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              }
-            },
-            "decimals": 0,
-            "mappings": [],
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "datasource": "Galaxy",
+        "fontSize": "80%",
+        "format": "short",
         "gridPos": {
           "h": 9,
           "w": 4,
@@ -1288,38 +949,21 @@
           "y": 32
         },
         "id": 24,
-        "maxDataPoints": 3,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true,
-            "values": [
-              "value"
-            ]
-          },
-          "pieType": "pie",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "single",
-            "sort": "none"
-          }
+        "interval": null,
+        "legend": {
+          "show": true,
+          "values": true
         },
+        "legendType": "Under graph",
+        "links": [],
+        "maxDataPoints": 3,
+        "nullPointMode": "connected",
+        "options": {},
+        "pieType": "pie",
+        "strokeWidth": 1,
         "targets": [
           {
             "alias": "[[tag_allow_user_dataset_purge]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "groupBy": [
               {
                 "params": [
@@ -1375,31 +1019,20 @@
           }
         ],
         "title": "Allowing User Dataset Purge",
-        "type": "piechart"
+        "type": "grafana-piechart-panel",
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
+        "aliasColors": {},
+        "breakPoint": "50%",
+        "cacheTimeout": null,
+        "combine": {
+          "label": "Others",
+          "threshold": 0
         },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              }
-            },
-            "decimals": 0,
-            "mappings": [],
-            "unit": "short"
-          },
-          "overrides": []
-        },
+        "datasource": "Galaxy",
+        "fontSize": "80%",
+        "format": "short",
         "gridPos": {
           "h": 9,
           "w": 4,
@@ -1408,38 +1041,20 @@
         },
         "id": 25,
         "interval": "",
-        "maxDataPoints": 3,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true,
-            "values": [
-              "value"
-            ]
-          },
-          "pieType": "pie",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "single",
-            "sort": "none"
-          }
+        "legend": {
+          "show": true,
+          "values": true
         },
+        "legendType": "Under graph",
+        "links": [],
+        "maxDataPoints": 3,
+        "nullPointMode": "connected",
+        "options": {},
+        "pieType": "pie",
+        "strokeWidth": 1,
         "targets": [
           {
             "alias": "[[tag_enable_oidc]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "groupBy": [
               {
                 "params": [
@@ -1495,285 +1110,167 @@
           }
         ],
         "title": "Supporting OIDC",
-        "type": "piechart"
+        "type": "grafana-piechart-panel",
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "custom": {
-              "align": "auto",
-              "cellOptions": {
-                "type": "auto"
-              },
-              "inspect": false
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Time"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Time"
-                },
-                {
-                  "id": "custom.hidden",
-                  "value": true
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "allow_user_creation"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "User Creation Enabled"
-                },
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.align"
-                },
-                {
-                  "id": "thresholds",
-                  "value": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "rgba(245, 54, 54, 0.9)",
-                        "value": null
-                      },
-                      {
-                        "color": "rgba(237, 129, 40, 0.89)",
-                        "value": null
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "enable_quotas"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Quotas"
-                },
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "enable_communication_server"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Galaxy Chat Available"
-                },
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "location"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Location"
-                },
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "name"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Name"
-                },
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "require_login"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Login Required?"
-                },
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "version"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Version"
-                },
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "last"
-              },
-              "properties": [
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.hidden",
-                  "value": true
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            }
-          ]
-        },
+        "columns": [
+          {
+            "text": "Avg",
+            "value": "avg"
+          }
+        ],
+        "datasource": "Galaxy",
+        "fontSize": "100%",
         "gridPos": {
           "h": 13,
           "w": 24,
           "x": 0,
           "y": 41
         },
+        "height": "500px",
         "id": 11,
-        "options": {
-          "cellHeight": "sm",
-          "footer": {
-            "countRows": false,
-            "fields": "",
-            "reducer": [
-              "sum"
-            ],
-            "show": false
-          },
-          "showHeader": true
+        "links": [],
+        "maxPerRow": 1,
+        "options": {},
+        "pageSize": null,
+        "scroll": true,
+        "showHeader": true,
+        "sort": {
+          "col": 7,
+          "desc": true
         },
-        "pluginVersion": "11.0.0",
+        "styles": [
+          {
+            "alias": "Time",
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "pattern": "Time",
+            "type": "hidden"
+          },
+          {
+            "alias": "User Creation Enabled",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "decimals": 2,
+            "pattern": "allow_user_creation",
+            "thresholds": [
+              ""
+            ],
+            "type": "string",
+            "unit": "short"
+          },
+          {
+            "alias": "Quotas",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "pattern": "enable_quotas",
+            "thresholds": [],
+            "type": "number",
+            "unit": "short"
+          },
+          {
+            "alias": "Galaxy Chat Available",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "pattern": "enable_communication_server",
+            "thresholds": [],
+            "type": "number",
+            "unit": "short"
+          },
+          {
+            "alias": "Location",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "pattern": "location",
+            "thresholds": [],
+            "type": "number",
+            "unit": "short"
+          },
+          {
+            "alias": "Name",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "pattern": "name",
+            "thresholds": [],
+            "type": "number",
+            "unit": "short"
+          },
+          {
+            "alias": "Login Required?",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "pattern": "require_login",
+            "thresholds": [],
+            "type": "number",
+            "unit": "short"
+          },
+          {
+            "alias": "Version",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "pattern": "version",
+            "thresholds": [],
+            "type": "number",
+            "unit": "short"
+          },
+          {
+            "alias": "",
+            "colorMode": null,
+            "colors": [
+              "rgba(245, 54, 54, 0.9)",
+              "rgba(237, 129, 40, 0.89)",
+              "rgba(50, 172, 45, 0.97)"
+            ],
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "decimals": 2,
+            "pattern": "last",
+            "thresholds": [],
+            "type": "hidden",
+            "unit": "short"
+          }
+        ],
         "targets": [
           {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1874,19 +1371,14 @@
           }
         ],
         "timeFrom": "1h",
+        "timeShift": null,
         "title": "Galactic Overview",
-        "transformations": [
-          {
-            "id": "merge",
-            "options": {
-              "reducers": []
-            }
-          }
-        ],
+        "transform": "table",
         "type": "table"
       }
     ],
-    "schemaVersion": 39,
+    "schemaVersion": 18,
+    "style": "dark",
     "tags": [
       "pgs"
     ],
@@ -1897,7 +1389,6 @@
       "from": "now-6h",
       "to": "now"
     },
-    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "refresh_intervals": [
         "5s",
@@ -1926,7 +1417,6 @@
     "timezone": "browser",
     "title": "Public Galaxy Servers",
     "uid": "000000020",
-    "version": 2,
-    "weekStart": ""
+    "version": 1
   }
 }

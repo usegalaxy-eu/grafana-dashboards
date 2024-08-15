@@ -9,8 +9,8 @@
     "slug": "traefik",
     "url": "/d/l2U_DcASz/traefik",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-03-06T09:30:05+01:00",
-    "updated": "2024-03-06T14:16:18+01:00",
+    "created": "2024-03-06T10:30:05+01:00",
+    "updated": "2024-03-06T15:16:18+01:00",
     "updatedBy": "admin",
     "createdBy": "mira-miracoli",
     "version": 17,
@@ -24,16 +24,19 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
+        "canAdd": true,
+        "canEdit": true,
+        "canDelete": true
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    }
+    },
+    "publicDashboardAccessToken": "",
+    "publicDashboardUid": "",
+    "publicDashboardEnabled": false
   },
   "dashboard": {
     "annotations": {
