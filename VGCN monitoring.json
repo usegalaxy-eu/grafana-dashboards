@@ -9,8 +9,8 @@
     "slug": "vgcn-monitoring",
     "url": "/d/Zn2z0NYVk/vgcn-monitoring",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2023-04-04T10:57:48+02:00",
-    "updated": "2023-10-31T16:12:07+01:00",
+    "created": "2023-04-04T08:57:48+02:00",
+    "updated": "2023-10-31T15:12:07+01:00",
     "updatedBy": "sanjaysrikakulam",
     "createdBy": "sanjaysrikakulam",
     "version": 24,
@@ -24,19 +24,16 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": true,
-        "canEdit": true,
-        "canDelete": true
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    },
-    "publicDashboardAccessToken": "",
-    "publicDashboardUid": "",
-    "publicDashboardEnabled": false
+    }
   },
   "dashboard": {
     "annotations": {

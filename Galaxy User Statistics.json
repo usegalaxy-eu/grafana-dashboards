@@ -9,34 +9,31 @@
     "slug": "galaxy-user-statistics",
     "url": "/d/000000012/galaxy-user-statistics",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2022-03-14T14:02:15+01:00",
-    "updated": "2022-03-14T14:02:15+01:00",
-    "updatedBy": "Anonymous",
-    "createdBy": "Anonymous",
-    "version": 1,
+    "created": "2024-07-24T13:58:32+02:00",
+    "updated": "2024-07-25T19:00:59+02:00",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 7,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 2,
     "folderUid": "03x-gIEnz",
     "folderTitle": "GalaxyServer",
     "folderUrl": "/dashboards/f/03x-gIEnz/galaxyserver",
-    "provisioned": true,
-    "provisionedExternalId": "GalaxyServer/Galaxy User Statistics.json",
+    "provisioned": false,
+    "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": true,
-        "canEdit": true,
-        "canDelete": true
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    },
-    "publicDashboardAccessToken": "",
-    "publicDashboardUid": "",
-    "publicDashboardEnabled": false
+    }
   },
   "dashboard": {
     "annotations": {
@@ -44,7 +41,10 @@
         {
           "$$hashKey": "object:98",
           "builtIn": 1,
-          "datasource": "-- Grafana --",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -54,15 +54,17 @@
       ]
     },
     "editable": true,
-    "gnetId": null,
+    "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 13,
-    "iteration": 1613401680556,
+    "id": 59,
     "links": [],
     "panels": [
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -71,32 +73,52 @@
         },
         "id": 22,
         "panels": [],
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "refId": "A"
+          }
+        ],
         "title": "Total (All Time)",
         "type": "row"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "locale"
           },
           "overrides": []
-        },
-        "format": "locale",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 5,
@@ -106,42 +128,30 @@
         },
         "hideTimeOverride": true,
         "id": 7,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -179,44 +189,44 @@
             "tags": []
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Galaxy Users",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "locale"
           },
           "overrides": []
-        },
-        "format": "locale",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 5,
@@ -226,42 +236,30 @@
         },
         "hideTimeOverride": true,
         "id": 11,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -299,44 +297,44 @@
             "tags": []
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Workflows",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "locale"
           },
           "overrides": []
-        },
-        "format": "locale",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 5,
@@ -346,42 +344,30 @@
         },
         "hideTimeOverride": true,
         "id": 8,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -419,44 +405,44 @@
             "tags": []
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Workflow Invocations",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "locale"
           },
           "overrides": []
-        },
-        "format": "locale",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -466,42 +452,30 @@
         },
         "hideTimeOverride": true,
         "id": 1,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -539,44 +513,44 @@
             "tags": []
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
-        "title": "Galaxy Histories",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "title": "Histories",
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "locale"
           },
           "overrides": []
-        },
-        "format": "locale",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 4,
@@ -586,42 +560,30 @@
         },
         "hideTimeOverride": true,
         "id": 10,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -659,39 +621,55 @@
             "tags": []
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Jobs",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "circleMaxSize": "15",
-        "circleMinSize": "10",
-        "colors": [
-          "#F2CC0C",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)",
-          "#3274D9",
-          "#E02F44",
-          "rgba(7, 38, 5, 0.97)"
-        ],
-        "datasource": "Galaxy",
-        "decimals": 0,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "description": "The European Galaxy server is built on the shoulders of our European ELIXIR partners. This map is providing you some impression of how many jobs are currently processed by external clouds across Europe. Each of the circles represents one ELIXIR partner that provides compute resources via a locally hosted pulsar server. The European Galaxy server is then submitting jobs to these pulsar servers and collects the inputs as soon as finished. If one of the sites is down Galaxy will attempt to resubmit the job to some other resources.",
-        "esMetric": "Count",
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#F2CC0C",
+                  "value": null
+                },
+                {
+                  "color": "rgba(237, 129, 40, 0.89)",
+                  "value": 0
+                },
+                {
+                  "color": "rgba(50, 172, 45, 0.97)",
+                  "value": 5
+                },
+                {
+                  "color": "#3274D9",
+                  "value": 10
+                },
+                {
+                  "color": "#E02F44",
+                  "value": 50
+                },
+                {
+                  "color": "rgba(7, 38, 5, 0.97)",
+                  "value": 100
+                }
+              ]
+            }
           },
           "overrides": []
         },
@@ -701,32 +679,98 @@
           "x": 0,
           "y": 6
         },
-        "hideEmpty": false,
-        "hideZero": false,
         "id": 69,
-        "initialZoom": "2",
         "interval": "",
-        "jsonUrl": "https://raw.githubusercontent.com/usegalaxy-eu/pulsar-servers/master/servers.json",
-        "links": [],
-        "locationData": "json endpoint",
-        "mapCenter": "Europe",
-        "mapCenterLatitude": 46,
-        "mapCenterLongitude": 14,
         "maxDataPoints": 1,
-        "mouseWheelZoom": true,
-        "pluginVersion": "6.3.3",
-        "showLegend": true,
-        "stickyLabels": false,
-        "tableQueryOptions": {
-          "geohashField": "geohash",
-          "latitudeField": "latitude",
-          "longitudeField": "longitude",
-          "metricField": "metric",
-          "queryType": "geohash"
+        "options": {
+          "basemap": {
+            "config": {},
+            "name": "Basemap",
+            "type": "default"
+          },
+          "controls": {
+            "mouseWheelZoom": true,
+            "showAttribution": true,
+            "showDebug": false,
+            "showMeasure": false,
+            "showScale": false,
+            "showZoom": true
+          },
+          "layers": [
+            {
+              "config": {
+                "showLegend": true,
+                "style": {
+                  "color": {
+                    "fixed": "dark-green"
+                  },
+                  "opacity": 0.4,
+                  "rotation": {
+                    "fixed": 0,
+                    "max": 360,
+                    "min": -360,
+                    "mode": "mod"
+                  },
+                  "size": {
+                    "fixed": 5,
+                    "max": 15,
+                    "min": 10
+                  },
+                  "symbol": {
+                    "fixed": "img/icons/marker/circle.svg",
+                    "mode": "fixed"
+                  },
+                  "symbolAlign": {
+                    "horizontal": "center",
+                    "vertical": "center"
+                  },
+                  "textConfig": {
+                    "fontSize": 12,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "textAlign": "center",
+                    "textBaseline": "middle"
+                  }
+                }
+              },
+              "location": {
+                "mode": "auto"
+              },
+              "name": "Layer 0",
+              "tooltip": true,
+              "type": "markers"
+            },
+            {
+              "config": {
+                "nightColor": "purple",
+                "show": "to",
+                "sun": false
+              },
+              "name": "Layer 2",
+              "opacity": 0.2,
+              "tooltip": false,
+              "type": "dayNight"
+            }
+          ],
+          "tooltip": {
+            "mode": "details"
+          },
+          "view": {
+            "allLayers": true,
+            "id": "europe",
+            "lat": 46,
+            "lon": 14,
+            "zoom": 2
+          }
         },
+        "pluginVersion": "11.0.0",
         "targets": [
           {
             "alias": "[[tag_job_runner_name]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -753,7 +797,7 @@
             "orderByTime": "ASC",
             "policy": "default",
             "query": "SELECT last(\"count\") FROM \"queue-overview\" WHERE (\"job_runner_name\" =~ /^pulsar_.*/ AND \"job_runner_name\" != 'condor')  AND (\"state\" = 'queued' OR \"state\" = 'running')  GROUP BY time(10m), \"job_runner_name\" fill(none)",
-            "rawQuery": true,
+            "rawQuery": false,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
@@ -797,40 +841,58 @@
             ]
           }
         ],
-        "thresholds": "0,5,10,50,100",
-        "timeFrom": null,
-        "timeShift": null,
         "title": "Jobs processing across Europe",
-        "type": "grafana-worldmap-panel",
-        "unitPlural": "runnings jobs",
-        "unitSingle": "",
-        "unitSingular": "running job",
-        "valueName": "current"
+        "transformations": [
+          {
+            "id": "reduce",
+            "options": {
+              "reducers": [
+                "lastNotNull"
+              ]
+            }
+          }
+        ],
+        "type": "geomap"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "description": "Users that used the [ELIXIR AAI](https://elixir-europe.org/services/compute/aai) (Authentication and Authorisation Infrastructure) to log into the European Galaxy server.",
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "color": {
+              "fixedColor": "rgb(31, 120, 193)",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
           },
           "overrides": []
-        },
-        "format": "none",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 6,
@@ -840,42 +902,30 @@
         },
         "hideTimeOverride": true,
         "id": 61,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": true
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -919,45 +969,45 @@
             "tags": []
           }
         ],
-        "thresholds": "",
         "timeFrom": "7d",
         "timeShift": "1h",
         "title": "Galaxy Elixir AAI Users",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
-        "decimals": null,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "locale"
           },
           "overrides": []
-        },
-        "format": "locale",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 4,
@@ -967,42 +1017,30 @@
         },
         "hideTimeOverride": true,
         "id": 9,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1040,24 +1078,16 @@
             "tags": []
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Datasets",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
         "collapsed": false,
-        "datasource": null,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1066,57 +1096,87 @@
         },
         "id": 58,
         "panels": [],
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "refId": "A"
+          }
+        ],
         "title": "CPU Time (All Time)",
         "type": "row"
       },
       {
-        "datasource": null,
-        "fieldConfig": {
-          "defaults": {
-            "custom": {}
-          },
-          "overrides": []
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
         },
         "gridPos": {
-          "h": 3,
+          "h": 6,
           "w": 8,
           "x": 0,
           "y": 13
         },
         "id": 60,
-        "links": [],
         "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
           "content": "This information is calculated from the assigned `galaxy_slots` multiplied by `runtime_seconds` for each job. It will not calculate the exact CPU usage but it gives and approximation for what was allocated on our infrastructure, across multiple clouds.",
           "mode": "markdown"
         },
-        "pluginVersion": "7.4.1",
+        "pluginVersion": "11.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "refId": "A"
+          }
+        ],
         "title": "Compute Time overview",
         "type": "text"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
-        "decimals": 2,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -1126,42 +1186,30 @@
         },
         "hideTimeOverride": true,
         "id": 65,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1206,50 +1254,50 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar DE01(Freiburg - de.NBI cloud)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
-        "decimals": 2,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -1259,42 +1307,30 @@
         },
         "hideTimeOverride": true,
         "id": 66,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1339,182 +1375,50 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar IT01 (Bari - RECAS)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
-          },
-          "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 8,
-          "x": 0,
-          "y": 16
-        },
-        "hideTimeOverride": true,
-        "id": 54,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "dsType": "influxdb",
-            "groupBy": [
+            "decimals": 2,
+            "mappings": [
               {
-                "params": [
-                  "24h"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "0"
-                ],
-                "type": "fill"
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
               }
             ],
-            "measurement": "server-allocated-cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
                 {
-                  "params": [
-                    "cpu_seconds"
-                  ],
-                  "type": "field"
+                  "color": "green",
+                  "value": null
                 },
                 {
-                  "params": [],
-                  "type": "last"
+                  "color": "red",
+                  "value": 80
                 }
               ]
-            ],
-            "tags": [
-              {
-                "key": "job_runner_name",
-                "operator": "=",
-                "value": "condor"
-              },
-              {
-                "condition": "AND",
-                "key": "host",
-                "operator": "=",
-                "value": "sn06.galaxyproject.eu"
-              }
-            ]
-          }
-        ],
-        "thresholds": "",
-        "timeFrom": "1d",
-        "timeShift": null,
-        "title": "de.NBI Cloud",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
-        "decimals": 2,
-        "fieldConfig": {
-          "defaults": {
-            "custom": {}
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -1524,42 +1428,30 @@
         },
         "hideTimeOverride": true,
         "id": 68,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1604,50 +1496,50 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar DE02 (T\u00fcbingen - de.NBI cloud)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
-        "decimals": 2,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -1657,42 +1549,30 @@
         },
         "hideTimeOverride": true,
         "id": 72,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1737,49 +1617,49 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar IT02 (Bari - RECAS)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -1788,43 +1668,31 @@
           "y": 19
         },
         "hideTimeOverride": true,
-        "id": 55,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
+        "id": 54,
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1863,50 +1731,56 @@
               {
                 "key": "job_runner_name",
                 "operator": "=",
-                "value": "drmaa"
+                "value": "condor"
+              },
+              {
+                "condition": "AND",
+                "key": "host",
+                "operator": "=",
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
-        "title": "AG Backofen (HPC)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "title": "de.NBI Cloud",
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
-        "decimals": 2,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -1916,42 +1790,30 @@
         },
         "hideTimeOverride": true,
         "id": 71,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -1996,50 +1858,50 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar DE03 (Freiburg - GPUs - de.NBI cloud)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
-        "decimals": 2,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -2049,44 +1911,30 @@
         },
         "hideTimeOverride": true,
         "id": 67,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "$$hashKey": "object:181",
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "$$hashKey": "object:182",
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -2131,95 +1979,82 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar BE01 (Ghent - VIB)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "$$hashKey": "object:184",
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
           "w": 8,
-          "x": 8,
+          "x": 0,
           "y": 22
         },
         "hideTimeOverride": true,
-        "id": 56,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
+        "id": 55,
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -2258,56 +2093,172 @@
               {
                 "key": "job_runner_name",
                 "operator": "=",
+                "value": "drmaa"
+              }
+            ]
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "AG Backofen (HPC)",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 8,
+          "x": 8,
+          "y": 22
+        },
+        "hideTimeOverride": true,
+        "id": 56,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "24h"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-allocated-cpu",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT last(\"cpu_seconds\") FROM \"server-allocated-cpu\" WHERE (\"job_runner_name\" = 'pulsar_eu_cz01' AND \"host\" = 'maintenance.galaxyproject.eu' OR \"job_runner_name\" = 'pulsar_eu_cz') AND $timeFilter GROUP BY time(24h) fill(0)",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "cpu_seconds"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "job_runner_name",
+                "operator": "=",
                 "value": "pulsar_eu_cz"
               },
               {
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar Czech Republic (CESNET)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
-        "decimals": 2,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -2317,42 +2268,30 @@
         },
         "hideTimeOverride": true,
         "id": 70,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -2397,49 +2336,48 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar PT01 (Lisbon - Tecnico ULisboa)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -2449,42 +2387,30 @@
         },
         "hideTimeOverride": true,
         "id": 74,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -2529,49 +2455,48 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar UK01 (Diamond Light Source)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
-        },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -2581,44 +2506,30 @@
         },
         "hideTimeOverride": true,
         "id": 75,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "$$hashKey": "object:270",
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "$$hashKey": "object:271",
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -2663,51 +2574,169 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar FI01 (CSC)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "$$hashKey": "object:273",
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "rgba(245, 54, 54, 0.9)",
-          "rgba(237, 129, 40, 0.89)",
-          "rgba(50, 172, 45, 0.97)"
-        ],
-        "datasource": "Galaxy Historical",
-        "decimals": 2,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
         "fieldConfig": {
           "defaults": {
-            "custom": {}
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
           },
           "overrides": []
         },
-        "format": "s",
-        "gauge": {
-          "maxValue": 1000,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
+        "gridPos": {
+          "h": 3,
+          "w": 8,
+          "x": 8,
+          "y": 28
+        },
+        "hideTimeOverride": true,
+        "id": 76,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "24h"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-allocated-cpu",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT last(\"cpu_seconds\") FROM \"server-allocated-cpu\" WHERE (\"job_runner_name\" = 'pulsar_eu_cz01' AND \"host\" = 'maintenance.galaxyproject.eu' OR \"job_runner_name\" = 'pulsar_eu_cz') AND $timeFilter GROUP BY time(24h) fill(0)",
+            "rawQuery": false,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "cpu_seconds"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "job_runner_name",
+                "operator": "=",
+                "value": "pulsar_eu_sk01"
+              },
+              {
+                "condition": "AND",
+                "key": "host",
+                "operator": "=",
+                "value": "maintenance.galaxyproject.eu"
+              }
+            ]
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Pulsar SK",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
+          },
+          "overrides": []
         },
         "gridPos": {
           "h": 3,
@@ -2716,43 +2745,153 @@
           "y": 28
         },
         "hideTimeOverride": true,
-        "id": 73,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
+        "id": 77,
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "s",
-        "postfixFontSize": "150%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": true,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "24h"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-allocated-cpu",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT last(\"cpu_seconds\") FROM \"server-allocated-cpu\" WHERE (\"job_runner_name\" = 'pulsar_eu_cz01' AND \"host\" = 'maintenance.galaxyproject.eu' OR \"job_runner_name\" = 'pulsar_eu_cz') AND $timeFilter GROUP BY time(24h) fill(0)",
+            "rawQuery": false,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "cpu_seconds"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "job_runner_name",
+                "operator": "=",
+                "value": "pulsar_eu_hcmr01"
+              },
+              {
+                "condition": "AND",
+                "key": "host",
+                "operator": "=",
+                "value": "maintenance.galaxyproject.eu"
+              }
+            ]
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Pulsar HCMR01",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "s"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 8,
+          "x": 16,
+          "y": 31
+        },
+        "hideTimeOverride": true,
+        "id": 73,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -2797,34 +2936,26 @@
                 "condition": "AND",
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1d",
-        "timeShift": null,
         "title": "Pulsar FR01 (Rennes - GenOuest bioinformatics)",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "total"
+        "type": "stat"
       },
       {
         "collapsed": true,
-        "datasource": null,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "gridPos": {
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 31
+          "y": 34
         },
         "id": 19,
         "panels": [
@@ -2833,14 +2964,17 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fill": 2,
             "fillGradient": 0,
             "gridPos": {
               "h": 7,
               "w": 12,
               "x": 0,
-              "y": 23
+              "y": 31
             },
             "id": 52,
             "legend": {
@@ -2875,6 +3009,10 @@
             "steppedLine": true,
             "targets": [
               {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -2913,9 +3051,7 @@
               }
             ],
             "thresholds": [],
-            "timeFrom": null,
             "timeRegions": [],
-            "timeShift": null,
             "title": "Users Over Time",
             "tooltip": {
               "shared": true,
@@ -2924,9 +3060,7 @@
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": [
                 "total"
@@ -2935,24 +3069,18 @@
             "yaxes": [
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
                 "min": "0",
                 "show": true
               },
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
-                "min": null,
                 "show": true
               }
             ],
             "yaxis": {
-              "align": false,
-              "alignLevel": null
+              "align": false
             }
           },
           {
@@ -2960,14 +3088,17 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fill": 2,
             "fillGradient": 0,
             "gridPos": {
               "h": 7,
               "w": 12,
               "x": 12,
-              "y": 23
+              "y": 31
             },
             "id": 53,
             "legend": {
@@ -3002,6 +3133,10 @@
             "steppedLine": true,
             "targets": [
               {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -3040,9 +3175,7 @@
               }
             ],
             "thresholds": [],
-            "timeFrom": null,
             "timeRegions": [],
-            "timeShift": null,
             "title": "Jobs Over Time",
             "tooltip": {
               "shared": true,
@@ -3051,9 +3184,7 @@
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": [
                 "total"
@@ -3062,40 +3193,31 @@
             "yaxes": [
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
                 "min": "0",
                 "show": true
               },
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
-                "min": null,
                 "show": true
               }
             ],
             "yaxis": {
-              "align": false,
-              "alignLevel": null
+              "align": false
             }
           },
           {
             "content": "These graphs are currently experiencing some issues, and we need to re-load the data.",
-            "datasource": null,
             "gridPos": {
               "h": 4,
               "w": 8,
               "x": 0,
-              "y": 30
+              "y": 38
             },
             "id": 64,
             "mode": "markdown",
             "options": {},
-            "timeFrom": null,
-            "timeShift": null,
             "title": "Panel Title",
             "type": "text"
           },
@@ -3104,14 +3226,17 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
               "h": 10,
               "w": 14,
               "x": 10,
-              "y": 30
+              "y": 38
             },
             "id": 23,
             "legend": {
@@ -3145,6 +3270,10 @@
             "targets": [
               {
                 "alias": "[[tag_extension]]",
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -3189,9 +3318,7 @@
               }
             ],
             "thresholds": [],
-            "timeFrom": null,
             "timeRegions": [],
-            "timeShift": null,
             "title": "New HDA Datatypes / $time_interval",
             "tooltip": {
               "shared": true,
@@ -3200,9 +3327,7 @@
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": [
                 "total"
@@ -3211,24 +3336,18 @@
             "yaxes": [
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
                 "min": "0",
                 "show": true
               },
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
-                "min": null,
                 "show": true
               }
             ],
             "yaxis": {
-              "align": false,
-              "alignLevel": null
+              "align": false
             }
           },
           {
@@ -3236,14 +3355,17 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
               "h": 10,
               "w": 10,
               "x": 0,
-              "y": 34
+              "y": 42
             },
             "hideTimeOverride": false,
             "id": 14,
@@ -3274,6 +3396,10 @@
             "steppedLine": true,
             "targets": [
               {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -3324,9 +3450,7 @@
               }
             ],
             "thresholds": [],
-            "timeFrom": null,
             "timeRegions": [],
-            "timeShift": null,
             "title": "Jobs / $time_interval",
             "tooltip": {
               "shared": true,
@@ -3335,9 +3459,7 @@
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": [
                 "total"
@@ -3346,24 +3468,18 @@
             "yaxes": [
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
                 "min": "0",
                 "show": true
               },
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
-                "min": null,
                 "show": true
               }
             ],
             "yaxis": {
-              "align": false,
-              "alignLevel": null
+              "align": false
             }
           },
           {
@@ -3371,14 +3487,17 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
               "h": 8,
               "w": 8,
               "x": 16,
-              "y": 40
+              "y": 48
             },
             "id": 16,
             "legend": {
@@ -3408,6 +3527,10 @@
             "steppedLine": true,
             "targets": [
               {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -3446,9 +3569,7 @@
               }
             ],
             "thresholds": [],
-            "timeFrom": null,
             "timeRegions": [],
-            "timeShift": null,
             "title": "Worfklow Invocations / $time_interval",
             "tooltip": {
               "shared": true,
@@ -3457,9 +3578,7 @@
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": [
                 "total"
@@ -3468,24 +3587,18 @@
             "yaxes": [
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
                 "min": "0",
                 "show": true
               },
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
-                "min": null,
                 "show": true
               }
             ],
             "yaxis": {
-              "align": false,
-              "alignLevel": null
+              "align": false
             }
           },
           {
@@ -3493,14 +3606,17 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
               "h": 8,
               "w": 8,
               "x": 0,
-              "y": 44
+              "y": 52
             },
             "id": 20,
             "legend": {
@@ -3530,6 +3646,10 @@
             "steppedLine": true,
             "targets": [
               {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -3568,9 +3688,7 @@
               }
             ],
             "thresholds": [],
-            "timeFrom": null,
             "timeRegions": [],
-            "timeShift": null,
             "title": "User Registrations / $time_interval",
             "tooltip": {
               "shared": true,
@@ -3579,9 +3697,7 @@
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": [
                 "total"
@@ -3590,24 +3706,18 @@
             "yaxes": [
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
                 "min": "0",
                 "show": true
               },
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
-                "min": null,
                 "show": true
               }
             ],
             "yaxis": {
-              "align": false,
-              "alignLevel": null
+              "align": false
             }
           },
           {
@@ -3615,14 +3725,17 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
               "h": 8,
               "w": 8,
               "x": 8,
-              "y": 44
+              "y": 52
             },
             "id": 15,
             "legend": {
@@ -3652,6 +3765,10 @@
             "steppedLine": true,
             "targets": [
               {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -3696,9 +3813,7 @@
               }
             ],
             "thresholds": [],
-            "timeFrom": null,
             "timeRegions": [],
-            "timeShift": null,
             "title": "HDAs / $time_interval",
             "tooltip": {
               "shared": true,
@@ -3707,9 +3822,7 @@
             },
             "type": "graph",
             "xaxis": {
-              "buckets": null,
               "mode": "time",
-              "name": null,
               "show": true,
               "values": [
                 "total"
@@ -3718,25 +3831,28 @@
             "yaxes": [
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
                 "min": "0",
                 "show": true
               },
               {
                 "format": "short",
-                "label": null,
                 "logBase": 1,
-                "max": null,
-                "min": null,
                 "show": true
               }
             ],
             "yaxis": {
-              "align": false,
-              "alignLevel": null
+              "align": false
             }
+          }
+        ],
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "refId": "A"
           }
         ],
         "title": "Recently",
@@ -3744,12 +3860,15 @@
       },
       {
         "collapsed": true,
-        "datasource": null,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "gridPos": {
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 32
+          "y": 35
         },
         "id": 31,
         "panels": [
@@ -3760,18 +3879,20 @@
                 "value": "current"
               }
             ],
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fontSize": "100%",
             "gridPos": {
               "h": 9,
               "w": 7,
               "x": 0,
-              "y": 31
+              "y": 39
             },
             "id": 3,
             "links": [],
             "options": {},
-            "pageSize": null,
             "scroll": true,
             "showHeader": true,
             "sort": {
@@ -3782,7 +3903,6 @@
               {
                 "alias": "Extension",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
@@ -3798,14 +3918,12 @@
               {
                 "alias": "Instances",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
                   "rgba(50, 172, 45, 0.97)"
                 ],
                 "dateFormat": "YYYY-MM-DD HH:mm:ss",
-                "decimals": null,
                 "pattern": "Current",
                 "thresholds": [],
                 "type": "number",
@@ -3815,6 +3933,10 @@
             "targets": [
               {
                 "alias": "[[tag_extension]]",
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -3869,18 +3991,20 @@
                 "value": "current"
               }
             ],
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fontSize": "100%",
             "gridPos": {
               "h": 9,
               "w": 8,
               "x": 7,
-              "y": 31
+              "y": 39
             },
             "id": 32,
             "links": [],
             "options": {},
-            "pageSize": null,
             "scroll": true,
             "showHeader": true,
             "sort": {
@@ -3891,7 +4015,6 @@
               {
                 "alias": "Extension",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
@@ -3907,14 +4030,12 @@
               {
                 "alias": "Value",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
                   "rgba(50, 172, 45, 0.97)"
                 ],
                 "dateFormat": "YYYY-MM-DD HH:mm:ss",
-                "decimals": null,
                 "pattern": "Current",
                 "thresholds": [],
                 "type": "number",
@@ -3924,6 +4045,10 @@
             "targets": [
               {
                 "alias": "[[tag_extension]]",
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -3978,19 +4103,21 @@
                 "value": "current"
               }
             ],
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fontSize": "100%",
             "gridPos": {
               "h": 9,
               "w": 9,
               "x": 15,
-              "y": 31
+              "y": 39
             },
             "hideTimeOverride": true,
             "id": 17,
             "links": [],
             "options": {},
-            "pageSize": null,
             "scroll": true,
             "showHeader": true,
             "sort": {
@@ -4001,7 +4128,6 @@
               {
                 "alias": "Group",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
@@ -4037,6 +4163,10 @@
             "targets": [
               {
                 "alias": "[[tag_tool_shed]] / [[tag_owner]]",
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -4087,7 +4217,6 @@
               }
             ],
             "timeFrom": "1d",
-            "timeShift": null,
             "title": "Installed TS Repositories",
             "transform": "timeseries_aggregations",
             "type": "table-old"
@@ -4099,18 +4228,20 @@
                 "value": "current"
               }
             ],
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fontSize": "100%",
             "gridPos": {
               "h": 9,
               "w": 6,
               "x": 0,
-              "y": 40
+              "y": 48
             },
             "id": 4,
             "links": [],
             "options": {},
-            "pageSize": null,
             "scroll": true,
             "showHeader": true,
             "sort": {
@@ -4121,7 +4252,6 @@
               {
                 "alias": "Extension",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
@@ -4137,14 +4267,12 @@
               {
                 "alias": "Instances",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
                   "rgba(50, 172, 45, 0.97)"
                 ],
                 "dateFormat": "YYYY-MM-DD HH:mm:ss",
-                "decimals": null,
                 "pattern": "Current",
                 "thresholds": [],
                 "type": "number",
@@ -4154,6 +4282,10 @@
             "targets": [
               {
                 "alias": "[[tag_job_runner_name]]",
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -4208,18 +4340,20 @@
                 "value": "current"
               }
             ],
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fontSize": "100%",
             "gridPos": {
               "h": 9,
               "w": 6,
               "x": 6,
-              "y": 40
+              "y": 48
             },
             "id": 12,
             "links": [],
             "options": {},
-            "pageSize": null,
             "scroll": true,
             "showHeader": true,
             "sort": {
@@ -4230,7 +4364,6 @@
               {
                 "alias": "State",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
@@ -4246,14 +4379,12 @@
               {
                 "alias": "Count",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
                   "rgba(50, 172, 45, 0.97)"
                 ],
                 "dateFormat": "YYYY-MM-DD HH:mm:ss",
-                "decimals": null,
                 "pattern": "Current",
                 "thresholds": [],
                 "type": "number",
@@ -4263,6 +4394,10 @@
             "targets": [
               {
                 "alias": "[[tag_state]]",
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -4317,18 +4452,20 @@
                 "value": "current"
               }
             ],
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fontSize": "100%",
             "gridPos": {
               "h": 9,
               "w": 6,
               "x": 12,
-              "y": 40
+              "y": 48
             },
             "id": 51,
             "links": [],
             "options": {},
-            "pageSize": null,
             "scroll": true,
             "showHeader": true,
             "sort": {
@@ -4339,7 +4476,6 @@
               {
                 "alias": "",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
@@ -4355,14 +4491,12 @@
               {
                 "alias": "Count",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
                   "rgba(50, 172, 45, 0.97)"
                 ],
                 "dateFormat": "YYYY-MM-DD HH:mm:ss",
-                "decimals": null,
                 "pattern": "Current",
                 "thresholds": [],
                 "type": "number",
@@ -4372,6 +4506,10 @@
             "targets": [
               {
                 "alias": "[[tag_state]]",
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -4426,18 +4564,20 @@
                 "value": "current"
               }
             ],
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fontSize": "100%",
             "gridPos": {
               "h": 9,
               "w": 6,
               "x": 18,
-              "y": 40
+              "y": 48
             },
             "id": 50,
             "links": [],
             "options": {},
-            "pageSize": null,
             "scroll": true,
             "showHeader": true,
             "sort": {
@@ -4448,7 +4588,6 @@
               {
                 "alias": "",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
@@ -4464,14 +4603,12 @@
               {
                 "alias": "Size",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
                   "rgba(50, 172, 45, 0.97)"
                 ],
                 "dateFormat": "YYYY-MM-DD HH:mm:ss",
-                "decimals": null,
                 "pattern": "Current",
                 "thresholds": [],
                 "type": "number",
@@ -4481,6 +4618,10 @@
             "targets": [
               {
                 "alias": "[[tag_state]]",
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -4529,17 +4670,29 @@
             "type": "table-old"
           }
         ],
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "refId": "A"
+          }
+        ],
         "title": "All-Time",
         "type": "row"
       },
       {
         "collapsed": true,
-        "datasource": null,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "gridPos": {
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 33
+          "y": 36
         },
         "id": 34,
         "panels": [
@@ -4550,18 +4703,20 @@
                 "value": "current"
               }
             ],
-            "datasource": "Galaxy Historical",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
             "fontSize": "100%",
             "gridPos": {
               "h": 9,
               "w": 8,
               "x": 0,
-              "y": 32
+              "y": 40
             },
             "id": 13,
             "links": [],
             "options": {},
-            "pageSize": null,
             "scroll": true,
             "showHeader": true,
             "sort": {
@@ -4572,7 +4727,6 @@
               {
                 "alias": "Build",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
@@ -4588,14 +4742,12 @@
               {
                 "alias": "Count",
                 "align": "auto",
-                "colorMode": null,
                 "colors": [
                   "rgba(245, 54, 54, 0.9)",
                   "rgba(237, 129, 40, 0.89)",
                   "rgba(50, 172, 45, 0.97)"
                 ],
                 "dateFormat": "YYYY-MM-DD HH:mm:ss",
-                "decimals": null,
                 "pattern": "Current",
                 "thresholds": [],
                 "type": "number",
@@ -4605,6 +4757,10 @@
             "targets": [
               {
                 "alias": "[[tag_genome_build]]",
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "PEBD82B4560F292BD"
+                },
                 "dsType": "influxdb",
                 "groupBy": [
                   {
@@ -4653,13 +4809,21 @@
             "type": "table-old"
           }
         ],
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "refId": "A"
+          }
+        ],
         "title": "Histories",
         "type": "row"
       }
     ],
     "refresh": "15m",
-    "schemaVersion": 27,
-    "style": "dark",
+    "schemaVersion": 39,
     "tags": [
       "galaxy",
       "migrated"
@@ -4667,15 +4831,11 @@
     "templating": {
       "list": [
         {
-          "allValue": null,
           "current": {
             "selected": false,
-            "tags": [],
             "text": "365d",
             "value": "365d"
           },
-          "description": null,
-          "error": null,
           "hide": 0,
           "includeAll": false,
           "label": "Time Interval",
@@ -4718,6 +4878,7 @@
       "from": "now-7y",
       "to": "now"
     },
+    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "hidden": true,
       "refresh_intervals": [
@@ -4738,6 +4899,7 @@
     "timezone": "browser",
     "title": "Galaxy User Statistics",
     "uid": "000000012",
-    "version": 1
+    "version": 7,
+    "weekStart": ""
   }
 }

@@ -9,8 +9,8 @@
     "slug": "wendys-playground",
     "url": "/d/vdBNXqVIz/wendys-playground",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2023-11-10T08:44:06+01:00",
-    "updated": "2023-11-10T08:52:42+01:00",
+    "created": "2023-11-10T07:44:06+01:00",
+    "updated": "2023-11-10T07:52:42+01:00",
     "updatedBy": "admin",
     "createdBy": "admin",
     "version": 4,
@@ -24,19 +24,16 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": true,
-        "canEdit": true,
-        "canDelete": true
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    },
-    "publicDashboardAccessToken": "",
-    "publicDashboardUid": "",
-    "publicDashboardEnabled": false
+    }
   },
   "dashboard": {
     "annotations": {

@@ -6,14 +6,14 @@
     "canAdmin": false,
     "canStar": false,
     "canDelete": false,
-    "slug": "tool-usage-stats",
-    "url": "/d/DYDPhX-Sk/tool-usage-stats",
+    "slug": "tool-usage-stats-copy",
+    "url": "/d/6rsDAVfSk/tool-usage-stats-copy",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-04-18T13:30:43+02:00",
-    "updated": "2024-08-04T10:18:43+02:00",
+    "created": "2024-04-22T20:30:28+02:00",
+    "updated": "2024-04-22T20:58:55+02:00",
     "updatedBy": "admin",
     "createdBy": "admin",
-    "version": 39,
+    "version": 2,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 0,
@@ -61,7 +61,7 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 51,
+    "id": 52,
     "links": [],
     "liveNow": false,
     "panels": [
@@ -86,7 +86,7 @@
           "content": "# Tool usage stats from the [European Galaxy server](https://usegalaxy.eu)\n\nTo see the stats of a given tool you need to select a tool from the \"Tool ID\" drop-down list on the top left.",
           "mode": "markdown"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "type": "text"
       },
       {
@@ -135,11 +135,9 @@
             "fields": "",
             "values": false
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          "textMode": "auto"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "9.2.10",
         "targets": [
           {
             "datasource": {
@@ -160,11 +158,10 @@
                 "type": "fill"
               }
             ],
-            "hide": false,
             "measurement": "tool-usage",
             "orderByTime": "ASC",
             "policy": "default",
-            "query": "SELECT sum(\"last_count\") FROM (SELECT LAST(\"count\") AS \"last_count\" FROM \"tool-usage\" WHERE (\"tool_id\" =~ /^$tool_id$/) GROUP BY \"tool_id\", \"version\")\n",
+            "query": "SELECT sum(\"count\") FROM \"tool-usage\" WHERE (\"tool_id\" =~ /$tool_id/)",
             "rawQuery": true,
             "refId": "A",
             "resultFormat": "time_series",
@@ -200,7 +197,6 @@
               "mode": "continuous-BlYlRd"
             },
             "custom": {
-              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
@@ -215,9 +211,6 @@
               "lineWidth": 3,
               "scaleDistribution": {
                 "type": "linear"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
               }
             },
             "mappings": [],
@@ -269,7 +262,6 @@
           "barRadius": 0.05,
           "barWidth": 0.46,
           "colorByField": "count",
-          "fullHighlight": false,
           "groupWidth": 0.56,
           "legend": {
             "calcs": [],
@@ -281,7 +273,6 @@
           "showValue": "always",
           "stacking": "none",
           "tooltip": {
-            "maxHeight": 600,
             "mode": "multi",
             "sort": "asc"
           },
@@ -308,9 +299,9 @@
             "measurement": "tool-usage",
             "orderByTime": "ASC",
             "policy": "default",
-            "query": "SELECT LAST(\"count\")  AS \"count\" FROM \"tool-usage\" WHERE (\"tool_id\" =~ /^$tool_id$/) GROUP BY \"tool_id\", \"version\"",
+            "query": "SELECT * FROM \"tool-usage\" WHERE (\"tool_id\" =~ /^$tool_id$/)  ",
             "rawQuery": true,
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "table",
             "select": [
               [
@@ -361,16 +352,16 @@
         "type": "barchart"
       }
     ],
-    "schemaVersion": 39,
+    "schemaVersion": 37,
+    "style": "dark",
     "tags": [],
     "templating": {
       "list": [
         {
-          "allValue": "",
           "current": {
-            "selected": false,
-            "text": "rna_star",
-            "value": "rna_star"
+            "selected": true,
+            "text": "jbrowse2",
+            "value": "jbrowse2"
           },
           "datasource": {
             "type": "influxdb",
@@ -397,14 +388,13 @@
       "from": "now-6h",
       "to": "now"
     },
-    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "hidden": true
     },
     "timezone": "",
-    "title": "Tool usage stats",
-    "uid": "DYDPhX-Sk",
-    "version": 39,
+    "title": "Tool usage stats Copy",
+    "uid": "6rsDAVfSk",
+    "version": 2,
     "weekStart": ""
   }
 }

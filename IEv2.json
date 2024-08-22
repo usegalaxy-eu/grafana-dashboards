@@ -9,41 +9,41 @@
     "slug": "iev2",
     "url": "/d/GfPTTlhWz/iev2",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2022-03-14T14:02:15+01:00",
-    "updated": "2022-03-14T14:02:15+01:00",
-    "updatedBy": "Anonymous",
-    "createdBy": "Anonymous",
-    "version": 1,
+    "created": "2024-07-24T14:03:34+02:00",
+    "updated": "2024-07-26T12:11:24+02:00",
+    "updatedBy": "kysrpex",
+    "createdBy": "admin",
+    "version": 2,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 0,
     "folderUid": "",
     "folderTitle": "General",
     "folderUrl": "",
-    "provisioned": true,
-    "provisionedExternalId": "IEv2.json",
+    "provisioned": false,
+    "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": true,
-        "canEdit": true,
-        "canDelete": true
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    },
-    "publicDashboardAccessToken": "",
-    "publicDashboardUid": "",
-    "publicDashboardEnabled": false
+    }
   },
   "dashboard": {
     "annotations": {
       "list": [
         {
           "builtIn": 1,
-          "datasource": "-- Grafana --",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -53,89 +53,98 @@
       ]
     },
     "editable": true,
-    "gnetId": null,
+    "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 4,
-    "iteration": 1570629985611,
+    "id": 72,
     "links": [],
     "panels": [
       {
-        "cacheTimeout": null,
-        "colorBackground": true,
-        "colorValue": false,
-        "colors": [
-          "#8AB8FF",
-          "#5794F2",
-          "#1F60C4"
-        ],
-        "datasource": null,
-        "decimals": null,
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
         },
-        "gridPos": {
-          "h": 3,
-          "w": 3.4285714285714284,
-          "x": 0,
-          "y": 0
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "color": "#8AB8FF",
+                    "text": "0"
+                  }
+                },
+                "type": "special"
+              },
+              {
+                "options": {
+                  "none": {
+                    "color": "#8AB8FF",
+                    "text": "0"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "No Data": {
+                    "color": "#8AB8FF",
+                    "text": "0"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#8AB8FF",
+                  "value": null
+                },
+                {
+                  "color": "#5794F2",
+                  "value": 5
+                },
+                {
+                  "color": "#1F60C4",
+                  "value": 15
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
         },
         "hideTimeOverride": true,
         "id": 10,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "maxPerRow": 12,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.0",
         "repeat": "ies",
         "repeatDirection": "h",
-        "scopedVars": {
-          "ies": {
-            "selected": false,
-            "text": "bam_iobio",
-            "value": "bam_iobio"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": 0
-        },
-        "tableColumn": "",
         "targets": [
           {
             "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -203,1099 +212,100 @@
             ]
           }
         ],
-        "thresholds": "5,15",
-        "timeFrom": null,
         "timeShift": "1m",
         "title": "$ies",
-        "type": "singlestat",
-        "valueFontSize": "120%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "0",
-            "value": "null"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "none"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "No Data"
-          }
-        ],
-        "valueName": "current"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": true,
-        "colorValue": false,
-        "colors": [
-          "#8AB8FF",
-          "#5794F2",
-          "#1F60C4"
-        ],
-        "datasource": null,
-        "decimals": null,
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
         },
-        "gridPos": {
-          "h": 3,
-          "w": 3.4285714285714284,
-          "x": 3.4285714285714284,
-          "y": 0
-        },
-        "hideTimeOverride": true,
-        "id": 11,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "maxPerRow": 12,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "repeat": null,
-        "repeatDirection": "h",
-        "repeatIteration": 1570629985611,
-        "repeatPanelId": 10,
-        "scopedVars": {
-          "ies": {
-            "selected": false,
-            "text": "cellxgene",
-            "value": "cellxgene"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": 0
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
               },
-              {
-                "params": [
-                  "tool_id"
-                ],
-                "type": "tag"
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
               },
-              {
-                "params": [
-                  "tool_version"
-                ],
-                "type": "tag"
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
               },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
+              "thresholdsStyle": {
+                "mode": "off"
               }
-            ],
-            "hide": false,
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
+            },
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
                 {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
+                  "color": "green",
+                  "value": null
                 },
                 {
-                  "params": [],
-                  "type": "sum"
+                  "color": "red",
+                  "value": 80
                 }
               ]
-            ],
-            "tags": [
-              {
-                "key": "state",
-                "operator": "=",
-                "value": "running"
-              },
-              {
-                "condition": "AND",
-                "key": "host",
-                "operator": "=",
-                "value": "sn06.galaxyproject.eu"
-              },
-              {
-                "condition": "AND",
-                "key": "tool_id",
-                "operator": "=~",
-                "value": "/interactive_tool_$ies/"
-              }
-            ]
-          }
-        ],
-        "thresholds": "5,15",
-        "timeFrom": null,
-        "timeShift": "1m",
-        "title": "$ies",
-        "type": "singlestat",
-        "valueFontSize": "120%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "0",
-            "value": "null"
+            },
+            "unit": "percent"
           },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "none"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "No Data"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": true,
-        "colorValue": false,
-        "colors": [
-          "#8AB8FF",
-          "#5794F2",
-          "#1F60C4"
-        ],
-        "datasource": null,
-        "decimals": null,
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
+          "overrides": []
         },
         "gridPos": {
-          "h": 3,
-          "w": 3.4285714285714284,
-          "x": 6.857142857142857,
-          "y": 0
-        },
-        "hideTimeOverride": true,
-        "id": 12,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "maxPerRow": 12,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "repeat": null,
-        "repeatDirection": "h",
-        "repeatIteration": 1570629985611,
-        "repeatPanelId": 10,
-        "scopedVars": {
-          "ies": {
-            "selected": false,
-            "text": "ethercalc",
-            "value": "ethercalc"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": 0
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "tool_id"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "tool_version"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "state",
-                "operator": "=",
-                "value": "running"
-              },
-              {
-                "condition": "AND",
-                "key": "host",
-                "operator": "=",
-                "value": "sn06.galaxyproject.eu"
-              },
-              {
-                "condition": "AND",
-                "key": "tool_id",
-                "operator": "=~",
-                "value": "/interactive_tool_$ies/"
-              }
-            ]
-          }
-        ],
-        "thresholds": "5,15",
-        "timeFrom": null,
-        "timeShift": "1m",
-        "title": "$ies",
-        "type": "singlestat",
-        "valueFontSize": "120%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "0",
-            "value": "null"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "none"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "No Data"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": true,
-        "colorValue": false,
-        "colors": [
-          "#8AB8FF",
-          "#5794F2",
-          "#1F60C4"
-        ],
-        "datasource": null,
-        "decimals": null,
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 3.4285714285714284,
-          "x": 10.285714285714285,
-          "y": 0
-        },
-        "hideTimeOverride": true,
-        "id": 13,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "maxPerRow": 12,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "repeat": null,
-        "repeatDirection": "h",
-        "repeatIteration": 1570629985611,
-        "repeatPanelId": 10,
-        "scopedVars": {
-          "ies": {
-            "selected": false,
-            "text": "jupyter_notebook",
-            "value": "jupyter_notebook"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": 0
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "tool_id"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "tool_version"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "state",
-                "operator": "=",
-                "value": "running"
-              },
-              {
-                "condition": "AND",
-                "key": "host",
-                "operator": "=",
-                "value": "sn06.galaxyproject.eu"
-              },
-              {
-                "condition": "AND",
-                "key": "tool_id",
-                "operator": "=~",
-                "value": "/interactive_tool_$ies/"
-              }
-            ]
-          }
-        ],
-        "thresholds": "5,15",
-        "timeFrom": null,
-        "timeShift": "1m",
-        "title": "$ies",
-        "type": "singlestat",
-        "valueFontSize": "120%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "0",
-            "value": "null"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "none"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "No Data"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": true,
-        "colorValue": false,
-        "colors": [
-          "#8AB8FF",
-          "#5794F2",
-          "#1F60C4"
-        ],
-        "datasource": null,
-        "decimals": null,
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 3.4285714285714284,
-          "x": 13.714285714285714,
-          "y": 0
-        },
-        "hideTimeOverride": true,
-        "id": 14,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "maxPerRow": 12,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "repeat": null,
-        "repeatDirection": "h",
-        "repeatIteration": 1570629985611,
-        "repeatPanelId": 10,
-        "scopedVars": {
-          "ies": {
-            "selected": false,
-            "text": "paraview",
-            "value": "paraview"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": 0
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "tool_id"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "tool_version"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "state",
-                "operator": "=",
-                "value": "running"
-              },
-              {
-                "condition": "AND",
-                "key": "host",
-                "operator": "=",
-                "value": "sn06.galaxyproject.eu"
-              },
-              {
-                "condition": "AND",
-                "key": "tool_id",
-                "operator": "=~",
-                "value": "/interactive_tool_$ies/"
-              }
-            ]
-          }
-        ],
-        "thresholds": "5,15",
-        "timeFrom": null,
-        "timeShift": "1m",
-        "title": "$ies",
-        "type": "singlestat",
-        "valueFontSize": "120%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "0",
-            "value": "null"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "none"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "No Data"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": true,
-        "colorValue": false,
-        "colors": [
-          "#8AB8FF",
-          "#5794F2",
-          "#1F60C4"
-        ],
-        "datasource": null,
-        "decimals": null,
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 3.4285714285714284,
-          "x": 17.142857142857142,
-          "y": 0
-        },
-        "hideTimeOverride": true,
-        "id": 15,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "maxPerRow": 12,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "repeat": null,
-        "repeatDirection": "h",
-        "repeatIteration": 1570629985611,
-        "repeatPanelId": 10,
-        "scopedVars": {
-          "ies": {
-            "selected": false,
-            "text": "rstudio",
-            "value": "rstudio"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": 0
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "tool_id"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "tool_version"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "state",
-                "operator": "=",
-                "value": "running"
-              },
-              {
-                "condition": "AND",
-                "key": "host",
-                "operator": "=",
-                "value": "sn06.galaxyproject.eu"
-              },
-              {
-                "condition": "AND",
-                "key": "tool_id",
-                "operator": "=~",
-                "value": "/interactive_tool_$ies/"
-              }
-            ]
-          }
-        ],
-        "thresholds": "5,15",
-        "timeFrom": null,
-        "timeShift": "1m",
-        "title": "$ies",
-        "type": "singlestat",
-        "valueFontSize": "120%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "0",
-            "value": "null"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "none"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "No Data"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": true,
-        "colorValue": false,
-        "colors": [
-          "#8AB8FF",
-          "#5794F2",
-          "#1F60C4"
-        ],
-        "datasource": null,
-        "decimals": null,
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 3.4285714285714284,
-          "x": 20.57142857142857,
-          "y": 0
-        },
-        "hideTimeOverride": true,
-        "id": 16,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "maxPerRow": 12,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "repeat": null,
-        "repeatDirection": "h",
-        "repeatIteration": 1570629985611,
-        "repeatPanelId": 10,
-        "scopedVars": {
-          "ies": {
-            "selected": false,
-            "text": "wilson",
-            "value": "wilson"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": 0
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "tool_id"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "tool_version"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "state",
-                "operator": "=",
-                "value": "running"
-              },
-              {
-                "condition": "AND",
-                "key": "host",
-                "operator": "=",
-                "value": "sn06.galaxyproject.eu"
-              },
-              {
-                "condition": "AND",
-                "key": "tool_id",
-                "operator": "=~",
-                "value": "/interactive_tool_$ies/"
-              }
-            ]
-          }
-        ],
-        "thresholds": "5,15",
-        "timeFrom": null,
-        "timeShift": "1m",
-        "title": "$ies",
-        "type": "singlestat",
-        "valueFontSize": "120%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "0",
-            "value": "null"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "none"
-          },
-          {
-            "op": "=",
-            "text": "0",
-            "value": "No Data"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": null,
-        "fill": 0,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 5,
-          "w": 12,
+          "h": 9,
+          "w": 24,
           "x": 0,
-          "y": 3
+          "y": 21
         },
         "id": 6,
         "interval": "",
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": false,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
         "options": {
-          "dataLinks": []
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "desc"
+          }
         },
-        "percentage": false,
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
         "targets": [
           {
             "alias": "[[tag_host]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -1319,6 +329,8 @@
             "measurement": "cpu",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT mean(\"usage_user\") FROM \"cpu\" WHERE (\"host\" =~ /^vgcnbwc-.*$/) AND $timeFilter GROUP BY time($__interval), \"host\" fill(none)",
+            "rawQuery": true,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
@@ -1334,100 +346,102 @@
                   "type": "mean"
                 }
               ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=~",
-                "value": "/^cn/"
-              }
             ]
           }
         ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
         "title": "Host CPU Usage",
-        "tooltip": {
-          "shared": true,
-          "sort": 2,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "decimals": null,
-            "format": "percent",
-            "label": null,
-            "logBase": 1,
-            "max": "100",
-            "min": "0",
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "type": "timeseries"
       },
       {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": null,
-        "fill": 0,
-        "fillGradient": 0,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
         "gridPos": {
-          "h": 5,
-          "w": 12,
-          "x": 12,
-          "y": 3
+          "h": 9,
+          "w": 24,
+          "x": 0,
+          "y": 30
         },
         "id": 7,
         "interval": "",
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": false,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
         "options": {
-          "dataLinks": []
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "desc"
+          }
         },
-        "percentage": false,
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
         "targets": [
           {
             "alias": "[[tag_host]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -1451,6 +465,8 @@
             "measurement": "mem",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT mean(\"used_percent\") FROM \"mem\" WHERE (\"host\" =~ /^vgcnbwc-.*$/) AND $timeFilter GROUP BY time($__interval), \"host\" fill(none)",
+            "rawQuery": true,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
@@ -1471,104 +487,133 @@
               {
                 "key": "host",
                 "operator": "=~",
-                "value": "/^cn/"
+                "value": "/^$ies$/"
               }
             ]
           }
         ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
         "title": "Host Memory Usage",
-        "tooltip": {
-          "shared": true,
-          "sort": 2,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "decimals": null,
-            "format": "percent",
-            "label": null,
-            "logBase": 1,
-            "max": "100",
-            "min": "0",
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "type": "timeseries"
       },
       {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": null,
-        "fill": 0,
-        "fillGradient": 0,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "stepAfter",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byRegexp",
+                "options": "/jupyter/"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#FF780A",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byRegexp",
+                "options": "/rstudio/"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#3274D9",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            }
+          ]
+        },
         "gridPos": {
-          "h": 8,
-          "w": 12,
+          "h": 7,
+          "w": 24,
           "x": 0,
-          "y": 8
+          "y": 39
         },
         "id": 2,
         "interval": "5m",
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": false,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
         "options": {
-          "dataLinks": []
-        },
-        "percentage": false,
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [
-          {
-            "alias": "/jupyter/",
-            "color": "#FF780A"
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
           },
-          {
-            "alias": "/rstudio/",
-            "color": "#3274D9"
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "desc"
           }
-        ],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": true,
+        },
         "targets": [
           {
             "alias": "[[tag_container_image]] / [[tag_container_name]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -1617,379 +662,143 @@
             "tags": []
           }
         ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
         "title": "CPU %",
-        "tooltip": {
-          "shared": true,
-          "sort": 2,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "type": "timeseries"
       },
       {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": null,
-        "fill": 0,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 8
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
         },
-        "id": 3,
-        "interval": "5m",
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": false,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null as zero",
-        "options": {
-          "dataLinks": []
-        },
-        "percentage": false,
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [
-          {
-            "alias": "/jupyter/",
-            "color": "#FF780A"
-          },
-          {
-            "alias": "/rstudio/",
-            "color": "#3274D9"
-          },
-          {
-            "alias": ""
-          }
-        ],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": true,
-        "targets": [
-          {
-            "alias": "[[tag_container_image]] / [[tag_container_name]]",
-            "groupBy": [
-              {
-                "params": [
-                  "5m"
-                ],
-                "type": "time"
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
               },
-              {
-                "params": [
-                  "container_name"
-                ],
-                "type": "tag"
+              "insertNulls": false,
+              "lineInterpolation": "stepAfter",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
               },
-              {
-                "params": [
-                  "container_image"
-                ],
-                "type": "tag"
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "normal"
               },
-              {
-                "params": [
-                  "0"
-                ],
-                "type": "fill"
+              "thresholdsStyle": {
+                "mode": "off"
               }
-            ],
-            "measurement": "docker_container_mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
+            },
+            "mappings": [],
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
                 {
-                  "params": [
-                    "rss"
-                  ],
-                  "type": "field"
+                  "color": "green",
+                  "value": null
                 },
                 {
-                  "params": [],
-                  "type": "mean"
+                  "color": "red",
+                  "value": 80
                 }
               ]
-            ],
-            "tags": []
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Memory",
-        "tooltip": {
-          "shared": true,
-          "sort": 2,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "decbytes",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
+            },
+            "unit": "short"
           },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": null,
-        "fill": 0,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 16
-        },
-        "id": 4,
-        "interval": "5m",
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": false,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "dataLinks": []
-        },
-        "percentage": false,
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [
-          {
-            "alias": "/jupyter/",
-            "color": "#FF780A"
-          },
-          {
-            "alias": "/rstudio/",
-            "color": "#3274D9"
-          }
-        ],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": true,
-        "targets": [
-          {
-            "alias": "[[tag_container_image]] / [[tag_container_name]]",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byValue",
+                "options": {
+                  "op": "gte",
+                  "reducer": "allIsZero",
+                  "value": 0
+                }
               },
-              {
-                "params": [
-                  "container_name"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "container_image"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "0"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "docker_container_blkio",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
+              "properties": [
                 {
-                  "params": [
-                    "io_service_bytes_recursive_total"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": true,
+                    "tooltip": true,
+                    "viz": false
+                  }
                 }
               ]
-            ],
-            "tags": []
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "IO",
-        "tooltip": {
-          "shared": true,
-          "sort": 2,
-          "value_type": "individual"
+            },
+            {
+              "matcher": {
+                "id": "byValue",
+                "options": {
+                  "op": "gte",
+                  "reducer": "allIsNull",
+                  "value": 0
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": true,
+                    "tooltip": true,
+                    "viz": false
+                  }
+                }
+              ]
+            }
+          ]
         },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "decbytes",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": null,
-        "fill": 1,
-        "fillGradient": 0,
         "gridPos": {
           "h": 4,
-          "w": 12,
-          "x": 12,
-          "y": 16
+          "w": 24,
+          "x": 0,
+          "y": 46
         },
         "id": 9,
         "interval": "5m",
-        "legend": {
-          "alignAsTable": true,
-          "avg": true,
-          "current": true,
-          "hideEmpty": true,
-          "hideZero": true,
-          "max": true,
-          "min": false,
-          "rightSide": true,
-          "show": false,
-          "sort": "avg",
-          "sortDesc": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null as zero",
         "options": {
-          "dataLinks": []
+          "legend": {
+            "calcs": [
+              "mean",
+              "lastNotNull",
+              "max"
+            ],
+            "displayMode": "list",
+            "placement": "right",
+            "showLegend": false
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "desc"
+          }
         },
-        "percentage": false,
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": true,
-        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -2057,89 +866,98 @@
             ]
           }
         ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
         "timeShift": "1m",
         "title": "Galaxy Running Tools",
-        "tooltip": {
-          "shared": true,
-          "sort": 2,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": "0",
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "type": "timeseries"
       },
       {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": null,
-        "fill": 0,
-        "fillGradient": 0,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
         "gridPos": {
           "h": 4,
-          "w": 12,
-          "x": 12,
-          "y": 20
+          "w": 24,
+          "x": 0,
+          "y": 50
         },
         "id": 5,
         "interval": "",
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": false,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
         "options": {
-          "dataLinks": []
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "desc"
+          }
         },
-        "percentage": false,
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
         "targets": [
           {
             "alias": "[[tag_host]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -2182,66 +1000,368 @@
             "tags": []
           }
         ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
         "title": "Containers Running",
-        "tooltip": {
-          "shared": true,
-          "sort": 2,
-          "value_type": "individual"
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
         },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "none",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "stepAfter",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "decbytes"
           },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byRegexp",
+                "options": "/jupyter/"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#FF780A",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byRegexp",
+                "options": "/rstudio/"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#3274D9",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 24,
+          "x": 0,
+          "y": 54
+        },
+        "id": 3,
+        "interval": "5m",
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "desc"
+          }
+        },
+        "targets": [
           {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
+            "alias": "[[tag_container_image]] / [[tag_container_name]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "5m"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "container_name"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "container_image"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "docker_container_mem",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "rss"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": []
           }
         ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "title": "Memory",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "stepAfter",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "decbytes"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byRegexp",
+                "options": "/jupyter/"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#FF780A",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byRegexp",
+                "options": "/rstudio/"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#3274D9",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 24,
+          "x": 0,
+          "y": 62
+        },
+        "id": 4,
+        "interval": "5m",
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "desc"
+          }
+        },
+        "targets": [
+          {
+            "alias": "[[tag_container_image]] / [[tag_container_name]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "container_name"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "container_image"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "docker_container_blkio",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "io_service_bytes_recursive_total"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "title": "IO",
+        "type": "timeseries"
       }
     ],
     "refresh": false,
-    "schemaVersion": 20,
-    "style": "dark",
+    "schemaVersion": 39,
     "tags": [],
     "templating": {
       "list": [
         {
-          "allValue": null,
           "current": {
-            "selected": true,
+            "selected": false,
             "text": "All",
             "value": "$__all"
           },
-          "datasource": "Galaxy",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "definition": "SHOW TAG VALUES FROM \"queue-overview\" WITH KEY = \"tool_id\"",
           "hide": 0,
           "includeAll": true,
-          "label": null,
           "multi": false,
           "name": "ies",
           "options": [],
@@ -2251,7 +1371,6 @@
           "skipUrlSync": false,
           "sort": 0,
           "tagValuesQuery": "",
-          "tags": [],
           "tagsQuery": "",
           "type": "query",
           "useTags": false
@@ -2262,6 +1381,7 @@
       "from": "now-3h",
       "to": "now"
     },
+    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "refresh_intervals": [
         "5s",
@@ -2279,6 +1399,7 @@
     "timezone": "",
     "title": "IEv2",
     "uid": "GfPTTlhWz",
-    "version": 1
+    "version": 2,
+    "weekStart": ""
   }
 }

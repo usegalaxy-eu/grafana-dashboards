@@ -6,44 +6,44 @@
     "canAdmin": false,
     "canStar": false,
     "canDelete": false,
-    "slug": "public-galaxy-servers-usegalaxy",
-    "url": "/d/nW8PuvMZk/public-galaxy-servers-usegalaxy",
+    "slug": "public-galaxy-servers-usegalaxy-2a",
+    "url": "/d/nW8PuvMZk/public-galaxy-servers-usegalaxy-2a",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2022-03-14T14:02:15+01:00",
-    "updated": "2022-03-14T14:02:15+01:00",
-    "updatedBy": "Anonymous",
-    "createdBy": "Anonymous",
-    "version": 1,
+    "created": "2024-07-24T14:04:54+02:00",
+    "updated": "2024-07-26T14:03:11+02:00",
+    "updatedBy": "kysrpex",
+    "createdBy": "admin",
+    "version": 3,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 0,
     "folderUid": "",
     "folderTitle": "General",
     "folderUrl": "",
-    "provisioned": true,
-    "provisionedExternalId": "Public Galaxy Servers - UseGalaxy.*.json",
+    "provisioned": false,
+    "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": true,
-        "canEdit": true,
-        "canDelete": true
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    },
-    "publicDashboardAccessToken": "",
-    "publicDashboardUid": "",
-    "publicDashboardEnabled": false
+    }
   },
   "dashboard": {
     "annotations": {
       "list": [
         {
           "builtIn": 1,
-          "datasource": "-- Grafana --",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -53,10 +53,9 @@
       ]
     },
     "editable": true,
-    "gnetId": null,
+    "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 16,
-    "iteration": 1570614597905,
+    "id": 77,
     "links": [
       {
         "icon": "external link",
@@ -68,46 +67,123 @@
     ],
     "panels": [
       {
-        "circleMaxSize": 30,
-        "circleMinSize": "3",
-        "colors": [
-          "#F2CC0C",
-          "#3274D9"
-        ],
-        "datasource": null,
-        "decimals": 0,
-        "esMetric": "Count",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#F2CC0C",
+                  "value": null
+                },
+                {
+                  "color": "#3274D9",
+                  "value": 0
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
         "gridPos": {
           "h": 8,
           "w": 16,
           "x": 0,
           "y": 0
         },
-        "hideEmpty": false,
         "hideTimeOverride": false,
-        "hideZero": false,
         "id": 2,
-        "initialZoom": 1,
-        "links": [],
-        "locationData": "countries",
-        "mapCenter": "(0\u00b0, 0\u00b0)",
-        "mapCenterLatitude": 0,
-        "mapCenterLongitude": 0,
         "maxDataPoints": 1,
-        "mouseWheelZoom": false,
-        "options": {},
-        "showLegend": false,
-        "stickyLabels": true,
-        "tableQueryOptions": {
-          "geohashField": "geohash",
-          "latitudeField": "latitude",
-          "longitudeField": "longitude",
-          "metricField": "metric",
-          "queryType": "geohash"
+        "options": {
+          "basemap": {
+            "name": "Basemap",
+            "type": "default"
+          },
+          "controls": {
+            "mouseWheelZoom": false,
+            "showAttribution": true,
+            "showDebug": false,
+            "showMeasure": false,
+            "showScale": false,
+            "showZoom": true
+          },
+          "layers": [
+            {
+              "config": {
+                "showLegend": true,
+                "style": {
+                  "color": {
+                    "fixed": "dark-green"
+                  },
+                  "opacity": 0.4,
+                  "rotation": {
+                    "fixed": 0,
+                    "max": 360,
+                    "min": -360,
+                    "mode": "mod"
+                  },
+                  "size": {
+                    "fixed": 5,
+                    "max": 30,
+                    "min": 3
+                  },
+                  "symbol": {
+                    "fixed": "img/icons/marker/circle.svg",
+                    "mode": "fixed"
+                  },
+                  "symbolAlign": {
+                    "horizontal": "center",
+                    "vertical": "center"
+                  },
+                  "textConfig": {
+                    "fontSize": 12,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "textAlign": "center",
+                    "textBaseline": "middle"
+                  }
+                }
+              },
+              "location": {
+                "gazetteer": "public/gazetteer/countries.json",
+                "mode": "lookup"
+              },
+              "name": "Layer 0",
+              "tooltip": true,
+              "type": "markers"
+            }
+          ],
+          "tooltip": {
+            "mode": "details"
+          },
+          "view": {
+            "allLayers": true,
+            "id": "zero",
+            "lat": 0,
+            "lon": 0,
+            "zoom": 1
+          }
         },
+        "pluginVersion": "11.0.0",
         "targets": [
           {
             "alias": "$tag_location",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -159,25 +235,101 @@
             ]
           }
         ],
-        "thresholds": "0",
         "timeFrom": "1h",
-        "timeShift": null,
         "title": "Galaxies Across the World",
-        "type": "grafana-worldmap-panel",
-        "unitPlural": "",
-        "unitSingle": "",
-        "unitSingular": "",
-        "valueName": "current"
-      },
-      {
-        "columns": [
+        "transformations": [
           {
-            "text": "Avg",
-            "value": "avg"
+            "id": "reduce",
+            "options": {
+              "reducers": [
+                "lastNotNull"
+              ]
+            }
           }
         ],
-        "datasource": "Galaxy",
-        "fontSize": "100%",
+        "type": "geomap"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "decimals": 2,
+            "displayName": "",
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Metric"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Server"
+                },
+                {
+                  "id": "unit",
+                  "value": "short"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                },
+                {
+                  "id": "custom.align"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Avg"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Uptime"
+                },
+                {
+                  "id": "unit",
+                  "value": "percentunit"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                },
+                {
+                  "id": "custom.align"
+                }
+              ]
+            }
+          ]
+        },
         "gridPos": {
           "h": 8,
           "w": 8,
@@ -186,64 +338,26 @@
         },
         "id": 17,
         "interval": "1h",
-        "links": [],
-        "options": {},
-        "pageSize": null,
-        "scroll": true,
-        "showHeader": true,
-        "sort": {
-          "col": 1,
-          "desc": true
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true
         },
-        "styles": [
-          {
-            "alias": "Server",
-            "colorMode": null,
-            "colors": [
-              "rgba(245, 54, 54, 0.9)",
-              "rgba(237, 129, 40, 0.89)",
-              "rgba(50, 172, 45, 0.97)"
-            ],
-            "dateFormat": "YYYY-MM-DD HH:mm:ss",
-            "decimals": 2,
-            "pattern": "Metric",
-            "thresholds": [],
-            "type": "string",
-            "unit": "short"
-          },
-          {
-            "alias": "Uptime",
-            "colorMode": null,
-            "colors": [
-              "rgba(245, 54, 54, 0.9)",
-              "rgba(237, 129, 40, 0.89)",
-              "rgba(50, 172, 45, 0.97)"
-            ],
-            "dateFormat": "YYYY-MM-DD HH:mm:ss",
-            "decimals": 2,
-            "pattern": "Avg",
-            "thresholds": [],
-            "type": "number",
-            "unit": "percentunit"
-          },
-          {
-            "alias": "",
-            "colorMode": null,
-            "colors": [
-              "rgba(245, 54, 54, 0.9)",
-              "rgba(237, 129, 40, 0.89)",
-              "rgba(50, 172, 45, 0.97)"
-            ],
-            "decimals": 2,
-            "pattern": "/.*/",
-            "thresholds": [],
-            "type": "number",
-            "unit": "short"
-          }
-        ],
+        "pluginVersion": "11.0.0",
         "targets": [
           {
             "alias": "[[tag_name]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -294,55 +408,91 @@
           }
         ],
         "timeFrom": "30d",
-        "timeShift": null,
         "title": "30 Day Uptime",
-        "transform": "timeseries_aggregations",
+        "transformations": [
+          {
+            "id": "reduce",
+            "options": {
+              "includeTimeField": false,
+              "reducers": [
+                "mean"
+              ]
+            }
+          }
+        ],
         "type": "table"
       },
       {
-        "backgroundColor": "rgba(128,128,128,0.1)",
-        "colorMaps": [
-          {
-            "color": "rgba(204, 204, 204, 0)",
-            "text": "N/A"
-          }
-        ],
-        "crosshairColor": "#8F070C",
-        "datasource": "Galaxy",
-        "decimals": 2,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "description": "Offline may indicate that:\n- the remote server is offline\n- that a failure occured somewhere between Freiburg and their server\n- that our server is offline",
-        "display": "timeline",
-        "expandFromQueryS": 0,
-        "extendLastValue": true,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "scaleDistribution": {
+                "type": "linear"
+              }
+            }
+          },
+          "overrides": []
+        },
         "gridPos": {
-          "h": 6,
+          "h": 9,
           "w": 24,
           "x": 0,
           "y": 8
         },
-        "highlightOnMouseover": true,
         "id": 19,
-        "legendSortBy": "-ms",
-        "lineColor": "rgba(0, 0, 0, 0.3)",
-        "links": [],
-        "metricNameColor": "#000000",
-        "options": {},
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
+        "options": {
+          "calculate": false,
+          "cellGap": 0,
+          "color": {
+            "exponent": 0.5,
+            "fill": "dark-orange",
+            "mode": "scheme",
+            "reverse": false,
+            "scale": "exponential",
+            "scheme": "PuOr",
+            "steps": 64
+          },
+          "exemplars": {
+            "color": "rgba(255,0,255,0.7)"
+          },
+          "filterValues": {
+            "le": 1e-09
+          },
+          "legend": {
+            "show": true
+          },
+          "rowsFrame": {
+            "layout": "auto"
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "single",
+            "showColorScale": false,
+            "yHistogram": false
+          },
+          "yAxis": {
+            "axisPlacement": "left",
+            "reverse": false
           }
-        ],
-        "rowHeight": 40,
-        "showLegend": false,
-        "showLegendNames": true,
-        "showLegendPercent": true,
-        "showLegendValues": true,
-        "showTimeAxis": true,
+        },
+        "pluginVersion": "11.0.0",
         "targets": [
           {
             "alias": "[[tag_name]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -392,72 +542,104 @@
             ]
           }
         ],
-        "textSize": 24,
-        "textSizeTime": 12,
         "timeFrom": "2w",
-        "timeShift": null,
-        "timeTextColor": "#d8d9da",
         "title": "Version",
-        "type": "natel-discrete-panel",
-        "units": "short",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "Offline",
-            "value": "null"
-          }
-        ],
-        "valueTextColor": "#000000",
-        "writeAllValues": false,
-        "writeLastValue": true,
-        "writeMetricNames": true
+        "type": "heatmap"
       },
       {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Galaxy",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "description": "These results are biased by the fact that response times are measured by the hoster of usegalaxy.eu, please be aware of this!",
-        "fill": 0,
-        "fillGradient": 0,
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
         "gridPos": {
           "h": 9,
           "w": 24,
           "x": 0,
-          "y": 14
+          "y": 17
         },
         "id": 18,
         "interval": "1h",
-        "legend": {
-          "alignAsTable": true,
-          "avg": true,
-          "current": true,
-          "max": true,
-          "min": true,
-          "rightSide": true,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
         "options": {
-          "dataLinks": []
+          "legend": {
+            "calcs": [
+              "mean",
+              "lastNotNull",
+              "max",
+              "min"
+            ],
+            "displayMode": "table",
+            "placement": "right",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "none"
+          }
         },
-        "percentage": false,
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
         "targets": [
           {
             "alias": "[[tag_name]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -507,121 +689,79 @@
             ]
           }
         ],
-        "thresholds": [],
         "timeFrom": "1w",
-        "timeRegions": [],
-        "timeShift": null,
         "title": "Response Time",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "type": "timeseries"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "Galaxy",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "description": "",
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
         },
         "gridPos": {
           "h": 3,
-          "w": 8,
+          "w": 6,
           "x": 0,
-          "y": 23
+          "y": 26
         },
         "id": 20,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "maxPerRow": 6,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.0.0",
         "repeat": "usg",
         "repeatDirection": "h",
-        "scopedVars": {
-          "usg": {
-            "selected": false,
-            "text": "UseGalaxy.eu",
-            "value": "UseGalaxy.eu"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
         "targets": [
           {
             "alias": "[[tag_name]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "dsType": "influxdb",
             "groupBy": [
               {
@@ -671,317 +811,27 @@
             ]
           }
         ],
-        "thresholds": "",
         "timeFrom": "1w",
-        "timeShift": null,
         "title": "Tools @ $usg",
-        "type": "singlestat",
-        "valueFontSize": "80%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "Galaxy",
-        "description": "",
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 8,
-          "x": 8,
-          "y": 23
-        },
-        "id": 21,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "maxPerRow": 6,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "repeat": null,
-        "repeatDirection": "h",
-        "repeatIteration": 1570614597905,
-        "repeatPanelId": 20,
-        "scopedVars": {
-          "usg": {
-            "selected": false,
-            "text": "UseGalaxy.org (Main)",
-            "value": "UseGalaxy.org (Main)"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "alias": "[[tag_name]]",
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "1h"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "name"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "previous"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "server",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "tools"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "name",
-                "operator": "=~",
-                "value": "/^$usg$/"
-              }
-            ]
-          }
-        ],
-        "thresholds": "",
-        "timeFrom": "1w",
-        "timeShift": null,
-        "title": "Tools @ $usg",
-        "type": "singlestat",
-        "valueFontSize": "80%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "Galaxy",
-        "description": "",
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 8,
-          "x": 16,
-          "y": 23
-        },
-        "id": 22,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "maxPerRow": 6,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "repeat": null,
-        "repeatDirection": "h",
-        "repeatIteration": 1570614597905,
-        "repeatPanelId": 20,
-        "scopedVars": {
-          "usg": {
-            "selected": false,
-            "text": "UseGalaxy.org.au",
-            "value": "UseGalaxy.org.au"
-          }
-        },
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "alias": "[[tag_name]]",
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "1h"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "name"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "previous"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "server",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "tools"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "name",
-                "operator": "=~",
-                "value": "/^$usg$/"
-              }
-            ]
-          }
-        ],
-        "thresholds": "",
-        "timeFrom": "1w",
-        "timeShift": null,
-        "title": "Tools @ $usg",
-        "type": "singlestat",
-        "valueFontSize": "80%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
+        "type": "stat"
       }
     ],
-    "schemaVersion": 20,
-    "style": "dark",
+    "schemaVersion": 39,
     "tags": [
       "pgs"
     ],
     "templating": {
       "list": [
         {
-          "allValue": null,
           "current": {
-            "tags": [],
+            "selected": false,
             "text": "All",
             "value": "$__all"
           },
-          "datasource": "Galaxy",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "definition": "SHOW TAG VALUES FROM \"server\" WITH KEY = \"name\"",
           "hide": 0,
           "includeAll": true,
@@ -995,7 +845,6 @@
           "skipUrlSync": false,
           "sort": 0,
           "tagValuesQuery": "",
-          "tags": [],
           "tagsQuery": "",
           "type": "query",
           "useTags": false
@@ -1003,9 +852,10 @@
       ]
     },
     "time": {
-      "from": "now-6h",
+      "from": "now-7d",
       "to": "now"
     },
+    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "refresh_intervals": [
         "5s",
@@ -1034,6 +884,7 @@
     "timezone": "browser",
     "title": "Public Galaxy Servers - UseGalaxy.*",
     "uid": "nW8PuvMZk",
-    "version": 1
+    "version": 3,
+    "weekStart": ""
   }
 }

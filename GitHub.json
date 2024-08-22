@@ -9,10 +9,10 @@
     "slug": "github",
     "url": "/d/Wb1wN7dZz/github",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2022-03-14T14:02:15+01:00",
-    "updated": "2022-03-14T14:02:15+01:00",
-    "updatedBy": "Anonymous",
-    "createdBy": "Anonymous",
+    "created": "2024-07-24T14:02:45+02:00",
+    "updated": "2024-07-24T14:02:45+02:00",
+    "updatedBy": "admin",
+    "createdBy": "admin",
     "version": 1,
     "hasAcl": false,
     "isFolder": false,
@@ -20,30 +20,30 @@
     "folderUid": "",
     "folderTitle": "General",
     "folderUrl": "",
-    "provisioned": true,
-    "provisionedExternalId": "GitHub.json",
+    "provisioned": false,
+    "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": true,
-        "canEdit": true,
-        "canDelete": true
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    },
-    "publicDashboardAccessToken": "",
-    "publicDashboardUid": "",
-    "publicDashboardEnabled": false
+    }
   },
   "dashboard": {
     "annotations": {
       "list": [
         {
           "builtIn": 1,
-          "datasource": "-- Grafana --",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -53,29 +53,45 @@
       ]
     },
     "editable": true,
-    "gnetId": null,
+    "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "hideControls": false,
-    "id": 25,
-    "iteration": 1565599586870,
+    "id": 68,
     "links": [],
     "panels": [
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
         },
         "gridPos": {
           "h": 4,
@@ -84,45 +100,30 @@
           "y": 0
         },
         "id": 2,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": null
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -171,37 +172,43 @@
             ]
           }
         ],
-        "thresholds": "",
-        "timeFrom": null,
-        "timeShift": null,
         "title": "Open Issues",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
         },
         "gridPos": {
           "h": 4,
@@ -210,45 +217,30 @@
           "y": 0
         },
         "id": 4,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": null
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -297,37 +289,43 @@
             ]
           }
         ],
-        "thresholds": "",
-        "timeFrom": null,
-        "timeShift": null,
         "title": "Stars",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
+        "type": "stat"
       },
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
         },
         "gridPos": {
           "h": 4,
@@ -336,45 +334,30 @@
           "y": 0
         },
         "id": 3,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
         "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "options": {},
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": null
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "tableColumn": "",
+        "pluginVersion": "11.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -423,23 +406,14 @@
             ]
           }
         ],
-        "thresholds": "",
-        "timeFrom": null,
-        "timeShift": null,
         "title": "Forks",
-        "type": "singlestat",
-        "valueFontSize": "150%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
+        "type": "stat"
       },
       {
-        "content": "<iframe src=\"https://github.com/$project/$repo/\"\n  name=\"github\"\n  frameborder=\"0\"\n  style=\"width: 100%;\n  height: 840px;\">  ",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "gridPos": {
           "h": 13,
           "w": 16,
@@ -447,31 +421,46 @@
           "y": 4
         },
         "id": 6,
-        "mode": "html",
-        "options": {},
-        "timeFrom": null,
-        "timeShift": null,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<iframe src=\"https://github.com/$project/$repo/\"\n  name=\"github\"\n  frameborder=\"0\"\n  style=\"width: 100%;\n  height: 840px;\">  ",
+          "mode": "html"
+        },
+        "pluginVersion": "11.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "refId": "A"
+          }
+        ],
         "title": "$project/$repo",
         "type": "text"
       }
     ],
-    "schemaVersion": 19,
-    "style": "dark",
+    "schemaVersion": 39,
     "tags": [],
     "templating": {
       "list": [
         {
-          "allValue": null,
           "current": {
-            "tags": [],
+            "selected": false,
             "text": "galaxyproject",
             "value": "galaxyproject"
           },
-          "datasource": "Galaxy",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "definition": "SHOW TAG VALUES FROM \"github_repository\" WITH KEY = \"owner\"",
           "hide": 0,
           "includeAll": false,
-          "label": null,
           "multi": false,
           "name": "project",
           "options": [],
@@ -481,23 +470,23 @@
           "skipUrlSync": false,
           "sort": 0,
           "tagValuesQuery": "",
-          "tags": [],
           "tagsQuery": "",
           "type": "query",
           "useTags": false
         },
         {
-          "allValue": null,
           "current": {
-            "tags": [],
+            "selected": false,
             "text": "training-material",
             "value": "training-material"
           },
-          "datasource": "Galaxy",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
           "definition": "SHOW TAG VALUES FROM \"github_repository\" WITH KEY = \"name\" WHERE owner =~ /$project/",
           "hide": 0,
           "includeAll": false,
-          "label": null,
           "multi": false,
           "name": "repo",
           "options": [],
@@ -507,7 +496,6 @@
           "skipUrlSync": false,
           "sort": 0,
           "tagValuesQuery": "",
-          "tags": [],
           "tagsQuery": "",
           "type": "query",
           "useTags": false
@@ -518,6 +506,7 @@
       "from": "now-30d",
       "to": "now"
     },
+    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "refresh_intervals": [
         "5s",
@@ -535,6 +524,7 @@
     "timezone": "",
     "title": "GitHub",
     "uid": "Wb1wN7dZz",
-    "version": 1
+    "version": 1,
+    "weekStart": ""
   }
 }

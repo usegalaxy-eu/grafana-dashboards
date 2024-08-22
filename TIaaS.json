@@ -9,10 +9,10 @@
     "slug": "tiaas",
     "url": "/d/7hY6kQfiz/tiaas",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2022-03-14T14:02:15+01:00",
-    "updated": "2022-03-14T14:02:15+01:00",
-    "updatedBy": "Anonymous",
-    "createdBy": "Anonymous",
+    "created": "2024-07-24T14:05:47+02:00",
+    "updated": "2024-07-24T14:05:47+02:00",
+    "updatedBy": "admin",
+    "createdBy": "admin",
     "version": 1,
     "hasAcl": false,
     "isFolder": false,
@@ -20,30 +20,30 @@
     "folderUid": "",
     "folderTitle": "General",
     "folderUrl": "",
-    "provisioned": true,
-    "provisionedExternalId": "TIaaS.json",
+    "provisioned": false,
+    "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": true,
-        "canEdit": true,
-        "canDelete": true
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    },
-    "publicDashboardAccessToken": "",
-    "publicDashboardUid": "",
-    "publicDashboardEnabled": false
+    }
   },
   "dashboard": {
     "annotations": {
       "list": [
         {
           "builtIn": 1,
-          "datasource": "-- Grafana --",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -53,51 +53,129 @@
       ]
     },
     "editable": true,
-    "gnetId": null,
+    "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 9,
+    "id": 81,
     "links": [],
     "panels": [
       {
-        "circleMaxSize": 30,
-        "circleMinSize": 2,
-        "colors": [
-          "#447ebc",
-          "#0a437c"
-        ],
-        "datasource": null,
-        "decimals": 0,
-        "esMetric": "Count",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#447ebc",
+                  "value": null
+                },
+                {
+                  "color": "#0a437c",
+                  "value": 0
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
         "gridPos": {
           "h": 9,
           "w": 12,
           "x": 0,
           "y": 0
         },
-        "hideEmpty": false,
-        "hideZero": false,
         "id": 2,
-        "initialZoom": 1,
         "interval": "1d",
-        "links": [],
-        "locationData": "countries",
-        "mapCenter": "(0\u00b0, 0\u00b0)",
-        "mapCenterLatitude": 0,
-        "mapCenterLongitude": 0,
         "maxDataPoints": 1,
-        "mouseWheelZoom": true,
-        "showLegend": true,
-        "stickyLabels": false,
-        "tableQueryOptions": {
-          "geohashField": "geohash",
-          "latitudeField": "latitude",
-          "longitudeField": "longitude",
-          "metricField": "metric",
-          "queryType": "geohash"
+        "options": {
+          "basemap": {
+            "name": "Basemap",
+            "type": "default"
+          },
+          "controls": {
+            "mouseWheelZoom": true,
+            "showAttribution": true,
+            "showDebug": false,
+            "showMeasure": false,
+            "showScale": false,
+            "showZoom": true
+          },
+          "layers": [
+            {
+              "config": {
+                "showLegend": true,
+                "style": {
+                  "color": {
+                    "fixed": "dark-green"
+                  },
+                  "opacity": 0.4,
+                  "rotation": {
+                    "fixed": 0,
+                    "max": 360,
+                    "min": -360,
+                    "mode": "mod"
+                  },
+                  "size": {
+                    "fixed": 5,
+                    "max": 30,
+                    "min": 2
+                  },
+                  "symbol": {
+                    "fixed": "img/icons/marker/circle.svg",
+                    "mode": "fixed"
+                  },
+                  "symbolAlign": {
+                    "horizontal": "center",
+                    "vertical": "center"
+                  },
+                  "textConfig": {
+                    "fontSize": 12,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "textAlign": "center",
+                    "textBaseline": "middle"
+                  }
+                }
+              },
+              "location": {
+                "gazetteer": "public/gazetteer/countries.json",
+                "mode": "lookup"
+              },
+              "name": "Layer 0",
+              "tooltip": true,
+              "type": "markers"
+            }
+          ],
+          "tooltip": {
+            "mode": "details"
+          },
+          "view": {
+            "allLayers": true,
+            "id": "zero",
+            "lat": 0,
+            "lon": 0,
+            "zoom": 1
+          }
         },
+        "pluginVersion": "11.0.0",
         "targets": [
           {
             "alias": "[[tag_location]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -140,16 +218,24 @@
             "tags": []
           }
         ],
-        "thresholds": "0",
         "title": "TIaaS Training Map",
-        "type": "grafana-worldmap-panel",
-        "unitPlural": "students",
-        "unitSingle": "",
-        "unitSingular": "student",
-        "valueName": "current"
+        "transformations": [
+          {
+            "id": "reduce",
+            "options": {
+              "reducers": [
+                "lastNotNull"
+              ]
+            }
+          }
+        ],
+        "type": "geomap"
       },
       {
-        "content": "# TIaaS - Training Infrastructure as a Service\n\nUseGalaxy.eu is proud to provide Training Infrastructure as a Service (TIaaS) for the Galaxy training community. You provide the training, we provide the infrastructure at no cost.\n\nRegister a training and read more about it at our [homepage](https://galaxyproject.eu/tiaas).",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
         "description": "",
         "gridPos": {
           "h": 9,
@@ -158,18 +244,130 @@
           "y": 0
         },
         "id": 7,
-        "links": [],
-        "mode": "markdown",
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "# TIaaS - Training Infrastructure as a Service\n\nUseGalaxy.eu is proud to provide Training Infrastructure as a Service (TIaaS) for the Galaxy training community. You provide the training, we provide the infrastructure at no cost.\n\nRegister a training and read more about it at our [homepage](https://galaxyproject.eu/tiaas).",
+          "mode": "markdown"
+        },
+        "pluginVersion": "11.0.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "refId": "A"
+          }
+        ],
         "title": "About",
         "type": "text"
       },
       {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": null,
-        "fill": 1,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "stepAfter",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "normal"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "decimals": 0,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byValue",
+                "options": {
+                  "op": "gte",
+                  "reducer": "allIsZero",
+                  "value": 0
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": true,
+                    "tooltip": true,
+                    "viz": false
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byValue",
+                "options": {
+                  "op": "gte",
+                  "reducer": "allIsNull",
+                  "value": 0
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": true,
+                    "tooltip": true,
+                    "viz": false
+                  }
+                }
+              ]
+            }
+          ]
+        },
         "gridPos": {
           "h": 9,
           "w": 12,
@@ -179,32 +377,26 @@
         "hideTimeOverride": true,
         "id": 4,
         "interval": "1d",
-        "legend": {
-          "avg": false,
-          "current": false,
-          "hideEmpty": true,
-          "hideZero": true,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "none"
+          }
         },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null as zero",
-        "percentage": false,
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": true,
-        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_event]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -253,54 +445,111 @@
             "tags": []
           }
         ],
-        "thresholds": [],
-        "timeFrom": null,
         "timeShift": "1d",
         "title": "Current TIaaS Events",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "decimals": 0,
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "type": "timeseries"
       },
       {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": null,
-        "fill": 1,
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "stepAfter",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "normal"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byValue",
+                "options": {
+                  "op": "gte",
+                  "reducer": "allIsZero",
+                  "value": 0
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": true,
+                    "tooltip": true,
+                    "viz": false
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byValue",
+                "options": {
+                  "op": "gte",
+                  "reducer": "allIsNull",
+                  "value": 0
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": true,
+                    "tooltip": true,
+                    "viz": false
+                  }
+                }
+              ]
+            }
+          ]
+        },
         "gridPos": {
           "h": 9,
           "w": 12,
@@ -310,32 +559,26 @@
         "hideTimeOverride": true,
         "id": 5,
         "interval": "1d",
-        "legend": {
-          "avg": false,
-          "current": false,
-          "hideEmpty": true,
-          "hideZero": true,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "desc"
+          }
         },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null as zero",
-        "percentage": false,
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": true,
-        "steppedLine": true,
         "targets": [
           {
             "alias": "[[tag_event]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
             "groupBy": [
               {
                 "params": [
@@ -384,50 +627,13 @@
             "tags": []
           }
         ],
-        "thresholds": [],
-        "timeFrom": null,
         "timeShift": "1d",
         "title": "Current TIaaS Students",
-        "tooltip": {
-          "shared": true,
-          "sort": 2,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "type": "timeseries"
       }
     ],
     "refresh": false,
-    "schemaVersion": 16,
-    "style": "dark",
+    "schemaVersion": 39,
     "tags": [
       "wip"
     ],
@@ -438,6 +644,7 @@
       "from": "now-6M",
       "to": "now"
     },
+    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "refresh_intervals": [
         "5s",
@@ -466,6 +673,7 @@
     "timezone": "",
     "title": "TIaaS",
     "uid": "7hY6kQfiz",
-    "version": 1
+    "version": 1,
+    "weekStart": ""
   }
 }

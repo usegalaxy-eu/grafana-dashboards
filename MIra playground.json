@@ -9,11 +9,11 @@
     "slug": "mira-playground",
     "url": "/d/N9O36HWVk/mira-playground",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2022-08-23T22:53:11+02:00",
-    "updated": "2023-04-17T15:19:56+02:00",
-    "updatedBy": "mira-miracoli",
+    "created": "2022-08-23T20:53:11+02:00",
+    "updated": "2024-04-18T13:19:10+02:00",
+    "updatedBy": "admin",
     "createdBy": "admin",
-    "version": 44,
+    "version": 45,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 0,
@@ -24,19 +24,16 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": true,
-        "canEdit": true,
-        "canDelete": true
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
       },
       "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
       }
-    },
-    "publicDashboardAccessToken": "",
-    "publicDashboardUid": "",
-    "publicDashboardEnabled": false
+    }
   },
   "dashboard": {
     "annotations": {
@@ -69,67 +66,61 @@
     "liveNow": false,
     "panels": [
       {
-        "columns": [
-          {
-            "$$hashKey": "object:93",
-            "text": "Current",
-            "value": "current"
-          }
-        ],
         "datasource": {
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "fontSize": "100%",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "displayMode": "auto",
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
         "gridPos": {
-          "h": 14,
-          "w": 5,
+          "h": 8,
+          "w": 12,
           "x": 0,
           "y": 0
         },
-        "id": 26,
-        "links": [],
-        "scroll": true,
-        "showHeader": true,
-        "sort": {
-          "col": 1,
-          "desc": true
-        },
-        "styles": [
-          {
-            "alias": "Time",
-            "align": "auto",
-            "dateFormat": "YYYY-MM-DD HH:mm:ss",
-            "pattern": "Time",
-            "type": "date"
+        "id": 28,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
           },
-          {
-            "alias": "",
-            "align": "auto",
-            "colorMode": "cell",
-            "colors": [
-              "rgba(143, 128, 218, 0.97)",
-              "rgba(223, 109, 239, 0.89)",
-              "rgba(245, 54, 54, 0.9)"
-            ],
-            "decimals": 2,
-            "pattern": "Current",
-            "thresholds": [
-              "50",
-              "90"
-            ],
-            "type": "number",
-            "unit": "short"
-          }
-        ],
+          "showHeader": true
+        },
+        "pluginVersion": "9.2.10",
         "targets": [
           {
-            "alias": "[[tag_fstype]] @ [[tag_path]]",
             "datasource": {
               "type": "influxdb",
               "uid": "P9B81C0353945995B"
             },
-            "dsType": "influxdb",
             "groupBy": [
               {
                 "params": [
@@ -139,24 +130,12 @@
               },
               {
                 "params": [
-                  "fstype"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "path"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
+                  "null"
                 ],
                 "type": "fill"
               }
             ],
-            "measurement": "disk",
+            "measurement": "tool-usage",
             "orderByTime": "ASC",
             "policy": "default",
             "refId": "A",
@@ -165,148 +144,21 @@
               [
                 {
                   "params": [
-                    "used_percent"
+                    "value"
                   ],
                   "type": "field"
                 },
                 {
                   "params": [],
-                  "type": "last"
+                  "type": "mean"
                 }
               ]
             ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
-              }
-            ]
+            "tags": []
           }
         ],
-        "title": "Celery Disk",
-        "transform": "timeseries_aggregations",
-        "type": "table-old"
-      },
-      {
-        "columns": [
-          {
-            "$$hashKey": "object:93",
-            "text": "Current",
-            "value": "current"
-          }
-        ],
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fontSize": "100%",
-        "gridPos": {
-          "h": 14,
-          "w": 5,
-          "x": 6,
-          "y": 0
-        },
-        "id": 22,
-        "links": [],
-        "scroll": true,
-        "showHeader": true,
-        "sort": {
-          "col": 1,
-          "desc": true
-        },
-        "styles": [
-          {
-            "alias": "Time",
-            "align": "auto",
-            "dateFormat": "YYYY-MM-DD HH:mm:ss",
-            "pattern": "Time",
-            "type": "date"
-          },
-          {
-            "alias": "",
-            "align": "auto",
-            "colorMode": "cell",
-            "colors": [
-              "rgba(143, 128, 218, 0.97)",
-              "rgba(223, 109, 239, 0.89)",
-              "rgba(245, 54, 54, 0.9)"
-            ],
-            "decimals": 2,
-            "pattern": "Current",
-            "thresholds": [
-              "50",
-              "90"
-            ],
-            "type": "number",
-            "unit": "short"
-          }
-        ],
-        "targets": [
-          {
-            "alias": "[[tag_fstype]] @ [[tag_path]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "fstype"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "path"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used_percent"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "last"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "mq.galaxyproject.eu"
-              }
-            ]
-          }
-        ],
-        "title": "Rabbit Disk",
-        "transform": "timeseries_aggregations",
-        "type": "table-old"
+        "title": "Tool-usage",
+        "type": "table"
       },
       {
         "aliasColors": {},
@@ -426,6 +278,246 @@
         "yaxis": {
           "align": false
         }
+      },
+      {
+        "columns": [
+          {
+            "$$hashKey": "object:93",
+            "text": "Current",
+            "value": "current"
+          }
+        ],
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fontSize": "100%",
+        "gridPos": {
+          "h": 14,
+          "w": 5,
+          "x": 0,
+          "y": 8
+        },
+        "id": 26,
+        "links": [],
+        "scroll": true,
+        "showHeader": true,
+        "sort": {
+          "col": 1,
+          "desc": true
+        },
+        "styles": [
+          {
+            "alias": "Time",
+            "align": "auto",
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "pattern": "Time",
+            "type": "date"
+          },
+          {
+            "alias": "",
+            "align": "auto",
+            "colorMode": "cell",
+            "colors": [
+              "rgba(143, 128, 218, 0.97)",
+              "rgba(223, 109, 239, 0.89)",
+              "rgba(245, 54, 54, 0.9)"
+            ],
+            "decimals": 2,
+            "pattern": "Current",
+            "thresholds": [
+              "50",
+              "90"
+            ],
+            "type": "number",
+            "unit": "short"
+          }
+        ],
+        "targets": [
+          {
+            "alias": "[[tag_fstype]] @ [[tag_path]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "fstype"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "disk",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used_percent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "celery-0.galaxyproject.eu.novalocal"
+              }
+            ]
+          }
+        ],
+        "title": "Celery Disk",
+        "transform": "timeseries_aggregations",
+        "type": "table-old"
+      },
+      {
+        "columns": [
+          {
+            "$$hashKey": "object:93",
+            "text": "Current",
+            "value": "current"
+          }
+        ],
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fontSize": "100%",
+        "gridPos": {
+          "h": 14,
+          "w": 5,
+          "x": 6,
+          "y": 8
+        },
+        "id": 22,
+        "links": [],
+        "scroll": true,
+        "showHeader": true,
+        "sort": {
+          "col": 1,
+          "desc": true
+        },
+        "styles": [
+          {
+            "alias": "Time",
+            "align": "auto",
+            "dateFormat": "YYYY-MM-DD HH:mm:ss",
+            "pattern": "Time",
+            "type": "date"
+          },
+          {
+            "alias": "",
+            "align": "auto",
+            "colorMode": "cell",
+            "colors": [
+              "rgba(143, 128, 218, 0.97)",
+              "rgba(223, 109, 239, 0.89)",
+              "rgba(245, 54, 54, 0.9)"
+            ],
+            "decimals": 2,
+            "pattern": "Current",
+            "thresholds": [
+              "50",
+              "90"
+            ],
+            "type": "number",
+            "unit": "short"
+          }
+        ],
+        "targets": [
+          {
+            "alias": "[[tag_fstype]] @ [[tag_path]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "fstype"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "path"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "disk",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "used_percent"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "mq.galaxyproject.eu"
+              }
+            ]
+          }
+        ],
+        "title": "Rabbit Disk",
+        "transform": "timeseries_aggregations",
+        "type": "table-old"
       },
       {
         "datasource": {
@@ -589,7 +681,7 @@
           "h": 5,
           "w": 4,
           "x": 0,
-          "y": 14
+          "y": 22
         },
         "hideTimeOverride": true,
         "id": 20,
@@ -718,7 +810,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 19
+          "y": 27
         },
         "id": 18,
         "options": {
@@ -861,7 +953,7 @@
           "h": 4,
           "w": 12,
           "x": 0,
-          "y": 27
+          "y": 35
         },
         "id": 16,
         "options": {
@@ -1007,7 +1099,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 31
+          "y": 39
         },
         "id": 14,
         "options": {
@@ -1215,7 +1307,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 39
+          "y": 47
         },
         "id": 4,
         "options": {
@@ -1297,7 +1389,7 @@
           "h": 9,
           "w": 24,
           "x": 0,
-          "y": 47
+          "y": 55
         },
         "hiddenSeries": false,
         "id": 11,
@@ -1475,7 +1567,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 56
+          "y": 64
         },
         "id": 8,
         "options": {
@@ -1755,7 +1847,7 @@
           "h": 7,
           "w": 24,
           "x": 0,
-          "y": 64
+          "y": 72
         },
         "id": 6,
         "interval": "1m",
@@ -1997,7 +2089,7 @@
           "h": 9,
           "w": 24,
           "x": 0,
-          "y": 71
+          "y": 79
         },
         "hiddenSeries": false,
         "id": 12,
@@ -2143,7 +2235,7 @@
           "h": 6,
           "w": 9,
           "x": 0,
-          "y": 80
+          "y": 88
         },
         "id": 4,
         "links": [],
@@ -2381,7 +2473,7 @@
           "h": 7,
           "w": 6,
           "x": 0,
-          "y": 86
+          "y": 94
         },
         "id": 2,
         "links": [],
@@ -2497,7 +2589,7 @@
     "timezone": "",
     "title": "MIra playground",
     "uid": "N9O36HWVk",
-    "version": 44,
+    "version": 45,
     "weekStart": ""
   }
 }
