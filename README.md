@@ -23,7 +23,7 @@ InfluxDB |  | 1 | [Live](https://stats.galaxyproject.eu/d/000000011) | [File](./
 Jobs Dashboard |  | 2 | [Live](https://stats.galaxyproject.eu/d/000000034) | [File](./Jobs%20Dashboard.json)
 MIra playground |  | 45 | [Live](https://stats.galaxyproject.eu/d/N9O36HWVk) | [File](./MIra%20playground.json)
 Node Detail - Infrastructure | infrastructure,galaxy,migrated | 1 | [Live](https://stats.galaxyproject.eu/d/000000023) | [File](./Node%20Detail%20-%20Infrastructure.json)
-OnCall Insights | oncall | 1 | [Live](https://stats.galaxyproject.eu/d/bdstgcjnddds0c) | [File](./OnCall%20Insights.json)
+OnCall Insights | oncall | 1 | [Live](https://stats.galaxyproject.eu/d/cdvlj8qs787pca) | [File](./OnCall%20Insights.json)
 Postgres |  | 21 | [Live](https://stats.galaxyproject.eu/d/t-hx7NfIk) | [File](./Postgres.json)
 Public Galaxy Servers - Individual | pgs | 5 | [Live](https://stats.galaxyproject.eu/d/000000022) | [File](./Public%20Galaxy%20Servers%20-%20Individual.json)
 Public Galaxy Servers - UseGalaxy.* | pgs | 3 | [Live](https://stats.galaxyproject.eu/d/nW8PuvMZk) | [File](./Public%20Galaxy%20Servers%20-%20UseGalaxy.*.json)

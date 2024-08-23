@@ -7,10 +7,10 @@
     "canStar": false,
     "canDelete": false,
     "slug": "oncall-insights",
-    "url": "/d/bdstgcjnddds0c/oncall-insights",
+    "url": "/d/cdvlj8qs787pca/oncall-insights",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-25T14:10:36+02:00",
-    "updated": "2024-07-25T14:10:36+02:00",
+    "created": "2024-08-22T15:19:20+02:00",
+    "updated": "2024-08-22T15:19:20+02:00",
     "updatedBy": "Anonymous",
     "createdBy": "Anonymous",
     "version": 1,
@@ -55,7 +55,7 @@
     "editable": false,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 84,
+    "id": 85,
     "links": [],
     "liveNow": false,
     "panels": [
@@ -1613,7 +1613,7 @@
     },
     "timezone": "browser",
     "title": "OnCall Insights",
-    "uid": "bdstgcjnddds0c",
+    "uid": "cdvlj8qs787pca",
     "version": 1,
     "weekStart": ""
   }
