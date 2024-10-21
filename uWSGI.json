@@ -10,10 +10,10 @@
     "url": "/d/DImgCuRMz/uwsgi",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2024-07-24T13:58:58+02:00",
-    "updated": "2024-07-26T11:22:19+02:00",
-    "updatedBy": "kysrpex",
+    "updated": "2024-09-23T14:46:41+02:00",
+    "updatedBy": "mira-miracoli",
     "createdBy": "admin",
-    "version": 4,
+    "version": 6,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 2,
@@ -76,7 +76,7 @@
               "axisPlacement": "auto",
               "barAlignment": 0,
               "drawStyle": "line",
-              "fillOpacity": 30,
+              "fillOpacity": 20,
               "gradientMode": "none",
               "hideFrom": {
                 "legend": false,
@@ -84,7 +84,7 @@
                 "viz": false
               },
               "insertNulls": false,
-              "lineInterpolation": "linear",
+              "lineInterpolation": "stepAfter",
               "lineWidth": 1,
               "pointSize": 5,
               "scaleDistribution": {
@@ -101,7 +101,6 @@
               }
             },
             "mappings": [],
-            "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
@@ -115,93 +114,37 @@
                 }
               ]
             },
-            "unit": "decbytes"
+            "unit": "short"
           },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "mem.buffered"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#ba43a9",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "mem.cached"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#705da0",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "mem.free"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#629e51",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "mem.used"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#c15c17",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            }
-          ]
+          "overrides": []
         },
         "gridPos": {
-          "h": 5,
+          "h": 7,
           "w": 8,
           "x": 0,
           "y": 0
         },
-        "id": 114,
+        "id": 118,
+        "interval": "1m",
         "options": {
           "legend": {
-            "calcs": [],
+            "calcs": [
+              "mean",
+              "max"
+            ],
             "displayMode": "list",
-            "placement": "bottom",
+            "placement": "right",
             "showLegend": false
           },
           "tooltip": {
             "maxHeight": 600,
-            "mode": "multi",
+            "mode": "single",
             "sort": "none"
           }
         },
         "targets": [
           {
+            "alias": "running [[tag_handler]]",
             "datasource": {
               "type": "influxdb",
               "uid": "P9B81C0353945995B"
@@ -210,107 +153,84 @@
             "groupBy": [
               {
                 "params": [
-                  "$__interval"
+                  "1m"
                 ],
                 "type": "time"
               },
               {
                 "params": [
-                  "none"
+                  "handler"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "null"
                 ],
                 "type": "fill"
               }
             ],
-            "measurement": "mem",
+            "hide": false,
+            "measurement": "queue-overview",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "A",
+            "refId": "B",
             "resultFormat": "time_series",
             "select": [
               [
                 {
                   "params": [
-                    "used"
+                    "count"
                   ],
                   "type": "field"
                 },
                 {
                   "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "alias"
-                }
-              ],
-              [
-                {
-                  "params": [
-                    "buffered"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "buffered"
-                  ],
-                  "type": "alias"
-                }
-              ],
-              [
-                {
-                  "params": [
-                    "free"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "free"
-                  ],
-                  "type": "alias"
-                }
-              ],
-              [
-                {
-                  "params": [
-                    "cached"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "cached"
-                  ],
-                  "type": "alias"
+                  "type": "sum"
                 }
               ]
             ],
             "tags": [
               {
                 "key": "host",
-                "operator": "=~",
-                "value": "/^$host$/"
+                "operator": "=",
+                "value": "maintenance.galaxyproject.eu"
+              },
+              {
+                "condition": "AND",
+                "key": "state",
+                "operator": "=",
+                "value": "running"
               }
             ]
           }
         ],
-        "title": "Memory",
+        "title": "Job per handler (Running)",
         "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "gridPos": {
+          "h": 2,
+          "w": 16,
+          "x": 8,
+          "y": 0
+        },
+        "id": 120,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "# Head Node Utilization",
+          "mode": "markdown"
+        },
+        "pluginVersion": "11.0.0",
+        "type": "text"
       },
       {
         "datasource": {
@@ -377,7 +297,7 @@
           "h": 5,
           "w": 8,
           "x": 8,
-          "y": 0
+          "y": 2
         },
         "id": 110,
         "options": {
@@ -607,7 +527,7 @@
           "h": 5,
           "w": 8,
           "x": 16,
-          "y": 0
+          "y": 2
         },
         "id": 108,
         "options": {
@@ -943,9 +863,9 @@
         },
         "gridPos": {
           "h": 7,
-          "w": 6,
+          "w": 5,
           "x": 0,
-          "y": 5
+          "y": 7
         },
         "id": 112,
         "options": {
@@ -1136,8 +1056,8 @@
         "gridPos": {
           "h": 7,
           "w": 6,
-          "x": 6,
-          "y": 5
+          "x": 5,
+          "y": 7
         },
         "id": 106,
         "options": {
@@ -1309,9 +1229,9 @@
         },
         "gridPos": {
           "h": 7,
-          "w": 6,
-          "x": 12,
-          "y": 5
+          "w": 5,
+          "x": 11,
+          "y": 7
         },
         "id": 116,
         "interval": "1m",
@@ -1402,7 +1322,7 @@
               "axisPlacement": "auto",
               "barAlignment": 0,
               "drawStyle": "line",
-              "fillOpacity": 20,
+              "fillOpacity": 30,
               "gradientMode": "none",
               "hideFrom": {
                 "legend": false,
@@ -1410,7 +1330,7 @@
                 "viz": false
               },
               "insertNulls": false,
-              "lineInterpolation": "stepAfter",
+              "lineInterpolation": "linear",
               "lineWidth": 1,
               "pointSize": 5,
               "scaleDistribution": {
@@ -1427,6 +1347,7 @@
               }
             },
             "mappings": [],
+            "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
@@ -1440,37 +1361,93 @@
                 }
               ]
             },
-            "unit": "short"
+            "unit": "decbytes"
           },
-          "overrides": []
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "mem.buffered"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#ba43a9",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "mem.cached"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#705da0",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "mem.free"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#629e51",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "mem.used"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#c15c17",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            }
+          ]
         },
         "gridPos": {
           "h": 7,
-          "w": 6,
-          "x": 18,
-          "y": 5
+          "w": 8,
+          "x": 16,
+          "y": 7
         },
-        "id": 118,
-        "interval": "1m",
+        "id": 114,
         "options": {
           "legend": {
-            "calcs": [
-              "mean",
-              "max"
-            ],
+            "calcs": [],
             "displayMode": "list",
-            "placement": "right",
+            "placement": "bottom",
             "showLegend": false
           },
           "tooltip": {
             "maxHeight": 600,
-            "mode": "single",
+            "mode": "multi",
             "sort": "none"
           }
         },
         "targets": [
           {
-            "alias": "running [[tag_handler]]",
             "datasource": {
               "type": "influxdb",
               "uid": "P9B81C0353945995B"
@@ -1479,59 +1456,106 @@
             "groupBy": [
               {
                 "params": [
-                  "1m"
+                  "$__interval"
                 ],
                 "type": "time"
               },
               {
                 "params": [
-                  "handler"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "null"
+                  "none"
                 ],
                 "type": "fill"
               }
             ],
-            "hide": false,
-            "measurement": "queue-overview",
+            "measurement": "mem",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "B",
+            "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
                 {
                   "params": [
-                    "count"
+                    "used"
                   ],
                   "type": "field"
                 },
                 {
                   "params": [],
-                  "type": "sum"
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "used"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "buffered"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "buffered"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "free"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "free"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "cached"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "cached"
+                  ],
+                  "type": "alias"
                 }
               ]
             ],
             "tags": [
               {
                 "key": "host",
-                "operator": "=",
-                "value": "maintenance.galaxyproject.eu"
-              },
-              {
-                "condition": "AND",
-                "key": "state",
-                "operator": "=",
-                "value": "running"
+                "operator": "=~",
+                "value": "/^$host$/"
               }
             ]
           }
         ],
-        "title": "Job per handler (Running)",
+        "title": "Memory",
         "type": "timeseries"
       },
       {
@@ -1544,7 +1568,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 12
+          "y": 14
         },
         "id": 85,
         "panels": [],
@@ -1655,7 +1679,7 @@
           "h": 10,
           "w": 24,
           "x": 0,
-          "y": 13
+          "y": 15
         },
         "id": 7,
         "interval": "1m",
@@ -1873,7 +1897,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 23
+          "y": 25
         },
         "id": 95,
         "panels": [],
@@ -1899,7 +1923,7 @@
           "h": 3,
           "w": 24,
           "x": 0,
-          "y": 24
+          "y": 26
         },
         "id": 119,
         "options": {
@@ -1980,7 +2004,7 @@
           "h": 9,
           "w": 14,
           "x": 0,
-          "y": 27
+          "y": 29
         },
         "id": 100,
         "interval": "2m",
@@ -2133,7 +2157,7 @@
           "h": 6,
           "w": 10,
           "x": 14,
-          "y": 27
+          "y": 29
         },
         "id": 93,
         "interval": "15s",
@@ -2374,7 +2398,7 @@
           "h": 5,
           "w": 10,
           "x": 14,
-          "y": 33
+          "y": 35
         },
         "id": 98,
         "interval": "15s",
@@ -2588,7 +2612,7 @@
           "h": 7,
           "w": 14,
           "x": 0,
-          "y": 36
+          "y": 38
         },
         "id": 102,
         "interval": "60s",
@@ -2829,7 +2853,7 @@
           "h": 5,
           "w": 10,
           "x": 14,
-          "y": 38
+          "y": 40
         },
         "id": 97,
         "interval": "15s",
@@ -3018,8 +3042,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -3095,7 +3118,7 @@
           "h": 5,
           "w": 14,
           "x": 0,
-          "y": 43
+          "y": 45
         },
         "id": 104,
         "interval": "60s",
@@ -3224,8 +3247,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -3282,7 +3304,7 @@
           "h": 5,
           "w": 10,
           "x": 14,
-          "y": 43
+          "y": 45
         },
         "id": 96,
         "interval": "15s",
@@ -3417,8 +3439,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -3475,7 +3496,7 @@
           "h": 5,
           "w": 12,
           "x": 0,
-          "y": 48
+          "y": 50
         },
         "id": 101,
         "interval": "15s",
@@ -3610,8 +3631,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -3668,7 +3688,7 @@
           "h": 5,
           "w": 12,
           "x": 12,
-          "y": 48
+          "y": 50
         },
         "id": 99,
         "interval": "1m",
@@ -3822,7 +3842,7 @@
     "timezone": "browser",
     "title": "uWSGI",
     "uid": "DImgCuRMz",
-    "version": 4,
+    "version": 6,
     "weekStart": ""
   }
 }

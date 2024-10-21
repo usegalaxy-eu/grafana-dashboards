@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": false,
+    "canEdit": false,
+    "canAdmin": false,
+    "canStar": false,
+    "canDelete": false,
+    "slug": "traffic",
+    "url": "/d/cdyrn1akn9pfkb/traffic",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2024-09-23T14:48:03+02:00",
+    "updated": "2024-09-23T15:38:17+02:00",
+    "updatedBy": "mira-miracoli",
+    "createdBy": "mira-miracoli",
+    "version": 7,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 89,
+    "folderUid": "fdyrlc2tx6gw0b",
+    "folderTitle": "Kiosk",
+    "folderUrl": "/dashboards/f/fdyrlc2tx6gw0b/kiosk",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
+      },
+      "organization": {
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
+      }
+    }
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 90,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "gridPos": {
+          "h": 17,
+          "w": 13,
+          "x": 0,
+          "y": 0
+        },
+        "id": 5,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<iframe plausible-embed src=\"https://plausible.galaxyproject.eu/share/usegalaxy.eu?auth=EGmCfCGNsZQ852mxBY06T&embed=true&theme=light\" scrolling=\"no\" frameborder=\"0\" loading=\"lazy\" style=\"width: 1px; min-width: 100%; height: 1600px;\"></iframe>\n<div style=\"font-size: 14px; padding-bottom: 14px;\">Stats powered by <a target=\"_blank\" style=\"color: #4F46E5; text-decoration: underline;\" href=\"https://plausible.io\">Plausible Analytics</a></div>\n<script async src=\"https://plausible.galaxyproject.eu/js/embed.host.js\"></script>",
+          "mode": "markdown"
+        },
+        "pluginVersion": "11.0.0",
+        "title": "Panel Title",
+        "type": "text"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 11,
+          "x": 13,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "alias": "[[tag_service]]",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "service"
+                ],
+                "type": "tag"
+              }
+            ],
+            "measurement": "traefik",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT derivative(first(traefik_service_requests_total), 1s) FROM traefik WHERE time > now() - 1h AND (\"host\" = 'traefik.flyingrabb.it') GROUP BY time(10s), \"service\"",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "traefik_service_requests_total"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=~",
+                "value": "/^$host$/"
+              }
+            ]
+          }
+        ],
+        "title": "Web Requests / sec",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "Shows the usage of usegalaxy.eu",
+        "gridPos": {
+          "h": 15,
+          "w": 11,
+          "x": 13,
+          "y": 6
+        },
+        "id": 4,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<img src=\"https://nextcloud.centip3.de/s/pY4GiXtFWacqK2E/download/Screenshot%20from%202024-09-23%2015-27-49.png\"/>",
+          "mode": "html"
+        },
+        "pluginVersion": "11.0.0",
+        "title": "Plausible stats of usegalaxy.eu",
+        "transparent": true,
+        "type": "text"
+      }
+    ],
+    "schemaVersion": 39,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timeRangeUpdatedDuringEditOrView": false,
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "Traffic",
+    "uid": "cdyrn1akn9pfkb",
+    "version": 7,
+    "weekStart": ""
+  }
+}
