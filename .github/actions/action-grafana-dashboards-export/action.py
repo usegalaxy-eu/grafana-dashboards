@@ -36,7 +36,7 @@ async def list_dashboards(
 
     while more_pages:
         async with session.get(
-            f"{grafana_url}/api/search?limit={limit}?page={page}?query=&",
+            f"{grafana_url}/api/search?limit={limit}&page={page}&query=",
             headers={"Content-Type": "application/json"},
         ) as response:
             response_json = await response.json()
