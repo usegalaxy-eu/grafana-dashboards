@@ -12,6 +12,7 @@ Dashboards are retrieved and saved concurrently using `aiohttp` and `aiofiles`.
 import asyncio
 import json
 import sys
+from collections import defaultdict
 from typing import AsyncIterator
 
 import aiofiles
@@ -53,7 +54,7 @@ async def list_dashboards(
 
 async def save_dashboard_json(
     uid: str, grafana_url: str, path: str, session: aiohttp.ClientSession
-) -> str:
+) -> dict:
     """Retrieve a dashboard by uid and save it to a JSON file."""
     async with session.get(
         f"{grafana_url}/api/dashboards/uid/{uid}",
@@ -61,11 +62,14 @@ async def save_dashboard_json(
     ) as response:
         dashboard_json = await response.json()
         metadata = dashboard_json["dashboard"]
-        async with aiofiles.open(
-            f"{path}/{metadata.get('title') or metadata.get('uid')}.json", "w"
-        ) as file:
+
+        file_name = f"{metadata.get('title') or metadata['uid']}.json"
+
+        async with aiofiles.open(f"{path}/{file_name}", "w") as file:
             json_string = json.dumps(dashboard_json, indent=2)
             await file.write(json_string)
+
+    return metadata | {"file_name": file_name}
 
 
 async def main(grafana_url: str, path: str):
@@ -83,7 +87,38 @@ async def main(grafana_url: str, path: str):
             )
             async for dashboard in list_dashboards(grafana_url, session)
         ]
-        await asyncio.gather(*tasks)
+        metadata = await asyncio.gather(*tasks)
+
+    # ensure all dashboards are saved to different files
+    file_names_to_metadata = defaultdict(list)
+    for meta in metadata:
+        file_names_to_metadata[meta["file_name"]] += [meta]
+    try:
+        assert len(file_names_to_metadata) == sum(
+            len(dashboards_metadata)
+            for dashboards_metadata in file_names_to_metadata.values()
+        )
+    except AssertionError as exception:
+        error_text = (
+            "Two or more dashboards have the same file name assigned, "
+            "aborting... Please rename some of the following dashboards:\n"
+        )
+        repeated_file_names = (
+            file_name
+            for file_name, dashboards_metadata in (
+                file_names_to_metadata.items()
+            )
+            if len(dashboards_metadata) >= 2
+        )
+        for file_name in repeated_file_names:
+            for meta in file_names_to_metadata[file_name]:
+                title = meta.get("title")
+                uid = meta["uid"]
+                error_text += f"- "
+                error_text += f"name: {title}, " if title else ""
+                error_text += f"uid: {uid}, "
+                error_text = error_text[:-2] + "\n"
+        raise AssertionError(error_text) from exception
 
 
 if __name__ == "__main__":
