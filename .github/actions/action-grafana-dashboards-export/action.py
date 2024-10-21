@@ -64,6 +64,15 @@ async def save_dashboard_json(
         metadata = dashboard_json["dashboard"]
 
         file_name = f"{metadata.get('title') or metadata['uid']}.json"
+        # forward slashes are not allowed in UNIX paths
+        file_name = file_name.replace("/", "⁄")
+        # NULL bytes are not allowed in UNIX paths
+        file_name = file_name.replace("\x00", "\u200B")
+        # `.` and `..` are reserved names
+        if file_name == ".":
+            file_name = "∘"
+        elif file_name == "..":
+            file_name = "∘∘"
 
         async with aiofiles.open(f"{path}/{file_name}", "w") as file:
             json_string = json.dumps(dashboard_json, indent=2)
