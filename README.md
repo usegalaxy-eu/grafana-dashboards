@@ -23,7 +23,7 @@ IEv2 |  | 2 | [Live](https://stats.galaxyproject.eu/d/GfPTTlhWz) | [File](./IEv2
 InfluxDB |  | 1 | [Live](https://stats.galaxyproject.eu/d/000000011) | [File](./InfluxDB.json)
 Job visualization |  | 5 | [Live](https://stats.galaxyproject.eu/d/adyr7sh9l7280d) | [File](./Job%20visualization.json)
 Jobs Dashboard |  | 2 | [Live](https://stats.galaxyproject.eu/d/000000034) | [File](./Jobs%20Dashboard.json)
-MIra playground |  | 47 | [Live](https://stats.galaxyproject.eu/d/N9O36HWVk) | [File](./MIra%20playground.json)
+MIra playground |  | 48 | [Live](https://stats.galaxyproject.eu/d/N9O36HWVk) | [File](./MIra%20playground.json)
 Node Detail - Infrastructure | infrastructure,galaxy,migrated | 1 | [Live](https://stats.galaxyproject.eu/d/000000023) | [File](./Node%20Detail%20-%20Infrastructure.json)
 OnCall Insights | oncall | 1 | [Live](https://stats.galaxyproject.eu/d/cdvlj8qs787pca) | [File](./OnCall%20Insights.json)
 Postgres |  | 21 | [Live](https://stats.galaxyproject.eu/d/t-hx7NfIk) | [File](./Postgres.json)

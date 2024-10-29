@@ -10,10 +10,10 @@
     "url": "/d/N9O36HWVk/mira-playground",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2022-08-23T20:53:11+02:00",
-    "updated": "2024-10-09T10:34:09+02:00",
+    "updated": "2024-10-28T09:47:52+01:00",
     "updatedBy": "mira-miracoli",
     "createdBy": "admin",
-    "version": 47,
+    "version": 48,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 0,
@@ -67,6 +67,7 @@
     "panels": [
       {
         "datasource": {
+          "default": true,
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
@@ -83,6 +84,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 0,
               "gradientMode": "none",
@@ -212,7 +214,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "upload.galaxyproject.eu.novalocal"
+                "value": "upload.galaxyproject.eu"
               }
             ]
           }
@@ -268,8 +270,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -374,8 +375,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -498,8 +498,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -608,8 +607,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -667,8 +665,7 @@
                     "mode": "absolute",
                     "steps": [
                       {
-                        "color": "rgba(143, 128, 218, 0.97)",
-                        "value": null
+                        "color": "rgba(143, 128, 218, 0.97)"
                       },
                       {
                         "color": "rgba(223, 109, 239, 0.89)",
@@ -800,8 +797,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -859,8 +855,7 @@
                     "mode": "absolute",
                     "steps": [
                       {
-                        "color": "rgba(143, 128, 218, 0.97)",
-                        "value": null
+                        "color": "rgba(143, 128, 218, 0.97)"
                       },
                       {
                         "color": "rgba(223, 109, 239, 0.89)",
@@ -2901,12 +2896,11 @@
       "from": "now-6h",
       "to": "now"
     },
-    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {},
     "timezone": "",
     "title": "MIra playground",
     "uid": "N9O36HWVk",
-    "version": 47,
+    "version": 48,
     "weekStart": ""
   }
 }
