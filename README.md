@@ -39,7 +39,7 @@ Squid |  | 1 | [Live](https://stats.galaxyproject.eu/d/AbGoj5Iik) | [File](./Squ
 Storage |  | 6 | [Live](https://stats.galaxyproject.eu/d/uNbBNv04k) | [File](./Storage.json)
 TIaaS | wip | 1 | [Live](https://stats.galaxyproject.eu/d/7hY6kQfiz) | [File](./TIaaS.json)
 Tomcat |  | 1 | [Live](https://stats.galaxyproject.eu/d/000000058) | [File](./Tomcat.json)
-Tool usage stats Copy |  | 2 | [Live](https://stats.galaxyproject.eu/d/6rsDAVfSk) | [File](./Tool%20usage%20stats%20Copy.json)
+Tool usage stats Copy |  | 3 | [Live](https://stats.galaxyproject.eu/d/6rsDAVfSk) | [File](./Tool%20usage%20stats%20Copy.json)
 Tool usage stats |  | 39 | [Live](https://stats.galaxyproject.eu/d/DYDPhX-Sk) | [File](./Tool%20usage%20stats.json)
 Traefik |  | 17 | [Live](https://stats.galaxyproject.eu/d/l2U_DcASz) | [File](./Traefik.json)
 Traffic |  | 7 | [Live](https://stats.galaxyproject.eu/d/cdyrn1akn9pfkb) | [File](./Traffic.json)

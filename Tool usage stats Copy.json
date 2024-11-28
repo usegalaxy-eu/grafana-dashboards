@@ -10,10 +10,10 @@
     "url": "/d/6rsDAVfSk/tool-usage-stats-copy",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2024-04-22T20:30:28+02:00",
-    "updated": "2024-04-22T20:58:55+02:00",
-    "updatedBy": "admin",
+    "updated": "2024-11-27T14:56:30+01:00",
+    "updatedBy": "mira-miracoli",
     "createdBy": "admin",
-    "version": 2,
+    "version": 3,
     "hasAcl": false,
     "isFolder": false,
     "folderId": 0,
@@ -86,7 +86,7 @@
           "content": "# Tool usage stats from the [European Galaxy server](https://usegalaxy.eu)\n\nTo see the stats of a given tool you need to select a tool from the \"Tool ID\" drop-down list on the top left.",
           "mode": "markdown"
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "11.2.2+security-01",
         "type": "text"
       },
       {
@@ -128,6 +128,7 @@
           "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "auto",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "lastNotNull"
@@ -135,9 +136,11 @@
             "fields": "",
             "values": false
           },
-          "textMode": "auto"
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "11.2.2+security-01",
         "targets": [
           {
             "datasource": {
@@ -187,6 +190,7 @@
       },
       {
         "datasource": {
+          "default": true,
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
@@ -197,6 +201,7 @@
               "mode": "continuous-BlYlRd"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
@@ -211,6 +216,9 @@
               "lineWidth": 3,
               "scaleDistribution": {
                 "type": "linear"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
               }
             },
             "mappings": [],
@@ -262,6 +270,7 @@
           "barRadius": 0.05,
           "barWidth": 0.46,
           "colorByField": "count",
+          "fullHighlight": false,
           "groupWidth": 0.56,
           "legend": {
             "calcs": [],
@@ -299,7 +308,7 @@
             "measurement": "tool-usage",
             "orderByTime": "ASC",
             "policy": "default",
-            "query": "SELECT * FROM \"tool-usage\" WHERE (\"tool_id\" =~ /^$tool_id$/)  ",
+            "query": "SELECT LAST(\"count\")  AS \"count\" FROM \"tool-usage\" WHERE (\"tool_id\" =~ /^$tool_id$/) GROUP BY \"tool_id\", \"version\"",
             "rawQuery": true,
             "refId": "A",
             "resultFormat": "table",
@@ -352,8 +361,7 @@
         "type": "barchart"
       }
     ],
-    "schemaVersion": 37,
-    "style": "dark",
+    "schemaVersion": 39,
     "tags": [],
     "templating": {
       "list": [
@@ -394,7 +402,7 @@
     "timezone": "",
     "title": "Tool usage stats Copy",
     "uid": "6rsDAVfSk",
-    "version": 2,
+    "version": 3,
     "weekStart": ""
   }
 }
