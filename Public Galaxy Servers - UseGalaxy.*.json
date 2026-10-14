@@ -9,13 +9,14 @@
     "slug": "public-galaxy-servers-usegalaxy-2a",
     "url": "/d/nW8PuvMZk/public-galaxy-servers-usegalaxy-2a",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-24T14:04:54+02:00",
-    "updated": "2024-07-26T14:03:11+02:00",
-    "updatedBy": "kysrpex",
+    "created": "2024-07-24T16:04:54+02:00",
+    "updated": "2024-07-26T16:03:11+02:00",
+    "updatedBy": "domgz",
     "createdBy": "admin",
     "version": 3,
     "hasAcl": false,
     "isFolder": false,
+    "apiVersion": "v0alpha1",
     "folderId": 0,
     "folderUid": "",
     "folderTitle": "General",
@@ -24,11 +25,6 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false

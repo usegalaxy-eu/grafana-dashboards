@@ -9,13 +9,14 @@
     "slug": "galaxy",
     "url": "/d/000000004/galaxy",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-24T14:01:38+02:00",
-    "updated": "2024-07-25T21:33:28+02:00",
+    "created": "2024-07-24T16:01:38+02:00",
+    "updated": "2026-10-14T09:49:49+02:00",
     "updatedBy": "admin",
     "createdBy": "admin",
-    "version": 7,
+    "version": 31,
     "hasAcl": false,
     "isFolder": false,
+    "apiVersion": "v0alpha1",
     "folderId": 0,
     "folderUid": "",
     "folderTitle": "General",
@@ -24,11 +25,6 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
@@ -41,7 +37,7 @@
         {
           "builtIn": 1,
           "datasource": {
-            "type": "datasource",
+            "type": "grafana",
             "uid": "grafana"
           },
           "enable": true,
@@ -62,14 +58,9 @@
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
     "id": 66,
-    "links": [],
     "liveNow": false,
     "panels": [
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "gridPos": {
           "h": 5,
           "w": 19,
@@ -86,16 +77,8 @@
           "content": "## About\n\nThese graphs show you the current status of our clusters and which tools are being run on [UseGalaxy.eu](https://usegalaxy.eu). Our primary cluster is a Condor cluster running in the [deNBI cloud](https://www.denbi.de/).",
           "mode": "markdown"
         },
-        "pluginVersion": "11.0.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "refId": "A"
-          }
-        ],
+        "pluginVersion": "13.1.1",
+        "targets": [],
         "title": "The UseGalaxy.EU Queue",
         "type": "text"
       },
@@ -109,19 +92,17 @@
             "color": {
               "mode": "thresholds"
             },
-            "mappings": [],
             "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 }
               ]
             }
-          },
-          "overrides": []
+          }
         },
         "gridPos": {
           "h": 5,
@@ -135,6 +116,7 @@
           "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "auto",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "last"
@@ -147,32 +129,19 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
               "type": "influxdb",
               "uid": "P9B81C0353945995B"
             },
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
+            "groupBy": [],
             "measurement": "active_users",
             "orderByTime": "ASC",
             "policy": "default",
             "query": "SELECT \"users\" FROM \"active_users\" WHERE (\"host\" = 'sn06.galaxyproject.eu') AND $timeFilter GROUP BY \"timespan\"",
-            "rawQuery": true,
+            "rawQuery": false,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
@@ -189,7 +158,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "sn09.galaxyproject.eu"
               }
             ]
           }
@@ -199,27 +168,13 @@
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
           "x": 0,
           "y": 5
         },
-        "id": 83,
-        "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "refId": "A"
-          }
-        ],
+        "id": 114,
         "title": "Schedulers",
         "type": "row"
       },
@@ -240,6 +195,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 100,
               "gradientMode": "none",
@@ -256,6 +212,7 @@
                 "type": "linear"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -265,15 +222,13 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -335,6 +290,10 @@
         "id": 103,
         "interval": "5m",
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [
               "mean",
@@ -342,16 +301,19 @@
               "max"
             ],
             "displayMode": "list",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "right",
             "showLegend": false
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "desc"
           }
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "alias": "[[tag_tool_id]]",
@@ -389,6 +351,8 @@
             "measurement": "queue-overview",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT sum(\"count\") FROM \"queue-overview\" WHERE (\"state\" = 'new' AND (\"host\" = 'maintenance.galaxyproject.eu' OR \"host\"='maintenance.bi.privat')) AND $timeFilter GROUP BY time(1m), \"tool_id\", \"state\" fill(null)",
+            "rawQuery": true,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
@@ -440,6 +404,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 100,
               "gradientMode": "none",
@@ -456,6 +421,7 @@
                 "type": "linear"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -465,15 +431,13 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -535,6 +499,10 @@
         "id": 38,
         "interval": "5m",
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [
               "mean",
@@ -542,16 +510,19 @@
               "max"
             ],
             "displayMode": "list",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "right",
             "showLegend": false
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "desc"
           }
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "alias": "[[tag_tool_id]]",
@@ -589,6 +560,8 @@
             "measurement": "queue-overview",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT sum(\"count\") FROM \"queue-overview\" WHERE (\"state\" = 'queued' AND (\"host\" = 'maintenance.galaxyproject.eu' OR \"host\"='maintenance.bi.privat')) AND $timeFilter GROUP BY time($__interval), \"tool_id\", \"state\" fill(null)",
+            "rawQuery": true,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
@@ -640,6 +613,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 10,
               "gradientMode": "none",
@@ -656,6 +630,7 @@
                 "type": "linear"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -665,15 +640,13 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -735,19 +708,26 @@
         "id": 5,
         "interval": "1m",
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [],
             "displayMode": "list",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "bottom",
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "alias": "[[tag_state]]",
@@ -778,7 +758,7 @@
             "measurement": "cluster.queue",
             "orderByTime": "ASC",
             "policy": "default",
-            "query": "SELECT mean(\"count\") FROM \"cluster.queue\" WHERE (\"host\" = 'maintenance.galaxyproject.eu') AND $timeFilter GROUP BY time($__interval), \"state\" fill(none)",
+            "query": "SELECT mean(\"count\") FROM \"cluster.queue\" WHERE (\"host\" = 'maintenance.galaxyproject.eu' OR \"host\"='maintenance.bi.privat') AND $timeFilter GROUP BY time($__interval), \"state\" fill(none)",
             "rawQuery": true,
             "refId": "B",
             "resultFormat": "time_series",
@@ -810,27 +790,13 @@
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
           "x": 0,
           "y": 12
         },
-        "id": 84,
-        "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "refId": "A"
-          }
-        ],
+        "id": 115,
         "title": "UseGalaxy.eu Cluster",
         "type": "row"
       },
@@ -851,6 +817,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 10,
               "gradientMode": "none",
@@ -867,6 +834,7 @@
                 "type": "linear"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -876,15 +844,13 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -946,6 +912,10 @@
         "id": 54,
         "interval": "5m",
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [
               "mean",
@@ -953,16 +923,19 @@
               "max"
             ],
             "displayMode": "table",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "right",
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "desc"
           }
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "alias": "[[tag_tool_id]]/[[tag_tool_version]]",
@@ -996,10 +969,11 @@
                 "type": "fill"
               }
             ],
-            "hide": false,
             "measurement": "queue-overview",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT sum(\"count\")  / 5 FROM \"queue-overview\" WHERE (\"state\" = 'running' AND (\"host\" = 'maintenance.galaxyproject.eu' OR \"host\"='maintenance.bi.privat')) AND $timeFilter GROUP BY time(5m), \"tool_id\", \"tool_version\" fill(null)",
+            "rawQuery": true,
             "refId": "B",
             "resultFormat": "time_series",
             "select": [
@@ -1031,8 +1005,8 @@
               {
                 "condition": "AND",
                 "key": "host",
-                "operator": "=~",
-                "value": "/^$host$/"
+                "operator": "=",
+                "value": "maintenance.galaxyproject.eu"
               }
             ]
           }
@@ -1058,6 +1032,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "bars",
               "fillOpacity": 100,
               "gradientMode": "none",
@@ -1074,6 +1049,7 @@
                 "type": "linear"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -1083,14 +1059,12 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -1152,6 +1126,10 @@
         "id": 90,
         "interval": "1h",
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [
               "mean",
@@ -1159,16 +1137,19 @@
               "max"
             ],
             "displayMode": "list",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "right",
             "showLegend": false
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "desc"
           }
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "alias": "general compute`",
@@ -1194,6 +1175,8 @@
             "measurement": "upload-gb-in-past-hour",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT mean(\"count\") FROM \"upload-gb-in-past-hour\" WHERE (\"host\" = 'maintenance.galaxyproject.eu' OR \"host\"='maintenance.bi.privat') AND $timeFilter GROUP BY time($__interval) fill(0)",
+            "rawQuery": true,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
@@ -1240,6 +1223,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 10,
               "gradientMode": "none",
@@ -1253,9 +1237,11 @@
               "lineWidth": 1,
               "pointSize": 5,
               "scaleDistribution": {
-                "type": "linear"
+                "log": 2,
+                "type": "log"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -1265,15 +1251,13 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -1335,6 +1319,10 @@
         "id": 105,
         "interval": "5m",
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [
               "mean",
@@ -1342,16 +1330,19 @@
               "max"
             ],
             "displayMode": "table",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "right",
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "desc"
           }
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "alias": "Pulsar",
@@ -1373,10 +1364,11 @@
                 "type": "fill"
               }
             ],
-            "hide": false,
             "measurement": "queue-overview",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT sum(\"count\")  / 5 FROM \"queue-overview\" WHERE (\"state\" = 'running' AND (\"host\" = 'maintenance.galaxyproject.eu' OR \"host\"='maintenance.bi.privat') AND \"destination_id\"::tag =~ /pulsar/) AND $timeFilter GROUP BY time(5m) fill(null)",
+            "rawQuery": true,
             "refId": "B",
             "resultFormat": "time_series",
             "select": [
@@ -1408,12 +1400,12 @@
               {
                 "condition": "AND",
                 "key": "host",
-                "operator": "=~",
-                "value": "/^$host$/"
+                "operator": "=",
+                "value": "maintenance.galaxyproject.eu"
               },
               {
                 "condition": "AND",
-                "key": "job_runner_name",
+                "key": "destination_id::tag",
                 "operator": "=~",
                 "value": "/pulsar/"
               }
@@ -1439,7 +1431,6 @@
                 "type": "fill"
               }
             ],
-            "hide": false,
             "measurement": "queue-overview",
             "orderByTime": "ASC",
             "policy": "default",
@@ -1474,14 +1465,20 @@
               {
                 "condition": "AND",
                 "key": "host",
-                "operator": "=~",
-                "value": "/^$host$/"
+                "operator": "=",
+                "value": "maintenance.galaxyproject.eu"
               },
               {
                 "condition": "AND",
                 "key": "job_runner_name",
                 "operator": "!~",
                 "value": "/pulsar/"
+              },
+              {
+                "condition": "AND",
+                "key": "job_runner_name::tag",
+                "operator": "=",
+                "value": "condor"
               }
             ]
           }
@@ -1492,27 +1489,13 @@
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
           "x": 0,
           "y": 34
         },
-        "id": 85,
-        "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "refId": "A"
-          }
-        ],
+        "id": 116,
         "title": "Galaxy / Route Timings",
         "type": "row"
       },
@@ -1521,7 +1504,6 @@
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "description": "",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -1534,6 +1516,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "points",
               "fillOpacity": 10,
               "gradientMode": "none",
@@ -1550,6 +1533,7 @@
                 "type": "linear"
               },
               "showPoints": "always",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -1559,8 +1543,6 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "max": 10000,
             "min": 0,
             "thresholds": {
@@ -1568,7 +1550,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -1617,22 +1599,29 @@
         "id": 7,
         "interval": "1m",
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [
               "mean",
               "max"
             ],
             "displayMode": "table",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "right",
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "7.4.1",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "alias": "90th percentile (api)",
@@ -1721,7 +1710,6 @@
                 "type": "fill"
               }
             ],
-            "hide": false,
             "measurement": "galaxy_page_timings.",
             "orderByTime": "ASC",
             "policy": "default",
@@ -1828,8 +1816,7 @@
           "x": 0,
           "y": 45
         },
-        "id": 108,
-        "panels": [],
+        "id": 117,
         "title": "Host / System Load",
         "type": "row"
       },
@@ -1850,6 +1837,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 0,
               "gradientMode": "none",
@@ -1867,6 +1855,7 @@
                 "type": "log"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -1876,15 +1865,13 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "min": 1,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -1958,19 +1945,26 @@
         },
         "id": 53,
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [],
             "displayMode": "list",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "bottom",
             "showLegend": false
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "alias": "",
@@ -2065,18 +2059,165 @@
         ],
         "title": "Load",
         "type": "timeseries"
+      },
+      {
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 51
+        },
+        "id": 112,
+        "libraryPanel": {
+          "name": "Repository utilization (BYOD)",
+          "uid": "dfkfpxkptwni8d"
+        },
+        "title": "Repository utilization (BYOD)",
+        "type": "library-panel-ref"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "Users can connect Galaxy to their own storage that Galaxy you can run tools and workflows against.\n\nThis dashboard shows how many users are using each kind of object store that is supported.\n\nRead more [here](https://galaxyproject.org/eu/storage/#user-owned-storage).",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisGridShow": false,
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "fillOpacity": 80,
+              "gradientMode": "scheme",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineWidth": 1,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                }
+              ]
+            },
+            "unit": "none"
+          }
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 51
+        },
+        "id": 111,
+        "interval": "24h",
+        "options": {
+          "barRadius": 0,
+          "barWidth": 0.97,
+          "colorByField": "template_id",
+          "fullHighlight": true,
+          "groupWidth": 0.7,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "overflow": "ellipsis",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "orientation": "horizontal",
+          "showValue": "always",
+          "stacking": "none",
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          },
+          "xField": "template_id",
+          "xTickLabelRotation": 0,
+          "xTickLabelSpacing": 100
+        },
+        "pluginVersion": "13.1.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "template_id::tag"
+                ],
+                "type": "tag"
+              }
+            ],
+            "measurement": "user_object_store_utilisation",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT LAST(\"user_count\") as \"Count\" FROM \"user_object_store_utilisation\" GROUP BY \"template_id\"::tag",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "table",
+            "select": [
+              [
+                {
+                  "params": [
+                    "user_count"
+                  ],
+                  "type": "field"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "title": "Object store utilization (BYOS)",
+        "type": "barchart"
+      },
+      {
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 6,
+          "y": 59
+        },
+        "id": 113,
+        "libraryPanel": {
+          "name": "Utilization of HTCondor cluster - Overview",
+          "uid": "cfkj3qeswkge8f"
+        },
+        "title": "HTCondor cluster utilization",
+        "type": "library-panel-ref"
       }
     ],
+    "preload": false,
     "refresh": "10s",
-    "schemaVersion": 39,
+    "schemaVersion": 42,
     "tags": [
       "galaxy"
     ],
     "templating": {
       "list": [
         {
+          "allowCustomValue": true,
           "current": {
-            "selected": true,
             "text": "sn06.galaxyproject.eu",
             "value": "sn06.galaxyproject.eu"
           },
@@ -2094,21 +2235,18 @@
           "options": [],
           "query": "SHOW TAG VALUES FROM \"cluster.queue\" WITH KEY = \"schedd\"",
           "refresh": 1,
-          "regex": "/sn[0-9]*\\.galaxyproject.eu/",
+          "regex": "/sn0[7-9]*\\.galaxyproject.eu/",
+          "regexApplyTo": "value",
           "skipUrlSync": false,
           "sort": 0,
-          "tagValuesQuery": "",
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
+          "type": "query"
         }
       ]
     },
     "time": {
-      "from": "now-3h",
+      "from": "now-6h",
       "to": "now"
     },
-    "timeRangeUpdatedDuringEditOrView": false,
     "timepicker": {
       "refresh_intervals": [
         "5s",
@@ -2121,23 +2259,11 @@
         "1h",
         "2h",
         "1d"
-      ],
-      "time_options": [
-        "5m",
-        "15m",
-        "1h",
-        "6h",
-        "12h",
-        "24h",
-        "2d",
-        "7d",
-        "30d"
       ]
     },
     "timezone": "browser",
     "title": "Galaxy",
     "uid": "000000004",
-    "version": 7,
-    "weekStart": ""
+    "version": 31
   }
 }

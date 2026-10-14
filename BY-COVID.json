@@ -9,13 +9,14 @@
     "slug": "by-covid",
     "url": "/d/G09PBrEVz/by-covid",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2023-04-24T14:59:56+02:00",
-    "updated": "2024-07-26T10:53:03+02:00",
-    "updatedBy": "kysrpex",
+    "created": "2023-04-24T16:59:56+02:00",
+    "updated": "2026-08-09T07:55:36+02:00",
+    "updatedBy": "admin",
     "createdBy": "admin",
-    "version": 5,
+    "version": 6,
     "hasAcl": false,
     "isFolder": false,
+    "apiVersion": "v0alpha1",
     "folderId": 2,
     "folderUid": "03x-gIEnz",
     "folderTitle": "GalaxyServer",
@@ -24,11 +25,6 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
@@ -63,7 +59,6 @@
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
     "id": 42,
-    "links": [],
     "liveNow": false,
     "panels": [
       {
@@ -83,6 +78,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 20,
               "gradientMode": "none",
@@ -99,6 +95,7 @@
                 "type": "linear"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -108,15 +105,13 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -152,19 +147,26 @@
         },
         "id": 2,
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [],
             "displayMode": "list",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "bottom",
             "showLegend": false
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "9.0.6",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
@@ -215,11 +217,6 @@
         "type": "timeseries"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "description": "",
         "gridPos": {
           "h": 7,
           "w": 3,
@@ -236,7 +233,9 @@
           "content": "<br>\n<br>\n<br>\n<br>\n<br>\n<br>\n\n<img src=\"https://raw.githubusercontent.com/usegalaxy-eu/website/master/assets/media/BYCOVID_logo.png\" alt=\"BY-COVID\" style=\"\"/>",
           "mode": "markdown"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
+        "targets": [],
+        "title": "",
         "transparent": true,
         "type": "text"
       },
@@ -257,6 +256,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 20,
               "gradientMode": "none",
@@ -273,6 +273,7 @@
                 "type": "linear"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -282,15 +283,13 @@
                 "mode": "off"
               }
             },
-            "links": [],
-            "mappings": [],
             "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -326,19 +325,26 @@
         },
         "id": 4,
         "options": {
+          "annotations": {
+            "clustering": -1,
+            "multiLane": false
+          },
           "legend": {
             "calcs": [],
             "displayMode": "list",
+            "enableFacetedFilter": false,
+            "overflow": "ellipsis",
             "placement": "bottom",
             "showLegend": false
           },
           "tooltip": {
+            "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "9.0.6",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
@@ -412,7 +418,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -421,8 +427,7 @@
               ]
             },
             "unit": "locale"
-          },
-          "overrides": []
+          }
         },
         "gridPos": {
           "h": 4,
@@ -438,6 +443,7 @@
           "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "sum"
@@ -449,7 +455,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
@@ -498,10 +504,6 @@
         "type": "stat"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "gridPos": {
           "h": 8,
           "w": 8,
@@ -518,7 +520,9 @@
           "content": "# [BY-COVID](https://by-covid.org/)\n\nThe BeYond-COVID project aims to make COVID-19 data accessible to scientists in laboratories but also\nto anyone who can use it, such as medical staff in hospitals or government officials.\n\nGoing beyond SARS-CoV-2 data, the project will provide a framework for making data from\nother infectious diseases open and accessible to everyone.\n\nThe [European Galaxy Server](https://usegalaxy.eu) is used by users beyond BY-COVID and covers other\nuser cases as well. The numbers shown here are a aggregation from the overall usage.\n\n\n",
           "mode": "markdown"
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
+        "targets": [],
+        "title": "",
         "type": "text"
       },
       {
@@ -547,7 +551,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -556,8 +560,7 @@
               ]
             },
             "unit": "locale"
-          },
-          "overrides": []
+          }
         },
         "gridPos": {
           "h": 4,
@@ -573,6 +576,7 @@
           "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "sum"
@@ -584,7 +588,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
@@ -658,7 +662,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -667,8 +671,7 @@
               ]
             },
             "unit": "locale"
-          },
-          "overrides": []
+          }
         },
         "gridPos": {
           "h": 4,
@@ -684,6 +687,7 @@
           "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "sum"
@@ -695,7 +699,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
@@ -769,7 +773,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -778,8 +782,7 @@
               ]
             },
             "unit": "locale"
-          },
-          "overrides": []
+          }
         },
         "gridPos": {
           "h": 4,
@@ -795,6 +798,7 @@
           "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "sum"
@@ -806,7 +810,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
@@ -880,7 +884,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -889,8 +893,7 @@
               ]
             },
             "unit": "locale"
-          },
-          "overrides": []
+          }
         },
         "gridPos": {
           "h": 4,
@@ -906,6 +909,7 @@
           "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "sum"
@@ -917,7 +921,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
@@ -993,7 +997,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "red",
@@ -1002,8 +1006,7 @@
               ]
             },
             "unit": "none"
-          },
-          "overrides": []
+          }
         },
         "gridPos": {
           "h": 4,
@@ -1019,6 +1022,7 @@
           "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "lastNotNull"
@@ -1030,7 +1034,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
@@ -1095,19 +1099,17 @@
             "color": {
               "mode": "thresholds"
             },
-            "mappings": [],
             "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 }
               ]
             }
-          },
-          "overrides": []
+          }
         },
         "gridPos": {
           "h": 6,
@@ -1123,6 +1125,7 @@
           "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "auto",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "last"
@@ -1135,7 +1138,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "13.1.1",
         "targets": [
           {
             "datasource": {
@@ -1156,28 +1159,34 @@
                 "type": "fill"
               }
             ],
-            "measurement": "journalctl.activeusers",
+            "measurement": "active_users",
             "orderByTime": "ASC",
             "policy": "default",
             "query": "SELECT \"users\" FROM \"active_users\" WHERE (\"host\" = 'sn06.galaxyproject.eu') AND $timeFilter GROUP BY \"timespan\"",
-            "rawQuery": true,
+            "rawQuery": false,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
                 {
                   "params": [
-                    "count"
+                    "users"
                   ],
                   "type": "field"
                 },
                 {
                   "params": [],
-                  "type": "mean"
+                  "type": "last"
                 }
               ]
             ],
-            "tags": []
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "sn09.galaxyproject.eu"
+              }
+            ]
           }
         ],
         "timeFrom": "1h",
@@ -1185,22 +1194,30 @@
         "type": "stat"
       }
     ],
-    "refresh": false,
-    "schemaVersion": 39,
-    "tags": [],
-    "templating": {
-      "list": []
-    },
+    "preload": false,
+    "refresh": "",
+    "schemaVersion": 42,
     "time": {
       "from": "now-5y",
       "to": "now"
     },
-    "timeRangeUpdatedDuringEditOrView": false,
-    "timepicker": {},
-    "timezone": "",
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ]
+    },
+    "timezone": "browser",
     "title": "BY-COVID",
     "uid": "G09PBrEVz",
-    "version": 5,
-    "weekStart": ""
+    "version": 6
   }
 }

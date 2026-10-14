@@ -9,26 +9,22 @@
     "slug": "mira-playground",
     "url": "/d/N9O36HWVk/mira-playground",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2022-08-23T20:53:11+02:00",
-    "updated": "2024-10-28T09:47:52+01:00",
+    "created": "2022-08-23T22:53:11+02:00",
+    "updated": "2026-01-27T18:58:03+01:00",
     "updatedBy": "mira-miracoli",
     "createdBy": "admin",
-    "version": 48,
+    "version": 70,
     "hasAcl": false,
     "isFolder": false,
-    "folderId": 0,
-    "folderUid": "",
-    "folderTitle": "General",
-    "folderUrl": "",
+    "apiVersion": "v0alpha1",
+    "folderId": 98,
+    "folderUid": "af0il37e8enswc",
+    "folderTitle": "Playgrounds",
+    "folderUrl": "/dashboards/f/af0il37e8enswc/playgrounds",
     "provisioned": false,
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
@@ -63,64 +59,50 @@
     "graphTooltip": 0,
     "id": 34,
     "links": [],
-    "liveNow": false,
     "panels": [
       {
         "datasource": {
-          "default": true,
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "description": "This panel shows the number of successful (204) PATCH requests to /api/upload/resumable_upload/ as well as all non-204 PATCH requests to that route",
         "fieldConfig": {
           "defaults": {
             "color": {
-              "mode": "palette-classic-by-name"
+              "mode": "thresholds"
             },
             "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
+              "align": "auto",
+              "cellOptions": {
+                "type": "color-background"
               },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 3,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
+              "inspect": false,
+              "minWidth": 75
             },
-            "mappings": [],
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "index": 1,
+                    "text": "FAILED"
+                  },
+                  "1": {
+                    "index": 0,
+                    "text": "OK"
+                  }
+                },
+                "type": "value"
+              }
+            ],
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
+                  "color": "red",
                   "value": null
                 },
                 {
-                  "color": "red",
-                  "value": 80
+                  "color": "green",
+                  "value": 1
                 }
               ]
             }
@@ -129,229 +111,106 @@
             {
               "matcher": {
                 "id": "byName",
-                "options": "rustus.erroring_requests"
+                "options": "host"
               },
               "properties": [
                 {
-                  "id": "color",
+                  "id": "thresholds",
                   "value": {
-                    "fixedColor": "semi-dark-red",
-                    "mode": "fixed"
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      }
+                    ]
                   }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "rustus.successful_requests"
-              },
-              "properties": [
+                },
                 {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "semi-dark-green",
-                    "mode": "fixed"
-                  }
+                  "id": "custom.width",
+                  "value": 150
                 }
               ]
             }
           ]
         },
         "gridPos": {
-          "h": 5,
-          "w": 9,
+          "h": 9,
+          "w": 24,
           "x": 0,
           "y": 0
         },
-        "id": 30,
+        "id": 34,
         "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "lastNotNull"
+            ],
+            "show": false
           },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "single",
-            "sort": "none"
-          }
+          "showHeader": true
         },
+        "pluginVersion": "11.4.0",
         "targets": [
           {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [],
-            "measurement": "rustus",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT \"erroring_requests\",\"successful_requests\" FROM \"rustus\" WHERE (\"host\" = 'upload.galaxyproject.eu') AND $timeFilter",
-            "rawQuery": false,
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "erroring_requests"
-                  ],
-                  "type": "field"
-                }
-              ],
-              [
-                {
-                  "params": [
-                    "successful_requests"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "upload.galaxyproject.eu"
-              }
-            ]
-          }
-        ],
-        "title": "Rustus Patch requests (last 1 min)",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "description": "This panel shows number of tasks currently executing at worker.",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 10,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green"
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 0
-        },
-        "id": 9,
-        "options": {
-          "legend": {
-            "calcs": [
-              "mean",
-              "lastNotNull",
-              "max",
-              "min"
-            ],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "multi",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "9.2.10",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "exemplar": true,
-            "expr": "flower_worker_number_of_currently_executing_tasks",
+            "alias": "",
             "groupBy": [
               {
                 "params": [
-                  "worker"
+                  "host::tag"
                 ],
                 "type": "tag"
               }
             ],
-            "interval": "",
-            "legendFormat": "{{worker}}",
-            "measurement": "flower_worker_number_of_currently_executing_tasks",
+            "measurement": "nfs_available",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT last(*) FROM \"nfs.disks_available\" GROUP BY \"host\"",
+            "rawQuery": true,
             "refId": "A",
-            "resultFormat": "time_series",
+            "resultFormat": "table",
             "select": [
               [
                 {
                   "params": [
-                    "gauge"
+                    "nfs_0"
                   ],
                   "type": "field"
                 }
               ]
             ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
-              }
-            ]
+            "tags": []
           }
         ],
-        "title": "Number of Tasks Currently Executing at Worker",
-        "type": "timeseries"
+        "title": "NFS Access with $NFSTimeout s Timeout",
+        "transformations": [
+          {
+            "id": "joinByField",
+            "options": {}
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time": true
+              },
+              "includeByName": {},
+              "indexByName": {},
+              "renameByName": {}
+            }
+          },
+          {
+            "id": "renameByRegex",
+            "options": {
+              "regex": "(last_nfs_)(.*)",
+              "renamePattern": "$2"
+            }
+          }
+        ],
+        "type": "table"
       },
       {
         "datasource": {
@@ -375,7 +234,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
@@ -390,9 +250,9 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 5
+          "y": 9
         },
-        "id": 28,
+        "id": 33,
         "options": {
           "cellHeight": "sm",
           "footer": {
@@ -405,50 +265,48 @@
           },
           "showHeader": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "11.4.0",
         "targets": [
           {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
             "groupBy": [
               {
                 "params": [
-                  "$__interval"
+                  "remotehost::field"
                 ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
+                "type": "tag"
               }
             ],
-            "measurement": "tool-usage",
+            "measurement": "condor_queued_jobs_status",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT count(last(\"remotehost\")) FROM \"condor_queued_jobs_status\" WHERE $timeFilter GROUP BY \"remotehost\"::field",
+            "rawQuery": false,
             "refId": "A",
-            "resultFormat": "time_series",
+            "resultFormat": "table",
             "select": [
               [
                 {
                   "params": [
-                    "value"
+                    "remotehost"
                   ],
                   "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
                 }
               ]
             ],
             "tags": []
           }
         ],
-        "title": "Tool-usage",
+        "title": "Panel Title",
+        "transformations": [
+          {
+            "id": "formatString",
+            "options": {
+              "outputFormat": "Substring",
+              "stringField": "remotehost",
+              "substringStart": 9
+            }
+          }
+        ],
         "type": "table"
       },
       {
@@ -459,159 +317,48 @@
         "fieldConfig": {
           "defaults": {
             "color": {
-              "mode": "palette-classic"
+              "mode": "thresholds"
             },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 2,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green"
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 8
-        },
-        "id": 10,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "worker"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "flower_worker_prefetched_tasks",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT derivative(\"gauge\", 10s) FROM \"flower_events_created\" WHERE (\"host\" = 'celery-0.galaxyproject.eu.novalocal')",
-            "rawQuery": false,
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "gauge"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "count"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
-              }
-            ]
-          }
-        ],
-        "title": "Celery Worker Prefetched Tasks",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
             "custom": {
               "align": "auto",
               "cellOptions": {
-                "type": "auto"
+                "type": "color-background"
               },
+              "filterable": true,
               "inspect": false
             },
-            "mappings": [],
+            "mappings": [
+              {
+                "options": {
+                  "0": {
+                    "color": "red",
+                    "index": 1,
+                    "text": "FAILED"
+                  },
+                  "1": {
+                    "color": "green",
+                    "index": 0,
+                    "text": "OK"
+                  },
+                  "2": {
+                    "color": "yellow",
+                    "index": 2,
+                    "text": "OK/Not hanging"
+                  }
+                },
+                "type": "value"
+              }
+            ],
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
-                  "value": 80
+                  "value": 1
                 }
               ]
             }
@@ -624,58 +371,22 @@
               },
               "properties": [
                 {
-                  "id": "displayName",
-                  "value": "Time"
-                },
-                {
-                  "id": "unit",
-                  "value": "time: YYYY-MM-DD HH:mm:ss"
-                },
-                {
-                  "id": "custom.align"
+                  "id": "custom.hidden",
+                  "value": true
                 }
               ]
             },
             {
               "matcher": {
                 "id": "byName",
-                "options": "Current"
+                "options": "host"
               },
               "properties": [
                 {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.cellOptions",
+                  "id": "color",
                   "value": {
-                    "type": "color-background"
-                  }
-                },
-                {
-                  "id": "custom.align"
-                },
-                {
-                  "id": "thresholds",
-                  "value": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "rgba(143, 128, 218, 0.97)"
-                      },
-                      {
-                        "color": "rgba(223, 109, 239, 0.89)",
-                        "value": 50
-                      },
-                      {
-                        "color": "rgba(245, 54, 54, 0.9)",
-                        "value": 90
-                      }
-                    ]
+                    "fixedColor": "transparent",
+                    "mode": "fixed"
                   }
                 }
               ]
@@ -683,12 +394,12 @@
           ]
         },
         "gridPos": {
-          "h": 14,
-          "w": 5,
+          "h": 26,
+          "w": 21,
           "x": 0,
-          "y": 13
+          "y": 17
         },
-        "id": 26,
+        "id": 32,
         "options": {
           "cellHeight": "sm",
           "footer": {
@@ -699,273 +410,103 @@
             ],
             "show": false
           },
+          "frameIndex": 2,
           "showHeader": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "11.4.0",
         "targets": [
           {
-            "alias": "[[tag_fstype]] @ [[tag_path]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "dsType": "influxdb",
             "groupBy": [
               {
                 "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "fstype"
+                  "host::tag"
                 ],
                 "type": "tag"
-              },
-              {
-                "params": [
-                  "path"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
               }
             ],
-            "measurement": "disk",
+            "measurement": "pxe.disk_mode",
             "orderByTime": "ASC",
             "policy": "default",
             "refId": "A",
-            "resultFormat": "time_series",
+            "resultFormat": "table",
             "select": [
               [
                 {
                   "params": [
-                    "used_percent"
+                    "disksetup_ok"
                   ],
                   "type": "field"
                 },
                 {
                   "params": [],
                   "type": "last"
+                },
+                {
+                  "params": [
+                    "Disk found?"
+                  ],
+                  "type": "alias"
                 }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
-              }
-            ]
-          }
-        ],
-        "title": "Celery Disk",
-        "transformations": [
-          {
-            "id": "reduce",
-            "options": {
-              "includeTimeField": false,
-              "reducers": [
-                "lastNotNull"
-              ]
-            }
-          }
-        ],
-        "type": "table"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "custom": {
-              "align": "auto",
-              "cellOptions": {
-                "type": "auto"
-              },
-              "inspect": false
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green"
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Time"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "Time"
-                },
-                {
-                  "id": "unit",
-                  "value": "time: YYYY-MM-DD HH:mm:ss"
-                },
-                {
-                  "id": "custom.align"
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Current"
-              },
-              "properties": [
-                {
-                  "id": "unit",
-                  "value": "short"
-                },
-                {
-                  "id": "decimals",
-                  "value": 2
-                },
-                {
-                  "id": "custom.cellOptions",
-                  "value": {
-                    "type": "color-background"
-                  }
-                },
-                {
-                  "id": "custom.align"
-                },
-                {
-                  "id": "thresholds",
-                  "value": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "rgba(143, 128, 218, 0.97)"
-                      },
-                      {
-                        "color": "rgba(223, 109, 239, 0.89)",
-                        "value": 50
-                      },
-                      {
-                        "color": "rgba(245, 54, 54, 0.9)",
-                        "value": 90
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "gridPos": {
-          "h": 14,
-          "w": 5,
-          "x": 6,
-          "y": 13
-        },
-        "id": 22,
-        "options": {
-          "cellHeight": "sm",
-          "footer": {
-            "countRows": false,
-            "fields": "",
-            "reducer": [
-              "sum"
-            ],
-            "show": false
-          },
-          "showHeader": true
-        },
-        "pluginVersion": "11.0.0",
-        "targets": [
-          {
-            "alias": "[[tag_fstype]] @ [[tag_path]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "fstype"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "path"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "disk",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
+              ],
               [
                 {
                   "params": [
-                    "used_percent"
+                    "openslx_label"
                   ],
                   "type": "field"
                 },
                 {
                   "params": [],
                   "type": "last"
+                },
+                {
+                  "params": [
+                    "Disk labelled?"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "scratch_mounted"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Scratch mounted?"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "nfs"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "NFS?"
+                  ],
+                  "type": "alias"
                 }
               ]
             ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "mq.galaxyproject.eu"
-              }
-            ]
+            "tags": []
           }
         ],
-        "title": "Rabbit Disk",
-        "transformations": [
-          {
-            "id": "reduce",
-            "options": {
-              "includeTimeField": false,
-              "reducers": [
-                "lastNotNull"
-              ]
-            }
-          }
-        ],
+        "title": "PXE Disk Setup",
         "type": "table"
       },
       {
@@ -983,7 +524,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 }
               ]
             }
@@ -994,7 +536,7 @@
           "h": 5,
           "w": 4,
           "x": 0,
-          "y": 27
+          "y": 43
         },
         "hideTimeOverride": true,
         "id": 20,
@@ -1004,6 +546,7 @@
           "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "auto",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "lastNotNull"
@@ -1015,7 +558,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.0.0",
+        "pluginVersion": "11.4.0",
         "targets": [
           {
             "datasource": {
@@ -1067,780 +610,7 @@
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green"
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "zfs.used"
-              },
-              "properties": [
-                {
-                  "id": "custom.axisPlacement",
-                  "value": "right"
-                }
-              ]
-            }
-          ]
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 32
-        },
-        "id": 18,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [],
-            "measurement": "zfs",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "wops"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "zfs2f.galaxyproject.eu"
-              }
-            ]
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [],
-            "hide": false,
-            "measurement": "zfs",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "used"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [
-                    " / 10000000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "zfs2f.galaxyproject.eu"
-              }
-            ]
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [],
-            "hide": false,
-            "measurement": "zfs",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "C",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "compr"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "zfs2f.galaxyproject.eu"
-              }
-            ]
-          }
-        ],
-        "title": "ZFS",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green"
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 4,
-          "w": 12,
-          "x": 0,
-          "y": 40
-        },
-        "id": 16,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "text": {},
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "11.0.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [
-              {
-                "params": [
-                  "timespan"
-                ],
-                "type": "tag"
-              }
-            ],
-            "hide": false,
-            "measurement": "active_users",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT mean(\"value\") FROM \"active_users\"",
-            "rawQuery": false,
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "users"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "sn06.galaxyproject.eu"
-              }
-            ]
-          }
-        ],
-        "title": "Active Users (10 minutes)",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "right",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green"
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "Load"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byFrameRefID",
-                "options": "C"
-              },
-              "properties": [
-                {
-                  "id": "custom.axisPlacement",
-                  "value": "left"
-                },
-                {
-                  "id": "custom.lineWidth",
-                  "value": 2
-                },
-                {
-                  "id": "unit",
-                  "value": "decbytes"
-                }
-              ]
-            }
-          ]
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 44
-        },
-        "id": 14,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "maxHeight": 600,
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "alias": "I/O Wait",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_iowait"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
-              }
-            ]
-          },
-          {
-            "alias": "User",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [
-              {
-                "params": [
-                  "$interval"
-                ],
-                "type": "time"
-              }
-            ],
-            "hide": false,
-            "measurement": "cpu",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "usage_user"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
-              }
-            ]
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [],
-            "hide": false,
-            "measurement": "mem",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "C",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "active"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
-              }
-            ]
-          }
-        ],
-        "title": "Celery0 System Load",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "description": "This panel shows status of celery workers. 1 = online, 0 = offline.",
-        "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red"
-                },
-                {
-                  "color": "green",
-                  "value": 1
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byRegexp",
-                "options": "^(.*?(external)[^$]*)$"
-              },
-              "properties": [
-                {
-                  "id": "displayName",
-                  "value": "External"
-                },
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "light-green",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byRegexp",
-                "options": "^(.*?(internal)[^$]*)$"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "semi-dark-green",
-                    "mode": "fixed"
-                  }
-                },
-                {
-                  "id": "displayName",
-                  "value": "Internal"
-                }
-              ]
-            }
-          ]
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 52
-        },
-        "id": 4,
-        "options": {
-          "colorMode": "background",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "text": {
-            "titleSize": 10
-          },
-          "textMode": "auto"
-        },
-        "pluginVersion": "9.2.10",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "exemplar": true,
-            "expr": "flower_worker_online",
-            "groupBy": [
-              {
-                "params": [
-                  "worker"
-                ],
-                "type": "tag"
-              }
-            ],
-            "interval": "",
-            "legendFormat": "{{ worker }}",
-            "measurement": "flower_worker_online",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "gauge"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
-              }
-            ]
-          }
-        ],
-        "title": "Celery Worker Status",
-        "type": "stat"
-      },
-      {
-        "aliasColors": {},
-        "autoMigrateFrom": "graph",
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "description": "This panel shows average task runtime at worker by worker and task name.",
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 9,
-          "w": 24,
-          "x": 0,
-          "y": 60
-        },
-        "hiddenSeries": false,
-        "id": 11,
-        "legend": {
-          "alignAsTable": true,
-          "avg": true,
-          "current": true,
-          "max": true,
-          "min": true,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "9.2.10",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "worker"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "hide": false,
-            "measurement": "flower_task_runtime_seconds",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "0.01"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
-              }
-            ]
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Average Task Runtime at Worker",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "timeseries",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:337",
-            "format": "s",
-            "label": "",
-            "logBase": 1,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:338",
-            "format": "short",
-            "logBase": 1,
-            "show": false
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 3,
               "gradientMode": "none",
@@ -1849,6 +619,7 @@
                 "tooltip": false,
                 "viz": false
               },
+              "insertNulls": false,
               "lineInterpolation": "linear",
               "lineWidth": 1,
               "pointSize": 5,
@@ -1870,7 +641,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
@@ -1885,7 +657,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 69
+          "y": 48
         },
         "id": 8,
         "options": {
@@ -1900,6 +672,7 @@
             "sort": "none"
           }
         },
+        "pluginVersion": "11.4.0",
         "targets": [
           {
             "datasource": {
@@ -1937,14 +710,6 @@
                 "value": "mq.galaxyproject.eu"
               }
             ]
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "hide": false,
-            "refId": "B"
           },
           {
             "datasource": {
@@ -2055,118 +820,62 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
-              "fillOpacity": 10,
+              "fillOpacity": 3,
               "gradientMode": "none",
               "hideFrom": {
                 "legend": false,
                 "tooltip": false,
                 "viz": false
               },
-              "lineInterpolation": "stepAfter",
+              "insertNulls": false,
+              "lineInterpolation": "linear",
               "lineWidth": 1,
               "pointSize": 5,
               "scaleDistribution": {
                 "type": "linear"
               },
-              "showPoints": "never",
+              "showPoints": "auto",
               "spanNulls": false,
               "stacking": {
                 "group": "A",
-                "mode": "normal"
+                "mode": "none"
               },
               "thresholdsStyle": {
                 "mode": "off"
               }
             },
             "mappings": [],
-            "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
                   "value": 80
                 }
               ]
-            },
-            "unit": "short"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "running"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#eab839",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "queued"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "rgb(124, 124, 124)",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "upload-gb-in-past-hour.mean"
-              },
-              "properties": [
-                {
-                  "id": "custom.scaleDistribution",
-                  "value": {
-                    "type": "linear"
-                  }
-                },
-                {
-                  "id": "custom.axisPlacement",
-                  "value": "right"
-                },
-                {
-                  "id": "custom.drawStyle",
-                  "value": "bars"
-                },
-                {
-                  "id": "custom.lineWidth",
-                  "value": 2
-                }
-              ]
             }
-          ]
+          },
+          "overrides": []
         },
         "gridPos": {
-          "h": 7,
-          "w": 24,
+          "h": 8,
+          "w": 12,
           "x": 0,
-          "y": 77
+          "y": 56
         },
-        "id": 6,
-        "interval": "1m",
+        "id": 31,
         "options": {
           "legend": {
             "calcs": [],
@@ -2175,171 +884,57 @@
             "showLegend": true
           },
           "tooltip": {
-            "mode": "multi",
+            "mode": "single",
             "sort": "none"
           }
         },
-        "pluginVersion": "9.1.0",
+        "pluginVersion": "11.4.0",
         "targets": [
           {
-            "alias": "[[tag_state]]",
             "datasource": {
               "type": "influxdb",
               "uid": "P9B81C0353945995B"
             },
-            "dsType": "influxdb",
             "groupBy": [
               {
                 "params": [
-                  "1m"
+                  "10m"
                 ],
                 "type": "time"
               },
               {
                 "params": [
-                  "state"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
+                  "null"
                 ],
                 "type": "fill"
               }
             ],
-            "measurement": "job_queue",
+            "measurement": "rabbitmq_queue_messages",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT mean(\"counter\") FROM \"rabbitmq_channel_messages_delivered_total\" WHERE (\"host\"::tag = 'mq.galaxyproject.eu') AND $timeFilter GROUP BY time(1m) fill(null)",
+            "rawQuery": false,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
               [
                 {
                   "params": [
-                    "value"
+                    "gauge"
                   ],
                   "type": "field"
                 },
                 {
                   "params": [],
-                  "type": "sum"
+                  "type": "median"
                 }
               ]
             ],
             "tags": [
               {
-                "key": "state",
-                "operator": "!=",
-                "value": "new"
-              }
-            ]
-          },
-          {
-            "alias": "[[tag_state]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "state"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "state",
-                "operator": "!=",
-                "value": "new"
-              }
-            ]
-          },
-          {
-            "alias": "[[tag_state]]",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "1m"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "state"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "C",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "state",
+                "key": "host",
                 "operator": "=",
-                "value": "new"
+                "value": "mq.galaxyproject.eu"
               }
             ]
           },
@@ -2357,111 +952,16 @@
               },
               {
                 "params": [
-                  "null"
+                  "none"
                 ],
                 "type": "fill"
               }
             ],
             "hide": false,
-            "measurement": "upload-gb-in-past-hour",
+            "measurement": "rabbitmq_channel_messages_unacked",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "D",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                }
-              ]
-            ]
-          }
-        ],
-        "title": "Currently Running and Queued Jobs vs Mean Upload",
-        "transparent": true,
-        "type": "timeseries"
-      },
-      {
-        "aliasColors": {},
-        "autoMigrateFrom": "graph",
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "description": "This panel shows task prefetch time at worker by worker and task name.",
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 9,
-          "w": 24,
-          "x": 0,
-          "y": 84
-        },
-        "hiddenSeries": false,
-        "id": 12,
-        "legend": {
-          "alignAsTable": true,
-          "avg": true,
-          "current": true,
-          "max": true,
-          "min": true,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "9.2.10",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "exemplar": true,
-            "expr": "flower_task_prefetch_time_seconds",
-            "groupBy": [
-              {
-                "params": [
-                  "10s"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "worker"
-                ],
-                "type": "tag"
-              }
-            ],
-            "interval": "",
-            "legendFormat": "{{task}}, {{worker}}",
-            "measurement": "flower_task_prefetch_time_seconds",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
+            "refId": "C",
             "resultFormat": "time_series",
             "select": [
               [
@@ -2481,98 +981,15 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "celery-0.galaxyproject.eu.novalocal"
+                "value": "mq.galaxyproject.eu"
               }
             ]
-          }
-        ],
-        "thresholds": [],
-        "timeRegions": [],
-        "title": "Task Prefetch Time at Worker",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "timeseries",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:337",
-            "format": "s",
-            "label": "",
-            "logBase": 1,
-            "show": true
           },
-          {
-            "$$hashKey": "object:338",
-            "format": "short",
-            "logBase": 1,
-            "show": false
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "links": [],
-            "mappings": [],
-            "thresholds": {
-              "mode": "percentage",
-              "steps": [
-                {
-                  "color": "green"
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 6,
-          "w": 9,
-          "x": 0,
-          "y": 93
-        },
-        "id": 29,
-        "options": {
-          "orientation": "auto",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showThresholdLabels": true,
-          "showThresholdMarkers": true
-        },
-        "pluginVersion": "9.2.10",
-        "targets": [
           {
             "datasource": {
               "type": "influxdb",
               "uid": "P9B81C0353945995B"
             },
-            "dsType": "influxdb",
             "groupBy": [
               {
                 "params": [
@@ -2587,64 +1004,23 @@
                 "type": "fill"
               }
             ],
-            "measurement": "system",
+            "hide": false,
+            "measurement": "rabbitmq_consumers",
             "orderByTime": "ASC",
             "policy": "default",
-            "refId": "A",
+            "refId": "D",
             "resultFormat": "time_series",
             "select": [
               [
                 {
                   "params": [
-                    "load1"
+                    "gauge"
                   ],
                   "type": "field"
                 },
                 {
                   "params": [],
                   "type": "mean"
-                },
-                {
-                  "params": [
-                    "load1"
-                  ],
-                  "type": "alias"
-                }
-              ],
-              [
-                {
-                  "params": [
-                    "load5"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "load5"
-                  ],
-                  "type": "alias"
-                }
-              ],
-              [
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "load15"
-                  ],
-                  "type": "alias"
                 }
               ]
             ],
@@ -2652,224 +1028,24 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "sn06.galaxyproject.eu"
+                "value": "mq.galaxyproject.eu"
               }
             ]
           }
         ],
-        "title": "Load",
-        "type": "gauge"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 100,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "lineInterpolation": "linear",
-              "lineStyle": {
-                "fill": "solid"
-              },
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "normal"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green"
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "mem.buffered"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#ba43a9",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "mem.cached"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#705da0",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "mem.free"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#629e51",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "mem.used"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#c15c17",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "gridPos": {
-          "h": 7,
-          "w": 6,
-          "x": 0,
-          "y": 99
-        },
-        "id": 2,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": false
-          },
-          "tooltip": {
-            "mode": "multi",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "9.1.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "kernel",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "interrupts"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "non_negative_derivative"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "sn06.galaxyproject.eu"
-              }
-            ]
-          }
-        ],
-        "title": "Interrupts",
+        "title": "Rabbit test",
         "type": "timeseries"
       }
     ],
+    "preload": false,
     "refresh": "5s",
-    "schemaVersion": 39,
+    "schemaVersion": 40,
     "tags": [],
     "templating": {
       "list": [
         {
           "current": {
             "isNone": true,
-            "selected": false,
             "text": "None",
             "value": ""
           },
@@ -2878,16 +1054,28 @@
             "uid": "P9B81C0353945995B"
           },
           "definition": "SHOW TAG VALUES FROM \"rabbitmq_node\" WITH KEY = \"host\"",
-          "hide": 0,
           "includeAll": false,
-          "multi": false,
           "name": "MQ",
           "options": [],
           "query": "SHOW TAG VALUES FROM \"rabbitmq_node\" WITH KEY = \"host\"",
           "refresh": 1,
           "regex": "",
-          "skipUrlSync": false,
-          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "text": "10",
+            "value": "10"
+          },
+          "definition": "SHOW TAG VALUES FROM \"nfs_available\" WITH KEY = \"timeout\"",
+          "name": "NFSTimeout",
+          "options": [],
+          "query": {
+            "query": "SHOW TAG VALUES FROM \"nfs_available\" WITH KEY = \"timeout\"",
+            "refId": "InfluxVariableQueryEditor-VariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
           "type": "query"
         }
       ]
@@ -2900,7 +1088,7 @@
     "timezone": "",
     "title": "MIra playground",
     "uid": "N9O36HWVk",
-    "version": 48,
+    "version": 70,
     "weekStart": ""
   }
 }

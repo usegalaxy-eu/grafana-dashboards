@@ -1,0 +1,1603 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": false,
+    "canEdit": false,
+    "canAdmin": false,
+    "canStar": false,
+    "canDelete": false,
+    "slug": "eu-factsheet",
+    "url": "/d/bejvb2fpdi96ob/eu-factsheet",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2025-04-24T14:21:46+02:00",
+    "updated": "2025-09-01T15:50:02+02:00",
+    "updatedBy": "mira-miracoli",
+    "createdBy": "sanjaysrikakulam",
+    "version": 24,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 2,
+    "folderUid": "03x-gIEnz",
+    "folderTitle": "GalaxyServer",
+    "folderUrl": "/dashboards/f/03x-gIEnz/galaxyserver",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
+      }
+    }
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "UseGalaxy EU Fact sheet.",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 95,
+    "links": [],
+    "panels": [
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 12,
+        "panels": [],
+        "title": "UseGalaxy EU users, jobs, and related",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "Number of installed tools.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 5,
+          "x": 0,
+          "y": 1
+        },
+        "id": 7,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "count"
+            ],
+            "fields": "/^Count$/",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "query": "SHOW TAG VALUES FROM \"tool-usage\" WITH KEY = \"tool_id\"",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series"
+          }
+        ],
+        "title": "Tools",
+        "transformations": [
+          {
+            "id": "calculateField",
+            "options": {
+              "binary": {
+                "left": {
+                  "fixed": ""
+                },
+                "right": {
+                  "fixed": ""
+                }
+              },
+              "cumulative": {
+                "field": "tool-usage",
+                "reducer": "sum"
+              },
+              "mode": "reduceRow",
+              "reduce": {
+                "include": [
+                  "tool-usage"
+                ],
+                "reducer": "count"
+              },
+              "replaceFields": false,
+              "window": {
+                "field": "tool-usage",
+                "reducer": "mean",
+                "windowAlignment": "trailing",
+                "windowSize": 0.1,
+                "windowSizeMode": "percentage"
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "description": "Shows the total number of Histories that all users have created.",
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "locale"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 5,
+          "x": 5,
+          "y": 1
+        },
+        "hideTimeOverride": true,
+        "id": 6,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "1d"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-histories",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Histories",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "description": "Shows the total number of registered users of Galaxy Europe.",
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "locale"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 6,
+          "x": 10,
+          "y": 1
+        },
+        "hideTimeOverride": true,
+        "id": 2,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "24h"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-users",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Registered users",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "description": "Shows the total number of jobs submitted by all users of Galaxy Europe.",
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "locale"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 5,
+          "x": 0,
+          "y": 4
+        },
+        "hideTimeOverride": true,
+        "id": 4,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "1d"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-jobs",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Jobs",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "description": "Shows the total number of datasets.",
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "locale"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 5,
+          "x": 5,
+          "y": 4
+        },
+        "hideTimeOverride": true,
+        "id": 5,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "1d"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-datasets",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Datasets",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "Users who used the [ELIXIR AAI](https://elixir-europe.org/services/compute/aai) (Authentication and Authorisation Infrastructure) to log into the European Galaxy server.\nNote: Check the Galaxy database for an accurate number. In 2024-2025, we had some issues with the session cookies and had to clean up the database, so we see a reduced user count here.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "rgb(31, 120, 193)",
+              "mode": "fixed"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 6,
+          "x": 10,
+          "y": 4
+        },
+        "hideTimeOverride": true,
+        "id": 9,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "provider"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "users-with-oidc",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "provider::tag",
+                "operator": "=",
+                "value": "elixir"
+              }
+            ]
+          }
+        ],
+        "timeFrom": "7d",
+        "timeShift": "1h",
+        "title": "Galaxy Elixir AAI Users",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PEBD82B4560F292BD"
+        },
+        "description": "Shows the total number of workflows run by all Galaxy Europe users.",
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "locale"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 5,
+          "x": 0,
+          "y": 7
+        },
+        "hideTimeOverride": true,
+        "id": 3,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "background_solid",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "sum"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "PEBD82B4560F292BD"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "1d"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "server-workflow-invocations",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "1d",
+        "title": "Workflow executions",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "Shows the EU monthly active users (ran at least 1 job; does not include the anonymous users) count.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "green",
+              "mode": "fixed"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 6,
+          "x": 10,
+          "y": 7
+        },
+        "hideTimeOverride": true,
+        "id": 17,
+        "maxDataPoints": 100,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "vertical",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [],
+            "fields": "/.*/",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "value_and_name",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "month::tag"
+                ],
+                "type": "tag"
+              }
+            ],
+            "measurement": "galaxy_monthly_active_users",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT last(\"active_users\") as \"Active users\" FROM \"galaxy_monthly_active_users\" GROUP BY \"month\"::tag",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "table",
+            "select": [
+              [
+                {
+                  "params": [
+                    "active_users"
+                  ],
+                  "type": "field"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "timeFrom": "7d",
+        "timeShift": "1h",
+        "title": "Galaxy monthly active users",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time": true,
+                "galaxy_monthly_active_users.last { month: 2025-03 }": false,
+                "last": false,
+                "month": false
+              },
+              "includeByName": {},
+              "indexByName": {},
+              "renameByName": {
+                "galaxy_monthly_active_users.last { month: 2025-03 }": "",
+                "month": "Month"
+              }
+            }
+          }
+        ],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "Shows the Galaxy Europe's compute resource utilization by its users.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 16,
+          "x": 0,
+          "y": 10
+        },
+        "id": 19,
+        "interval": "1m",
+        "options": {
+          "minVizHeight": 75,
+          "minVizWidth": 75,
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "alias": "$col ",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "group"
+                ],
+                "type": "tag"
+              }
+            ],
+            "measurement": "htcondor_cluster_usage",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT last(\"total_detected_cpus\") AS \"Total CPU cores\", last(\"claimed_cpus\") AS \"Claimed CPU cores\", last(\"unclaimed_cpus\") AS \"Unclaimed CPU cores\", last(\"total_memory\") /(1024*1024) AS \"Total mem (TiB)\", last(\"claimed_memory\")  /(1024*1024) AS \"Claimed mem (TiB)\", last(\"unclaimed_memory\") /(1024*1024) AS \"Unclaimed mem (TiB)\", last(\"total_gpu_slots\") AS \"Total GPU hosts\", last(\"claimed_gpus\") AS \"Claimed GPU hosts\", last(\"unclaimed_gpus\") AS \"Unclaimed GPU hosts\", last(\"total_slots\") AS \"Total slots\", last(\"claimed_busy_slots\") AS \"Claimed busy slots\", last(\"unclaimed_idle_slots\") AS \"Unclaimed idle slots\" FROM \"htcondor_cluster_usage\" WHERE (\"classad\" = '\\'machine\\'') AND $timeFilter GROUP BY time($__interval), \"group\"",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "total_detected_cpus"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Total CPU cores"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "claimed_cpus"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Claimed CPU cores"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "unclaimed_cpus"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Unclaimed CPU cores"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "total_memory"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "/(1024*1024)"
+                  ],
+                  "type": "math"
+                },
+                {
+                  "params": [
+                    "Total mem (TiB)"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "claimed_memory"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    " /(1024*1024)"
+                  ],
+                  "type": "math"
+                },
+                {
+                  "params": [
+                    "Claimed mem (TiB)"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "unclaimed_memory"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "/(1024*1024)"
+                  ],
+                  "type": "math"
+                },
+                {
+                  "params": [
+                    "Unclaimed mem (TiB)"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "total_gpu_slots"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Total GPU slots"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "claimed_gpus"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Claimed GPU slots"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "unclaimed_gpus"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Unclaimed GPU slots"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "total_slots"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Total slots"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "claimed_busy_slots"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Claimed busy slots"
+                  ],
+                  "type": "alias"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "unclaimed_idle_slots"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
+                },
+                {
+                  "params": [
+                    "Unclaimed idle slots"
+                  ],
+                  "type": "alias"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "classad",
+                "operator": "=",
+                "value": "'machine'"
+              }
+            ]
+          }
+        ],
+        "title": "Utilization of Galaxy Europe's compute resources",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "Shows the amount of data that is uploaded each hour on Galaxy Europe.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "bars",
+              "fillOpacity": 100,
+              "gradientMode": "hue",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "stepAfter",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "links": [],
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "decbytes"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byValue",
+                "options": {
+                  "op": "gte",
+                  "reducer": "allIsZero",
+                  "value": 0
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": true,
+                    "tooltip": true,
+                    "viz": false
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byValue",
+                "options": {
+                  "op": "gte",
+                  "reducer": "allIsNull",
+                  "value": 0
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": true,
+                    "tooltip": true,
+                    "viz": false
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 16,
+          "x": 0,
+          "y": 18
+        },
+        "id": 18,
+        "interval": "1h",
+        "options": {
+          "legend": {
+            "calcs": [
+              "mean",
+              "lastNotNull",
+              "max"
+            ],
+            "displayMode": "list",
+            "placement": "right",
+            "showLegend": false
+          },
+          "tooltip": {
+            "maxHeight": 600,
+            "mode": "multi",
+            "sort": "desc"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "alias": "general compute`",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "0"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "upload-gb-in-past-hour",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host",
+                "operator": "=",
+                "value": "maintenance.galaxyproject.eu"
+              }
+            ]
+          }
+        ],
+        "timeFrom": "24h",
+        "title": "Data Upload / Hour",
+        "type": "timeseries"
+      },
+      {
+        "description": "Shows the usage of usegalaxy.eu from varying countries. The stats is available from July 2024.",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 18,
+          "x": 0,
+          "y": 25
+        },
+        "id": 8,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "# usegalaxy.eu\n\n<iframe id=\"embeddedFrame\" src=\"https://plausible.galaxyproject.eu/share/usegalaxy.eu?auth=EGmCfCGNsZQ852mxBY06T\" width=\"100%\" style=\"border: none; min-height: 1500px;></iframe>\n\n<script>\nvar iframe = document.getElementById(\"embeddedFrame\");\n\nfunction setIframeSize() {\n    // Set the iframe height to match its parent's height\n    iframe.style.height = iframe.parentElement.offsetHeight + \"px\";\n    \n    // Set the iframe width to match its parent's width\n    iframe.style.width = iframe.parentElement.offsetWidth + \"px\";\n}\n\n// Call setIframeSize when the iframe content is loaded\niframe.onload = setIframeSize;\n\n// Also, call setIframeSize when the window is resized\nwindow.addEventListener(\"resize\", setIframeSize);\n\n// Function to refresh the iframe\nwindow.setInterval(function() {\n            reloadIFrame()\n        }, 30000);\n\n        function reloadIFrame() {\n            console.log('reloading..');\n            document.getElementById('iframe').contentWindow.location.reload();\n        }\n</script>",
+          "mode": "html"
+        },
+        "pluginVersion": "11.4.0",
+        "title": "Users from countries",
+        "transparent": true,
+        "type": "text"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 37
+        },
+        "id": 15,
+        "panels": [],
+        "title": "UseGalaxy EU Key Usage Indicators (KUI)",
+        "type": "row"
+      },
+      {
+        "description": "You might need to click the EU (option 3).",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 13,
+          "w": 18,
+          "x": 0,
+          "y": 38
+        },
+        "id": 16,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<iframe id=\"embeddedFrame\" src=\"https://lookerstudio.google.com/embed/reporting/8cfee054-2ddd-4711-af5a-a7a8d62076bb/page/nrqdD\" width=\"100%\" style=\"border: none; min-height: 1500px;></iframe>\n\n<script>\nvar iframe = document.getElementById(\"embeddedFrame\");\n\nfunction setIframeSize() {\n    // Set the iframe height to match its parent's height\n    iframe.style.height = iframe.parentElement.offsetHeight + \"px\";\n    \n    // Set the iframe width to match its parent's width\n    iframe.style.width = iframe.parentElement.offsetWidth + \"px\";\n}\n\n// Call setIframeSize when the iframe content is loaded\niframe.onload = setIframeSize;\n\n// Also, call setIframeSize when the window is resized\nwindow.addEventListener(\"resize\", setIframeSize);\n\n// Function to refresh the iframe\nwindow.setInterval(function() {\n            reloadIFrame()\n        }, 30000);\n\n        function reloadIFrame() {\n            console.log('reloading..');\n            document.getElementById('iframe').contentWindow.location.reload();\n        }\n</script>",
+          "mode": "html"
+        },
+        "pluginVersion": "11.4.0",
+        "title": "UseGalaxy EU KUI ",
+        "transparent": true,
+        "type": "text"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 51
+        },
+        "id": 13,
+        "panels": [],
+        "title": "UseGalaxy EU TIaaS stats",
+        "type": "row"
+      },
+      {
+        "description": "",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 18,
+          "x": 0,
+          "y": 52
+        },
+        "id": 11,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<iframe id=\"embeddedFrame\" src=\"https://usegalaxy.eu/tiaas/stats/\" width=\"100%\" style=\"border: none; min-height: 1500px;></iframe>\n\n<script>\nvar iframe = document.getElementById(\"embeddedFrame\");\n\nfunction setIframeSize() {\n    // Set the iframe height to match its parent's height\n    iframe.style.height = iframe.parentElement.offsetHeight + \"px\";\n    \n    // Set the iframe width to match its parent's width\n    iframe.style.width = iframe.parentElement.offsetWidth + \"px\";\n}\n\n// Call setIframeSize when the iframe content is loaded\niframe.onload = setIframeSize;\n\n// Also, call setIframeSize when the window is resized\nwindow.addEventListener(\"resize\", setIframeSize);\n\n// Function to refresh the iframe\nwindow.setInterval(function() {\n            reloadIFrame()\n        }, 30000);\n\n        function reloadIFrame() {\n            console.log('reloading..');\n            document.getElementById('iframe').contentWindow.location.reload();\n        }\n</script>",
+          "mode": "html"
+        },
+        "pluginVersion": "11.4.0",
+        "title": "UseGalaxy EU TIaaS stats",
+        "transparent": true,
+        "type": "text"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 64
+        },
+        "id": 14,
+        "panels": [],
+        "title": "GTN stats",
+        "type": "row"
+      },
+      {
+        "description": "",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 14,
+          "w": 18,
+          "x": 0,
+          "y": 65
+        },
+        "id": 10,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<iframe id=\"embeddedFrame\" src=\"https://training.galaxyproject.org/training-material/stats/#gtn-statistics\" width=\"100%\" style=\"border: none; min-height: 1500px;></iframe>\n\n<script>\nvar iframe = document.getElementById(\"embeddedFrame\");\n\nfunction setIframeSize() {\n    // Set the iframe height to match its parent's height\n    iframe.style.height = iframe.parentElement.offsetHeight + \"px\";\n    \n    // Set the iframe width to match its parent's width\n    iframe.style.width = iframe.parentElement.offsetWidth + \"px\";\n}\n\n// Call setIframeSize when the iframe content is loaded\niframe.onload = setIframeSize;\n\n// Also, call setIframeSize when the window is resized\nwindow.addEventListener(\"resize\", setIframeSize);\n\n// Function to refresh the iframe\nwindow.setInterval(function() {\n            reloadIFrame()\n        }, 30000);\n\n        function reloadIFrame() {\n            console.log('reloading..');\n            document.getElementById('iframe').contentWindow.location.reload();\n        }\n</script>",
+          "mode": "html"
+        },
+        "pluginVersion": "11.4.0",
+        "title": "GTN stats",
+        "transparent": true,
+        "type": "text"
+      }
+    ],
+    "preload": false,
+    "schemaVersion": 40,
+    "tags": [
+      "Production"
+    ],
+    "templating": {
+      "list": []
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "Eu-Factsheet",
+    "uid": "bejvb2fpdi96ob",
+    "version": 24,
+    "weekStart": ""
+  }
+}

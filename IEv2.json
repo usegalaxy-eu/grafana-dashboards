@@ -9,13 +9,14 @@
     "slug": "iev2",
     "url": "/d/GfPTTlhWz/iev2",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-24T14:03:34+02:00",
-    "updated": "2024-07-26T12:11:24+02:00",
-    "updatedBy": "kysrpex",
+    "created": "2024-07-24T16:03:34+02:00",
+    "updated": "2024-07-26T14:11:24+02:00",
+    "updatedBy": "domgz",
     "createdBy": "admin",
     "version": 2,
     "hasAcl": false,
     "isFolder": false,
+    "apiVersion": "v0alpha1",
     "folderId": 0,
     "folderUid": "",
     "folderTitle": "General",
@@ -24,11 +25,6 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false

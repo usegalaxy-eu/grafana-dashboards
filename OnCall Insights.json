@@ -9,13 +9,14 @@
     "slug": "oncall-insights",
     "url": "/d/cdvlj8qs787pca/oncall-insights",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-08-22T15:19:20+02:00",
-    "updated": "2024-08-22T15:19:20+02:00",
+    "created": "2024-08-22T17:19:20+02:00",
+    "updated": "2024-08-22T17:19:20+02:00",
     "updatedBy": "Anonymous",
     "createdBy": "Anonymous",
     "version": 1,
     "hasAcl": false,
     "isFolder": false,
+    "apiVersion": "v0alpha1",
     "folderId": 0,
     "folderUid": "",
     "folderTitle": "General",
@@ -24,11 +25,6 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false

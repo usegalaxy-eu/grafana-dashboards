@@ -9,13 +9,14 @@
     "slug": "node-detail-infrastructure",
     "url": "/d/000000023/node-detail-infrastructure",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-24T14:00:09+02:00",
-    "updated": "2024-07-24T14:00:09+02:00",
+    "created": "2024-07-24T16:00:09+02:00",
+    "updated": "2024-07-24T16:00:09+02:00",
     "updatedBy": "admin",
     "createdBy": "admin",
     "version": 1,
     "hasAcl": false,
     "isFolder": false,
+    "apiVersion": "v0alpha1",
     "folderId": 6,
     "folderUid": "hR-aRIP7z",
     "folderTitle": "Infrastructure",
@@ -24,11 +25,6 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false

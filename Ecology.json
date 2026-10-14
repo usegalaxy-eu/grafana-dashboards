@@ -9,13 +9,14 @@
     "slug": "ecology",
     "url": "/d/U5vwgGGVz/ecology",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2022-09-03T08:47:24+02:00",
-    "updated": "2024-07-26T10:52:44+02:00",
-    "updatedBy": "kysrpex",
+    "created": "2022-09-03T10:47:24+02:00",
+    "updated": "2024-07-26T12:52:44+02:00",
+    "updatedBy": "domgz",
     "createdBy": "admin",
     "version": 7,
     "hasAcl": false,
     "isFolder": false,
+    "apiVersion": "v0alpha1",
     "folderId": 35,
     "folderUid": "YUdJgMG4z",
     "folderTitle": "ecology.usegalaxy.eu",
@@ -24,11 +25,6 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false

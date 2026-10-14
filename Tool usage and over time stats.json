@@ -6,29 +6,25 @@
     "canAdmin": false,
     "canStar": false,
     "canDelete": false,
-    "slug": "tool-usage-stats-copy",
-    "url": "/d/6rsDAVfSk/tool-usage-stats-copy",
+    "slug": "tool-usage-and-over-time-stats",
+    "url": "/d/deom6x41t4dtsf/tool-usage-and-over-time-stats",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-04-22T20:30:28+02:00",
-    "updated": "2024-11-27T14:56:30+01:00",
-    "updatedBy": "mira-miracoli",
-    "createdBy": "admin",
-    "version": 3,
+    "created": "2025-06-11T11:44:33+02:00",
+    "updated": "2025-06-12T19:03:29+02:00",
+    "updatedBy": "sanjaysrikakulam",
+    "createdBy": "sanjaysrikakulam",
+    "version": 11,
     "hasAcl": false,
     "isFolder": false,
-    "folderId": 0,
-    "folderUid": "",
-    "folderTitle": "General",
-    "folderUrl": "",
+    "apiVersion": "v0alpha1",
+    "folderId": 31,
+    "folderUid": "LJhnLfkVz",
+    "folderTitle": "sanjay",
+    "folderUrl": "/dashboards/f/LJhnLfkVz/sanjay",
     "provisioned": false,
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
@@ -61,14 +57,13 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 52,
+    "id": 97,
     "links": [],
-    "liveNow": false,
     "panels": [
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
         },
         "gridPos": {
           "h": 6,
@@ -86,7 +81,8 @@
           "content": "# Tool usage stats from the [European Galaxy server](https://usegalaxy.eu)\n\nTo see the stats of a given tool you need to select a tool from the \"Tool ID\" drop-down list on the top left.",
           "mode": "markdown"
         },
-        "pluginVersion": "11.2.2+security-01",
+        "pluginVersion": "11.4.0",
+        "title": "",
         "type": "text"
       },
       {
@@ -140,7 +136,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.2+security-01",
+        "pluginVersion": "11.4.0",
         "targets": [
           {
             "datasource": {
@@ -161,10 +157,11 @@
                 "type": "fill"
               }
             ],
+            "hide": false,
             "measurement": "tool-usage",
             "orderByTime": "ASC",
             "policy": "default",
-            "query": "SELECT sum(\"count\") FROM \"tool-usage\" WHERE (\"tool_id\" =~ /$tool_id/)",
+            "query": "SELECT sum(\"last_count\") FROM (SELECT LAST(\"count\") AS \"last_count\" FROM \"tool-usage\" WHERE (\"tool_id\" =~ /^$tool_id$/) GROUP BY \"tool_id\", \"version\")\n",
             "rawQuery": true,
             "refId": "A",
             "resultFormat": "time_series",
@@ -190,7 +187,6 @@
       },
       {
         "datasource": {
-          "default": true,
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
@@ -282,6 +278,7 @@
           "showValue": "always",
           "stacking": "none",
           "tooltip": {
+            "maxHeight": 600,
             "mode": "multi",
             "sort": "asc"
           },
@@ -289,7 +286,7 @@
           "xTickLabelRotation": -30,
           "xTickLabelSpacing": 0
         },
-        "pluginVersion": "9.2.10",
+        "pluginVersion": "11.4.0",
         "targets": [
           {
             "datasource": {
@@ -310,7 +307,7 @@
             "policy": "default",
             "query": "SELECT LAST(\"count\")  AS \"count\" FROM \"tool-usage\" WHERE (\"tool_id\" =~ /^$tool_id$/) GROUP BY \"tool_id\", \"version\"",
             "rawQuery": true,
-            "refId": "A",
+            "refId": "B",
             "resultFormat": "table",
             "select": [
               [
@@ -359,17 +356,174 @@
           }
         ],
         "type": "barchart"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "This panel displays tool usage over time (limited to the last 2 years).\n\nYou can select a tool from the drop-down at the top of this dashboard.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "series",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineStyle": {
+                "fill": "solid"
+              },
+              "lineWidth": 3,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "always",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "fieldMinMax": false,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Time"
+              },
+              "properties": []
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 24,
+          "x": 0,
+          "y": 18
+        },
+        "id": 9,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "groupBy": [],
+            "hide": false,
+            "measurement": "galaxy_tool_usage_over_time",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT usage_count, month FROM \"tool_usage_over_time\" WHERE \"tool_id\" =~ /$tool_id$/",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "table",
+            "select": [
+              [
+                {
+                  "params": [
+                    "usage_count"
+                  ],
+                  "type": "field"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "tool_id",
+                "operator": "=~",
+                "value": "/$tool_id$/"
+              }
+            ]
+          }
+        ],
+        "title": "Tool-usage of \"$tool_id\" over time",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time": true
+              },
+              "includeByName": {},
+              "indexByName": {},
+              "renameByName": {
+                "Last": "time",
+                "galaxy_tool_usage_over_time.last": "Usage count",
+                "month": "Month",
+                "usage_count": "Usage Count"
+              }
+            }
+          },
+          {
+            "id": "convertFieldType",
+            "options": {
+              "conversions": [
+                {
+                  "destinationType": "time",
+                  "targetField": "month"
+                }
+              ],
+              "fields": {}
+            }
+          }
+        ],
+        "type": "timeseries"
       }
     ],
-    "schemaVersion": 39,
+    "preload": false,
+    "schemaVersion": 40,
     "tags": [],
     "templating": {
       "list": [
         {
           "current": {
-            "selected": true,
-            "text": "jbrowse2",
-            "value": "jbrowse2"
+            "text": "rna_star",
+            "value": "rna_star"
           },
           "datasource": {
             "type": "influxdb",
@@ -377,16 +531,13 @@
           },
           "definition": "SHOW TAG VALUES FROM \"tool-usage\" WITH KEY = \"tool_id\"",
           "description": "A given Galaxy tool ID",
-          "hide": 0,
           "includeAll": false,
           "label": "Choose a Tool by Galaxy tool ID",
-          "multi": false,
           "name": "tool_id",
           "options": [],
           "query": "SHOW TAG VALUES FROM \"tool-usage\" WITH KEY = \"tool_id\"",
           "refresh": 1,
           "regex": "",
-          "skipUrlSync": false,
           "sort": 1,
           "type": "query"
         }
@@ -400,9 +551,9 @@
       "hidden": true
     },
     "timezone": "",
-    "title": "Tool usage stats Copy",
-    "uid": "6rsDAVfSk",
-    "version": 3,
+    "title": "Tool usage and over time stats",
+    "uid": "deom6x41t4dtsf",
+    "version": 11,
     "weekStart": ""
   }
 }

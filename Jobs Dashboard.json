@@ -9,13 +9,14 @@
     "slug": "jobs-dashboard",
     "url": "/d/000000034/jobs-dashboard",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-24T14:03:53+02:00",
-    "updated": "2024-07-31T21:42:03+02:00",
+    "created": "2024-07-24T16:03:53+02:00",
+    "updated": "2024-07-31T23:42:03+02:00",
     "updatedBy": "admin",
     "createdBy": "admin",
     "version": 2,
     "hasAcl": false,
     "isFolder": false,
+    "apiVersion": "v0alpha1",
     "folderId": 0,
     "folderUid": "",
     "folderTitle": "General",
@@ -24,11 +25,6 @@
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false

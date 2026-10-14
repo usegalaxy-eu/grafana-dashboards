@@ -9,26 +9,22 @@
     "slug": "helena-testing",
     "url": "/d/IHFHo23iz/helena-testing",
     "expires": "0001-01-01T00:00:00Z",
-    "created": "2024-07-24T14:03:21+02:00",
-    "updated": "2024-07-24T14:03:21+02:00",
-    "updatedBy": "admin",
+    "created": "2024-07-24T16:03:21+02:00",
+    "updated": "2025-10-09T13:08:54+02:00",
+    "updatedBy": "mira-miracoli",
     "createdBy": "admin",
-    "version": 1,
+    "version": 2,
     "hasAcl": false,
     "isFolder": false,
-    "folderId": 0,
-    "folderUid": "",
-    "folderTitle": "General",
-    "folderUrl": "",
+    "apiVersion": "v0alpha1",
+    "folderId": 98,
+    "folderUid": "af0il37e8enswc",
+    "folderTitle": "Playgrounds",
+    "folderUrl": "/dashboards/f/af0il37e8enswc/playgrounds",
     "provisioned": false,
     "provisionedExternalId": "",
     "annotationsPermissions": {
       "dashboard": {
-        "canAdd": false,
-        "canEdit": false,
-        "canDelete": false
-      },
-      "organization": {
         "canAdd": false,
         "canEdit": false,
         "canDelete": false
@@ -1148,7 +1144,7 @@
     "timezone": "",
     "title": "helena-testing",
     "uid": "IHFHo23iz",
-    "version": 1,
+    "version": 2,
     "weekStart": ""
   }
 }

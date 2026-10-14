@@ -1,0 +1,790 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": false,
+    "canEdit": false,
+    "canAdmin": false,
+    "canStar": false,
+    "canDelete": false,
+    "slug": "jwd-i-o-comparison",
+    "url": "/d/cfqlp1qvshloge/jwd-i-o-comparison",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2026-06-29T17:38:24+02:00",
+    "updated": "2026-07-23T20:44:33+02:00",
+    "updatedBy": "sj213",
+    "createdBy": "sj213",
+    "version": 25,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 47,
+    "folderUid": "TSK4MlVSk",
+    "folderTitle": "storage",
+    "folderUrl": "/dashboards/f/TSK4MlVSk/storage",
+    "provisioned": false,
+    "provisionedExternalId": "",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
+      }
+    }
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 103,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "TiB",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 2,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 5,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "alias": "jwd08",
+            "query": "SELECT mean(\"used\")  / 1099511627776 FROM \"zfs\" WHERE (\"host\"::tag = 'zfs08.bi.privat' AND \"scope\"::tag = 'dataset' AND \"ds\"::tag = 'zp0/jwd08') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series"
+          },
+          {
+            "alias": "jwd07",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT mean(\"used\")  / 1099511627776 FROM \"zfs\" WHERE (\"host\"::tag = 'zfs07.bi.privat' AND \"scope\"::tag = 'dataset' AND \"ds\"::tag = 'zp0/jwd07') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "B",
+            "resultFormat": "time_series"
+          },
+          {
+            "alias": "jwd06",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT mean(\"used\")  / 1099511627776 FROM \"zfs\" WHERE (\"host\"::tag = 'zfs06.bi.privat' AND \"scope\"::tag = 'dataset' AND \"ds\"::tag = 'zp0/jwd06') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "C",
+            "resultFormat": "time_series"
+          }
+        ],
+        "title": "jwd{08,07,06} block usage",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "MiB/s",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 2,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "id": 3,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "alias": "jwd08",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "zfs",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT moving_average(non_negative_derivative(mean(\"nread\"), 1m), 60) / 62914560 FROM \"zfs\" WHERE (\"host\"::tag = 'zfs08.bi.privat' AND \"scope\"::tag = 'dataset' AND \"ds\"::tag = 'zp0/jwd08') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "nread"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1m"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    30
+                  ],
+                  "type": "moving_average"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host::tag",
+                "operator": "=",
+                "value": "zfs08.bi.privat"
+              },
+              {
+                "condition": "AND",
+                "key": "scope::tag",
+                "operator": "=",
+                "value": "dataset"
+              },
+              {
+                "condition": "AND",
+                "key": "ds::tag",
+                "operator": "=",
+                "value": "zp0/jwd08"
+              }
+            ]
+          },
+          {
+            "alias": "jwd07",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT moving_average(non_negative_derivative(mean(\"nread\"), 1m), 60) / 62914560 FROM \"zfs\" WHERE (\"host\"::tag = 'zfs07.bi.privat' AND \"scope\"::tag = 'dataset' AND \"ds\"::tag = 'zp0/jwd07') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "B",
+            "resultFormat": "time_series"
+          },
+          {
+            "alias": "jwd06",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT moving_average(non_negative_derivative(mean(\"nread\"), 1m), 60) / 62914560 FROM \"zfs\" WHERE (\"host\"::tag = 'zfs06.bi.privat' AND \"scope\"::tag = 'dataset' AND \"ds\"::tag = 'zp0/jwd06') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "C",
+            "resultFormat": "time_series"
+          }
+        ],
+        "title": "jwd{08,07,06} dataset READ bandwidth moving average 60",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "MiB/s",
+              "axisPlacement": "left",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 2,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        },
+        "id": 4,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "alias": "jwd08",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "zfs",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT moving_average(non_negative_derivative(mean(\"nwritten\"), 1m), 60) / 62914560 FROM \"zfs\" WHERE (\"host\"::tag = 'zfs08.bi.privat' AND \"scope\"::tag = 'dataset' AND \"ds\"::tag = 'zp0/jwd08') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "nread"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "1m"
+                  ],
+                  "type": "non_negative_derivative"
+                },
+                {
+                  "params": [
+                    30
+                  ],
+                  "type": "moving_average"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "host::tag",
+                "operator": "=",
+                "value": "zfs08.bi.privat"
+              },
+              {
+                "condition": "AND",
+                "key": "scope::tag",
+                "operator": "=",
+                "value": "dataset"
+              },
+              {
+                "condition": "AND",
+                "key": "ds::tag",
+                "operator": "=",
+                "value": "zp0/jwd08"
+              }
+            ]
+          },
+          {
+            "alias": "jwd07",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT moving_average(non_negative_derivative(mean(\"nwritten\"), 1m), 60) / 62914560 FROM \"zfs\" WHERE (\"host\"::tag = 'zfs07.bi.privat' AND \"scope\"::tag = 'dataset' AND \"ds\"::tag = 'zp0/jwd07') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "B",
+            "resultFormat": "time_series"
+          },
+          {
+            "alias": "jwd06",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT moving_average(non_negative_derivative(mean(\"nwritten\"), 1m), 60) / 62914560 FROM \"zfs\" WHERE (\"host\"::tag = 'zfs06.bi.privat' AND \"scope\"::tag = 'dataset' AND \"ds\"::tag = 'zp0/jwd06') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "C",
+            "resultFormat": "time_series"
+          }
+        ],
+        "title": "jwd{08,07,06} dataset WRITE bandwidth moving average 60",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "MiB/s",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineWidth": 2,
+              "pointSize": 4,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": true,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 24
+        },
+        "id": 1,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "alias": "jwd08",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT non_negative_derivative(mean(\"nread\"), 60s)  / 62914560 FROM \"zfs\" WHERE (\"host\" = 'zfs08.bi.privat' AND \"scope\" = 'dataset' AND \"ds\" = 'zp0/jwd08') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series"
+          },
+          {
+            "alias": "jwd07",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT non_negative_derivative(mean(\"nread\"), 60s)  / 62914560 FROM \"zfs\" WHERE (\"host\" = 'zfs07.bi.privat' AND \"scope\" = 'dataset' AND \"ds\" = 'zp0/jwd07') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "B",
+            "resultFormat": "time_series"
+          },
+          {
+            "alias": "jwd06",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT non_negative_derivative(mean(\"nread\"), 60s)  / 62914560 FROM \"zfs\" WHERE (\"host\" = 'zfs06.bi.privat' AND \"scope\" = 'dataset' AND \"ds\" = 'zp0/jwd06') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "C",
+            "resultFormat": "time_series"
+          }
+        ],
+        "title": "jwd{08,07,06} dataset READ bandwidth raw data",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "MiB/s",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineWidth": 2,
+              "pointSize": 4,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": true,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 32
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "alias": "jwd08",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT non_negative_derivative(mean(\"nwritten\"), 60s)  / 62914560 FROM \"zfs\" WHERE (\"host\" = 'zfs08.bi.privat' AND \"scope\" = 'dataset' AND \"ds\" = 'zp0/jwd08') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series"
+          },
+          {
+            "alias": "jwd07",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT non_negative_derivative(mean(\"nwritten\"), 60s)  / 62914560 FROM \"zfs\" WHERE (\"host\" = 'zfs07.bi.privat' AND \"scope\" = 'dataset' AND \"ds\" = 'zp0/jwd07') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "B",
+            "resultFormat": "time_series"
+          },
+          {
+            "alias": "jwd06",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "hide": false,
+            "query": "SELECT non_negative_derivative(mean(\"nwritten\"), 60s)  / 62914560 FROM \"zfs\" WHERE (\"host\" = 'zfs06.bi.privat' AND \"scope\" = 'dataset' AND \"ds\" = 'zp0/jwd06') AND $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "C",
+            "resultFormat": "time_series"
+          }
+        ],
+        "title": "jwd{08,07,06} dataset WRITE bandwidth raw data",
+        "type": "timeseries"
+      }
+    ],
+    "preload": false,
+    "schemaVersion": 40,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "JWD I/O Comparison",
+    "uid": "cfqlp1qvshloge",
+    "version": 25,
+    "weekStart": ""
+  }
+}
