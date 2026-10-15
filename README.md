@@ -25,7 +25,6 @@ Jobs Dashboard |  | 2 | [Live](https://stats.galaxyproject.eu/d/000000034) | [Fi
 MIra playground |  | 70 | [Live](https://stats.galaxyproject.eu/d/N9O36HWVk) | [File](./MIra%20playground.json)
 New dashboard |  | 59 | [Live](https://stats.galaxyproject.eu/d/befm8y59yxog0d) | [File](./New%20dashboard.json)
 Node Detail - Infrastructure | infrastructure,galaxy,migrated | 1 | [Live](https://stats.galaxyproject.eu/d/000000023) | [File](./Node%20Detail%20-%20Infrastructure.json)
-OnCall Insights | oncall | 1 | [Live](https://stats.galaxyproject.eu/d/cdvlj8qs787pca) | [File](./OnCall%20Insights.json)
 Public Galaxy Servers - Individual | pgs | 5 | [Live](https://stats.galaxyproject.eu/d/000000022) | [File](./Public%20Galaxy%20Servers%20-%20Individual.json)
 Public Galaxy Servers - UseGalaxy.* | pgs | 3 | [Live](https://stats.galaxyproject.eu/d/nW8PuvMZk) | [File](./Public%20Galaxy%20Servers%20-%20UseGalaxy.*.json)
 Public Galaxy Servers | pgs | 2 | [Live](https://stats.galaxyproject.eu/d/000000020) | [File](./Public%20Galaxy%20Servers.json)
