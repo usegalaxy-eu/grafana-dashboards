@@ -10,10 +10,10 @@
     "url": "/d/ZmZaLfz4k/day-to-day",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2022-08-03T15:11:46+02:00",
-    "updated": "2026-10-14T12:04:24+02:00",
+    "updated": "2026-10-15T08:46:20+02:00",
     "updatedBy": "admin",
     "createdBy": "sanjaysrikakulam",
-    "version": 287,
+    "version": 289,
     "hasAcl": false,
     "isFolder": false,
     "apiVersion": "v0alpha1",
@@ -68,7 +68,7 @@
           "x": 0,
           "y": 0
         },
-        "id": 95,
+        "id": 96,
         "title": "Galaxy",
         "type": "row"
       },
@@ -2016,7 +2016,7 @@
           "x": 0,
           "y": 33
         },
-        "id": 96,
+        "id": 97,
         "title": "Services status",
         "type": "row"
       },
@@ -2417,7 +2417,7 @@
           "x": 0,
           "y": 45
         },
-        "id": 97,
+        "id": 98,
         "title": "HTCondor",
         "type": "row"
       },
@@ -4820,7 +4820,7 @@
           "x": 0,
           "y": 116
         },
-        "id": 98,
+        "id": 99,
         "title": "KVM Services",
         "type": "row"
       },
@@ -4989,6 +4989,104 @@
         "type": "table"
       },
       {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P9B81C0353945995B"
+        },
+        "description": "0 - means is running less than 10h\n\n1 - means is running over 10h",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
+                },
+                {
+                  "color": "#E02F44",
+                  "value": 1
+                }
+              ]
+            }
+          }
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 10,
+          "y": 117
+        },
+        "id": 95,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "13.1.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "pgcleanup-watchdog",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT mean(\"stuck\") FROM \"pgcleanup-watchdog\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+            "rawQuery": true,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "stuck"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "mean"
+                }
+              ]
+            ],
+            "tags": []
+          }
+        ],
+        "title": "Dataset Cleanup Monitor",
+        "type": "stat"
+      },
+      {
         "collapsed": false,
         "gridPos": {
           "h": 1,
@@ -4996,7 +5094,7 @@
           "x": 0,
           "y": 126
         },
-        "id": 99,
+        "id": 100,
         "title": "Rabbitmq",
         "type": "row"
       },
@@ -5351,7 +5449,7 @@
           "x": 0,
           "y": 141
         },
-        "id": 100,
+        "id": 101,
         "title": "Central Manager",
         "type": "row"
       },
@@ -6373,7 +6471,7 @@
           "x": 0,
           "y": 156
         },
-        "id": 101,
+        "id": 102,
         "title": "sn09 server",
         "type": "row"
       },
@@ -7633,7 +7731,7 @@
           "x": 0,
           "y": 171
         },
-        "id": 102,
+        "id": 103,
         "title": "Jenkins Builds",
         "type": "row"
       },
@@ -7668,7 +7766,7 @@
           "x": 0,
           "y": 185
         },
-        "id": 103,
+        "id": 104,
         "title": "Plausible analytics of UseGalaxy.eu",
         "type": "row"
       },
@@ -7780,7 +7878,7 @@
     "timezone": "browser",
     "title": "day-to-day",
     "uid": "ZmZaLfz4k",
-    "version": 287,
+    "version": 289,
     "weekStart": "monday"
   }
 }

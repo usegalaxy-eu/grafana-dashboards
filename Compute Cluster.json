@@ -10,10 +10,10 @@
     "url": "/d/addlvrz/compute-cluster",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2026-10-08T16:07:36+02:00",
-    "updated": "2026-10-09T10:31:33+02:00",
+    "updated": "2026-10-15T11:14:07+02:00",
     "updatedBy": "admin",
     "createdBy": "admin",
-    "version": 25,
+    "version": 27,
     "hasAcl": false,
     "isFolder": false,
     "apiVersion": "v0alpha1",
@@ -1342,6 +1342,29 @@
           {
             "id": "calculateField",
             "options": {
+              "alias": "CPU spec",
+              "binary": {
+                "left": {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "CPUs"
+                  }
+                },
+                "operator": "/",
+                "right": {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "spec_cpus"
+                  }
+                }
+              },
+              "mode": "binary",
+              "replaceFields": false
+            }
+          },
+          {
+            "id": "calculateField",
+            "options": {
               "alias": "GPU alloc.",
               "binary": {
                 "left": {
@@ -1396,6 +1419,22 @@
               "renameByName": {
                 "GPU alloc.": ""
               }
+            }
+          },
+          {
+            "id": "filterByValue",
+            "options": {
+              "filters": [
+                {
+                  "config": {
+                    "id": "isNull",
+                    "options": {}
+                  },
+                  "fieldName": "In pool"
+                }
+              ],
+              "match": "any",
+              "type": "exclude"
             }
           }
         ],
@@ -2716,6 +2755,39 @@
     "preload": false,
     "refresh": "",
     "schemaVersion": 42,
+    "templating": {
+      "list": [
+        {
+          "allowCustomValue": false,
+          "current": {
+            "text": "c192m1536-n3709",
+            "value": "c192m1536-n3709.bi.privat"
+          },
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P9B81C0353945995B"
+          },
+          "definition": "SHOW TAG VALUES FROM \"htcondor_host_status\" WITH KEY = \"host\"",
+          "description": "Host shown on the per-host tab",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Host",
+          "multi": false,
+          "name": "host",
+          "options": [],
+          "query": {
+            "query": "SHOW TAG VALUES FROM \"htcondor_host_status\" WITH KEY = \"host\"",
+            "rawQuery": true
+          },
+          "refresh": 1,
+          "regex": "/^(?<value>(?<text>[^.]+)\\..+)$/",
+          "regexApplyTo": "value",
+          "skipUrlSync": false,
+          "sort": 1,
+          "type": "query"
+        }
+      ]
+    },
     "time": {
       "from": "now-6h",
       "to": "now"
@@ -2737,6 +2809,6 @@
     "timezone": "browser",
     "title": "Compute Cluster",
     "uid": "addlvrz",
-    "version": 25
+    "version": 27
   }
 }
