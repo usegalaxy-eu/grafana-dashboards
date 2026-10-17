@@ -14,6 +14,7 @@ GRT Tool Comparison | galaxy,migrated | 1 | [Live](https://stats.galaxyproject.e
 GRT Tool Usage | migrated,galaxy | 1 | [Live](https://stats.galaxyproject.eu/d/SDduH5Zik) | [File](./GRT%20Tool%20Usage.json)
 Galaxy Database | migrated,infrastructure | 1 | [Live](https://stats.galaxyproject.eu/d/000000019) | [File](./Galaxy%20Database.json)
 Galaxy Docker Cluster | galaxy,docker | 1 | [Live](https://stats.galaxyproject.eu/d/000000024) | [File](./Galaxy%20Docker%20Cluster.json)
+Galaxy SSE | galaxy,sse,statsd | 20 | [Live](https://stats.galaxyproject.eu/d/ad9bz5h) | [File](./Galaxy%20SSE.json)
 Galaxy User Statistics | galaxy,migrated | 11 | [Live](https://stats.galaxyproject.eu/d/000000012) | [File](./Galaxy%20User%20Statistics.json)
 Galaxy | galaxy | 31 | [Live](https://stats.galaxyproject.eu/d/000000004) | [File](./Galaxy.json)
 GitHub |  | 1 | [Live](https://stats.galaxyproject.eu/d/Wb1wN7dZz) | [File](./GitHub.json)
