@@ -10,10 +10,10 @@
     "url": "/d/ZmZaLfz4k/day-to-day",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2022-08-03T15:11:46+02:00",
-    "updated": "2026-10-15T08:46:20+02:00",
+    "updated": "2026-10-19T13:48:24+02:00",
     "updatedBy": "admin",
     "createdBy": "sanjaysrikakulam",
-    "version": 289,
+    "version": 290,
     "hasAcl": false,
     "isFolder": false,
     "apiVersion": "v0alpha1",
@@ -4993,7 +4993,7 @@
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "description": "0 - means is running less than 10h\n\n1 - means is running over 10h",
+        "description": "0 - means is running less time than the threshold\n\n1 - means is running over the time threshold\n\nThe threshold is configured via the `monitoring_pgcleanup_watchdog_stale_threshold_seconds` Ansible variable.",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -7878,7 +7878,7 @@
     "timezone": "browser",
     "title": "day-to-day",
     "uid": "ZmZaLfz4k",
-    "version": 289,
+    "version": 290,
     "weekStart": "monday"
   }
 }

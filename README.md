@@ -43,7 +43,7 @@ Traefik |  | 33 | [Live](https://stats.galaxyproject.eu/d/l2U_DcASz) | [File](./
 Traffic |  | 7 | [Live](https://stats.galaxyproject.eu/d/cdyrn1akn9pfkb) | [File](./Traffic.json)
 User Tool usage stats |  | 10 | [Live](https://stats.galaxyproject.eu/d/bfq6qq2jf3pq8e) | [File](./User%20Tool%20usage%20stats.json)
 Wendy's playground |  | 5 | [Live](https://stats.galaxyproject.eu/d/vdBNXqVIz) | [File](./Wendy's%20playground.json)
-day-to-day | Production | 289 | [Live](https://stats.galaxyproject.eu/d/ZmZaLfz4k) | [File](./day-to-day.json)
+day-to-day | Production | 290 | [Live](https://stats.galaxyproject.eu/d/ZmZaLfz4k) | [File](./day-to-day.json)
 galaxy-stats-test-import | galaxy | 2 | [Live](https://stats.galaxyproject.eu/d/-aO2Bdl4z) | [File](./galaxy-stats-test-import.json)
 helena-testing |  | 2 | [Live](https://stats.galaxyproject.eu/d/IHFHo23iz) | [File](./helena-testing.json)
 memory |  | 1 | [Live](https://stats.galaxyproject.eu/d/S03osH7Wz) | [File](./memory.json)
