@@ -10,10 +10,10 @@
     "url": "/d/ZmZaLfz4k/day-to-day",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2022-08-03T15:11:46+02:00",
-    "updated": "2026-10-19T13:48:24+02:00",
+    "updated": "2026-10-20T14:47:19+02:00",
     "updatedBy": "admin",
     "createdBy": "sanjaysrikakulam",
-    "version": 290,
+    "version": 297,
     "hasAcl": false,
     "isFolder": false,
     "apiVersion": "v0alpha1",
@@ -68,7 +68,7 @@
           "x": 0,
           "y": 0
         },
-        "id": 96,
+        "id": 99,
         "title": "Galaxy",
         "type": "row"
       },
@@ -330,7 +330,7 @@
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "description": "Shows the distribution of jobs in the queued state, categorized as processed and unprocessed depending on whether they have received an external  (HTCondor) ID or not.",
+        "description": "Time-series showing the status of Galaxy jobs.",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -345,7 +345,7 @@
               "barAlignment": 0,
               "barWidthFactor": 0.6,
               "drawStyle": "line",
-              "fillOpacity": 20,
+              "fillOpacity": 30,
               "gradientMode": "none",
               "hideFrom": {
                 "legend": false,
@@ -370,6 +370,7 @@
                 "mode": "off"
               }
             },
+            "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
@@ -389,7 +390,22 @@
             {
               "matcher": {
                 "id": "byName",
-                "options": "processed"
+                "options": "Running"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#ff7f50",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Queued"
               },
               "properties": [
                 {
@@ -404,13 +420,13 @@
             {
               "matcher": {
                 "id": "byName",
-                "options": "unprocessed"
+                "options": "New"
               },
               "properties": [
                 {
                   "id": "color",
                   "value": {
-                    "fixedColor": "#ff0000",
+                    "fixedColor": "#00bfff",
                     "mode": "fixed"
                   }
                 }
@@ -424,7 +440,7 @@
           "x": 6,
           "y": 1
         },
-        "id": 30,
+        "id": 6,
         "interval": "1m",
         "options": {
           "annotations": {
@@ -432,27 +448,24 @@
             "multiLane": false
           },
           "legend": {
-            "calcs": [
-              "mean",
-              "max"
-            ],
+            "calcs": [],
             "displayMode": "list",
             "enableFacetedFilter": false,
             "overflow": "ellipsis",
-            "placement": "right",
+            "placement": "bottom",
             "showLegend": false
           },
           "tooltip": {
             "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
-            "sort": "desc"
+            "sort": "none"
           }
         },
         "pluginVersion": "13.1.1",
         "targets": [
           {
-            "alias": "[[tag_group]]",
+            "alias": "Running",
             "datasource": {
               "type": "influxdb",
               "uid": "P9B81C0353945995B"
@@ -461,26 +474,84 @@
             "groupBy": [
               {
                 "params": [
-                  "1m"
+                  "$__interval"
                 ],
                 "type": "time"
               },
               {
                 "params": [
-                  "group"
+                  "state"
                 ],
                 "type": "tag"
               },
               {
                 "params": [
-                  "linear"
+                  "none"
                 ],
                 "type": "fill"
               }
             ],
-            "measurement": "jobs-queued",
+            "measurement": "queue-overview",
             "orderByTime": "ASC",
             "policy": "default",
+            "query": "SELECT sum(\"count\") FROM \"queue-overview\" WHERE (\"state\" = 'running') AND $timeFilter GROUP BY time(1m)",
+            "rawQuery": false,
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "state",
+                "operator": "=",
+                "value": "running"
+              }
+            ]
+          },
+          {
+            "alias": "Queued",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "state"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "queue-overview",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT sum(\"count\") FROM \"queue-overview\" WHERE (\"state\" = 'queued') AND $timeFilter GROUP BY time(1m)",
+            "rawQuery": false,
             "refId": "B",
             "resultFormat": "time_series",
             "select": [
@@ -499,14 +570,70 @@
             ],
             "tags": [
               {
-                "key": "host",
+                "key": "state",
                 "operator": "=",
-                "value": "maintenance.bi.privat"
+                "value": "queued"
+              }
+            ]
+          },
+          {
+            "alias": "New",
+            "datasource": {
+              "type": "influxdb",
+              "uid": "P9B81C0353945995B"
+            },
+            "dsType": "influxdb",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "state"
+                ],
+                "type": "tag"
+              },
+              {
+                "params": [
+                  "none"
+                ],
+                "type": "fill"
+              }
+            ],
+            "measurement": "queue-overview",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "query": "SELECT sum(\"count\") FROM \"queue-overview\" WHERE (\"state\" = 'new') AND $timeFilter GROUP BY time(1m)",
+            "rawQuery": false,
+            "refId": "C",
+            "resultFormat": "time_series",
+            "select": [
+              [
+                {
+                  "params": [
+                    "count"
+                  ],
+                  "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "sum"
+                }
+              ]
+            ],
+            "tags": [
+              {
+                "key": "state",
+                "operator": "=",
+                "value": "new"
               }
             ]
           }
         ],
-        "title": " Queued jobs (with or without condor ids)",
+        "title": "Job queue",
         "type": "timeseries"
       },
       {
@@ -757,7 +884,7 @@
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "description": "Time-series showing the status of Galaxy jobs.",
+        "description": "Shows the distribution of jobs in the queued state, categorized as processed and unprocessed depending on whether they have received an external  (HTCondor) ID or not.",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -772,7 +899,7 @@
               "barAlignment": 0,
               "barWidthFactor": 0.6,
               "drawStyle": "line",
-              "fillOpacity": 30,
+              "fillOpacity": 20,
               "gradientMode": "none",
               "hideFrom": {
                 "legend": false,
@@ -797,7 +924,6 @@
                 "mode": "off"
               }
             },
-            "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
@@ -817,22 +943,7 @@
             {
               "matcher": {
                 "id": "byName",
-                "options": "Running"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "#ff7f50",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Queued"
+                "options": "processed"
               },
               "properties": [
                 {
@@ -847,13 +958,13 @@
             {
               "matcher": {
                 "id": "byName",
-                "options": "New"
+                "options": "unprocessed"
               },
               "properties": [
                 {
                   "id": "color",
                   "value": {
-                    "fixedColor": "#00bfff",
+                    "fixedColor": "#ff0000",
                     "mode": "fixed"
                   }
                 }
@@ -867,7 +978,7 @@
           "x": 6,
           "y": 6
         },
-        "id": 6,
+        "id": 30,
         "interval": "1m",
         "options": {
           "annotations": {
@@ -875,24 +986,27 @@
             "multiLane": false
           },
           "legend": {
-            "calcs": [],
+            "calcs": [
+              "mean",
+              "max"
+            ],
             "displayMode": "list",
             "enableFacetedFilter": false,
             "overflow": "ellipsis",
-            "placement": "bottom",
+            "placement": "right",
             "showLegend": false
           },
           "tooltip": {
             "hideZeros": false,
             "maxHeight": 600,
             "mode": "multi",
-            "sort": "none"
+            "sort": "desc"
           }
         },
         "pluginVersion": "13.1.1",
         "targets": [
           {
-            "alias": "Running",
+            "alias": "[[tag_group]]",
             "datasource": {
               "type": "influxdb",
               "uid": "P9B81C0353945995B"
@@ -901,84 +1015,26 @@
             "groupBy": [
               {
                 "params": [
-                  "$__interval"
+                  "1m"
                 ],
                 "type": "time"
               },
               {
                 "params": [
-                  "state"
+                  "group"
                 ],
                 "type": "tag"
               },
               {
                 "params": [
-                  "none"
+                  "linear"
                 ],
                 "type": "fill"
               }
             ],
-            "measurement": "queue-overview",
+            "measurement": "jobs-queued",
             "orderByTime": "ASC",
             "policy": "default",
-            "query": "SELECT sum(\"count\") FROM \"queue-overview\" WHERE (\"state\" = 'running') AND $timeFilter GROUP BY time(1m)",
-            "rawQuery": false,
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "state",
-                "operator": "=",
-                "value": "running"
-              }
-            ]
-          },
-          {
-            "alias": "Queued",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "state"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT sum(\"count\") FROM \"queue-overview\" WHERE (\"state\" = 'queued') AND $timeFilter GROUP BY time(1m)",
-            "rawQuery": false,
             "refId": "B",
             "resultFormat": "time_series",
             "select": [
@@ -997,70 +1053,14 @@
             ],
             "tags": [
               {
-                "key": "state",
+                "key": "host",
                 "operator": "=",
-                "value": "queued"
-              }
-            ]
-          },
-          {
-            "alias": "New",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "dsType": "influxdb",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "state"
-                ],
-                "type": "tag"
-              },
-              {
-                "params": [
-                  "none"
-                ],
-                "type": "fill"
-              }
-            ],
-            "measurement": "queue-overview",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT sum(\"count\") FROM \"queue-overview\" WHERE (\"state\" = 'new') AND $timeFilter GROUP BY time(1m)",
-            "rawQuery": false,
-            "refId": "C",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "count"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "sum"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "state",
-                "operator": "=",
-                "value": "new"
+                "value": "maintenance.bi.privat"
               }
             ]
           }
         ],
-        "title": "Job queue",
+        "title": " Queued jobs (with or without condor ids)",
         "type": "timeseries"
       },
       {
@@ -1400,39 +1400,70 @@
         "type": "barchart"
       },
       {
+        "gridPos": {
+          "h": 5,
+          "w": 14,
+          "x": 0,
+          "y": 18
+        },
+        "id": 97,
+        "libraryPanel": {
+          "name": "Active users",
+          "uid": "bg1sq0tsi61oge"
+        },
+        "title": "Active users",
+        "type": "library-panel-ref"
+      },
+      {
+        "gridPos": {
+          "h": 5,
+          "w": 6,
+          "x": 14,
+          "y": 18
+        },
+        "id": 98,
+        "libraryPanel": {
+          "name": "Active users (live)",
+          "uid": "eg1sqe76sp9fkc"
+        },
+        "title": "Active users",
+        "type": "library-panel-ref"
+      },
+      {
         "datasource": {
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "description": "Shows the number of currently active users logged in on the https://usegalaxy.eu (recorded every 10 minutes).",
+        "description": "Shows the number of seconds since the last log entry. If the entry was a bit old then the respective handler might have some issues. So, this helps to investigate the corresponding handler. Each handler is run as a systemd service.",
         "fieldConfig": {
           "defaults": {
-            "color": {
-              "fixedColor": "#ad46ff",
-              "mode": "thresholds"
-            },
-            "min": 0,
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
                   "color": "green",
                   "value": 0
+                },
+                {
+                  "color": "red",
+                  "value": 80
                 }
               ]
-            }
+            },
+            "unit": "short"
           }
         },
         "gridPos": {
           "h": 5,
-          "w": 4,
+          "w": 20,
           "x": 0,
-          "y": 18
+          "y": 23
         },
-        "id": 13,
+        "id": 42,
+        "interval": "15s",
         "options": {
-          "colorMode": "background",
-          "graphMode": "none",
+          "colorMode": "value",
+          "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "auto",
           "percentChangeColorMode": "standard",
@@ -1454,11 +1485,24 @@
               "type": "influxdb",
               "uid": "P9B81C0353945995B"
             },
-            "groupBy": [],
-            "measurement": "active_users",
+            "groupBy": [
+              {
+                "params": [
+                  "$interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "service"
+                ],
+                "type": "tag"
+              }
+            ],
+            "measurement": "journalctl.lastlog",
             "orderByTime": "ASC",
             "policy": "default",
-            "query": "SELECT \"users\" FROM \"active_users\" WHERE (\"host\" = 'traefik.galaxyproject.eu') AND $timeFilter",
+            "query": "SELECT last(\"seconds\") FROM \"journalctl.lastlog\" WHERE (\"host\" =~ /^$Schedd$/ AND \"service\" =~ /galaxy-handler@[0-5]/) AND $timeFilter GROUP BY time($interval), \"service\"",
             "rawQuery": true,
             "refId": "B",
             "resultFormat": "time_series",
@@ -1466,22 +1510,67 @@
               [
                 {
                   "params": [
-                    "users"
+                    "seconds"
                   ],
                   "type": "field"
+                },
+                {
+                  "params": [],
+                  "type": "last"
                 }
               ]
             ],
             "tags": [
               {
+                "condition": "AND",
                 "key": "host",
-                "operator": "=",
-                "value": "traefik.flyingrabb.it"
+                "operator": "=~",
+                "value": "/^$Schedd$/"
+              },
+              {
+                "condition": "AND",
+                "key": "service",
+                "operator": "=~",
+                "value": "/galaxy-handler@[0-5]/"
               }
             ]
           }
         ],
-        "title": "Active users",
+        "title": "Galaxy handlers last log entry",
+        "transformations": [
+          {
+            "id": "joinByField",
+            "options": {}
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time": false
+              },
+              "includeByName": {},
+              "indexByName": {},
+              "renameByName": {
+                "Time": "",
+                "journalctl.lastlog.last { service: galaxy-handler@0 }": "Handler 0",
+                "journalctl.lastlog.last { service: galaxy-handler@1 }": "Handler 1",
+                "journalctl.lastlog.last { service: galaxy-handler@2 }": "Handler 2",
+                "journalctl.lastlog.last { service: galaxy-handler@3 }": "Handler 3",
+                "journalctl.lastlog.last { service: galaxy-handler@4 }": "Handler 4",
+                "journalctl.lastlog.last { service: galaxy-handler@5 }": "Handler 5",
+                "journalctl.lastlog.last {service: galaxy-handler@0}": "Handler 0",
+                "journalctl.lastlog.last {service: galaxy-handler@1}": "Handler 1",
+                "journalctl.lastlog.last {service: galaxy-handler@2}": "Handler 2",
+                "journalctl.lastlog.last {service: galaxy-handler@3}": "Handler 3",
+                "journalctl.lastlog.last {service: galaxy-handler@4}": "Handler 4",
+                "journalctl.lastlog.last {service: galaxy-handler@5}": "Handler 5",
+                "journalctl.lastlog.seconds {service: galaxy-handler@0}": "Handler 0",
+                "journalctl.lastlog.seconds {service: galaxy-handler@1}": "Handler 1",
+                "journalctl.lastlog.seconds {service: galaxy-handler@2}": "Handler 2"
+              }
+            }
+          }
+        ],
         "type": "stat"
       },
       {
@@ -1518,10 +1607,10 @@
           }
         },
         "gridPos": {
-          "h": 5,
-          "w": 8,
-          "x": 12,
-          "y": 18
+          "h": 9,
+          "w": 20,
+          "x": 0,
+          "y": 28
         },
         "hideTimeOverride": true,
         "id": 32,
@@ -1644,273 +1733,6 @@
           "type": "influxdb",
           "uid": "P9B81C0353945995B"
         },
-        "description": "Shows the number of seconds since the last log entry. If the entry was a bit old then the respective handler might have some issues. So, this helps to investigate the corresponding handler. Each handler is run as a systemd service.",
-        "fieldConfig": {
-          "defaults": {
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": 0
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "short"
-          }
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 16,
-          "x": 4,
-          "y": 23
-        },
-        "id": 42,
-        "interval": "15s",
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "13.1.1",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [
-              {
-                "params": [
-                  "$interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "service"
-                ],
-                "type": "tag"
-              }
-            ],
-            "measurement": "journalctl.lastlog",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT last(\"seconds\") FROM \"journalctl.lastlog\" WHERE (\"host\" =~ /^$Schedd$/ AND \"service\" =~ /galaxy-handler@[0-5]/) AND $timeFilter GROUP BY time($interval), \"service\"",
-            "rawQuery": true,
-            "refId": "B",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "seconds"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "last"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "condition": "AND",
-                "key": "host",
-                "operator": "=~",
-                "value": "/^$Schedd$/"
-              },
-              {
-                "condition": "AND",
-                "key": "service",
-                "operator": "=~",
-                "value": "/galaxy-handler@[0-5]/"
-              }
-            ]
-          }
-        ],
-        "title": "Galaxy handlers last log entry",
-        "transformations": [
-          {
-            "id": "joinByField",
-            "options": {}
-          },
-          {
-            "id": "organize",
-            "options": {
-              "excludeByName": {
-                "Time": false
-              },
-              "includeByName": {},
-              "indexByName": {},
-              "renameByName": {
-                "Time": "",
-                "journalctl.lastlog.last { service: galaxy-handler@0 }": "Handler 0",
-                "journalctl.lastlog.last { service: galaxy-handler@1 }": "Handler 1",
-                "journalctl.lastlog.last { service: galaxy-handler@2 }": "Handler 2",
-                "journalctl.lastlog.last { service: galaxy-handler@3 }": "Handler 3",
-                "journalctl.lastlog.last { service: galaxy-handler@4 }": "Handler 4",
-                "journalctl.lastlog.last { service: galaxy-handler@5 }": "Handler 5",
-                "journalctl.lastlog.last {service: galaxy-handler@0}": "Handler 0",
-                "journalctl.lastlog.last {service: galaxy-handler@1}": "Handler 1",
-                "journalctl.lastlog.last {service: galaxy-handler@2}": "Handler 2",
-                "journalctl.lastlog.last {service: galaxy-handler@3}": "Handler 3",
-                "journalctl.lastlog.last {service: galaxy-handler@4}": "Handler 4",
-                "journalctl.lastlog.last {service: galaxy-handler@5}": "Handler 5",
-                "journalctl.lastlog.seconds {service: galaxy-handler@0}": "Handler 0",
-                "journalctl.lastlog.seconds {service: galaxy-handler@1}": "Handler 1",
-                "journalctl.lastlog.seconds {service: galaxy-handler@2}": "Handler 2"
-              }
-            }
-          }
-        ],
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "description": "Shows the number of currently active users who are logged in on the usegalaxy.eu website (recorded every 10 minutes)",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 50,
-              "gradientMode": "opacity",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineStyle": {
-                "fill": "solid"
-              },
-              "lineWidth": 2,
-              "pointSize": 10,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "showValues": false,
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": 0
-                }
-              ]
-            },
-            "unit": "none"
-          }
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 11,
-          "x": 0,
-          "y": 28
-        },
-        "id": 73,
-        "options": {
-          "annotations": {
-            "clustering": -1,
-            "multiLane": false
-          },
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "enableFacetedFilter": false,
-            "overflow": "ellipsis",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "13.1.1",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [],
-            "measurement": "active_users",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT \"users\" FROM \"active_users\" WHERE (\"host\" = 'sn06.galaxyproject.eu')",
-            "rawQuery": false,
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "users"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host::tag",
-                "operator": "=~",
-                "value": "/^$Schedd$/"
-              }
-            ]
-          }
-        ],
-        "title": "Active users over time",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
         "description": "This panel shows the list of services (e.g., tusd, celery, Galaxy, rabbitmq, etc.) and their statuses.",
         "fieldConfig": {
           "defaults": {
@@ -1970,7 +1792,7 @@
           "h": 5,
           "w": 9,
           "x": 11,
-          "y": 28
+          "y": 37
         },
         "id": 69,
         "options": {
@@ -2014,9 +1836,9 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 33
+          "y": 42
         },
-        "id": 97,
+        "id": 100,
         "title": "Services status",
         "type": "row"
       },
@@ -2296,7 +2118,7 @@
           "h": 11,
           "w": 20,
           "x": 0,
-          "y": 34
+          "y": 43
         },
         "id": 77,
         "options": {
@@ -2415,9 +2237,9 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 45
+          "y": 54
         },
-        "id": 98,
+        "id": 101,
         "title": "HTCondor",
         "type": "row"
       },
@@ -2529,7 +2351,7 @@
           "h": 6,
           "w": 5,
           "x": 5,
-          "y": 46
+          "y": 55
         },
         "id": 19,
         "interval": "1m",
@@ -2686,7 +2508,7 @@
           "h": 6,
           "w": 5,
           "x": 10,
-          "y": 46
+          "y": 55
         },
         "id": 20,
         "interval": "1m",
@@ -2845,7 +2667,7 @@
           "h": 6,
           "w": 10,
           "x": 0,
-          "y": 52
+          "y": 61
         },
         "id": 59,
         "interval": "1m",
@@ -3092,7 +2914,7 @@
           "h": 6,
           "w": 10,
           "x": 10,
-          "y": 52
+          "y": 61
         },
         "id": 56,
         "options": {
@@ -3390,7 +3212,7 @@
           "h": 15,
           "w": 20,
           "x": 0,
-          "y": 58
+          "y": 67
         },
         "id": 67,
         "interval": "1m",
@@ -3623,7 +3445,7 @@
           "h": 12,
           "w": 20,
           "x": 0,
-          "y": 73
+          "y": 82
         },
         "id": 52,
         "interval": "1m",
@@ -3770,7 +3592,7 @@
           "h": 6,
           "w": 20,
           "x": 0,
-          "y": 85
+          "y": 94
         },
         "id": 54,
         "options": {
@@ -4056,7 +3878,7 @@
           "h": 6,
           "w": 20,
           "x": 0,
-          "y": 91
+          "y": 100
         },
         "id": 57,
         "options": {
@@ -4342,7 +4164,7 @@
           "h": 6,
           "w": 14,
           "x": 0,
-          "y": 97
+          "y": 106
         },
         "id": 58,
         "options": {
@@ -4607,7 +4429,7 @@
           "h": 6,
           "w": 6,
           "x": 14,
-          "y": 97
+          "y": 106
         },
         "id": 70,
         "options": {
@@ -4705,7 +4527,7 @@
           "h": 13,
           "w": 20,
           "x": 0,
-          "y": 103
+          "y": 112
         },
         "id": 81,
         "options": {
@@ -4818,9 +4640,9 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 116
+          "y": 125
         },
-        "id": 99,
+        "id": 102,
         "title": "KVM Services",
         "type": "row"
       },
@@ -4909,7 +4731,7 @@
           "h": 9,
           "w": 10,
           "x": 0,
-          "y": 117
+          "y": 126
         },
         "id": 61,
         "options": {
@@ -5018,7 +4840,7 @@
           "h": 4,
           "w": 6,
           "x": 10,
-          "y": 117
+          "y": 126
         },
         "id": 95,
         "options": {
@@ -5092,9 +4914,9 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 126
+          "y": 135
         },
-        "id": 100,
+        "id": 103,
         "title": "Rabbitmq",
         "type": "row"
       },
@@ -5166,7 +4988,7 @@
           "h": 6,
           "w": 9,
           "x": 0,
-          "y": 127
+          "y": 136
         },
         "id": 84,
         "options": {
@@ -5269,7 +5091,7 @@
           "h": 6,
           "w": 9,
           "x": 9,
-          "y": 127
+          "y": 136
         },
         "id": 83,
         "options": {
@@ -5358,7 +5180,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 133
+          "y": 142
         },
         "id": 87,
         "options": {
@@ -5447,9 +5269,9 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 141
+          "y": 150
         },
-        "id": 101,
+        "id": 104,
         "title": "Central Manager",
         "type": "row"
       },
@@ -5558,7 +5380,7 @@
           "h": 14,
           "w": 7,
           "x": 0,
-          "y": 142
+          "y": 151
         },
         "id": 94,
         "options": {
@@ -5711,7 +5533,7 @@
           "h": 7,
           "w": 5,
           "x": 7,
-          "y": 142
+          "y": 151
         },
         "id": 90,
         "options": {
@@ -5878,7 +5700,7 @@
           "h": 7,
           "w": 5,
           "x": 12,
-          "y": 142
+          "y": 151
         },
         "id": 91,
         "options": {
@@ -6143,7 +5965,7 @@
           "h": 7,
           "w": 5,
           "x": 7,
-          "y": 149
+          "y": 158
         },
         "id": 92,
         "options": {
@@ -6371,7 +6193,7 @@
           "h": 7,
           "w": 5,
           "x": 12,
-          "y": 149
+          "y": 158
         },
         "id": 93,
         "options": {
@@ -6469,9 +6291,9 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 156
+          "y": 165
         },
-        "id": 102,
+        "id": 105,
         "title": "sn09 server",
         "type": "row"
       },
@@ -6580,7 +6402,7 @@
           "h": 14,
           "w": 7,
           "x": 0,
-          "y": 157
+          "y": 166
         },
         "id": 26,
         "options": {
@@ -6733,7 +6555,7 @@
           "h": 7,
           "w": 5,
           "x": 7,
-          "y": 157
+          "y": 166
         },
         "id": 34,
         "options": {
@@ -7144,7 +6966,7 @@
           "h": 7,
           "w": 5,
           "x": 12,
-          "y": 157
+          "y": 166
         },
         "id": 36,
         "options": {
@@ -7407,7 +7229,7 @@
           "h": 7,
           "w": 5,
           "x": 7,
-          "y": 164
+          "y": 173
         },
         "id": 28,
         "options": {
@@ -7633,7 +7455,7 @@
           "h": 7,
           "w": 5,
           "x": 12,
-          "y": 164
+          "y": 173
         },
         "id": 38,
         "options": {
@@ -7729,9 +7551,9 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 171
+          "y": 180
         },
-        "id": 103,
+        "id": 106,
         "title": "Jenkins Builds",
         "type": "row"
       },
@@ -7741,7 +7563,7 @@
           "h": 13,
           "w": 6,
           "x": 0,
-          "y": 172
+          "y": 181
         },
         "id": 65,
         "options": {
@@ -7764,9 +7586,9 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 185
+          "y": 194
         },
-        "id": 104,
+        "id": 107,
         "title": "Plausible analytics of UseGalaxy.eu",
         "type": "row"
       },
@@ -7776,7 +7598,7 @@
           "h": 20,
           "w": 17,
           "x": 0,
-          "y": 186
+          "y": 195
         },
         "id": 72,
         "options": {
@@ -7878,7 +7700,7 @@
     "timezone": "browser",
     "title": "day-to-day",
     "uid": "ZmZaLfz4k",
-    "version": 290,
+    "version": 297,
     "weekStart": "monday"
   }
 }
