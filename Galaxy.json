@@ -10,10 +10,10 @@
     "url": "/d/000000004/galaxy",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2024-07-24T16:01:38+02:00",
-    "updated": "2026-10-20T14:50:50+02:00",
+    "updated": "2026-10-21T11:27:08+02:00",
     "updatedBy": "admin",
     "createdBy": "admin",
-    "version": 32,
+    "version": 33,
     "hasAcl": false,
     "isFolder": false,
     "apiVersion": "v0alpha1",
@@ -89,7 +89,7 @@
           "x": 19,
           "y": 0
         },
-        "id": 114,
+        "id": 115,
         "libraryPanel": {
           "name": "Active users (live)",
           "uid": "eg1sqe76sp9fkc"
@@ -105,7 +105,7 @@
           "x": 0,
           "y": 5
         },
-        "id": 115,
+        "id": 116,
         "title": "Schedulers",
         "type": "row"
       },
@@ -727,7 +727,7 @@
           "x": 0,
           "y": 12
         },
-        "id": 116,
+        "id": 117,
         "title": "UseGalaxy.eu Cluster",
         "type": "row"
       },
@@ -1426,7 +1426,7 @@
           "x": 0,
           "y": 34
         },
-        "id": 117,
+        "id": 118,
         "title": "Galaxy / Route Timings",
         "type": "row"
       },
@@ -1747,7 +1747,7 @@
           "x": 0,
           "y": 45
         },
-        "id": 118,
+        "id": 119,
         "title": "Host / System Load",
         "type": "row"
       },
@@ -2195,6 +2195,6 @@
     "timezone": "browser",
     "title": "Galaxy",
     "uid": "000000004",
-    "version": 32
+    "version": 33
   }
 }

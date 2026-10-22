@@ -10,10 +10,10 @@
     "url": "/d/ZmZaLfz4k/day-to-day",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2022-08-03T15:11:46+02:00",
-    "updated": "2026-10-20T14:47:19+02:00",
+    "updated": "2026-10-21T11:28:07+02:00",
     "updatedBy": "admin",
     "createdBy": "sanjaysrikakulam",
-    "version": 297,
+    "version": 298,
     "hasAcl": false,
     "isFolder": false,
     "apiVersion": "v0alpha1",
@@ -68,7 +68,7 @@
           "x": 0,
           "y": 0
         },
-        "id": 99,
+        "id": 100,
         "title": "Galaxy",
         "type": "row"
       },
@@ -1421,7 +1421,7 @@
           "x": 14,
           "y": 18
         },
-        "id": 98,
+        "id": 99,
         "libraryPanel": {
           "name": "Active users (live)",
           "uid": "eg1sqe76sp9fkc"
@@ -1838,7 +1838,7 @@
           "x": 0,
           "y": 42
         },
-        "id": 100,
+        "id": 101,
         "title": "Services status",
         "type": "row"
       },
@@ -2239,7 +2239,7 @@
           "x": 0,
           "y": 54
         },
-        "id": 101,
+        "id": 102,
         "title": "HTCondor",
         "type": "row"
       },
@@ -4642,7 +4642,7 @@
           "x": 0,
           "y": 125
         },
-        "id": 102,
+        "id": 103,
         "title": "KVM Services",
         "type": "row"
       },
@@ -4916,7 +4916,7 @@
           "x": 0,
           "y": 135
         },
-        "id": 103,
+        "id": 104,
         "title": "Rabbitmq",
         "type": "row"
       },
@@ -5271,7 +5271,7 @@
           "x": 0,
           "y": 150
         },
-        "id": 104,
+        "id": 105,
         "title": "Central Manager",
         "type": "row"
       },
@@ -6293,7 +6293,7 @@
           "x": 0,
           "y": 165
         },
-        "id": 105,
+        "id": 106,
         "title": "sn09 server",
         "type": "row"
       },
@@ -7553,7 +7553,7 @@
           "x": 0,
           "y": 180
         },
-        "id": 106,
+        "id": 107,
         "title": "Jenkins Builds",
         "type": "row"
       },
@@ -7588,7 +7588,7 @@
           "x": 0,
           "y": 194
         },
-        "id": 107,
+        "id": 108,
         "title": "Plausible analytics of UseGalaxy.eu",
         "type": "row"
       },
@@ -7700,7 +7700,7 @@
     "timezone": "browser",
     "title": "day-to-day",
     "uid": "ZmZaLfz4k",
-    "version": 297,
+    "version": 298,
     "weekStart": "monday"
   }
 }

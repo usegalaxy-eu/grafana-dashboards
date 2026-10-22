@@ -10,10 +10,10 @@
     "url": "/d/xxeOsZiVz/elixir",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2022-08-09T11:30:54+02:00",
-    "updated": "2026-08-09T07:50:26+02:00",
+    "updated": "2026-10-21T12:42:47+02:00",
     "updatedBy": "admin",
     "createdBy": "bgruening",
-    "version": 25,
+    "version": 26,
     "hasAcl": false,
     "isFolder": false,
     "apiVersion": "v0alpha1",
@@ -1186,88 +1186,19 @@
         "type": "stat"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": 0
-                }
-              ]
-            }
-          }
-        },
         "gridPos": {
           "h": 5,
           "w": 3,
           "x": 4,
           "y": 15
         },
-        "id": 24,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "text": {},
-          "textMode": "auto",
-          "wideLayout": true
+        "id": 27,
+        "libraryPanel": {
+          "name": "Active users (live)",
+          "uid": "eg1sqe76sp9fkc"
         },
-        "pluginVersion": "13.1.1",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "P9B81C0353945995B"
-            },
-            "groupBy": [],
-            "measurement": "active_users",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "query": "SELECT \"users\" FROM \"active_users\" WHERE (\"host\" = 'traefik.flyingrabb.it') AND $timeFilter GROUP BY \"timespan\"",
-            "rawQuery": false,
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "users"
-                  ],
-                  "type": "field"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "host",
-                "operator": "=",
-                "value": "sn09.galaxyproject.eu"
-              }
-            ]
-          }
-        ],
-        "title": "Active Users (10 minutes)",
-        "type": "stat"
+        "title": "Active users",
+        "type": "library-panel-ref"
       },
       {
         "gridPos": {
@@ -1317,6 +1248,6 @@
     "timezone": "browser",
     "title": "ELIXIR",
     "uid": "xxeOsZiVz",
-    "version": 25
+    "version": 26
   }
 }
