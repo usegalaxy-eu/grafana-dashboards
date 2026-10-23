@@ -10,10 +10,10 @@
     "url": "/d/ad9bz5h/galaxy-sse",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2026-10-02T12:02:23+02:00",
-    "updated": "2026-10-16T10:50:23+02:00",
+    "updated": "2026-10-22T14:37:50+02:00",
     "updatedBy": "dsizovs",
     "createdBy": "admin",
-    "version": 20,
+    "version": 21,
     "hasAcl": false,
     "isFolder": false,
     "apiVersion": "v0alpha1",
@@ -171,7 +171,7 @@
         },
         "gridPos": {
           "h": 4,
-          "w": 4,
+          "w": 8,
           "x": 4,
           "y": 0
         },
@@ -207,71 +207,6 @@
           }
         ],
         "title": "Logged-in connections",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "${datasource}"
-        },
-        "description": "Distinct logged-in users plus anonymous browser sessions with an open stream (galaxy.sse.users.active, galaxyproject/galaxy#24124). Shows 'Not deployed yet' until that PR is on usegalaxy.eu. Upper bound: a user whose tabs sit on different workers counts once per worker.",
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "decimals": 0,
-            "noValue": "Not deployed yet",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "#56A64B",
-                  "value": 0
-                }
-              ]
-            },
-            "unit": "none"
-          }
-        },
-        "gridPos": {
-          "h": 4,
-          "w": 4,
-          "x": 8,
-          "y": 0
-        },
-        "id": 4,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "none",
-          "justifyMode": "center",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "value",
-          "wideLayout": true
-        },
-        "pluginVersion": "13.1.1",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "${datasource}"
-            },
-            "query": "SELECT sum(\"v\") FROM (SELECT last(\"value\") AS \"v\" FROM \"galaxy_page_timings.\" WHERE \"path\" = 'galaxy.sse.users.active' AND \"server_name\" =~ /^web_/ AND $timeFilter GROUP BY time($__interval), \"server_name\") WHERE $timeFilter GROUP BY time($__interval) fill(none)",
-            "rawQuery": true,
-            "refId": "A",
-            "resultFormat": "time_series"
-          }
-        ],
-        "title": "Active users (SSE)",
         "type": "stat"
       },
       {
@@ -348,14 +283,14 @@
           "type": "influxdb",
           "uid": "${datasource}"
         },
-        "description": "Events lost because a tab's queue was full (galaxy.sse.connections.dropped). Occasional drops on a network blip are normal; a steady rate is a bug or a proxy holding events back.",
+        "description": "Events lost because a tab's queue was full (galaxy.sse.connections.dropped). Occasional drops on a network blip are normal; a steady rate is a bug or a proxy holding events back. Since 2026-10-15 statsd counters are not stored (integer/float field-type conflict on galaxy_page_timings.value), so this shows 'Counters not stored' instead of a real count until Telegraf is fixed.",
         "fieldConfig": {
           "defaults": {
             "color": {
               "mode": "thresholds"
             },
             "decimals": 0,
-            "noValue": "0",
+            "noValue": "Counters not stored",
             "thresholds": {
               "mode": "absolute",
               "steps": [
@@ -421,14 +356,14 @@
           "type": "influxdb",
           "uid": "${datasource}"
         },
-        "description": "Producer could not reach the AMQP bus, so the event was never sent (galaxy.sse.dispatch.skipped_no_qw). Anything above 0 needs a look at amqp_internal_connection and the broker.",
+        "description": "Producer could not reach the AMQP bus, so the event was never sent (galaxy.sse.dispatch.skipped_no_qw). Anything above 0 needs a look at amqp_internal_connection and the broker. Since 2026-10-15 statsd counters are not stored (integer/float field-type conflict on galaxy_page_timings.value), so this shows 'Counters not stored' instead of a real count until Telegraf is fixed.",
         "fieldConfig": {
           "defaults": {
             "color": {
               "mode": "thresholds"
             },
             "decimals": 0,
-            "noValue": "0",
+            "noValue": "Counters not stored",
             "thresholds": {
               "mode": "absolute",
               "steps": [
@@ -642,7 +577,7 @@
           "type": "influxdb",
           "uid": "${datasource}"
         },
-        "description": "SSE lines need galaxyproject/galaxy#24124 deployed. The old count is files/traefik/active_users.sh: distinct IPs that polled /history/current_history_json in the last 10 minutes. SSE replaces that poll, so the old count falls as browsers switch over, and it always undercounted users behind one NAT IP.",
+        "description": "files/traefik/active_users.sh: distinct IPs that polled /history/current_history_json in the last 10 minutes. SSE replaces that poll, so this count falls as browsers switch over, and it always undercounted users behind one NAT IP. The SSE-based distinct-user metric (galaxyproject/galaxy#24124) was closed unmerged, so there is no SSE line here.",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -793,28 +728,6 @@
         "pluginVersion": "13.1.1",
         "targets": [
           {
-            "alias": "Logged-in users (SSE)",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "${datasource}"
-            },
-            "query": "SELECT sum(\"v\") FROM (SELECT last(\"value\") AS \"v\" FROM \"galaxy_page_timings.\" WHERE \"path\" = 'galaxy.sse.users.active' AND \"kind\" = 'user' AND \"server_name\" =~ /^web_/ AND $timeFilter GROUP BY time($__interval), \"server_name\") WHERE $timeFilter GROUP BY time($__interval) fill(none)",
-            "rawQuery": true,
-            "refId": "A",
-            "resultFormat": "time_series"
-          },
-          {
-            "alias": "Anonymous sessions (SSE)",
-            "datasource": {
-              "type": "influxdb",
-              "uid": "${datasource}"
-            },
-            "query": "SELECT sum(\"v\") FROM (SELECT last(\"value\") AS \"v\" FROM \"galaxy_page_timings.\" WHERE \"path\" = 'galaxy.sse.users.active' AND \"kind\" = 'anonymous' AND \"server_name\" =~ /^web_/ AND $timeFilter GROUP BY time($__interval), \"server_name\") WHERE $timeFilter GROUP BY time($__interval) fill(none)",
-            "rawQuery": true,
-            "refId": "B",
-            "resultFormat": "time_series"
-          },
-          {
             "alias": "Old count (Traefik, 10 min)",
             "datasource": {
               "type": "influxdb",
@@ -826,7 +739,7 @@
             "resultFormat": "time_series"
           }
         ],
-        "title": "Active users: SSE vs. old Traefik count",
+        "title": "Active users (Traefik, last 10 min)",
         "type": "timeseries"
       },
       {
@@ -1022,7 +935,7 @@
           "type": "influxdb",
           "uid": "${datasource}"
         },
-        "description": "Control-task fan-outs (galaxy.sse.dispatch.count) per minute: history_update, entry_point_update, notification_update, broadcast_update. history_update should track how busy users are.",
+        "description": "Control-task fan-outs per minute: history_update, entry_point_update, notification_update, broadcast_update. history_update should track how busy users are. Counted from the dispatch latency timer's count field, because the galaxy.sse.dispatch.count counter is not stored since 2026-10-15 (integer/float field-type conflict on galaxy_page_timings.value).",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -1117,7 +1030,7 @@
               "type": "influxdb",
               "uid": "${datasource}"
             },
-            "query": "SELECT sum(\"value\") / ($__interval_ms / 60000) FROM \"galaxy_page_timings.\" WHERE \"path\" = 'galaxy.sse.dispatch.count' AND $timeFilter GROUP BY time($__interval), \"task\" fill(0)",
+            "query": "SELECT sum(\"count\") / ($__interval_ms / 60000) FROM \"galaxy_page_timings.\" WHERE \"path\" = 'galaxy.sse.dispatch.latency_ms' AND $timeFilter GROUP BY time($__interval), \"task\" fill(0)",
             "rawQuery": true,
             "refId": "A",
             "resultFormat": "time_series"
@@ -1271,7 +1184,7 @@
           "type": "influxdb",
           "uid": "${datasource}"
         },
-        "description": "Both should be flat at 0. These are the two alert conditions from the Galaxy SSE docs.",
+        "description": "Both should be flat at 0. These are the two alert conditions from the Galaxy SSE docs. Since 2026-10-15 statsd counters are not stored (integer/float field-type conflict on galaxy_page_timings.value), so this panel stays empty until Telegraf is fixed.",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -1312,6 +1225,7 @@
                 "mode": "off"
               }
             },
+            "noValue": "No data: counters not stored (field-type conflict)",
             "thresholds": {
               "mode": "absolute",
               "steps": [
@@ -1710,6 +1624,6 @@
     "timezone": "browser",
     "title": "Galaxy SSE",
     "uid": "ad9bz5h",
-    "version": 20
+    "version": 21
   }
 }
