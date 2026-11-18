@@ -10,10 +10,10 @@
     "url": "/d/addlvrz/compute-cluster",
     "expires": "0001-01-01T00:00:00Z",
     "created": "2026-10-08T16:07:36+02:00",
-    "updated": "2026-10-22T13:48:39+02:00",
+    "updated": "2026-11-17T09:59:35+01:00",
     "updatedBy": "dsizovs",
     "createdBy": "admin",
-    "version": 29,
+    "version": 30,
     "hasAcl": false,
     "isFolder": false,
     "apiVersion": "v0alpha1",
@@ -2005,8 +2005,8 @@
       },
       {
         "datasource": {
-          "type": "influxdb",
-          "uid": "P9B81C0353945995B"
+          "type": "mixed",
+          "uid": "-- Mixed --"
         },
         "description": "Total power draw (left axis) against the share of CPUs given to jobs (right axis). The gap between them at low allocation is the idle cost of the cluster.",
         "fieldConfig": {
@@ -2157,7 +2157,7 @@
             "alias": "$col",
             "datasource": {
               "type": "influxdb",
-              "uid": "P9B81C0353945995B"
+              "uid": "PEBD82B4560F292BD"
             },
             "query": "SELECT sum(\"w\") AS \"Power\" FROM (SELECT mean(\"watts\") AS \"w\" FROM \"ipmi_power\" WHERE $timeFilter GROUP BY time($__interval), \"host\") WHERE $timeFilter GROUP BY time($__interval) fill(null)",
             "rawQuery": true,
@@ -2499,7 +2499,7 @@
       {
         "datasource": {
           "type": "influxdb",
-          "uid": "P9B81C0353945995B"
+          "uid": "PEBD82B4560F292BD"
         },
         "description": "Power draw of the selected host.",
         "fieldConfig": {
@@ -2605,7 +2605,7 @@
             "alias": "$col",
             "datasource": {
               "type": "influxdb",
-              "uid": "P9B81C0353945995B"
+              "uid": "PEBD82B4560F292BD"
             },
             "query": "SELECT mean(\"watts\") AS \"Power\" FROM \"ipmi_power\" WHERE \"host\" = '$host' AND $timeFilter GROUP BY time($__interval) fill(null)",
             "rawQuery": true,
@@ -2760,6 +2760,6 @@
     "timezone": "browser",
     "title": "Compute Cluster",
     "uid": "addlvrz",
-    "version": 29
+    "version": 30
   }
 }
